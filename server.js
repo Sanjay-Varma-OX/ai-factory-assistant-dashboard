@@ -4,8 +4,17 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// Disable caching for all routes
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  next();
+});
+
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build'), {
+  etag: false,
+  lastModified: false
+}));
 
 // For any request that doesn't match one above, send back React's index.html file.
 app.get('/*', (req, res) => {
