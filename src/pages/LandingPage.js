@@ -1,5 +1,6 @@
 import React from 'react';
-import { Brain, Factory, BadgeDollarSign, LineChart, Clock, Shield } from 'lucide-react';
+import { Brain, Factory, LineChart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
@@ -8,14 +9,18 @@ const LandingPage = () => {
       <header className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-24">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold mb-6">AI Factory Assistant</h1>
-          <p className="text-xl mb-12 max-w-3xl mx-auto">Real-time monitoring, predictive maintenance, and intelligent optimization for your factory floor</p>
+          <p className="text-xl mb-12 max-w-3xl mx-auto">Revolutionizing factory operations through intelligent AI systems that predict, prevent, and optimize processes</p>
+          <div className="flex justify-center gap-6">
+            <Link to="/" className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Back to Home</Link>
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors">Try Factory Demo</button>
+          </div>
         </div>
       </header>
 
-      {/* Dashboard Section */}
-      <section id="dashboard" className="py-16 bg-white">
+      {/* Dashboard Preview */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">Real-time Factory Performance</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Real-time Factory Performance</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="flex items-center justify-between mb-4">
@@ -44,134 +49,44 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section id="capabilities" className="py-16 bg-gray-50">
+      {/* Key Benefits */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">AI Agent Capabilities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {
-              [
-                {
-                  icon: <Brain className="w-12 h-12 text-blue-600" />,
-                  title: 'Real-time Monitoring',
-                  description: 'Connected to PLCs and sensors for continuous monitoring of equipment performance and production metrics.'
-                },
-                {
-                  icon: <LineChart className="w-12 h-12 text-blue-600" />,
-                  title: 'Predictive Analytics',
-                  description: 'Advanced algorithms predict potential failures and maintenance needs before they impact production.'
-                },
-                {
-                  icon: <Factory className="w-12 h-12 text-blue-600" />,
-                  title: 'Automated Maintenance',
-                  description: 'Intelligent scheduling and execution of maintenance tasks to optimize equipment reliability.'
-                }
-              ].map((capability, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                  <div className="mb-4">{capability.icon}</div>
-                  <h3 className="text-xl font-semibold mb-4">{capability.title}</h3>
-                  <p className="text-gray-600">{capability.description}</p>
-                </div>
-              ))
-            }
+          <h2 className="text-3xl font-bold text-center mb-16">Factory Assistant Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {[
+              {
+                icon: <Brain className="w-12 h-12 text-blue-600" />,
+                title: 'AI Intelligence',
+                description: 'Advanced algorithms predict maintenance needs before failures occur'
+              },
+              {
+                icon: <LineChart className="w-12 h-12 text-purple-600" />,
+                title: 'Performance Analytics',
+                description: 'Real-time monitoring and analytics provide actionable insights'
+              },
+              {
+                icon: <Factory className="w-12 h-12 text-indigo-600" />,
+                title: 'Factory Integration',
+                description: 'Seamless integration with your existing factory systems'
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <div className="mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Actions Section */}
-      <section id="actions" className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">Recent AI Agent Actions</h2>
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <table className="min-w-full">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Timestamp</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Action</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Location</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr>
-                  <td className="px-6 py-4">2024-12-11 10:45 AM</td>
-                  <td className="px-6 py-4">Predictive Maintenance Alert</td>
-                  <td className="px-6 py-4">Assembly Line 2</td>
-                  <td className="px-6 py-4"><span className="px-2 py-1 bg-green-100 text-green-800 rounded">Completed</span></td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4">2024-12-11 10:30 AM</td>
-                  <td className="px-6 py-4">Temperature Threshold Adjustment</td>
-                  <td className="px-6 py-4">Forming Machine 5</td>
-                  <td className="px-6 py-4"><span className="px-2 py-1 bg-green-100 text-green-800 rounded">Completed</span></td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4">2024-12-11 10:15 AM</td>
-                  <td className="px-6 py-4">Performance Optimization</td>
-                  <td className="px-6 py-4">Packaging Unit</td>
-                  <td className="px-6 py-4"><span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded">In Progress</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Metrics Section */}
-      <section id="metrics" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">Performance Metrics</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">Area Performance</h3>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span>Assembly</span>
-                    <span>92%</span>
-                  </div>
-                  <div className="h-2 bg-gray-200 rounded">
-                    <div className="h-2 bg-blue-600 rounded" style={{ width: '92%' }}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span>Packaging</span>
-                    <span>88%</span>
-                  </div>
-                  <div className="h-2 bg-gray-200 rounded">
-                    <div className="h-2 bg-blue-600 rounded" style={{ width: '88%' }}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span>Quality Control</span>
-                    <span>95%</span>
-                  </div>
-                  <div className="h-2 bg-gray-200 rounded">
-                    <div className="h-2 bg-blue-600 rounded" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">Monthly Downtime Analysis</h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span>Planned Maintenance</span>
-                  <span className="font-semibold">24h</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Unplanned Stops</span>
-                  <span className="font-semibold">6h</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Setup & Adjustments</span>
-                  <span className="font-semibold">12h</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* CTA Section */}
+      <section className="py-20 bg-blue-900 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-8">Ready to Optimize Your Factory?</h2>
+          <p className="text-xl mb-12 max-w-2xl mx-auto">Experience the power of AI-driven factory management with our demo</p>
+          <button className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Start Demo</button>
         </div>
       </section>
     </div>
