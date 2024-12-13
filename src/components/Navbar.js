@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-
-  const isActive = (path) => {
-    return location.pathname === path ? 'text-blue-200' : 'hover:text-blue-200';
-  };
 
   return (
     <nav className="bg-blue-900 text-white px-6 py-4 sticky top-0 z-50">
