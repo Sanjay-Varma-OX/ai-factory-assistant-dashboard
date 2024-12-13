@@ -1,4 +1,4 @@
-name: Build and deploy React app to Azure Web App - oxmaint-ai-landing
+name: Build and deploy React app to Azure Web App-oxmaint-ai-landing
 
 on:
   push:
