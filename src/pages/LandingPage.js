@@ -1,156 +1,107 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faIndustry, faBuilding, faTools, faCar, faHospital, faGraduationCap, faStore, faUtensils, faHardHat, faPlane, faTruck, faLaptop } from '@fortawesome/free-solid-svg-icons';
+import { Brain, Factory, BadgeDollarSign, LineChart, Clock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const IndustryCard = ({ icon, title, description, link }) => (
-  <Link to={link} className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl">
-    <FontAwesomeIcon icon={icon} className="text-4xl text-blue-600 mb-4" />
-    <h3 className="text-xl font-semibold mb-4">{title}</h3>
-    <p className="text-gray-600">{description}</p>
-  </Link>
-);
-
 const LandingPage = () => {
-  const industries = [
-    {
-      icon: faIndustry,
-      title: "Manufacturing",
-      description: "Advanced AI-driven solutions for optimizing production processes and reducing downtime.",
-      link: "/manufacturing"
-    },
-    {
-      icon: faBuilding,
-      title: "Real Estate",
-      description: "Smart building management and preventive maintenance for property portfolios.",
-      link: "/real_estate"
-    },
-    {
-      icon: faTools,
-      title: "Maintenance",
-      description: "Predictive maintenance solutions that prevent failures before they occur.",
-      link: "/maintenance"
-    },
-    {
-      icon: faCar,
-      title: "Automotive",
-      description: "AI-powered maintenance for vehicle fleets and automotive facilities.",
-      link: "/automotive"
-    },
-    {
-      icon: faHospital,
-      title: "Healthcare",
-      description: "Ensuring critical medical equipment reliability and facility maintenance.",
-      link: "/healthcare"
-    },
-    {
-      icon: faGraduationCap,
-      title: "Education",
-      description: "Facility management solutions for educational institutions.",
-      link: "/education"
-    },
-    {
-      icon: faStore,
-      title: "Retail",
-      description: "Store equipment maintenance and facility management optimization.",
-      link: "/retail"
-    },
-    {
-      icon: faUtensils,
-      title: "Food & Beverage",
-      description: "Maintain food safety standards with AI-powered equipment monitoring.",
-      link: "/food_and_beverage"
-    },
-    {
-      icon: faHardHat,
-      title: "Construction",
-      description: "Equipment maintenance and site safety management solutions.",
-      link: "/construction"
-    },
-    {
-      icon: faPlane,
-      title: "Aviation",
-      description: "Critical maintenance management for aviation facilities and equipment.",
-      link: "/aviation"
-    },
-    {
-      icon: faTruck,
-      title: "Logistics",
-      description: "Warehouse equipment maintenance and fleet management solutions.",
-      link: "/logistics"
-    },
-    {
-      icon: faLaptop,
-      title: "Technology",
-      description: "IT infrastructure and data center maintenance optimization.",
-      link: "/technology"
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <header className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20">
+      <header className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-24">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold mb-4">Oxmaint AI</h1>
-          <p className="text-2xl mb-8">Revolutionizing maintenance with artificial intelligence</p>
-          <p className="text-xl mb-12">Predictive maintenance, real-time monitoring, and intelligent optimization for all industries</p>
-          <div className="flex justify-center gap-4">
-            <button className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-              Request Demo
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-              Learn More
-            </button>
+          <h1 className="text-5xl font-bold mb-6">AI Factory Assistant</h1>
+          <p className="text-xl mb-12 max-w-3xl mx-auto">Revolutionizing factory operations through intelligent AI systems that predict, prevent, and optimize processes</p>
+          <div className="flex justify-center gap-6">
+            <Link to="/" className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Back to Home</Link>
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors">Try Factory Demo</button>
           </div>
         </div>
       </header>
 
-      {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Dashboard Preview */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-4 text-center">Why Choose Oxmaint AI?</h2>
-          <p className="text-xl text-gray-600 text-center mb-12">Our AI-powered CMMS brings intelligence to your maintenance operations</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold mb-4">Predictive Maintenance</h3>
-              <p className="text-gray-600">Stop problems before they start with AI-driven predictive analytics</p>
+          <h2 className="text-3xl font-bold text-center mb-16">Real-time Factory Performance</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold">Plant OEE</h3>
+                <span className="text-2xl font-bold text-green-600">87.2%</span>
+              </div>
+              <div className="h-2 bg-gray-200 rounded">
+                <div className="h-2 bg-green-600 rounded" style={{ width: '87.2%' }}></div>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold mb-4">Cost Reduction</h3>
-              <p className="text-gray-600">Minimize downtime and optimize maintenance resources</p>
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold">Current Downtime</h3>
+                <span className="text-2xl font-bold text-yellow-600">12 min</span>
+              </div>
+              <p className="text-gray-600">Line 3 - Packaging Unit</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold mb-4">Real-time Insights</h3>
-              <p className="text-gray-600">Make data-driven decisions with real-time monitoring and analytics</p>
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold">Equipment Health</h3>
+                <span className="text-2xl font-bold text-blue-600">94%</span>
+              </div>
+              <p className="text-gray-600">28/30 Machines Optimal</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-16 bg-white">
+      {/* Key Benefits */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-4 text-center">Industries We Serve</h2>
-          <p className="text-xl text-gray-600 text-center mb-12">Tailored AI solutions for every sector</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {industries.map((industry, index) => (
-              <IndustryCard key={index} {...industry} />
+          <h2 className="text-3xl font-bold text-center mb-16">Factory Assistant Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {[
+              {
+                icon: <Brain className="w-12 h-12 text-blue-600" />,
+                title: 'Predictive Intelligence',
+                description: 'Advanced AI algorithms predict maintenance needs before failures occur, reducing downtime by up to 50%'
+              },
+              {
+                icon: <BadgeDollarSign className="w-12 h-12 text-green-600" />,
+                title: 'Cost Reduction',
+                description: 'Optimize maintenance schedules and resources, leading to 30-40% reduction in maintenance costs'
+              },
+              {
+                icon: <LineChart className="w-12 h-12 text-purple-600" />,
+                title: 'Performance Analytics',
+                description: 'Real-time monitoring and analytics provide actionable insights for continuous improvement'
+              },
+              {
+                icon: <Clock className="w-12 h-12 text-orange-600" />,
+                title: 'Time Efficiency',
+                description: 'Automated scheduling and resource allocation improve maintenance efficiency by 45%'
+              },
+              {
+                icon: <Shield className="w-12 h-12 text-red-600" />,
+                title: 'Risk Mitigation',
+                description: 'Proactive maintenance strategies reduce safety risks and compliance issues'
+              },
+              {
+                icon: <Factory className="w-12 h-12 text-indigo-600" />,
+                title: 'Factory Integration',
+                description: 'Seamless integration with your existing factory systems and equipment'
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <div className="mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-800 text-white py-16">
+      <section className="py-20 bg-blue-900 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Maintenance Operations?</h2>
-          <p className="text-xl mb-8">Schedule a demo to see how Oxmaint AI can help your organization</p>
-          <button className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-            Get Started Today
-          </button>
+          <h2 className="text-3xl font-bold mb-8">Ready to Optimize Your Factory?</h2>
+          <p className="text-xl mb-12 max-w-2xl mx-auto">Experience the power of AI-driven factory management with our demo</p>
+          <button className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Start Demo</button>
         </div>
       </section>
     </div>
