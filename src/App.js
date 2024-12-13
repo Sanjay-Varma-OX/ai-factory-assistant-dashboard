@@ -14,7 +14,7 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/factory" element={<LandingPage />} />
+            <Route path="/:industry" element={<LandingPage />} />
           </Routes>
         </div>
         <Footer />
