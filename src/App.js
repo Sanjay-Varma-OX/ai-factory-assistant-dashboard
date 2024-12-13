@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import Footer from './components/Footer';
 
@@ -12,7 +13,8 @@ function App() {
         <Navbar />
         <div className="flex-grow">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/factory" element={<LandingPage />} />
           </Routes>
         </div>
         <Footer />
