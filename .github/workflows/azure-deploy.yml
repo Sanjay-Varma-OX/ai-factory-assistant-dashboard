@@ -21,20 +21,25 @@ jobs:
       with:
         node-version: '20.x'
 
-    - name: npm install, build, and test
+    - name: npm install and build
       run: |
         npm install
         npm run build
 
-    - name: Prepare for deployment
+    - name: Prepare deployment package
       run: |
-        mkdir deploy
+        # Create deployment directory
+        mkdir -p deploy
+        
+        # Copy build contents
         cp -r build/* deploy/
+        
+        # Copy server files
         cp package.json deploy/
         cp package-lock.json deploy/
         cp server.js deploy/
-        cp startup.sh deploy/
-        chmod +x deploy/startup.sh
+        
+        # Install production dependencies
         cd deploy
         npm install --production
 
@@ -53,3 +58,4 @@ jobs:
         slot-name: 'production'
         package: deploy
         clean: true
+        startup-command: 'node server.js'
