@@ -29,16 +29,15 @@ jobs:
 
       - name: Create deployment package
         run: |
-          # Create temp directory
+          # Create deployment directory
           mkdir deploy
           
-          # Copy build files
+          # Copy build, server files, and web.config
           cp -r build/* deploy/
-          
-          # Copy server files
           cp package.json deploy/
           cp package-lock.json deploy/
           cp server.js deploy/
+          cp web.config deploy/
           
           # Install production dependencies
           cd deploy
