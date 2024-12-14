@@ -12,6 +12,7 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
     - uses: actions/checkout@v4
@@ -55,7 +56,5 @@ jobs:
       uses: azure/webapps-deploy@v3
       with:
         app-name: 'oxmaint-ai-landing'
-        slot-name: 'production'
         package: deploy
         clean: true
-        startup-command: 'node server.js'
