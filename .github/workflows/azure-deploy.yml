@@ -57,4 +57,3 @@ jobs:
       with:
         app-name: 'oxmaint-ai-landing'
         package: deploy
-        clean: true
