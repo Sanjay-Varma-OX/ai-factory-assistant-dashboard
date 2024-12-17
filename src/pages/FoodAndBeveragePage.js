@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, X } from 'lucide-react';
+import { ArrowUpRight, X, DollarSign, TrendingUp, Users, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { LineChart, Line, PieChart, Pie, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
@@ -49,8 +49,8 @@ const Modal = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-      <div className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center" onClick={onClose}>
+      <div className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4" onClick={e => e.stopPropagation()}>
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-bold">{title}</h3>
           <button onClick={onClose} className="p-1 hover:bg-gray-100 rounded">
@@ -107,28 +107,28 @@ const FoodAndBeveragePage = () => {
             title="Total Daily Sales"
             value="$24,589"
             trend="+12.5% vs last week"
-            icon={({ size, className }) => <span className={className}>$</span>}
+            icon={DollarSign}
             onClick={() => handleMetricClick('sales')}
           />
           <MetricCard
             title="Profit Margin"
             value="32.8%"
             trend="+2.4% vs target"
-            icon={({ size, className }) => <span className={className}>↗</span>}
+            icon={TrendingUp}
             onClick={() => handleMetricClick('profit')}
           />
           <MetricCard
             title="Customer Satisfaction"
             value="4.8/5.0"
             trend="+0.3 this month"
-            icon={({ size, className }) => <span className={className}>👥</span>}
+            icon={Users}
             onClick={() => handleMetricClick('satisfaction')}
           />
           <MetricCard
             title="Food Cost %"
             value="28.5%"
             trend="-1.2% vs last month"
-            icon={({ size, className }) => <span className={className}>📦</span>}
+            icon={Package}
             onClick={() => handleMetricClick('cost')}
           />
         </div>
