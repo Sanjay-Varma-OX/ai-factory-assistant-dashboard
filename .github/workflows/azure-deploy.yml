@@ -29,13 +29,20 @@ jobs:
 
     - name: Prepare deployment package
       run: |
+        # Create deployment directory
         mkdir -p deploy
+        
+        # Copy build contents
         cp -r build/* deploy/
+        
+        # Copy server files
         cp package.json deploy/
         cp package-lock.json deploy/
         cp server.js deploy/
+        
+        # Install production dependencies
         cd deploy
-        npm install --production --legacy-peer-deps
+        npm install --production
 
     - name: Login to Azure
       uses: azure/login@v2
@@ -43,11 +50,10 @@ jobs:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
+ 
     - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v3
       with:
         app-name: 'oxmaint-ai-landing'
         package: deploy
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
