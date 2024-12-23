@@ -1,9 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { AlertTriangle, CheckCircle, Clock, ArrowUpRight, AlertCircle, Timer, MoveUpRight } from 'lucide-react';
+import { AlertTriangle, CheckCircle, Clock, ArrowUpRight, Timer, MoveUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// ... (previous component definitions remain the same) ...
+const MetricCard = ({ title, value, trend, children }) => (
+  <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+    <h3 className="font-semibold mb-2">{title}</h3>
+    <div className="text-3xl font-bold">{value}</div>
+    <div className="flex items-center text-green-500">
+      <ArrowUpRight className="w-4 h-4 mr-1" />
+      {trend}
+    </div>
+    {children}
+  </div>
+);
+
+const Alert = ({ status, title, children }) => {
+  const bgColor = {
+    ALERT: 'bg-red-50 border-red-200',
+    WARNING: 'bg-yellow-50 border-yellow-200',
+    NORMAL: 'bg-green-50 border-green-200'
+  }[status];
+
+  const textColor = {
+    ALERT: 'text-red-600',
+    WARNING: 'text-yellow-600',
+    NORMAL: 'text-green-600'
+  }[status];
+
+  const StatusIcon = {
+    ALERT: () => <AlertTriangle className="text-red-500" />,
+    WARNING: () => <AlertTriangle className="text-yellow-500" />,
+    NORMAL: () => <CheckCircle className="text-green-500" />
+  }[status];
+
+  return (
+    <div className={`${bgColor} p-4 rounded-lg border`}>
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2 font-semibold">
+          {StatusIcon && <StatusIcon />}
+          {title}
+        </div>
+        <span className={`${textColor} font-bold`}>{status}</span>
+      </div>
+      {children}
+    </div>
+  );
+};
 
 const WorkOrderCard = ({ current, workOrders }) => {
   return (
@@ -69,7 +112,7 @@ const ExceptionAlert = ({ type, data, action }) => {
         };
       default:
         return {
-          icon: <AlertCircle className="text-gray-500" />,
+          icon: null,
           bg: 'bg-gray-50',
           border: 'border-gray-200',
           button: 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -108,10 +151,55 @@ const ExceptionAlert = ({ type, data, action }) => {
   );
 };
 
-export default function FoodAndBeveragePage() {
-  // ... (previous state and data definitions remain the same) ...
+const Modal = ({ isOpen, onClose, title, children }) => {
+  if (!isOpen) return null;
 
-  // Sample work order data
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center" onClick={onClose}>
+      <div className="bg-white rounded-lg p-6 max-w-4xl w-full mx-4" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-bold">{title}</h3>
+          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">&times;</button>
+        </div>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default function FoodAndBeveragePage() {
+  const [timeFilter, setTimeFilter] = useState('1M');
+  const [selectedMetric, setSelectedMetric] = useState(null);
+  const [workOrders, setWorkOrders] = useState([]);
+
+  const sensorData = [
+    {
+      name: 'Motor Vibration - Line 2',
+      currentValue: 12.8,
+      threshold: 10.0,
+      unit: 'mm/s',
+      status: 'ALERT',
+      timestamp: new Date().toLocaleString()
+    },
+    {
+      name: 'Bearing Temperature',
+      currentValue: 82,
+      threshold: 85,
+      unit: '°C',
+      status: 'WARNING',
+      timestamp: new Date().toLocaleString()
+    },
+    {
+      name: 'Pressure Sensor',
+      currentValue: 2.4,
+      threshold: 3.0,
+      unit: 'bar',
+      status: 'NORMAL',
+      timestamp: new Date().toLocaleString()
+    }
+  ];
+
+  // Work order data
   const workOrderData = {
     current: {
       id: '2024-1211-0023',
@@ -137,7 +225,7 @@ export default function FoodAndBeveragePage() {
     ]
   };
 
-  // Sample exception alerts data
+  // Exception alerts data
   const exceptionAlerts = [
     {
       type: 'warranty',
@@ -170,57 +258,81 @@ export default function FoodAndBeveragePage() {
     }
   ];
 
-  return (
-    <div className="p-6 space-y-6">
-      {/* ... (previous JSX remains the same until PLC Monitoring section) ... */}
-      
-      <div className="grid grid-cols-1 gap-4">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-xl font-bold mb-4">Live PLC Monitoring & Automated Response</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {sensorData.map((sensor) => (
-              <Alert
-                key={sensor.name}
-                status={sensor.status}
-                title={sensor.name}
-              >
-                <div>
-                  <div>Current Value: {sensor.currentValue} {sensor.unit}</div>
-                  <div>Threshold: {sensor.threshold} {sensor.unit}</div>
-                  <div className="flex items-center gap-1 text-gray-500 mt-2">
-                    <Clock className="w-4 h-4" />
-                    Last Updated: {sensor.timestamp}
-                  </div>
-                </div>
-              </Alert>
-            ))}
-          </div>
-        </div>
-
-        {/* New Work Order Analysis Section */}
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-xl font-bold mb-4">Work Order Analysis & Exceptions</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <WorkOrderCard 
-              current={workOrderData.current}
-              workOrders={workOrderData.historical}
-            />
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Exception Alerts</h3>
-              {exceptionAlerts.map((alert, index) => (
-                <ExceptionAlert
-                  key={index}
-                  type={alert.type}
-                  data={alert.data}
-                  action={alert.action}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ... (Modal component remains the same) ... */}
-    </div>
-  );
-}
+  // Time filter data
+  const timeFilterData = {
+    '1M': {
+      downtimeData: [
+        { month: 'Week 1', withAI: 120, withoutAI: 240 },
+        { month: 'Week 2', withAI: 110, withoutAI: 235 },
+        { month: 'Week 3', withAI: 105, withoutAI: 230 },
+        { month: 'Week 4', withAI: 95, withoutAI: 225 }
+      ],
+      savingsData: [
+        { month: 'Week 1', actual: 85000, projected: 65000 },
+        { month: 'Week 2', actual: 92000, projected: 70000 },
+        { month: 'Week 3', actual: 88000, projected: 75000 },
+        { month: 'Week 4', actual: 95000, projected: 80000 }
+      ],
+      oeeData: [
+        { month: 'Week 1', oee: 82, target: 85 },
+        { month: 'Week 2', oee: 85, target: 85 },
+        { month: 'Week 3', oee: 87, target: 85 },
+        { month: 'Week 4', oee: 89, target: 85 }
+      ],
+      healthData: [
+        { month: 'Week 1', optimal: 110, total: 120 },
+        { month: 'Week 2', optimal: 112, total: 120 },
+        { month: 'Week 3', optimal: 113, total: 120 },
+        { month: 'Week 4', optimal: 115, total: 120 }
+      ],
+      metrics: {
+        reduction: '50%',
+        savings: '$324,500',
+        points: '120',
+        health: '94%'
+      }
+    },
+    '3M': {
+      downtimeData: [
+        { month: 'Jan', withAI: 130, withoutAI: 250 },
+        { month: 'Feb', withAI: 115, withoutAI: 240 },
+        { month: 'Mar', withAI: 100, withoutAI: 230 }
+      ],
+      savingsData: [
+        { month: 'Jan', actual: 280000, projected: 220000 },
+        { month: 'Feb', actual: 310000, projected: 240000 },
+        { month: 'Mar', actual: 335000, projected: 260000 }
+      ],
+      oeeData: [
+        { month: 'Jan', oee: 83, target: 85 },
+        { month: 'Feb', oee: 86, target: 85 },
+        { month: 'Mar', oee: 88, target: 85 }
+      ],
+      healthData: [
+        { month: 'Jan', optimal: 108, total: 120 },
+        { month: 'Feb', optimal: 112, total: 120 },
+        { month: 'Mar', optimal: 115, total: 120 }
+      ],
+      metrics: {
+        reduction: '55%',
+        savings: '$892,000',
+        points: '120',
+        health: '92%'
+      }
+    },
+    '6M': {
+      downtimeData: [
+        { month: 'Jan', withAI: 130, withoutAI: 250 },
+        { month: 'Feb', withAI: 115, withoutAI: 240 },
+        { month: 'Mar', withAI: 100, withoutAI: 230 },
+        { month: 'Apr', withAI: 95, withoutAI: 225 },
+        { month: 'May', withAI: 90, withoutAI: 220 },
+        { month: 'Jun', withAI: 85, withoutAI: 215 }
+      ],
+      savingsData: [
+        { month: 'Jan', actual: 280000, projected: 220000 },
+        { month: 'Feb', actual: 310000, projected: 240000 },
+        { month: 'Mar', actual: 335000, projected: 260000 },
+        { month: 'Apr', actual: 350000, projected: 280000 },
+        { month: 'May', actual: 375000, projected: 300000 },
+        { month: 
