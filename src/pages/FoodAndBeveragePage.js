@@ -145,9 +145,156 @@ const ExceptionAlert = ({ type, data, action }) => {
 
       <button
         className={`${styles.button} w-full rounded-md py-2 text-center transition-colors`}
+        onClick={() => onActionClick(type, data)}
       >
         {action}
       </button>
+    </div>
+  );
+};
+
+const AlertDetailModal = ({ isOpen, onClose, type, data }) => {
+  const getModalContent = () => {
+    switch (type) {
+      case 'warranty':
+        return {
+          title: 'Warranty Claim Details',
+          content: (
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-lg mb-2">AI-Powered Savings Analysis</h4>
+                <p>Oxmaint.ai has identified potential warranty savings of {data['Potential Savings']} by automatically tracking and managing warranty claims.</p>
+              </div>
+              
+              <div className="space-y-2">
+                <h4 className="font-semibold">Historical Context</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>3 similar warranty claims processed in the last quarter</li>
+                  <li>Average processing time reduced from 5 days to 2 hours</li>
+                  <li>100% claim approval rate with AI-assisted documentation</li>
+                </ul>
+              </div>
+
+              <div className="bg-green-50 p-4 rounded-lg">
+                <h4 className="font-semibold">Oxmaint.ai Advantage</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Automated warranty period tracking</li>
+                  <li>Smart documentation preparation</li>
+                  <li>Predictive maintenance to prevent future issues</li>
+                  <li>24/7 monitoring and instant alerts</li>
+                </ul>
+              </div>
+            </div>
+          )
+        };
+
+      case 'maintenance':
+        return {
+          title: 'Premature Maintenance Analysis',
+          content: (
+            <div className="space-y-4">
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-lg mb-2">AI Detection Details</h4>
+                <p>Oxmaint.ai has detected unusual wear patterns requiring early maintenance, potentially preventing a critical failure.</p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="border p-4 rounded-lg">
+                  <h4 className="font-semibold mb-2">Traditional Approach</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>90-day fixed maintenance schedule</li>
+                    <li>4-6 hours of downtime per inspection</li>
+                    <li>Reactive to failures</li>
+                  </ul>
+                </div>
+
+                <div className="border p-4 rounded-lg bg-green-50">
+                  <h4 className="font-semibold mb-2">Oxmaint.ai Approach</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Dynamic maintenance scheduling</li>
+                    <li>1-2 hours of planned downtime</li>
+                    <li>Predictive failure prevention</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h4 className="font-semibold">Historical Performance</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>47% reduction in unexpected downtime</li>
+                  <li>68% decrease in maintenance costs</li>
+                  <li>3x improvement in equipment lifespan</li>
+                </ul>
+              </div>
+            </div>
+          )
+        };
+
+      case 'pattern':
+        return {
+          title: 'Pattern Analysis Insights',
+          content: (
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-lg mb-2">AI Pattern Recognition</h4>
+                <p>Oxmaint.ai has identified a recurring pattern that suggests an underlying systemic issue.</p>
+              </div>
+
+              <div className="border p-4 rounded-lg">
+                <h4 className="font-semibold mb-2">Pattern Details</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>3 similar failures detected in 30 days</li>
+                  <li>Average downtime: 4.5 hours per incident</li>
+                  <li>Estimated production loss: $12,000 per incident</li>
+                </ul>
+              </div>
+
+              <div className="bg-green-50 p-4 rounded-lg">
+                <h4 className="font-semibold">Oxmaint.ai Solutions</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>24/7 automated monitoring of 120+ parameters</li>
+                  <li>Real-time correlation analysis</li>
+                  <li>Predictive maintenance recommendations</li>
+                  <li>Automated work order generation</li>
+                  <li>Resource optimization suggestions</li>
+                </ul>
+              </div>
+
+              <div className="bg-purple-50 p-4 rounded-lg">
+                <h4 className="font-semibold">AI-Powered Benefits</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>85% reduction in repeat failures</li>
+                  <li>60% faster root cause identification</li>
+                  <li>40% decrease in maintenance costs</li>
+                  <li>Replaces manual analysis of 4+ human operators</li>
+                </ul>
+              </div>
+            </div>
+          )
+        };
+      default:
+        return { title: '', content: null };
+    }
+  };
+
+  if (!isOpen) return null;
+
+  const modalContent = getModalContent();
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+      <div className="bg-white rounded-lg p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-bold">{modalContent.title}</h3>
+          <button 
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700 text-2xl"
+          >
+            ×
+          </button>
+        </div>
+        {modalContent.content}
+      </div>
     </div>
   );
 };
@@ -172,6 +319,7 @@ export default function FoodAndBeveragePage() {
   const [timeFilter, setTimeFilter] = useState('All');
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [workOrders, setWorkOrders] = useState([]);
+  const [alertModalData, setAlertModalData] = useState(null);
 
   const sensorData = [
     {
@@ -474,19 +622,26 @@ const timeFilterData = {
           />
           
           {/* Exception Alerts */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-2">Exception Alerts</h3>
-            {exceptionAlerts.map((alert, index) => (
-              <ExceptionAlert
-                key={index}
-                type={alert.type}
-                data={alert.data}
-                action={alert.action}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+<div className="space-y-4">
+  <h3 className="text-lg font-semibold mb-2">Exception Alerts</h3>
+  {exceptionAlerts.map((alert, index) => (
+    <ExceptionAlert
+      key={index}
+      type={alert.type}
+      data={alert.data}
+      action={alert.action}
+      onActionClick={(type, data) => setAlertModalData({ type, data })}
+    />
+  ))}
+</div>
+
+{/* Alert Detail Modal */}
+<AlertDetailModal
+  isOpen={!!alertModalData}
+  onClose={() => setAlertModalData(null)}
+  type={alertModalData?.type}
+  data={alertModalData?.data}
+/>
 
       {/* Charts Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
