@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { AlertTriangle, CheckCircle, Clock, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MetricCard = ({ title, value, trend, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
     <h3 className="font-semibold mb-2">{title}</h3>
-    <div className="text-3xl font-bold">{value}</div>
+    <div className="text-3xl font-bold">{value || 'N/A'}</div>
     <div className="flex items-center text-green-500">
       <ArrowUpRight className="w-4 h-4 mr-1" />
       {trend}
@@ -68,7 +68,6 @@ export default function FoodAndBeveragePage() {
   const [timeFilter, setTimeFilter] = useState('1M');
   const [selectedMetric, setSelectedMetric] = useState(null);
 
-  // Sample sensor data with timestamps
   const sensorData = [
     {
       name: 'Motor Vibration - Line 2',
@@ -96,33 +95,39 @@ export default function FoodAndBeveragePage() {
     }
   ];
 
-  // Different data sets for each metric
+  const defaultData = {
+    metrics: {
+      reduction: 'N/A',
+      savings: 'N/A',
+      points: 'N/A',
+      health: 'N/A'
+    },
+    downtimeData: [],
+    savingsData: [],
+    oeeData: [],
+    healthData: []
+  };
+
+  const generateMonthlyData = (months) => {
+    return Array.from({ length: months }, (_, index) => ({
+      month: `Month ${index + 1}`,
+      withAI: 100 - index * 5,
+      withoutAI: 200 - index * 3,
+      actual: 300000 + index * 20000,
+      projected: 250000 + index * 15000,
+      oee: 85 + index,
+      target: 85,
+      optimal: 110 + index,
+      total: 120
+    }));
+  };
+
   const timeFilterData = {
     '1M': {
-      downtimeData: [
-        { month: 'Week 1', withAI: 120, withoutAI: 240 },
-        { month: 'Week 2', withAI: 110, withoutAI: 235 },
-        { month: 'Week 3', withAI: 105, withoutAI: 230 },
-        { month: 'Week 4', withAI: 95, withoutAI: 225 }
-      ],
-      savingsData: [
-        { month: 'Week 1', actual: 85000, projected: 65000 },
-        { month: 'Week 2', actual: 92000, projected: 70000 },
-        { month: 'Week 3', actual: 88000, projected: 75000 },
-        { month: 'Week 4', actual: 95000, projected: 80000 }
-      ],
-      oeeData: [
-        { month: 'Week 1', oee: 82, target: 85 },
-        { month: 'Week 2', oee: 85, target: 85 },
-        { month: 'Week 3', oee: 87, target: 85 },
-        { month: 'Week 4', oee: 89, target: 85 }
-      ],
-      healthData: [
-        { month: 'Week 1', optimal: 110, total: 120 },
-        { month: 'Week 2', optimal: 112, total: 120 },
-        { month: 'Week 3', optimal: 113, total: 120 },
-        { month: 'Week 4', optimal: 115, total: 120 }
-      ],
+      downtimeData: generateMonthlyData(4).map(d => ({ ...d, month: `Week ${d.month.split(' ')[1]}` })),
+      savingsData: generateMonthlyData(4).map(d => ({ ...d, month: `Week ${d.month.split(' ')[1]}` })),
+      oeeData: generateMonthlyData(4).map(d => ({ ...d, month: `Week ${d.month.split(' ')[1]}` })),
+      healthData: generateMonthlyData(4).map(d => ({ ...d, month: `Week ${d.month.split(' ')[1]}` })),
       metrics: {
         reduction: '50%',
         savings: '$324,500',
@@ -130,41 +135,58 @@ export default function FoodAndBeveragePage() {
         health: '94%'
       }
     },
-    // Similar structure for other time periods...
     '3M': {
-      downtimeData: [
-        { month: 'Jan', withAI: 130, withoutAI: 250 },
-        { month: 'Feb', withAI: 115, withoutAI: 240 },
-        { month: 'Mar', withAI: 100, withoutAI: 230 }
-      ],
-      savingsData: [
-        { month: 'Jan', actual: 280000, projected: 220000 },
-        { month: 'Feb', actual: 310000, projected: 240000 },
-        { month: 'Mar', actual: 335000, projected: 260000 }
-      ],
-      oeeData: [
-        { month: 'Jan', oee: 83, target: 85 },
-        { month: 'Feb', oee: 86, target: 85 },
-        { month: 'Mar', oee: 88, target: 85 }
-      ],
-      healthData: [
-        { month: 'Jan', optimal: 108, total: 120 },
-        { month: 'Feb', optimal: 112, total: 120 },
-        { month: 'Mar', optimal: 115, total: 120 }
-      ],
+      downtimeData: generateMonthlyData(3),
+      savingsData: generateMonthlyData(3),
+      oeeData: generateMonthlyData(3),
+      healthData: generateMonthlyData(3),
       metrics: {
         reduction: '55%',
         savings: '$892,000',
         points: '120',
         health: '92%'
       }
+    },
+    '6M': {
+      downtimeData: generateMonthlyData(6),
+      savingsData: generateMonthlyData(6),
+      oeeData: generateMonthlyData(6),
+      healthData: generateMonthlyData(6),
+      metrics: {
+        reduction: '60%',
+        savings: '$1,892,000',
+        points: '120',
+        health: '95%'
+      }
+    },
+    'All': {
+      downtimeData: generateMonthlyData(12).map(d => ({
+        ...d,
+        month: `Q${Math.floor((parseInt(d.month.split(' ')[1]) - 1) / 3) + 1}`
+      })),
+      savingsData: generateMonthlyData(12).map(d => ({
+        ...d,
+        month: `Q${Math.floor((parseInt(d.month.split(' ')[1]) - 1) / 3) + 1}`
+      })),
+      oeeData: generateMonthlyData(12).map(d => ({
+        ...d,
+        month: `Q${Math.floor((parseInt(d.month.split(' ')[1]) - 1) / 3) + 1}`
+      })),
+      healthData: generateMonthlyData(12).map(d => ({
+        ...d,
+        month: `Q${Math.floor((parseInt(d.month.split(' ')[1]) - 1) / 3) + 1}`
+      })),
+      metrics: {
+        reduction: '65%',
+        savings: '$4,892,000',
+        points: '120',
+        health: '97%'
+      }
     }
   };
 
-  // Get current data based on time filter
-  const currentData = timeFilterData[timeFilter];
+  const currentData = timeFilterData[timeFilter] || defaultData;
 
-  // Function to get the appropriate data based on selected metric
   const getMetricData = () => {
     switch (selectedMetric) {
       case 'downtime':
@@ -180,7 +202,6 @@ export default function FoodAndBeveragePage() {
     }
   };
 
-  // Function to get the appropriate line configurations based on selected metric
   const getLineConfig = () => {
     switch (selectedMetric) {
       case 'downtime':
