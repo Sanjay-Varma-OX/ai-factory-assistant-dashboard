@@ -3,6 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { AlertTriangle, CheckCircle, Clock, ArrowUpRight, Timer, MoveUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+
 const MetricCard = ({ title, value, trend, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
     <h3 className="font-semibold mb-2">{title}</h3>
@@ -168,7 +169,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
 };
 
 export default function FoodAndBeveragePage() {
-  const [timeFilter, setTimeFilter] = useState('1M');
+  const [timeFilter, setTimeFilter] = useState('All');
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [workOrders, setWorkOrders] = useState([]);
 
@@ -259,28 +260,108 @@ export default function FoodAndBeveragePage() {
   ];
 
   // Time filter data
-  const timeFilterData = {
-    '1M': {
-      downtimeData: [
-        { month: 'Week 1', withAI: 120, withoutAI: 240 },
-        { month: 'Week 2', withAI: 110, withoutAI: 235 },
-        { month: 'Week 3', withAI: 105, withoutAI: 230 },
-        { month: 'Week 4', withAI: 95, withoutAI: 225 }
-      ],
-      savingsData: [
-        { month: 'Week 1', actual: 85000, projected: 65000 },
-        { month: 'Week 2', actual: 92000, projected: 70000 },
-        { month: 'Week 3', actual: 88000, projected: 75000 },
-        { month: 'Week 4', actual: 95000, projected: 80000 }
-      ],
-      metrics: {
-        reduction: '50%',
-        savings: '$324,500',
-        points: '120',
-        health: '94%'
-      }
+  // In the FoodAndBeveragePage component, update the timeFilterData object:
+
+const timeFilterData = {
+  'All': {
+    downtimeData: [
+      { month: 'Jan', withAI: 130, withoutAI: 250 },
+      { month: 'Feb', withAI: 115, withoutAI: 240 },
+      { month: 'Mar', withAI: 100, withoutAI: 230 },
+      { month: 'Apr', withAI: 95, withoutAI: 225 },
+      { month: 'May', withAI: 90, withoutAI: 220 },
+      { month: 'Jun', withAI: 85, withoutAI: 215 },
+      { month: 'Jul', withAI: 82, withoutAI: 210 },
+      { month: 'Aug', withAI: 80, withoutAI: 205 },
+      { month: 'Sep', withAI: 78, withoutAI: 200 },
+      { month: 'Oct', withAI: 75, withoutAI: 195 },
+      { month: 'Nov', withAI: 73, withoutAI: 190 },
+      { month: 'Dec', withAI: 70, withoutAI: 185 }
+    ],
+    savingsData: [
+      { month: 'Jan', actual: 280000, projected: 220000 },
+      { month: 'Feb', actual: 310000, projected: 240000 },
+      { month: 'Mar', actual: 335000, projected: 260000 },
+      { month: 'Apr', actual: 350000, projected: 280000 },
+      { month: 'May', actual: 375000, projected: 300000 },
+      { month: 'Jun', actual: 390000, projected: 320000 },
+      { month: 'Jul', actual: 405000, projected: 340000 },
+      { month: 'Aug', actual: 420000, projected: 360000 },
+      { month: 'Sep', actual: 435000, projected: 380000 },
+      { month: 'Oct', actual: 450000, projected: 400000 },
+      { month: 'Nov', actual: 465000, projected: 420000 },
+      { month: 'Dec', actual: 480000, projected: 440000 }
+    ],
+    metrics: {
+      reduction: '60%',
+      savings: '$1,892,000',
+      points: '120',
+      health: '95%'
     }
-  };
+  },
+  '1M': {
+    downtimeData: [
+      { month: 'Week 1', withAI: 120, withoutAI: 240 },
+      { month: 'Week 2', withAI: 110, withoutAI: 235 },
+      { month: 'Week 3', withAI: 105, withoutAI: 230 },
+      { month: 'Week 4', withAI: 95, withoutAI: 225 }
+    ],
+    savingsData: [
+      { month: 'Week 1', actual: 85000, projected: 65000 },
+      { month: 'Week 2', actual: 92000, projected: 70000 },
+      { month: 'Week 3', actual: 88000, projected: 75000 },
+      { month: 'Week 4', actual: 95000, projected: 80000 }
+    ],
+    metrics: {
+      reduction: '50%',
+      savings: '$324,500',
+      points: '120',
+      health: '94%'
+    }
+  },
+  '3M': {
+    downtimeData: [
+      { month: 'Jan', withAI: 130, withoutAI: 250 },
+      { month: 'Feb', withAI: 115, withoutAI: 240 },
+      { month: 'Mar', withAI: 100, withoutAI: 230 }
+    ],
+    savingsData: [
+      { month: 'Jan', actual: 280000, projected: 220000 },
+      { month: 'Feb', actual: 310000, projected: 240000 },
+      { month: 'Mar', actual: 335000, projected: 260000 }
+    ],
+    metrics: {
+      reduction: '55%',
+      savings: '$892,000',
+      points: '120',
+      health: '92%'
+    }
+  },
+  '6M': {
+    downtimeData: [
+      { month: 'Jan', withAI: 130, withoutAI: 250 },
+      { month: 'Feb', withAI: 115, withoutAI: 240 },
+      { month: 'Mar', withAI: 100, withoutAI: 230 },
+      { month: 'Apr', withAI: 95, withoutAI: 225 },
+      { month: 'May', withAI: 90, withoutAI: 220 },
+      { month: 'Jun', withAI: 85, withoutAI: 215 }
+    ],
+    savingsData: [
+      { month: 'Jan', actual: 280000, projected: 220000 },
+      { month: 'Feb', actual: 310000, projected: 240000 },
+      { month: 'Mar', actual: 335000, projected: 260000 },
+      { month: 'Apr', actual: 350000, projected: 280000 },
+      { month: 'May', actual: 375000, projected: 300000 },
+      { month: 'Jun', actual: 390000, projected: 320000 }
+    ],
+    metrics: {
+      reduction: '58%',
+      savings: '$1,292,000',
+      points: '120',
+      health: '93%'
+    }
+  }
+};
 
   useEffect(() => {
     // Monitor sensor data for threshold violations
@@ -307,21 +388,22 @@ export default function FoodAndBeveragePage() {
       {/* Header and Time Filter */}
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">Food & Beverage Analytics Dashboard</h1>
-        <div className="flex gap-4">
-          {['1M', '3M', '6M'].map((filter) => (
-            <button
-              key={filter}
-              className={`px-4 py-2 rounded ${
-                timeFilter === filter
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-              onClick={() => setTimeFilter(filter)}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
+        {/* Update the time filter buttons section */}
+<div className="flex gap-4">
+  {['All', '1M', '3M', '6M'].map((filter) => (
+    <button
+      key={filter}
+      className={`px-4 py-2 rounded ${
+        timeFilter === filter
+          ? 'bg-blue-600 text-white'
+          : 'bg-gray-100 hover:bg-gray-200'
+      }`}
+      onClick={() => setTimeFilter(filter)}
+    >
+      {filter}
+    </button>
+  ))}
+</div>
       </div>
 
       {/* Metrics Grid */}
