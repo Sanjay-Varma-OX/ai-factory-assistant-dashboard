@@ -3,6 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { AlertTriangle, CheckCircle, Clock, ArrowUpRight, Timer, MoveUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Reusable Components
 const MetricCard = ({ title, value, trend, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
     <h3 className="font-semibold mb-2">{title}</h3>
@@ -15,105 +16,44 @@ const MetricCard = ({ title, value, trend, children }) => (
   </div>
 );
 
-export default function FoodAndBeveragePage() {
-  const [timeFilter, setTimeFilter] = useState('All');
-  const [selectedMetric, setSelectedMetric] = useState(null);
-  const [workOrders, setWorkOrders] = useState([]);
-  const [alertModalData, setAlertModalData] = useState(null);
+const Alert = ({ status, title, children }) => {
+  const bgColor = {
+    ALERT: 'bg-red-50 border-red-200',
+    WARNING: 'bg-yellow-50 border-yellow-200',
+    NORMAL: 'bg-green-50 border-green-200'
+  }[status];
 
-  const sensorData = [
-    {
-      name: 'Motor Vibration - Line 2',
-      currentValue: 12.8,
-      threshold: 10.0,
-      unit: 'mm/s',
-      status: 'ALERT',
-      timestamp: new Date().toLocaleString()
-    },
-    {
-      name: 'Bearing Temperature',
-      currentValue: 82,
-      threshold: 85,
-      unit: '°C',
-      status: 'WARNING',
-      timestamp: new Date().toLocaleString()
-    },
-    {
-      name: 'Pressure Sensor',
-      currentValue: 2.4,
-      threshold: 3.0,
-      unit: 'bar',
-      status: 'NORMAL',
-      timestamp: new Date().toLocaleString()
-    }
-  ];
+  const textColor = {
+    ALERT: 'text-red-600',
+    WARNING: 'text-yellow-600',
+    NORMAL: 'text-green-600'
+  }[status];
 
-  // Work order data
-  const workOrderData = {
-    current: {
-      id: '2024-1211-0023',
-      description: 'Motor Assembly - Line 2 (Vibration Issue)'
-    },
-    historical: [
-      {
-        id: '2024-0915-0187',
-        daysAgo: 86,
-        resolution: 'Bearing replacement',
-        timeTaken: 4.5,
-        partsUsed: 'BK-2344, ML-892',
-        status: 'Successful Fix'
-      },
-      {
-        id: '2024-0602-0092',
-        daysAgo: 191,
-        resolution: 'Alignment adjustment',
-        timeTaken: 2.0,
-        notes: 'Required follow-up after 2 weeks',
-        status: 'Temporary Fix'
-      }
-    ]
-  };
-
-  useEffect(() => {
-    // Monitor sensor data for threshold violations
-    const checkThresholds = () => {
-      sensorData.forEach(sensor => {
-        if (sensor.currentValue > sensor.threshold) {
-          // Create work order if threshold exceeded
-          const newWorkOrder = {
-            id: `2024-${Math.floor(Math.random() * 10000)}`,
-            description: `${sensor.name} exceeded threshold: ${sensor.currentValue} ${sensor.unit}`,
-            timestamp: new Date().toLocaleString(),
-            status: 'Open'
-          };
-          setWorkOrders(prev => [...prev, newWorkOrder]);
-        }
-      });
-    };
-
-    checkThresholds();
-  }, [sensorData]);
+  const StatusIcon = {
+    ALERT: () => <AlertTriangle className="text-red-500" />,
+    WARNING: () => <AlertTriangle className="text-yellow-500" />,
+    NORMAL: () => <CheckCircle className="text-green-500" />
+  }[status];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Food & Beverage Analytics Dashboard</h1>
-        <div className="flex gap-4">
-          {['All', '1M', '3M', '6M'].map((filter) => (
-            <button
-              key={filter}
-              className={`px-4 py-2 rounded ${
-                timeFilter === filter
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-              onClick={() => setTimeFilter(filter)}
-            >
-              {filter}
-            </button>
-          ))}
+    <div className={`${bgColor} p-4 rounded-lg border`}>
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2 font-semibold">
+          {StatusIcon && <StatusIcon />}
+          {title}
         </div>
+        <span className={`${textColor} font-bold`}>{status}</span>
       </div>
+      {children}
+    </div>
+  );
+};
+
+// Main Component (placeholder)
+export default function FoodAndBeveragePage() {
+  return (
+    <div>
+      <h1>Food & Beverage Dashboard</h1>
     </div>
   );
 }
