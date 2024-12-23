@@ -22,6 +22,12 @@ const Alert = ({ status, title, children }) => {
     NORMAL: 'bg-green-50 border-green-200'
   }[status];
 
+  const textColor = {
+    ALERT: 'text-red-600',
+    WARNING: 'text-yellow-600',
+    NORMAL: 'text-green-600'
+  }[status];
+
   const StatusIcon = {
     ALERT: () => <AlertTriangle className="text-red-500" />,
     WARNING: () => <AlertTriangle className="text-yellow-500" />,
@@ -30,9 +36,12 @@ const Alert = ({ status, title, children }) => {
 
   return (
     <div className={`${bgColor} p-4 rounded-lg border`}>
-      <div className="flex items-center gap-2 font-semibold mb-2">
-        {StatusIcon && <StatusIcon />}
-        {title}
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2 font-semibold">
+          {StatusIcon && <StatusIcon />}
+          {title}
+        </div>
+        <span className={`${textColor} font-bold`}>{status}</span>
       </div>
       {children}
     </div>
