@@ -3,6 +3,18 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { AlertTriangle, CheckCircle, Clock, ArrowUpRight, Timer, MoveUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const MetricCard = ({ title, value, trend, children }) => (
+  <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+    <h3 className="font-semibold mb-2">{title}</h3>
+    <div className="text-3xl font-bold">{value}</div>
+    <div className="flex items-center text-green-500">
+      <ArrowUpRight className="w-4 h-4 mr-1" />
+      {trend}
+    </div>
+    {children}
+  </div>
+);
+
 export default function FoodAndBeveragePage() {
   const [timeFilter, setTimeFilter] = useState('All');
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -84,8 +96,24 @@ export default function FoodAndBeveragePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Placeholder for rest of the component */}
-      <h1>Food & Beverage Analytics Dashboard</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold">Food & Beverage Analytics Dashboard</h1>
+        <div className="flex gap-4">
+          {['All', '1M', '3M', '6M'].map((filter) => (
+            <button
+              key={filter}
+              className={`px-4 py-2 rounded ${
+                timeFilter === filter
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 hover:bg-gray-200'
+              }`}
+              onClick={() => setTimeFilter(filter)}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
