@@ -87,7 +87,7 @@ const WorkOrderCard = ({ current, workOrders }) => {
   );
 };
 
-const ExceptionAlert = ({ type, data, action }) => {
+const ExceptionAlert = ({ type, data, action, onActionClick }) => {
   const getTypeStyles = () => {
     switch(type) {
       case 'warranty':
