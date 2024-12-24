@@ -21,16 +21,16 @@ import {
   Tool,
   ClipboardList,
 } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogFooter,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogDescription,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogTrigger,
+//   DialogFooter,
+// } from "@/components/ui/dialog";
+// import { Button } from "@/components/ui/button";
 
 const MetricCard = ({ title, value, trend, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
@@ -77,54 +77,54 @@ const Alert = ({ status, title, children }) => {
   );
 };
 
-// const WorkOrderCard = ({ current, workOrders }) => {
-//   return (
-//     <div className="bg-white p-6 rounded-lg border">
-//       <h3 className="text-lg font-semibold mb-4">Similar Historical Repairs</h3>
-//       <div className="border-l-4 border-blue-500 pl-4 mb-4">
-//         <div className="font-medium">Current WO#: {current.id}</div>
-//         <div className="text-gray-600">{current.description}</div>
-//       </div>
+const WorkOrderCard = ({ current, workOrders }) => {
+  return (
+    <div className="bg-white p-6 rounded-lg border">
+      <h3 className="text-lg font-semibold mb-4">Similar Historical Repairs</h3>
+      <div className="border-l-4 border-blue-500 pl-4 mb-4">
+        <div className="font-medium">Current WO#: {current.id}</div>
+        <div className="text-gray-600">{current.description}</div>
+      </div>
 
-//       <div className="space-y-6">
-//         {workOrders.map((wo) => (
-//           <div key={wo.id} className="space-y-2">
-//             <div className="flex justify-between items-center">
-//               <div className="font-medium">WO#: {wo.id}</div>
-//               <div
-//                 className={`text-sm px-3 py-1 rounded-full ${
-//                   wo.status === "Successful Fix"
-//                     ? "bg-green-100 text-green-800"
-//                     : "bg-yellow-100 text-yellow-800"
-//                 }`}
-//               >
-//                 {wo.status}
-//               </div>
-//             </div>
-//             <div className="text-gray-500">{wo.daysAgo} days ago</div>
-//             <div>
-//               <span className="font-medium">Resolution:</span> {wo.resolution}
-//             </div>
-//             <div>
-//               <span className="font-medium">Time Taken:</span> {wo.timeTaken}{" "}
-//               hours
-//             </div>
-//             {wo.partsUsed && (
-//               <div>
-//                 <span className="font-medium">Parts Used:</span> {wo.partsUsed}
-//               </div>
-//             )}
-//             {wo.notes && (
-//               <div>
-//                 <span className="font-medium">Notes:</span> {wo.notes}
-//               </div>
-//             )}
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+      <div className="space-y-6">
+        {workOrders.map((wo) => (
+          <div key={wo.id} className="space-y-2">
+            <div className="flex justify-between items-center">
+              <div className="font-medium">WO#: {wo.id}</div>
+              <div
+                className={`text-sm px-3 py-1 rounded-full ${
+                  wo.status === "Successful Fix"
+                    ? "bg-green-100 text-green-800"
+                    : "bg-yellow-100 text-yellow-800"
+                }`}
+              >
+                {wo.status}
+              </div>
+            </div>
+            <div className="text-gray-500">{wo.daysAgo} days ago</div>
+            <div>
+              <span className="font-medium">Resolution:</span> {wo.resolution}
+            </div>
+            <div>
+              <span className="font-medium">Time Taken:</span> {wo.timeTaken}{" "}
+              hours
+            </div>
+            {wo.partsUsed && (
+              <div>
+                <span className="font-medium">Parts Used:</span> {wo.partsUsed}
+              </div>
+            )}
+            {wo.notes && (
+              <div>
+                <span className="font-medium">Notes:</span> {wo.notes}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const WorkOrderDetails = ({ workOrder }) => {
   return (
@@ -216,60 +216,60 @@ const WorkOrderDetails = ({ workOrder }) => {
   );
 };
 
-const WorkOrderCard = ({ current, workOrders }) => {
-  return (
-    <div className="bg-white p-6 rounded-lg border">
-      <h3 className="text-lg font-semibold mb-4">Similar Historical Repairs</h3>
-      <div className="border-l-4 border-blue-500 pl-4 mb-4">
-        <div className="font-medium">Current WO#: {current.id}</div>
-        <div className="text-gray-600">{current.description}</div>
-      </div>
+// const WorkOrderCard = ({ current, workOrders }) => {
+//   return (
+//     <div className="bg-white p-6 rounded-lg border">
+//       <h3 className="text-lg font-semibold mb-4">Similar Historical Repairs</h3>
+//       <div className="border-l-4 border-blue-500 pl-4 mb-4">
+//         <div className="font-medium">Current WO#: {current.id}</div>
+//         <div className="text-gray-600">{current.description}</div>
+//       </div>
 
-      <div className="space-y-6">
-        {workOrders.map((wo) => (
-          <Dialog key={wo.id}>
-            <DialogTrigger asChild>
-              <div className="space-y-2 cursor-pointer hover:bg-gray-50 p-4 rounded-lg transition-colors">
-                <div className="flex justify-between items-center">
-                  <div className="font-medium">WO#: {wo.id}</div>
-                  <div
-                    className={`text-sm px-3 py-1 rounded-full ${
-                      wo.status === "Successful Fix"
-                        ? "bg-green-100 text-green-800"
-                        : "bg-yellow-100 text-yellow-800"
-                    }`}
-                  >
-                    {wo.status}
-                  </div>
-                </div>
-                <div className="text-gray-500">{wo.daysAgo} days ago</div>
-                <div>
-                  <span className="font-medium">Resolution:</span> {wo.resolution}
-                </div>
-                <div>
-                  <span className="font-medium">Time Taken:</span> {wo.timeTaken} hours
-                </div>
-              </div>
-            </DialogTrigger>
-            <DialogContent className="max-w-4xl">
-              <DialogHeader>
-                <DialogTitle>Work Order Details - {wo.id}</DialogTitle>
-                <DialogDescription>
-                  Detailed information about this maintenance work order
-                </DialogDescription>
-              </DialogHeader>
-              <WorkOrderDetails workOrder={wo} />
-              <DialogFooter>
-                <Button variant="outline">Export Details</Button>
-                <Button>Create Similar WO</Button>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
-        ))}
-      </div>
-    </div>
-  );
-};
+//       <div className="space-y-6">
+//         {workOrders.map((wo) => (
+//           <Dialog key={wo.id}>
+//             <DialogTrigger asChild>
+//               <div className="space-y-2 cursor-pointer hover:bg-gray-50 p-4 rounded-lg transition-colors">
+//                 <div className="flex justify-between items-center">
+//                   <div className="font-medium">WO#: {wo.id}</div>
+//                   <div
+//                     className={`text-sm px-3 py-1 rounded-full ${
+//                       wo.status === "Successful Fix"
+//                         ? "bg-green-100 text-green-800"
+//                         : "bg-yellow-100 text-yellow-800"
+//                     }`}
+//                   >
+//                     {wo.status}
+//                   </div>
+//                 </div>
+//                 <div className="text-gray-500">{wo.daysAgo} days ago</div>
+//                 <div>
+//                   <span className="font-medium">Resolution:</span> {wo.resolution}
+//                 </div>
+//                 <div>
+//                   <span className="font-medium">Time Taken:</span> {wo.timeTaken} hours
+//                 </div>
+//               </div>
+//             </DialogTrigger>
+//             <DialogContent className="max-w-4xl">
+//               <DialogHeader>
+//                 <DialogTitle>Work Order Details - {wo.id}</DialogTitle>
+//                 <DialogDescription>
+//                   Detailed information about this maintenance work order
+//                 </DialogDescription>
+//               </DialogHeader>
+//               <WorkOrderDetails workOrder={wo} />
+//               <DialogFooter>
+//                 <Button variant="outline">Export Details</Button>
+//                 <Button>Create Similar WO</Button>
+//               </DialogFooter>
+//             </DialogContent>
+//           </Dialog>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
 const ExceptionAlert = ({ type, data, action, onActionClick }) => {
   const getTypeStyles = () => {
