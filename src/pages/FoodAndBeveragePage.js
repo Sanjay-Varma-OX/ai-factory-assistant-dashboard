@@ -509,102 +509,313 @@ const AlertDetailModal = ({ isOpen, onClose, type, data }) => {
   };
 
       case "maintenance":
-        return {
-          title: "Premature Maintenance Analysis",
-          content: (
-            <div className="space-y-4">
-              <div className="bg-yellow-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-lg mb-2">
-                  AI Detection Details
-                </h4>
-                <p>
-                  Oxmaint.ai has detected unusual wear patterns requiring early
-                  maintenance, potentially preventing a critical failure.
-                </p>
-              </div>
+  return {
+    title: "Maintenance Analytics Dashboard",
+    content: (
+      <div className="space-y-6">
+        {/* Top Stats Section */}
+        <div className="grid grid-cols-4 gap-4">
+          <div className="bg-yellow-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-yellow-600 font-medium">Downtime Reduction</h4>
+            <div className="text-2xl font-bold text-yellow-700">47%</div>
+            <p className="text-xs text-yellow-500">vs. Traditional</p>
+          </div>
+          <div className="bg-green-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-green-600 font-medium">Cost Reduction</h4>
+            <div className="text-2xl font-bold text-green-700">68%</div>
+            <p className="text-xs text-green-500">Annual Savings</p>
+          </div>
+          <div className="bg-blue-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-blue-600 font-medium">Equipment Lifespan</h4>
+            <div className="text-2xl font-bold text-blue-700">3x</div>
+            <p className="text-xs text-blue-500">Improvement</p>
+          </div>
+          <div className="bg-purple-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-purple-600 font-medium">Inspection Time</h4>
+            <div className="text-2xl font-bold text-purple-700">-75%</div>
+            <p className="text-xs text-purple-500">Time Saved</p>
+          </div>
+        </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="border p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">Traditional Approach</h4>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>90-day fixed maintenance schedule</li>
-                    <li>4-6 hours of downtime per inspection</li>
-                    <li>Reactive to failures</li>
-                  </ul>
-                </div>
-
-                <div className="border p-4 rounded-lg bg-green-50">
-                  <h4 className="font-semibold mb-2">Oxmaint.ai Approach</h4>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Dynamic maintenance scheduling</li>
-                    <li>1-2 hours of planned downtime</li>
-                    <li>Predictive failure prevention</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Historical Performance</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>47% reduction in unexpected downtime</li>
-                  <li>68% decrease in maintenance costs</li>
-                  <li>3x improvement in equipment lifespan</li>
-                </ul>
-              </div>
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-2 gap-6">
+          {/* AI Detection Alert */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="font-semibold text-lg">AI Detection Alert</h4>
+              <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+                Urgent Action Required
+              </span>
             </div>
-          ),
-        };
+            <div className="bg-yellow-50 p-4 rounded-lg mb-4">
+              <p className="text-gray-700">
+                Oxmaint.ai has detected unusual wear patterns requiring early
+                maintenance, potentially preventing a critical failure.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <button className="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-lg hover:bg-yellow-200">
+                View Details
+              </button>
+            </div>
+          </div>
 
-      case "pattern":
-        return {
-          title: "Pattern Analysis Insights",
-          content: (
+          {/* Approach Comparison */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <h4 className="font-semibold text-lg mb-4">Maintenance Approach Comparison</h4>
             <div className="space-y-4">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-lg mb-2">
-                  AI Pattern Recognition
-                </h4>
-                <p>
-                  Oxmaint.ai has identified a recurring pattern that suggests an
-                  underlying systemic issue.
-                </p>
-              </div>
-
-              <div className="border p-4 rounded-lg">
-                <h4 className="font-semibold mb-2">Pattern Details</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>3 similar failures detected in 30 days</li>
-                  <li>Average downtime: 4.5 hours per incident</li>
-                  <li>Estimated production loss: $12,000 per incident</li>
-                </ul>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="font-medium">Traditional Schedule</span>
+                </div>
+                <div className="ml-7 text-gray-600">
+                  <div className="flex justify-between mb-1">
+                    <span>Maintenance Interval</span>
+                    <span className="font-medium">90 days</span>
+                  </div>
+                  <div className="flex justify-between mb-1">
+                    <span>Inspection Time</span>
+                    <span className="font-medium">4-6 hours</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Approach</span>
+                    <span className="font-medium text-red-500">Reactive</span>
+                  </div>
+                </div>
               </div>
 
               <div className="bg-green-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Oxmaint.ai Solutions</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>24/7 automated monitoring of 120+ parameters</li>
-                  <li>Real-time correlation analysis</li>
-                  <li>Predictive maintenance recommendations</li>
-                  <li>Automated work order generation</li>
-                  <li>Resource optimization suggestions</li>
-                </ul>
-              </div>
-
-              <div className="bg-purple-50 p-4 rounded-lg">
-                <h4 className="font-semibold">AI-Powered Benefits</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>85% reduction in repeat failures</li>
-                  <li>60% faster root cause identification</li>
-                  <li>40% decrease in maintenance costs</li>
-                  <li>Replaces manual analysis of 4+ human operators</li>
-                </ul>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span className="font-medium">Oxmaint.ai Schedule</span>
+                </div>
+                <div className="ml-7 text-gray-600">
+                  <div className="flex justify-between mb-1">
+                    <span>Maintenance Interval</span>
+                    <span className="font-medium">Dynamic</span>
+                  </div>
+                  <div className="flex justify-between mb-1">
+                    <span>Inspection Time</span>
+                    <span className="font-medium">1-2 hours</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Approach</span>
+                    <span className="font-medium text-green-500">Predictive</span>
+                  </div>
+                </div>
               </div>
             </div>
-          ),
-        };
-      default:
-        return { title: "", content: null };
-    }
+          </div>
+
+          {/* Historical Performance */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm col-span-2">
+            <h4 className="font-semibold text-lg mb-4">Performance Metrics</h4>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-3">
+                  <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  <span className="font-medium">Downtime</span>
+                </div>
+                <div className="text-3xl font-bold text-blue-700 mb-1">47%</div>
+                <p className="text-sm text-blue-600">Reduction in unexpected downtime</p>
+              </div>
+              <div className="bg-green-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-3">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="font-medium">Costs</span>
+                </div>
+                <div className="text-3xl font-bold text-green-700 mb-1">68%</div>
+                <p className="text-sm text-green-600">Decrease in maintenance costs</p>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-3">
+                  <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                  <span className="font-medium">Equipment</span>
+                </div>
+                <div className="text-3xl font-bold text-purple-700 mb-1">3x</div>
+                <p className="text-sm text-purple-600">Improvement in lifespan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  };
+      case "pattern":
+  return {
+    title: "Pattern Analysis Dashboard",
+    content: (
+      <div className="space-y-6">
+        {/* Top Stats Section */}
+        <div className="grid grid-cols-4 gap-4">
+          <div className="bg-red-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-red-600 font-medium">Similar Failures</h4>
+            <div className="text-2xl font-bold text-red-700">3</div>
+            <p className="text-xs text-red-500">Last 30 Days</p>
+          </div>
+          <div className="bg-orange-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-orange-600 font-medium">Avg Downtime</h4>
+            <div className="text-2xl font-bold text-orange-700">4.5h</div>
+            <p className="text-xs text-orange-500">Per Incident</p>
+          </div>
+          <div className="bg-yellow-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-yellow-600 font-medium">Production Loss</h4>
+            <div className="text-2xl font-bold text-yellow-700">$12k</div>
+            <p className="text-xs text-yellow-500">Per Incident</p>
+          </div>
+          <div className="bg-green-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-green-600 font-medium">Parameters</h4>
+            <div className="text-2xl font-bold text-green-700">120+</div>
+            <p className="text-xs text-green-500">Monitored 24/7</p>
+          </div>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-2 gap-6">
+          {/* AI Pattern Recognition Alert */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="font-semibold text-lg">AI Pattern Recognition</h4>
+              <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
+                Pattern Detected
+              </span>
+            </div>
+            <div className="bg-blue-50 p-4 rounded-lg mb-4">
+              <p className="text-gray-700">
+                Oxmaint.ai has identified a recurring pattern that suggests an
+                underlying systemic issue.
+              </p>
+            </div>
+            <div className="mt-4 space-y-3">
+              <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
+                <span className="text-gray-600">Detection Accuracy</span>
+                <span className="font-bold text-blue-600">98%</span>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
+                <span className="text-gray-600">Pattern Type</span>
+                <span className="font-bold text-blue-600">Cyclical Failure</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Pattern Details */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <h4 className="font-semibold text-lg mb-4">Impact Analysis</h4>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 bg-red-50 rounded">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Failures Detected</span>
+                </div>
+                <span className="font-bold text-red-700">3 in 30 days</span>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-orange-50 rounded">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Average Downtime</span>
+                </div>
+                <span className="font-bold text-orange-700">4.5 hours</span>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-yellow-50 rounded">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Production Loss</span>
+                </div>
+                <span className="font-bold text-yellow-700">$12,000/incident</span>
+              </div>
+            </div>
+          </div>
+
+          {/* AI Solutions */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <h4 className="font-semibold text-lg mb-4">Oxmaint.ai Solutions</h4>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-green-50 p-3 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="font-medium">24/7 Monitoring</span>
+                </div>
+                <p className="text-sm text-gray-600">120+ parameters tracked</p>
+              </div>
+              <div className="bg-blue-50 p-3 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                  <span className="font-medium">Real-time Analysis</span>
+                </div>
+                <p className="text-sm text-gray-600">Instant correlation detection</p>
+              </div>
+              <div className="bg-purple-50 p-3 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  <span className="font-medium">Auto Work Orders</span>
+                </div>
+                <p className="text-sm text-gray-600">Automated generation</p>
+              </div>
+              <div className="bg-indigo-50 p-3 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span className="font-medium">Resource Optimization</span>
+                </div>
+                <p className="text-sm text-gray-600">Smart resource allocation</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Performance Metrics */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <h4 className="font-semibold text-lg mb-4">AI-Powered Benefits</h4>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 bg-green-50 rounded">
+                <span>Repeat Failures</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold">85%</span>
+                  <span className="text-green-500 text-sm">↓ Reduction</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-blue-50 rounded">
+                <span>Root Cause Analysis</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold">60%</span>
+                  <span className="text-blue-500 text-sm">↑ Faster</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-purple-50 rounded">
+                <span>Maintenance Costs</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold">40%</span>
+                  <span className="text-purple-500 text-sm">↓ Decrease</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
   };
 
   if (!isOpen) return null;
