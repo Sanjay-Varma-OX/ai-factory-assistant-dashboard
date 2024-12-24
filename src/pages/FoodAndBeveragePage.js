@@ -345,48 +345,168 @@ const AlertDetailModal = ({ isOpen, onClose, type, data }) => {
   const getModalContent = () => {
     switch (type) {
       case "warranty":
-        return {
-          title: "Warranty Claim Details",
-          content: (
-            <div className="space-y-4">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-lg mb-2">
-                  AI-Powered Savings Analysis
-                </h4>
-                <p>
-                  Oxmaint.ai has identified potential warranty savings of{" "}
-                  {data["Potential Savings"]} by automatically tracking and
-                  managing warranty claims.
-                </p>
-              </div>
+  return {
+    title: "Warranty Management Dashboard",
+    content: (
+      <div className="space-y-6">
+        {/* Top Stats Section */}
+        <div className="grid grid-cols-4 gap-4">
+          <div className="bg-blue-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-blue-600 font-medium">Potential Savings</h4>
+            <div className="text-2xl font-bold text-blue-700">{data["Potential Savings"]}</div>
+            <p className="text-xs text-blue-500">+15% from last month</p>
+          </div>
+          <div className="bg-green-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-green-600 font-medium">Processing Time</h4>
+            <div className="text-2xl font-bold text-green-700">2 hrs</div>
+            <p className="text-xs text-green-500">-70% from 5 days</p>
+          </div>
+          <div className="bg-purple-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-purple-600 font-medium">Approval Rate</h4>
+            <div className="text-2xl font-bold text-purple-700">100%</div>
+            <p className="text-xs text-purple-500">+25% improvement</p>
+          </div>
+          <div className="bg-orange-50 p-4 rounded-lg text-center">
+            <h4 className="text-sm text-orange-600 font-medium">Active Claims</h4>
+            <div className="text-2xl font-bold text-orange-700">12</div>
+            <p className="text-xs text-orange-500">3 pending review</p>
+          </div>
+        </div>
 
-              <div className="space-y-2">
-                <h4 className="font-semibold">Historical Context</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>
-                    3 similar warranty claims processed in the last quarter
-                  </li>
-                  <li>
-                    Average processing time reduced from 5 days to 2 hours
-                  </li>
-                  <li>
-                    100% claim approval rate with AI-assisted documentation
-                  </li>
-                </ul>
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-2 gap-6">
+          {/* Current Warranty Details */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="font-semibold text-lg">Current Warranty Details</h4>
+              <span className="text-blue-600 bg-blue-50 px-3 py-1 rounded-full text-sm">
+                Active
+              </span>
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between border-b pb-2">
+                <span className="text-gray-600">Part Number</span>
+                <span className="font-medium">{data["Part"]}</span>
               </div>
-
-              <div className="bg-green-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Oxmaint.ai Advantage</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Automated warranty period tracking</li>
-                  <li>Smart documentation preparation</li>
-                  <li>Predictive maintenance to prevent future issues</li>
-                  <li>24/7 monitoring and instant alerts</li>
-                </ul>
+              <div className="flex justify-between border-b pb-2">
+                <span className="text-gray-600">Work Order</span>
+                <span className="font-medium">{data["WO#"]}</span>
+              </div>
+              <div className="flex justify-between border-b pb-2">
+                <span className="text-gray-600">Valid Until</span>
+                <span className="font-medium">{data["Warranty Valid Until"]}</span>
               </div>
             </div>
-          ),
-        };
+          </div>
+
+          {/* Historical Context */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <h4 className="font-semibold text-lg mb-4">Quarterly Performance</h4>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between bg-gray-50 p-3 rounded">
+                <span>Claims Processed</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold">3</span>
+                  <span className="text-green-500 text-sm">↑ 2</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-between bg-gray-50 p-3 rounded">
+                <span>Average Processing Time</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold">2 hours</span>
+                  <span className="text-green-500 text-sm">↓ 70%</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-between bg-gray-50 p-3 rounded">
+                <span>Approval Rate</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold">100%</span>
+                  <span className="text-green-500 text-sm">↑ 25%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* AI Features */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <h4 className="font-semibold text-lg mb-4">AI-Powered Features</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span className="font-medium">Automated Tracking</span>
+                </div>
+                <p className="text-sm text-gray-600">24/7 warranty period monitoring</p>
+              </div>
+              <div className="bg-green-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="font-medium">Smart Docs</span>
+                </div>
+                <p className="text-sm text-gray-600">Automated documentation prep</p>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  <span className="font-medium">Predictive</span>
+                </div>
+                <p className="text-sm text-gray-600">Early issue detection</p>
+              </div>
+              <div className="bg-orange-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                  <span className="font-medium">Alerts</span>
+                </div>
+                <p className="text-sm text-gray-600">Real-time notifications</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Items */}
+          <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <h4 className="font-semibold text-lg mb-4">Recommended Actions</h4>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-yellow-600">⚡</span>
+                  <span>Submit warranty claim for {data["Part"]}</span>
+                </div>
+                <button className="text-sm bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full hover:bg-yellow-200">
+                  Action
+                </button>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-blue-600">📋</span>
+                  <span>Review maintenance history</span>
+                </div>
+                <button className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-200">
+                  View
+                </button>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">📊</span>
+                  <span>Generate savings report</span>
+                </div>
+                <button className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200">
+                  Generate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  };
 
       case "maintenance":
         return {
