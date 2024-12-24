@@ -880,7 +880,7 @@ export default function FoodAndBeveragePage() {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
               <YAxis />
-              <Wrenchtip />
+              <Tooltip />
               <Legend />
               <Line
                 type="monotone"
@@ -906,7 +906,7 @@ export default function FoodAndBeveragePage() {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
               <YAxis />
-              <Wrenchtip />
+              <Tooltip />
               <Legend />
               <Line
                 type="monotone"
