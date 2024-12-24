@@ -18,7 +18,7 @@ import {
   MoveUpRight,
   Package2 as Box,
   CalendarDays as Calendar,
-  Tool,
+  Wrench,
   ClipboardList,
 } from "lucide-react";
 // import {
@@ -158,7 +158,7 @@ const WorkOrderDetails = ({ workOrder }) => {
         <div className="grid grid-cols-2 gap-4">
           <div className="p-4 bg-gray-50 rounded-lg">
             <div className="flex items-center gap-2 mb-2">
-              <Tool className="w-4 h-4 text-gray-600" />
+              <Wrench className="w-4 h-4 text-gray-600" />
               <h4 className="font-medium">Maintenance Details</h4>
             </div>
             <div className="space-y-2">
@@ -880,7 +880,7 @@ export default function FoodAndBeveragePage() {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
               <YAxis />
-              <Tooltip />
+              <Wrenchtip />
               <Legend />
               <Line
                 type="monotone"
@@ -906,7 +906,7 @@ export default function FoodAndBeveragePage() {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
               <YAxis />
-              <Tooltip />
+              <Wrenchtip />
               <Legend />
               <Line
                 type="monotone"
