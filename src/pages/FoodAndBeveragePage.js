@@ -817,6 +817,10 @@ const AlertDetailModal = ({ isOpen, onClose, type, data }) => {
       </div>
     ),
   };
+default:
+        return { title: "", content: null };
+    }
+  };
 
   if (!isOpen) return null;
 
