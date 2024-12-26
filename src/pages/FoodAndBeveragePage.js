@@ -21,17 +21,58 @@ import {
   Wrench,
   ClipboardList,
 } from "lucide-react";
-// import {
-//   Dialog,
-//   DialogContent,
-//   DialogDescription,
-//   DialogHeader,
-//   DialogTitle,
-//   DialogTrigger,
-//   DialogFooter,
-// } from "@/components/ui/dialog";
-// import { Button } from "@/components/ui/button";
 
+// Custom Dialog Components
+const Dialog = ({ children, open, onOpenChange }) => {
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-50">
+      <div className="fixed inset-0 bg-black/50" onClick={() => onOpenChange(false)} />
+      <div className="fixed inset-0 overflow-y-auto">
+        <div className="flex min-h-full items-center justify-center p-4">
+          <div className="relative bg-white rounded-lg w-full max-w-4xl p-6">
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DialogContent = ({ children, className = "" }) => (
+  <div className={`${className}`}>{children}</div>
+);
+
+const DialogHeader = ({ children }) => (
+  <div className="mb-4">{children}</div>
+);
+
+const DialogTitle = ({ children }) => (
+  <h2 className="text-xl font-semibold">{children}</h2>
+);
+
+const DialogDescription = ({ children }) => (
+  <p className="text-sm text-gray-500 mt-1">{children}</p>
+);
+
+const DialogFooter = ({ children }) => (
+  <div className="flex justify-end gap-3 mt-6">{children}</div>
+);
+
+const Button = ({ children, variant = "default", onClick }) => {
+  const styles = {
+    default: "bg-blue-600 text-white hover:bg-blue-700",
+    outline: "border border-gray-300 text-gray-700 hover:bg-gray-50"
+  };
+  return (
+    <button
+      onClick={onClick}
+      className={`px-4 py-2 rounded-md ${styles[variant]} transition-colors`}
+    >
+      {children}
+    </button>
+  );
+};
 const MetricCard = ({ title, value, trend, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
     <h3 className="font-semibold mb-2">{title}</h3>
