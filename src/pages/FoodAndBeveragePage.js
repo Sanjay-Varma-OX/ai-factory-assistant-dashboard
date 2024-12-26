@@ -209,10 +209,28 @@ const WorkOrderCard = ({ current, workOrders }) => {
 const InventorySection = ({ parts }) => {
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [selectedPart, setSelectedPart] = useState(null);
+  const [orderQuantity, setOrderQuantity] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleOrderClick = (part) => {
     setSelectedPart(part);
+    setOrderQuantity(part.orderQuantity); // Set default order quantity
     setShowOrderForm(true);
+  };
+
+  const handleOrderSubmit = async (part) => {
+    setIsSubmitting(true);
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      alert(`Order placed successfully for ${orderQuantity} units of ${part.name}`);
+      setShowOrderForm(false);
+      setSelectedPart(null);
+    } catch (error) {
+      alert('Failed to place order. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -226,9 +244,14 @@ const InventorySection = ({ parts }) => {
         {parts.map((part) => (
           <div key={part.id} className="bg-blue-50 p-4 rounded-lg">
             <div className="flex items-center justify-between mb-2">
-              <a href={`/parts/${part.id}`} className="text-blue-600 hover:text-blue-800 font-medium">
-                {part.name} (#{part.id})
-              </a>
+              <div>
+                <div className="text-blue-600 hover:text-blue-800 font-medium">
+                  {part.name} (#{part.id})
+                </div>
+                <div className="text-sm text-gray-500 mt-1">
+                  Min. Stock: {part.minimumStock} | Reorder Point: {part.reorderPoint}
+                </div>
+              </div>
               <div className="flex items-center gap-2">
                 <span className={`px-2 py-1 rounded text-sm ${
                   part.inStock > part.minimumStock 
@@ -242,7 +265,7 @@ const InventorySection = ({ parts }) => {
                 {part.inStock <= part.reorderPoint && (
                   <button
                     onClick={() => handleOrderClick(part)}
-                    className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm"
+                    className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm transition-colors"
                   >
                     Place Order
                   </button>
@@ -250,7 +273,7 @@ const InventorySection = ({ parts }) => {
               </div>
             </div>
 
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-600 mt-2">
               <div className="flex items-center gap-2">
                 <span className="font-medium">Location:</span>
                 <span>{part.location}</span>
@@ -260,12 +283,22 @@ const InventorySection = ({ parts }) => {
                   <span className="font-medium">Note:</span> Stock below reorder point ({part.reorderPoint})
                 </div>
               )}
+              <div className="mt-2 grid grid-cols-2 gap-4">
+                <div>
+                  <span className="font-medium">Last Ordered:</span>{" "}
+                  <span>{part.lastOrdered}</span>
+                </div>
+                <div>
+                  <span className="font-medium">Lead Time:</span>{" "}
+                  <span>{part.leadTime}</span>
+                </div>
+              </div>
             </div>
 
             {showOrderForm && selectedPart?.id === part.id && (
               <div className="mt-4 p-4 bg-white rounded-lg border">
                 <h4 className="font-medium mb-3">Place Order for {part.name}</h4>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="text-gray-600">Supplier:</span>
@@ -280,27 +313,41 @@ const InventorySection = ({ parts }) => {
                       <span className="ml-2 font-medium">${part.partCost}</span>
                     </div>
                     <div>
-                      <span className="text-gray-600">Suggested Quantity:</span>
-                      <span className="ml-2 font-medium">{part.orderQuantity}</span>
+                      <span className="text-gray-600">Total Cost:</span>
+                      <span className="ml-2 font-medium">
+                        ${(part.partCost * orderQuantity).toLocaleString()}
+                      </span>
                     </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <label className="text-sm text-gray-600">Order Quantity:</label>
+                    <input
+                      type="number"
+                      min="1"
+                      value={orderQuantity}
+                      onChange={(e) => setOrderQuantity(Math.max(1, parseInt(e.target.value) || 0))}
+                      className="border rounded px-2 py-1 w-24 text-right"
+                    />
+                    <span className="text-sm text-gray-500">
+                      (Suggested: {part.orderQuantity})
+                    </span>
                   </div>
 
                   <div className="flex justify-end gap-2 mt-4">
                     <button
                       onClick={() => setShowOrderForm(false)}
-                      className="px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-50"
+                      className="px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                      disabled={isSubmitting}
                     >
                       Cancel
                     </button>
                     <button
-                      onClick={() => {
-                        // Handle order submission
-                        alert(`Order placed for ${part.orderQuantity} ${part.name}`);
-                        setShowOrderForm(false);
-                      }}
-                      className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                      onClick={() => handleOrderSubmit(part)}
+                      disabled={isSubmitting || orderQuantity < 1}
+                      className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-300"
                     >
-                      Confirm Order
+                      {isSubmitting ? 'Placing Order...' : 'Confirm Order'}
                     </button>
                   </div>
                 </div>
@@ -313,9 +360,11 @@ const InventorySection = ({ parts }) => {
   );
 };
 
-
-
 const WorkOrderDetails = ({ workOrder }) => {
+  // Add state for order form if needed
+  const [showOrderModal, setShowOrderModal] = useState(false);
+  const [selectedPart, setSelectedPart] = useState(null);
+
   return (
     <div className="space-y-6">
       {/* Work Order Header */}
@@ -354,13 +403,20 @@ const WorkOrderDetails = ({ workOrder }) => {
             <span className="text-gray-600">Technician:</span>
             <span className="ml-2 font-medium">{workOrder.technician}</span>
           </div>
+          {workOrder.submittedBy && (
+            <div>
+              <span className="text-gray-600">Submitted By:</span>
+              <span className="ml-2 font-medium">{workOrder.submittedBy}</span>
+            </div>
+          )}
+          {workOrder.submissionDate && (
+            <div>
+              <span className="text-gray-600">Submission Date:</span>
+              <span className="ml-2 font-medium">{workOrder.submissionDate}</span>
+            </div>
+          )}
         </div>
       </div>
-{/* Required Parts & Inventory Section */}
-      {workOrder.requiredParts && (
-        <InventorySection parts={workOrder.requiredParts} />
-      )}
-
 
       {/* PM Status Section */}
       {workOrder.pmStatus && (
@@ -369,10 +425,6 @@ const WorkOrderDetails = ({ workOrder }) => {
             <Calendar className="w-5 h-5 text-gray-600" />
             <h3 className="text-lg font-semibold">Preventive Maintenance Status</h3>
           </div>
- {/* Add the Inventory Section right after the header section */}
-      {workOrder.requiredParts && (
-        <InventorySection parts={workOrder.requiredParts} />
-      )}
 
           {/* Last PM Service */}
           <div className="mb-6">
@@ -432,6 +484,57 @@ const WorkOrderDetails = ({ workOrder }) => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Required Parts & Inventory Section */}
+      {workOrder.requiredParts && workOrder.requiredParts.length > 0 && (
+        <div className="bg-white p-4 rounded-lg border">
+          <div className="flex items-center gap-2 mb-4">
+            <Box className="w-5 h-5 text-gray-600" />
+            <h3 className="text-lg font-semibold">Required Parts & Inventory</h3>
+          </div>
+          <div className="space-y-4">
+            {workOrder.requiredParts.map((part) => (
+              <div key={part.id} className="bg-blue-50 p-4 rounded-lg">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-blue-600 hover:text-blue-800 font-medium">
+                    {part.name} (#{part.id})
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className={`px-2 py-1 rounded text-sm ${
+                      part.inStock > part.minimumStock 
+                        ? "bg-green-100 text-green-800"
+                        : part.inStock > 0
+                        ? "bg-yellow-100 text-yellow-800"
+                        : "bg-red-100 text-red-800"
+                    }`}>
+                      In Stock: {part.inStock}
+                    </span>
+                    {part.inStock <= part.reorderPoint && (
+                      <button
+                        onClick={() => {
+                          setSelectedPart(part);
+                          setShowOrderModal(true);
+                        }}
+                        className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm"
+                      >
+                        Place Order
+                      </button>
+                    )}
+                  </div>
+                </div>
+                <div className="text-sm text-gray-600">
+                  <span>Location: {part.location}</span>
+                </div>
+                {part.inStock <= part.reorderPoint && (
+                  <div className="mt-2 text-yellow-600 text-sm">
+                    Note: Stock below reorder point ({part.reorderPoint})
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -1242,6 +1345,34 @@ export default function FoodAndBeveragePage() {
     submittedBy: "John Smith",
     assignedTo: "Mike Johnson",
     submissionDate: "2024-12-11",
+    requiredParts: [
+      {
+        id: "BRG-2024-A456",
+        name: "High-Temp Bearing Assembly",
+        location: "Aisle B, Bin 08-A, Shelf 2",
+        inStock: 1,
+        minimumStock: 4,
+        reorderPoint: 2,
+        supplier: "BearingTech Solutions",
+        partCost: 275,
+        leadTime: "3-4 days",
+        lastOrdered: "2024-12-01",
+        orderQuantity: 6
+      },
+      {
+        id: "MTR-2024-C789",
+        name: "Motor Coupling Kit",
+        location: "Aisle E, Bin 22-D, Shelf 1",
+        inStock: 0,
+        minimumStock: 2,
+        reorderPoint: 1,
+        supplier: "MotorTech Inc",
+        partCost: 180,
+        leadTime: "2-3 days",
+        lastOrdered: "2024-11-28",
+        orderQuantity: 3
+      }
+    ],
     pmStatus: {
       lastService: {
         date: "2024-11-20",
@@ -1267,6 +1398,34 @@ export default function FoodAndBeveragePage() {
       status: "Successful Fix",
       location: "Line 2 - Motor Assembly",
       technician: "Mike Johnson",
+      requiredParts: [
+        {
+          id: "BK-2344",
+          name: "Bearing Kit",
+          location: "Aisle B, Bin 12-A, Shelf 1",
+          inStock: 3,
+          minimumStock: 2,
+          reorderPoint: 2,
+          supplier: "BearingTech Solutions",
+          partCost: 450,
+          leadTime: "2-3 days",
+          lastOrdered: "2024-09-01",
+          orderQuantity: 4
+        },
+        {
+          id: "ML-892",
+          name: "Motor Lubricant",
+          location: "Aisle C, Bin 05-D, Shelf 4",
+          inStock: 5,
+          minimumStock: 4,
+          reorderPoint: 3,
+          supplier: "LubeTech Corp",
+          partCost: 85,
+          leadTime: "1-2 days",
+          lastOrdered: "2024-09-10",
+          orderQuantity: 6
+        }
+      ],
       procedure: [
         "Lock out/tag out machine",
         "Remove motor housing cover",
@@ -1315,6 +1474,21 @@ export default function FoodAndBeveragePage() {
       status: "Temporary Fix",
       location: "Line 2 - Drive System",
       technician: "Sarah Chen",
+      requiredParts: [
+        {
+          id: "SC-789",
+          name: "Shaft Coupling Gasket",
+          location: "Aisle A, Bin 03-B, Shelf 2",
+          inStock: 2,
+          minimumStock: 3,
+          reorderPoint: 2,
+          supplier: "SealTech Inc",
+          partCost: 65,
+          leadTime: "1-2 days",
+          lastOrdered: "2024-06-01",
+          orderQuantity: 5
+        }
+      ],
       procedure: [
         "Check alignment measurements",
         "Loosen mounting bolts",
@@ -1362,33 +1536,6 @@ export default function FoodAndBeveragePage() {
       status: "Successful Fix",
       location: "Line 2 - Control Panel",
       technician: "David Lee",
-      procedure: [
-        "Backup current settings",
-        "Install firmware update",
-        "Calibrate temperature sensors",
-        "Update control parameters",
-        "Verify system operation",
-        "Document new settings"
-      ],
-      toolsRequired: "Laptop, Calibration kit, USB drive",
-      notes: "New firmware version 2.1.5 improves temperature control accuracy",
-      completedDate: "2024-04-15",
-      priority: "Low",
-      submittedBy: "Maria Garcia",
-      pmStatus: {
-        lastService: {
-          date: "2024-03-10",
-          hours: 550,
-          workOrder: "PM-2024-045",
-          technician: "David Lee"
-        },
-        nextService: {
-          hoursRemaining: 450,
-          estimatedDate: "2024-05-25",
-          daysRemaining: 75,
-          progressPercentage: 55
-        }
-      },
       requiredParts: [
         {
           id: "IMP-2024-X789",
@@ -1417,6 +1564,33 @@ export default function FoodAndBeveragePage() {
           orderQuantity: 6
         }
       ],
+      procedure: [
+        "Backup current settings",
+        "Install firmware update",
+        "Calibrate temperature sensors",
+        "Update control parameters",
+        "Verify system operation",
+        "Document new settings"
+      ],
+      toolsRequired: "Laptop, Calibration kit, USB drive",
+      notes: "New firmware version 2.1.5 improves temperature control accuracy",
+      completedDate: "2024-04-15",
+      priority: "Low",
+      submittedBy: "Maria Garcia",
+      pmStatus: {
+        lastService: {
+          date: "2024-03-10",
+          hours: 550,
+          workOrder: "PM-2024-045",
+          technician: "David Lee"
+        },
+        nextService: {
+          hoursRemaining: 450,
+          estimatedDate: "2024-05-25",
+          daysRemaining: 75,
+          progressPercentage: 55
+        }
+      },
       diagnostics: {
         systemVersion: "2.1.5",
         temperatureAccuracy: "±0.2°C",
@@ -1431,6 +1605,7 @@ export default function FoodAndBeveragePage() {
     }
   ]
 };
+
   // Exception alerts data
   const exceptionAlerts = [
     {
