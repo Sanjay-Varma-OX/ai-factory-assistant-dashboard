@@ -209,11 +209,24 @@ const WorkOrderCard = ({ current, workOrders }) => {
 const WorkOrderDetails = ({ workOrder }) => {
   return (
     <div className="space-y-6">
-      {/* Current Issue Alert */}
+      {/* Work Order Header */}
       <div className="bg-blue-50 p-4 rounded-lg">
-        <div className="flex items-center gap-2 mb-4">
-          <ClipboardList className="w-5 h-5 text-blue-600" />
-          <h3 className="text-lg font-semibold">Work Order Details</h3>
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <ClipboardList className="w-5 h-5 text-blue-600" />
+            <h3 className="text-lg font-semibold">Work Order Details</h3>
+          </div>
+          <span 
+            className={`px-3 py-1 rounded-full text-sm ${
+              workOrder.status === "Successful Fix"
+                ? "bg-green-100 text-green-800"
+                : workOrder.status === "Temporary Fix"
+                ? "bg-yellow-100 text-yellow-800"
+                : "bg-blue-100 text-blue-800"
+            }`}
+          >
+            {workOrder.status}
+          </span>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -221,16 +234,8 @@ const WorkOrderDetails = ({ workOrder }) => {
             <span className="ml-2 font-medium">{workOrder.id}</span>
           </div>
           <div>
-            <span className="text-gray-600">Status:</span>
-            <span
-              className={`ml-2 font-medium ${
-                workOrder.status === "Successful Fix"
-                  ? "text-green-600"
-                  : "text-yellow-600"
-              }`}
-            >
-              {workOrder.status}
-            </span>
+            <span className="text-gray-600">Priority:</span>
+            <span className="ml-2 font-medium">{workOrder.priority}</span>
           </div>
           <div>
             <span className="text-gray-600">Location:</span>
@@ -242,6 +247,187 @@ const WorkOrderDetails = ({ workOrder }) => {
           </div>
         </div>
       </div>
+
+      {/* PM Status Section */}
+      {workOrder.pmStatus && (
+        <div className="bg-white p-4 rounded-lg border">
+          <div className="flex items-center gap-2 mb-4">
+            <Calendar className="w-5 h-5 text-gray-600" />
+            <h3 className="text-lg font-semibold">Preventive Maintenance Status</h3>
+          </div>
+ {/* Add the Inventory Section right after the header section */}
+      {workOrder.requiredParts && (
+        <InventorySection parts={workOrder.requiredParts} />
+      )}
+
+          {/* Last PM Service */}
+          <div className="mb-6">
+            <h4 className="font-medium mb-3">Last PM Service</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <span className="text-gray-600">Date:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.date}</span>
+              </div>
+              <div>
+                <span className="text-gray-600">Hours:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.hours}</span>
+              </div>
+              <div>
+                <span className="text-gray-600">Work Order:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.workOrder}</span>
+              </div>
+              <div>
+                <span className="text-gray-600">Technician:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.technician}</span>
+              </div>
+            </div>
+          </div>
+const InventorySection = ({ parts }) => {
+  const [showOrderForm, setShowOrderForm] = useState(false);
+  const [selectedPart, setSelectedPart] = useState(null);
+
+  const handleOrderClick = (part) => {
+    setSelectedPart(part);
+    setShowOrderForm(true);
+  };
+  
+  return (
+    <div className="bg-white p-4 rounded-lg border">
+      <div className="flex items-center gap-2 mb-4">
+        <Box className="w-5 h-5 text-gray-600" />
+        <h3 className="text-lg font-semibold">Required Parts & Inventory</h3>
+      </div>
+
+      <div className="space-y-4">
+        {parts.map((part) => (
+          <div key={part.id} className="bg-blue-50 p-4 rounded-lg">
+            <div className="flex items-center justify-between mb-2">
+              <a href={`/parts/${part.id}`} className="text-blue-600 hover:text-blue-800 font-medium">
+                {part.name} (#{part.id})
+              </a>
+              <div className="flex items-center gap-2">
+                <span className={`px-2 py-1 rounded text-sm ${
+                  part.inStock > part.minimumStock 
+                    ? "bg-green-100 text-green-800"
+                    : part.inStock > 0
+                    ? "bg-yellow-100 text-yellow-800"
+                    : "bg-red-100 text-red-800"
+                }`}>
+                  In Stock: {part.inStock}
+                </span>
+                {part.inStock <= part.reorderPoint && (
+                  <button
+                    onClick={() => handleOrderClick(part)}
+                    className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm"
+                  >
+                    Place Order
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <span className="font-medium">Location:</span>
+                <span>{part.location}</span>
+              </div>
+              {part.inStock <= part.reorderPoint && (
+                <div className="mt-2 text-yellow-600">
+                  <span className="font-medium">Note:</span> Stock below reorder point ({part.reorderPoint})
+                </div>
+              )}
+            </div>
+
+            {showOrderForm && selectedPart?.id === part.id && (
+              <div className="mt-4 p-4 bg-white rounded-lg border">
+                <h4 className="font-medium mb-3">Place Order for {part.name}</h4>
+                <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Supplier:</span>
+                      <span className="ml-2 font-medium">{part.supplier}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Lead Time:</span>
+                      <span className="ml-2 font-medium">{part.leadTime}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Unit Cost:</span>
+                      <span className="ml-2 font-medium">${part.partCost}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Suggested Quantity:</span>
+                      <span className="ml-2 font-medium">{part.orderQuantity}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-2 mt-4">
+                    <button
+                      onClick={() => setShowOrderForm(false)}
+                      className="px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-50"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={() => {
+                        // Handle order submission
+                        alert(`Order placed for ${part.orderQuantity} ${part.name}`);
+                        setShowOrderForm(false);
+                      }}
+                      className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                    >
+                      Confirm Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+          {/* Next PM Service */}
+          <div className="bg-blue-50 p-4 rounded-lg">
+            <h4 className="font-medium mb-3">Next PM Service</h4>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Hours Until Next PM:</span>
+                <span className="font-medium">{workOrder.pmStatus.nextService.hoursRemaining} hours</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Estimated Due Date:</span>
+                <span className="font-medium">{workOrder.pmStatus.nextService.estimatedDate}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Estimated Days Remaining:</span>
+                <span className="font-medium">{workOrder.pmStatus.nextService.daysRemaining} days</span>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="mt-4">
+                <div className="flex mb-2 items-center justify-between">
+                  <div className="text-xs font-semibold text-blue-700">Progress to Next PM</div>
+                  <div className="text-right">
+                    <span className="text-xs font-semibold text-blue-700">
+                      {workOrder.pmStatus.nextService.progressPercentage}%
+                    </span>
+                  </div>
+                </div>
+                <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+                  <div 
+                    style={{ width: `${workOrder.pmStatus.nextService.progressPercentage}%` }}
+                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Maintenance Details & Parts */}
       <div className="grid grid-cols-2 gap-4">
@@ -288,45 +474,70 @@ const WorkOrderDetails = ({ workOrder }) => {
         </div>
       </div>
 
-      {/* Procedure Details */}
-      <div className="p-4 bg-gray-50 rounded-lg">
-        <div className="flex items-center gap-2 mb-4">
-          <ClipboardList className="w-4 h-4 text-gray-600" />
-          <h4 className="font-medium">Maintenance Procedure</h4>
-        </div>
-        <div className="space-y-2">
-          {workOrder.procedure?.map((step, index) => (
-            <div key={index} className="p-2 bg-white rounded flex gap-2">
-              <span className="text-gray-500">{index + 1}.</span>
-              <span>{step}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Timeline */}
-      <div className="p-4 bg-blue-50 rounded-lg">
-        <div className="flex items-center gap-2 mb-2">
-          <Calendar className="w-4 h-4 text-blue-600" />
-          <h4 className="font-medium">Timeline</h4>
-        </div>
-        <div className="space-y-2">
-          <div>
-            <span className="text-gray-600">Created:</span>
-            <p className="font-medium">{workOrder.daysAgo} days ago</p>
+      {/* Procedure Steps */}
+      {workOrder.procedure && (
+        <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="flex items-center gap-2 mb-4">
+            <ClipboardList className="w-4 h-4 text-gray-600" />
+            <h4 className="font-medium">Maintenance Procedure</h4>
           </div>
-          {workOrder.completedDate && (
-            <div>
-              <span className="text-gray-600">Completed:</span>
-              <p className="font-medium">{workOrder.completedDate}</p>
-            </div>
-          )}
+          <div className="space-y-2">
+            {workOrder.procedure.map((step, index) => (
+              <div key={index} className="p-2 bg-white rounded flex gap-2">
+                <span className="text-gray-500">{index + 1}.</span>
+                <span>{step}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* Diagnostic Information */}
+      {workOrder.diagnostics && (
+        <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="flex items-center gap-2 mb-3">
+            <AlertTriangle className="w-4 h-4 text-gray-600" />
+            <h4 className="font-medium">Diagnostic Information</h4>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {Object.entries(workOrder.diagnostics).map(([key, value]) => (
+              <div key={key}>
+                <span className="text-gray-600">
+                  {key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}:
+                </span>
+                <span className="ml-2 font-medium">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Cost Details */}
+      {workOrder.costDetails && (
+        <div className="p-4 bg-green-50 rounded-lg">
+          <div className="flex items-center gap-2 mb-3">
+            <Clock className="w-4 h-4 text-green-600" />
+            <h4 className="font-medium">Cost Details</h4>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <span className="text-gray-600">Parts:</span>
+              <span className="ml-2 font-medium">${workOrder.costDetails.parts}</span>
+            </div>
+            <div>
+              <span className="text-gray-600">Labor:</span>
+              <span className="ml-2 font-medium">${workOrder.costDetails.labor}</span>
+            </div>
+            <div>
+              <span className="text-gray-600">Total:</span>
+              <span className="ml-2 font-medium">${workOrder.costDetails.total}</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
 // const WorkOrderCard = ({ current, workOrders }) => {
 //   return (
 //     <div className="bg-white p-6 rounded-lg border">
@@ -1018,6 +1229,26 @@ export default function FoodAndBeveragePage() {
   current: {
     id: "2024-1211-0023",
     description: "Motor Assembly - Line 2 (Vibration Issue)",
+    status: "Open",
+    priority: "High",
+    location: "Line 2 - Motor Assembly",
+    submittedBy: "John Smith",
+    assignedTo: "Mike Johnson",
+    submissionDate: "2024-12-11",
+    pmStatus: {
+      lastService: {
+        date: "2024-11-20",
+        hours: 850,
+        workOrder: "PM-2024-156",
+        technician: "Mike Johnson"
+      },
+      nextService: {
+        hoursRemaining: 150,
+        estimatedDate: "2024-12-28",
+        daysRemaining: 11,
+        progressPercentage: 85
+      }
+    }
   },
   historical: [
     {
@@ -1039,7 +1270,34 @@ export default function FoodAndBeveragePage() {
       ],
       toolsRequired: "Torque wrench, Bearing puller, Alignment tools",
       notes: "Follow-up vibration test after 24 hours showed normal levels",
-      completedDate: "2024-09-15"
+      completedDate: "2024-09-15",
+      priority: "High",
+      submittedBy: "Sarah Chen",
+      pmStatus: {
+        lastService: {
+          date: "2024-08-20",
+          hours: 750,
+          workOrder: "PM-2024-142",
+          technician: "Mike Johnson"
+        },
+        nextService: {
+          hoursRemaining: 250,
+          estimatedDate: "2024-10-15",
+          daysRemaining: 25,
+          progressPercentage: 75
+        }
+      },
+      diagnostics: {
+        vibrationLevel: "High (12.5 mm/s)",
+        temperature: "82°C",
+        noiseLevel: "Above normal",
+        alignmentOffset: "2.5mm"
+      },
+      costDetails: {
+        parts: 850,
+        labor: 450,
+        total: 1300
+      }
     },
     {
       id: "2024-0602-0092",
@@ -1059,7 +1317,111 @@ export default function FoodAndBeveragePage() {
       ],
       toolsRequired: "Laser alignment tool, Torque wrench",
       notes: "Required follow-up after 2 weeks - Schedule complete bearing replacement",
-      completedDate: "2024-06-02"
+      completedDate: "2024-06-02",
+      priority: "Medium",
+      submittedBy: "Robert Wilson",
+      pmStatus: {
+        lastService: {
+          date: "2024-05-15",
+          hours: 650,
+          workOrder: "PM-2024-089",
+          technician: "Sarah Chen"
+        },
+        nextService: {
+          hoursRemaining: 350,
+          estimatedDate: "2024-07-20",
+          daysRemaining: 48,
+          progressPercentage: 65
+        }
+      },
+      diagnostics: {
+        alignmentOffset: "1.8mm",
+        vibrationLevel: "Medium (8.2 mm/s)",
+        temperature: "75°C",
+        noiseLevel: "Normal"
+      },
+      costDetails: {
+        parts: 120,
+        labor: 200,
+        total: 320
+      }
+    },
+    {
+      id: "2024-0415-0078",
+      daysAgo: 245,
+      resolution: "Control system firmware update and sensor calibration",
+      timeTaken: 3.5,
+      partsUsed: "None - Software update only",
+      status: "Successful Fix",
+      location: "Line 2 - Control Panel",
+      technician: "David Lee",
+      procedure: [
+        "Backup current settings",
+        "Install firmware update",
+        "Calibrate temperature sensors",
+        "Update control parameters",
+        "Verify system operation",
+        "Document new settings"
+      ],
+      toolsRequired: "Laptop, Calibration kit, USB drive",
+      notes: "New firmware version 2.1.5 improves temperature control accuracy",
+      completedDate: "2024-04-15",
+      priority: "Low",
+      submittedBy: "Maria Garcia",
+      pmStatus: {
+        lastService: {
+          date: "2024-03-10",
+          hours: 550,
+          workOrder: "PM-2024-045",
+          technician: "David Lee"
+        },
+        nextService: {
+          hoursRemaining: 450,
+          estimatedDate: "2024-05-25",
+          daysRemaining: 75,
+          progressPercentage: 55
+        }
+      },
+      requiredParts: [
+      {
+        id: "IMP-2024-X789",
+        name: "Chocolate Pump Impeller",
+        location: "Aisle D, Bin 15-C, Shelf 3",
+        inStock: 2,
+        minimumStock: 3,
+        reorderPoint: 2,
+        supplier: "ChocMach Industries",
+        partCost: 450,
+        leadTime: "5-7 days",
+        lastOrdered: "2024-11-15",
+        orderQuantity: 5
+      },
+      {
+        id: "BRG-2024-A456",
+        name: "High-Temp Bearing Assembly",
+        location: "Aisle B, Bin 08-A, Shelf 2",
+        inStock: 0,
+        minimumStock: 4,
+        reorderPoint: 2,
+        supplier: "BearingTech Solutions",
+        partCost: 275,
+        leadTime: "3-4 days",
+        lastOrdered: "2024-12-01",
+        orderQuantity: 6
+      }
+    ]
+  },
+      diagnostics: {
+        systemVersion: "2.1.5",
+        temperatureAccuracy: "±0.2°C",
+        responseTime: "150ms",
+        sensorDrift: "Within spec"
+      },
+      costDetails: {
+        parts: 0,
+        labor: 350,
+        total: 350
+      }
     }
   ]
 };
