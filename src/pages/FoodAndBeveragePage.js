@@ -78,46 +78,86 @@ const Alert = ({ status, title, children }) => {
 };
 
 const WorkOrderCard = ({ current, workOrders }) => {
+  const [selectedWorkOrder, setSelectedWorkOrder] = useState(null);
+
   return (
     <div className="bg-white p-6 rounded-lg border">
+      {/* Current WO Header */}
       <h3 className="text-lg font-semibold mb-4">Similar Historical Repairs</h3>
       <div className="border-l-4 border-blue-500 pl-4 mb-4">
         <div className="font-medium">Current WO#: {current.id}</div>
         <div className="text-gray-600">{current.description}</div>
       </div>
 
-      <div className="space-y-6">
+      {/* Historical Work Orders List */}
+      <div className="space-y-4">
         {workOrders.map((wo) => (
-          <div key={wo.id} className="space-y-2">
-            <div className="flex justify-between items-center">
-              <div className="font-medium">WO#: {wo.id}</div>
-              <div
-                className={`text-sm px-3 py-1 rounded-full ${
-                  wo.status === "Successful Fix"
-                    ? "bg-green-100 text-green-800"
-                    : "bg-yellow-100 text-yellow-800"
-                }`}
+          <div key={wo.id}>
+            <div
+              onClick={() => setSelectedWorkOrder(wo)}
+              className="bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+            >
+              {/* Work Order Header */}
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-medium">WO#: {wo.id}</span>
+                <span 
+                  className={`px-3 py-1 rounded-full text-sm ${
+                    wo.status === "Successful Fix"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-yellow-100 text-yellow-800"
+                  }`}
+                >
+                  {wo.status}
+                </span>
+              </div>
+              
+              {/* Work Order Details */}
+              <div className="text-gray-500 mb-2">{wo.daysAgo} days ago</div>
+              <div className="mb-2">
+                <span className="font-medium">Resolution: </span>
+                {wo.resolution}
+              </div>
+              <div className="mb-2">
+                <span className="font-medium">Time Taken: </span>
+                {wo.timeTaken} hours
+              </div>
+              <div className="mb-2">
+                <span className="font-medium">Parts Used: </span>
+                {wo.partsUsed}
+              </div>
+              {wo.notes && (
+                <div>
+                  <span className="font-medium">Notes: </span>
+                  {wo.notes}
+                </div>
+              )}
+            </div>
+
+            {/* Modal/Dialog for detailed view */}
+            {selectedWorkOrder?.id === wo.id && (
+              <Dialog 
+                open={true} 
+                onOpenChange={() => setSelectedWorkOrder(null)}
               >
-                {wo.status}
-              </div>
-            </div>
-            <div className="text-gray-500">{wo.daysAgo} days ago</div>
-            <div>
-              <span className="font-medium">Resolution:</span> {wo.resolution}
-            </div>
-            <div>
-              <span className="font-medium">Time Taken:</span> {wo.timeTaken}{" "}
-              hours
-            </div>
-            {wo.partsUsed && (
-              <div>
-                <span className="font-medium">Parts Used:</span> {wo.partsUsed}
-              </div>
-            )}
-            {wo.notes && (
-              <div>
-                <span className="font-medium">Notes:</span> {wo.notes}
-              </div>
+                <DialogContent className="max-w-4xl">
+                  <DialogHeader>
+                    <DialogTitle>Work Order Details - {wo.id}</DialogTitle>
+                    <DialogDescription>
+                      Detailed maintenance information and history
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  {/* Detailed Work Order Information */}
+                  <WorkOrderDetails workOrder={wo} />
+                  
+                  <DialogFooter>
+                    <Button variant="outline" onClick={() => setSelectedWorkOrder(null)}>
+                      Close
+                    </Button>
+                    <Button>Export Details</Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             )}
           </div>
         ))}
@@ -125,7 +165,6 @@ const WorkOrderCard = ({ current, workOrders }) => {
     </div>
   );
 };
-
 const WorkOrderDetails = ({ workOrder }) => {
   return (
     <div className="space-y-6">
