@@ -129,6 +129,7 @@ const WorkOrderCard = ({ current, workOrders }) => {
 const WorkOrderDetails = ({ workOrder }) => {
   return (
     <div className="space-y-6">
+      {/* Current Issue Alert */}
       <div className="bg-blue-50 p-4 rounded-lg">
         <div className="flex items-center gap-2 mb-4">
           <ClipboardList className="w-5 h-5 text-blue-600" />
@@ -151,67 +152,95 @@ const WorkOrderDetails = ({ workOrder }) => {
               {workOrder.status}
             </span>
           </div>
+          <div>
+            <span className="text-gray-600">Location:</span>
+            <span className="ml-2 font-medium">{workOrder.location}</span>
+          </div>
+          <div>
+            <span className="text-gray-600">Technician:</span>
+            <span className="ml-2 font-medium">{workOrder.technician}</span>
+          </div>
         </div>
       </div>
 
-      <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              <Wrench className="w-4 h-4 text-gray-600" />
-              <h4 className="font-medium">Maintenance Details</h4>
-            </div>
-            <div className="space-y-2">
-              <div>
-                <span className="text-gray-600">Resolution:</span>
-                <p className="font-medium">{workOrder.resolution}</p>
-              </div>
-              <div>
-                <span className="text-gray-600">Time Taken:</span>
-                <p className="font-medium">{workOrder.timeTaken} hours</p>
-              </div>
-            </div>
+      {/* Maintenance Details & Parts */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="flex items-center gap-2 mb-2">
+            <Wrench className="w-4 h-4 text-gray-600" />
+            <h4 className="font-medium">Maintenance Details</h4>
           </div>
-
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              <Box className="w-4 h-4 text-gray-600" />
-              <h4 className="font-medium">Parts & Notes</h4>
+          <div className="space-y-2">
+            <div>
+              <span className="text-gray-600">Resolution:</span>
+              <p className="font-medium">{workOrder.resolution}</p>
             </div>
-            <div className="space-y-2">
-              {workOrder.partsUsed && (
-                <div>
-                  <span className="text-gray-600">Parts Used:</span>
-                  <p className="font-medium">{workOrder.partsUsed}</p>
-                </div>
-              )}
-              {workOrder.notes && (
-                <div>
-                  <span className="text-gray-600">Notes:</span>
-                  <p className="font-medium">{workOrder.notes}</p>
-                </div>
-              )}
+            <div>
+              <span className="text-gray-600">Time Taken:</span>
+              <p className="font-medium">{workOrder.timeTaken} hours</p>
+            </div>
+            <div>
+              <span className="text-gray-600">Tools Required:</span>
+              <p className="font-medium">{workOrder.toolsRequired}</p>
             </div>
           </div>
         </div>
 
-        <div className="p-4 bg-blue-50 rounded-lg">
+        <div className="p-4 bg-gray-50 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
-            <Calendar className="w-4 h-4 text-blue-600" />
-            <h4 className="font-medium">Timeline</h4>
+            <Box className="w-4 h-4 text-gray-600" />
+            <h4 className="font-medium">Parts & Notes</h4>
           </div>
           <div className="space-y-2">
-            <div>
-              <span className="text-gray-600">Created:</span>
-              <p className="font-medium">{workOrder.daysAgo} days ago</p>
-            </div>
-            {workOrder.completedDate && (
+            {workOrder.partsUsed && (
               <div>
-                <span className="text-gray-600">Completed:</span>
-                <p className="font-medium">{workOrder.completedDate}</p>
+                <span className="text-gray-600">Parts Used:</span>
+                <p className="font-medium">{workOrder.partsUsed}</p>
+              </div>
+            )}
+            {workOrder.notes && (
+              <div>
+                <span className="text-gray-600">Notes:</span>
+                <p className="font-medium">{workOrder.notes}</p>
               </div>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* Procedure Details */}
+      <div className="p-4 bg-gray-50 rounded-lg">
+        <div className="flex items-center gap-2 mb-4">
+          <ClipboardList className="w-4 h-4 text-gray-600" />
+          <h4 className="font-medium">Maintenance Procedure</h4>
+        </div>
+        <div className="space-y-2">
+          {workOrder.procedure?.map((step, index) => (
+            <div key={index} className="p-2 bg-white rounded flex gap-2">
+              <span className="text-gray-500">{index + 1}.</span>
+              <span>{step}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Timeline */}
+      <div className="p-4 bg-blue-50 rounded-lg">
+        <div className="flex items-center gap-2 mb-2">
+          <Calendar className="w-4 h-4 text-blue-600" />
+          <h4 className="font-medium">Timeline</h4>
+        </div>
+        <div className="space-y-2">
+          <div>
+            <span className="text-gray-600">Created:</span>
+            <p className="font-medium">{workOrder.daysAgo} days ago</p>
+          </div>
+          {workOrder.completedDate && (
+            <div>
+              <span className="text-gray-600">Completed:</span>
+              <p className="font-medium">{workOrder.completedDate}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -906,29 +935,54 @@ export default function FoodAndBeveragePage() {
 
   // Work order data
   const workOrderData = {
-    current: {
-      id: "2024-1211-0023",
-      description: "Motor Assembly - Line 2 (Vibration Issue)",
+  current: {
+    id: "2024-1211-0023",
+    description: "Motor Assembly - Line 2 (Vibration Issue)",
+  },
+  historical: [
+    {
+      id: "2024-0915-0187",
+      daysAgo: 86,
+      resolution: "Bearing replacement - Resolved excessive vibration in motor assembly",
+      timeTaken: 4.5,
+      partsUsed: "BK-2344 (Bearing Kit), ML-892 (Motor Lubricant)",
+      status: "Successful Fix",
+      location: "Line 2 - Motor Assembly",
+      technician: "Mike Johnson",
+      procedure: [
+        "Lock out/tag out machine",
+        "Remove motor housing cover",
+        "Replace worn bearings",
+        "Apply new lubricant",
+        "Reassemble housing",
+        "Test rotation and vibration"
+      ],
+      toolsRequired: "Torque wrench, Bearing puller, Alignment tools",
+      notes: "Follow-up vibration test after 24 hours showed normal levels",
+      completedDate: "2024-09-15"
     },
-    historical: [
-      {
-        id: "2024-0915-0187",
-        daysAgo: 86,
-        resolution: "Bearing replacement",
-        timeTaken: 4.5,
-        partsUsed: "BK-2344, ML-892",
-        status: "Successful Fix",
-      },
-      {
-        id: "2024-0602-0092",
-        daysAgo: 191,
-        resolution: "Alignment adjustment",
-        timeTaken: 2.0,
-        notes: "Required follow-up after 2 weeks",
-        status: "Temporary Fix",
-      },
-    ],
-  };
+    {
+      id: "2024-0602-0092",
+      daysAgo: 191,
+      resolution: "Alignment adjustment of motor shaft and coupling",
+      timeTaken: 2.0,
+      partsUsed: "Shaft coupling gasket SC-789",
+      status: "Temporary Fix",
+      location: "Line 2 - Drive System",
+      technician: "Sarah Chen",
+      procedure: [
+        "Check alignment measurements",
+        "Loosen mounting bolts",
+        "Adjust alignment",
+        "Retighten to spec",
+        "Test operation"
+      ],
+      toolsRequired: "Laser alignment tool, Torque wrench",
+      notes: "Required follow-up after 2 weeks - Schedule complete bearing replacement",
+      completedDate: "2024-06-02"
+    }
+  ]
+};
 
   // Exception alerts data
   const exceptionAlerts = [
