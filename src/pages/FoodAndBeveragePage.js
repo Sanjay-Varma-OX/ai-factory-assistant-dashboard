@@ -1429,7 +1429,7 @@ export default function FoodAndBeveragePage() {
         labor: 350,
         total: 350
       }
-    }
+    },
   ]
 };
 
