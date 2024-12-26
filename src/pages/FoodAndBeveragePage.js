@@ -206,82 +206,6 @@ const WorkOrderCard = ({ current, workOrders }) => {
     </div>
   );
 };
-const WorkOrderDetails = ({ workOrder }) => {
-  return (
-    <div className="space-y-6">
-      {/* Work Order Header */}
-      <div className="bg-blue-50 p-4 rounded-lg">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <ClipboardList className="w-5 h-5 text-blue-600" />
-            <h3 className="text-lg font-semibold">Work Order Details</h3>
-          </div>
-          <span 
-            className={`px-3 py-1 rounded-full text-sm ${
-              workOrder.status === "Successful Fix"
-                ? "bg-green-100 text-green-800"
-                : workOrder.status === "Temporary Fix"
-                ? "bg-yellow-100 text-yellow-800"
-                : "bg-blue-100 text-blue-800"
-            }`}
-          >
-            {workOrder.status}
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <span className="text-gray-600">Work Order #:</span>
-            <span className="ml-2 font-medium">{workOrder.id}</span>
-          </div>
-          <div>
-            <span className="text-gray-600">Priority:</span>
-            <span className="ml-2 font-medium">{workOrder.priority}</span>
-          </div>
-          <div>
-            <span className="text-gray-600">Location:</span>
-            <span className="ml-2 font-medium">{workOrder.location}</span>
-          </div>
-          <div>
-            <span className="text-gray-600">Technician:</span>
-            <span className="ml-2 font-medium">{workOrder.technician}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* PM Status Section */}
-      {workOrder.pmStatus && (
-        <div className="bg-white p-4 rounded-lg border">
-          <div className="flex items-center gap-2 mb-4">
-            <Calendar className="w-5 h-5 text-gray-600" />
-            <h3 className="text-lg font-semibold">Preventive Maintenance Status</h3>
-          </div>
- {/* Add the Inventory Section right after the header section */}
-      {workOrder.requiredParts && (
-        <InventorySection parts={workOrder.requiredParts} />
-      )}
-
-          {/* Last PM Service */}
-          <div className="mb-6">
-            <h4 className="font-medium mb-3">Last PM Service</h4>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <span className="text-gray-600">Date:</span>
-                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.date}</span>
-              </div>
-              <div>
-                <span className="text-gray-600">Hours:</span>
-                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.hours}</span>
-              </div>
-              <div>
-                <span className="text-gray-600">Work Order:</span>
-                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.workOrder}</span>
-              </div>
-              <div>
-                <span className="text-gray-600">Technician:</span>
-                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.technician}</span>
-              </div>
-            </div>
-          </div>
 const InventorySection = ({ parts }) => {
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [selectedPart, setSelectedPart] = useState(null);
@@ -389,6 +313,89 @@ const InventorySection = ({ parts }) => {
   );
 };
 
+
+
+const WorkOrderDetails = ({ workOrder }) => {
+  return (
+    <div className="space-y-6">
+      {/* Work Order Header */}
+      <div className="bg-blue-50 p-4 rounded-lg">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <ClipboardList className="w-5 h-5 text-blue-600" />
+            <h3 className="text-lg font-semibold">Work Order Details</h3>
+          </div>
+          <span 
+            className={`px-3 py-1 rounded-full text-sm ${
+              workOrder.status === "Successful Fix"
+                ? "bg-green-100 text-green-800"
+                : workOrder.status === "Temporary Fix"
+                ? "bg-yellow-100 text-yellow-800"
+                : "bg-blue-100 text-blue-800"
+            }`}
+          >
+            {workOrder.status}
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <span className="text-gray-600">Work Order #:</span>
+            <span className="ml-2 font-medium">{workOrder.id}</span>
+          </div>
+          <div>
+            <span className="text-gray-600">Priority:</span>
+            <span className="ml-2 font-medium">{workOrder.priority}</span>
+          </div>
+          <div>
+            <span className="text-gray-600">Location:</span>
+            <span className="ml-2 font-medium">{workOrder.location}</span>
+          </div>
+          <div>
+            <span className="text-gray-600">Technician:</span>
+            <span className="ml-2 font-medium">{workOrder.technician}</span>
+          </div>
+        </div>
+      </div>
+{/* Required Parts & Inventory Section */}
+      {workOrder.requiredParts && (
+        <InventorySection parts={workOrder.requiredParts} />
+      )}
+
+
+      {/* PM Status Section */}
+      {workOrder.pmStatus && (
+        <div className="bg-white p-4 rounded-lg border">
+          <div className="flex items-center gap-2 mb-4">
+            <Calendar className="w-5 h-5 text-gray-600" />
+            <h3 className="text-lg font-semibold">Preventive Maintenance Status</h3>
+          </div>
+ {/* Add the Inventory Section right after the header section */}
+      {workOrder.requiredParts && (
+        <InventorySection parts={workOrder.requiredParts} />
+      )}
+
+          {/* Last PM Service */}
+          <div className="mb-6">
+            <h4 className="font-medium mb-3">Last PM Service</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <span className="text-gray-600">Date:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.date}</span>
+              </div>
+              <div>
+                <span className="text-gray-600">Hours:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.hours}</span>
+              </div>
+              <div>
+                <span className="text-gray-600">Work Order:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.workOrder}</span>
+              </div>
+              <div>
+                <span className="text-gray-600">Technician:</span>
+                <span className="ml-2 font-medium">{workOrder.pmStatus.lastService.technician}</span>
+              </div>
+            </div>
+          </div>
 
           {/* Next PM Service */}
           <div className="bg-blue-50 p-4 rounded-lg">
