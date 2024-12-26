@@ -1390,34 +1390,33 @@ export default function FoodAndBeveragePage() {
         }
       },
       requiredParts: [
-      {
-        id: "IMP-2024-X789",
-        name: "Chocolate Pump Impeller",
-        location: "Aisle D, Bin 15-C, Shelf 3",
-        inStock: 2,
-        minimumStock: 3,
-        reorderPoint: 2,
-        supplier: "ChocMach Industries",
-        partCost: 450,
-        leadTime: "5-7 days",
-        lastOrdered: "2024-11-15",
-        orderQuantity: 5
-      },
-      {
-        id: "BRG-2024-A456",
-        name: "High-Temp Bearing Assembly",
-        location: "Aisle B, Bin 08-A, Shelf 2",
-        inStock: 0,
-        minimumStock: 4,
-        reorderPoint: 2,
-        supplier: "BearingTech Solutions",
-        partCost: 275,
-        leadTime: "3-4 days",
-        lastOrdered: "2024-12-01",
-        orderQuantity: 6
-      }
-    ]
-  },
+        {
+          id: "IMP-2024-X789",
+          name: "Chocolate Pump Impeller",
+          location: "Aisle D, Bin 15-C, Shelf 3",
+          inStock: 2,
+          minimumStock: 3,
+          reorderPoint: 2,
+          supplier: "ChocMach Industries",
+          partCost: 450,
+          leadTime: "5-7 days",
+          lastOrdered: "2024-11-15",
+          orderQuantity: 5
+        },
+        {
+          id: "BRG-2024-A456",
+          name: "High-Temp Bearing Assembly",
+          location: "Aisle B, Bin 08-A, Shelf 2",
+          inStock: 0,
+          minimumStock: 4,
+          reorderPoint: 2,
+          supplier: "BearingTech Solutions",
+          partCost: 275,
+          leadTime: "3-4 days",
+          lastOrdered: "2024-12-01",
+          orderQuantity: 6
+        }
+      ],
       diagnostics: {
         systemVersion: "2.1.5",
         temperatureAccuracy: "±0.2°C",
@@ -1429,10 +1428,9 @@ export default function FoodAndBeveragePage() {
         labor: 350,
         total: 350
       }
-    },
+    }
   ]
 };
-
   // Exception alerts data
   const exceptionAlerts = [
     {
