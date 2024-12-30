@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
+import FactoryDemo from './pages/FactoryDemo.js';
 import FoodAndBeveragePage from './pages/FoodAndBeveragePage';
 import Footer from './components/Footer';
 
@@ -15,8 +16,8 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/factory" element={<LandingPage />} />
-            <Route path="/food_and_beverage" element={<FoodAndBeveragePage />} />
+            <Route path="/factory_demo" element={<FactoryDemo />} />
+            // <Route path="/food_and_beverage" element={<FoodAndBeveragePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
