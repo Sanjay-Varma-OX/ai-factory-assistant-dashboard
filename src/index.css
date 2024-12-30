@@ -23,15 +23,24 @@ body {
   background: rgba(0, 0, 0, 0.6); /* Add a background dim if needed */
 }
 
-/* Ensure the Calendly popup is centered and responsive */
 .calendly-popup {
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 100% !important;
-  max-width: 600px !important; /* Set max width for responsiveness */
-  z-index: 10000 !important;
+  max-height: 80vh !important; /* Limit popup height to 80% of the viewport */
+  overflow-y: auto !important; /* Add vertical scrolling if content exceeds height */
+  border-radius: 10px !important; /* Add a smooth border radius for better appearance */
+  background-color: #ffffff !important; /* Ensure a white background for the popup */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important; /* Add shadow for depth */
+}
+
+
+/* Ensure the close button is visible */
+.calendly-popup .calendly-close {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  cursor: pointer !important;
+  font-size: 24px !important;
+  color: #000 !important;
+  z-index: 10001 !important;
 }
 
 /* Prevent body from interfering with the popup */
