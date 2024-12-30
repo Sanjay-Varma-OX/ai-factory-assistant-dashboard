@@ -97,17 +97,22 @@ const HomePage = () => {
           <p className="text-2xl mb-8">Revolutionizing maintenance with artificial intelligence</p>
           <p className="text-xl mb-12">Predictive maintenance, real-time monitoring, and intelligent optimization for all industries</p>
           <div className="flex justify-center gap-4">
-            <button
-    className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-    onClick={() => {
-      Calendly.initPopupWidget({
+           <button
+  className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+  onClick={() => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
         url: 'https://calendly.com/oxmaintapp/30min',
       });
-      return false;
-    }}
-  >
-    Request Demo
-  </button>
+    } else {
+      console.error('Calendly is not defined.');
+    }
+    return false;
+  }}
+>
+  Request Demo
+</button>
+
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
               Learn More
             </button>
@@ -161,14 +166,19 @@ const HomePage = () => {
   to="#"
   className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block"
   onClick={(e) => {
-    e.preventDefault(); // Prevent default navigation
-    Calendly.initPopupWidget({
-      url: 'https://calendly.com/oxmaintapp/30min',
-    });
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/oxmaintapp/30min',
+      });
+    } else {
+      console.error('Calendly is not defined.');
+    }
   }}
 >
   Try Factory Demo
 </Link>
+
 
         </div>
       </section>
