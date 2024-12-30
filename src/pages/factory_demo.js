@@ -1767,9 +1767,13 @@ export default function FoodAndBeveragePage() {
     <div className="container mx-auto px-4 py-8">
       {/* Header and Time Filter */}
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">
-          Food & Beverage Analytics Dashboard
-        </h1>
+       <button
+  className="text-xl font-bold py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
+  onClick={() => window.location.href = 'https://oxmaint.ai'}
+>
+  ← Back to Home Page
+</button>
+
         {/* Update the time filter buttons section */}
         <div className="flex gap-4">
           {["All", "1M", "3M", "6M"].map((filter) => (
