@@ -11,15 +11,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure the Calendly overlay is positioned correctly */
+/* Ensure the Calendly overlay takes full screen */
 .calendly-overlay {
   display: block !important;
   position: fixed !important;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999; /* Make sure it appears above everything */
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 9999 !important; /* Ensure it appears above everything */
+  background: rgba(0, 0, 0, 0.6); /* Add a background dim if needed */
+}
+
+/* Ensure the Calendly popup is centered and responsive */
+.calendly-popup {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100% !important;
+  max-width: 600px !important; /* Set max width for responsiveness */
+  z-index: 10000 !important;
 }
 
 /* Prevent body from interfering with the popup */
