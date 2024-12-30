@@ -101,18 +101,18 @@ const HomePage = () => {
   className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
   onClick={() => {
     if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
-      // Remove overflow: hidden from body
-      document.body.style.overflow = 'auto';
-      
+      // Temporarily adjust body styles
+      document.body.style.overflow = 'visible';
+
       console.log('Calendly widget is being opened.');
       window.Calendly.initPopupWidget({
         url: 'https://calendly.com/oxmaintapp/30min',
       });
 
-      // Optionally reset the overflow after some time
+      // Reset the overflow after the popup is invoked
       setTimeout(() => {
         document.body.style.overflow = 'hidden';
-      }, 10000); // Reset overflow after 5 seconds
+      }, 500);
     } else {
       console.error('Calendly is not defined or the function is unavailable.');
     }
@@ -121,6 +121,7 @@ const HomePage = () => {
 >
   Request Demo
 </button>
+
 
 
 
