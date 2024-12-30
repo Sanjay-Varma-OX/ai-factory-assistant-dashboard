@@ -101,26 +101,26 @@ const HomePage = () => {
   className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
   onClick={() => {
     if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
-      // Temporarily adjust body styles
-      document.body.style.overflow = 'visible';
+      // Add class to prevent scrolling
+      document.body.classList.add('calendly-overlay-open');
 
-      console.log('Calendly widget is being opened.');
+      console.log('Opening Calendly popup...');
       window.Calendly.initPopupWidget({
         url: 'https://calendly.com/oxmaintapp/30min',
+        onClose: () => {
+          // Remove class when the popup is closed
+          document.body.classList.remove('calendly-overlay-open');
+        },
       });
-
-      // Reset the overflow after the popup is invoked
-      setTimeout(() => {
-        document.body.style.overflow = 'hidden';
-      }, 500);
     } else {
-      console.error('Calendly is not defined or the function is unavailable.');
+      console.error('Calendly is not defined.');
     }
     return false;
   }}
 >
   Request Demo
 </button>
+
 
 
 
