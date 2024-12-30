@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIndustry, faBuilding, faTools, faCar, faHospital, faGraduationCap, faStore, faUtensils, faHardHat, faPlane, faTruck, faLaptop } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const IndustryCard = ({ icon, title, description, link }) => (
-  <Link to={link} className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl">
+const IndustryCard = ({ icon, title, description }) => (
+  <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer">
     <FontAwesomeIcon icon={icon} className="text-4xl text-blue-600 mb-4" />
     <h3 className="text-xl font-semibold mb-4">{title}</h3>
     <p className="text-gray-600">{description}</p>
-  </Link>
+  </div>
 );
+
 
 const HomePage = () => {
   const industries = [
@@ -96,9 +97,17 @@ const HomePage = () => {
           <p className="text-2xl mb-8">Revolutionizing maintenance with artificial intelligence</p>
           <p className="text-xl mb-12">Predictive maintenance, real-time monitoring, and intelligent optimization for all industries</p>
           <div className="flex justify-center gap-4">
-            <button className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-              Request Demo
-            </button>
+            <button
+    className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+    onClick={() => {
+      Calendly.initPopupWidget({
+        url: 'https://calendly.com/oxmaintapp/30min',
+      });
+      return false;
+    }}
+  >
+    Request Demo
+  </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
               Learn More
             </button>
@@ -148,9 +157,19 @@ const HomePage = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Maintenance Operations?</h2>
           <p className="text-xl mb-8">Schedule a demo to see how Oxmaint AI can help your organization</p>
-          <Link to="/factory" className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block">
-            Try Factory Demo
-          </Link>
+          <Link
+  to="#"
+  className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block"
+  onClick={(e) => {
+    e.preventDefault(); // Prevent default navigation
+    Calendly.initPopupWidget({
+      url: 'https://calendly.com/oxmaintapp/30min',
+    });
+  }}
+>
+  Try Factory Demo
+</Link>
+
         </div>
       </section>
     </div>
