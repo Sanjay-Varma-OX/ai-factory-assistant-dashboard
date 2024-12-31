@@ -17,57 +17,52 @@ const openCalendlyModal = () => {
     return;
   }
 
-  // Add class to body to prevent scrolling
+  // Add class to body
   document.body.classList.add('modal-open');
 
   // Initialize Calendly popup
   window.Calendly.initPopupWidget({
     url: 'https://calendly.com/oxmaintapp/30min',
     onClose: () => {
-      document.body.classList.remove('modal-open');
-      const customCloseBtn = document.querySelector('.custom-close-button');
-      if (customCloseBtn) {
-        customCloseBtn.remove();
-      }
-      // Re-enable pointer events on body
-      document.body.style.pointerEvents = 'auto';
-      // Remove any remaining overlays
-      const overlay = document.querySelector('.calendly-overlay');
-      if (overlay) {
-        overlay.remove();
-      }
+      closeModal();
     }
   });
 
-  // Add custom close button
-  setTimeout(() => {
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'custom-close-button';
-    closeBtn.innerHTML = '×';
-    closeBtn.onclick = () => {
-      // Remove the Calendly widget
-      const overlay = document.querySelector('.calendly-overlay');
-      if (overlay) {
-        overlay.remove();
-      }
-      // Remove modal-open class
-      document.body.classList.remove('modal-open');
-      // Remove close button
-      closeBtn.remove();
-      // Re-enable pointer events
-      document.body.style.pointerEvents = 'auto';
-    };
-    document.body.appendChild(closeBtn);
-  }, 100);
+  // Create and add custom close button
+  const closeBtn = document.createElement('button');
+  closeBtn.id = 'custom-close-btn';
+  closeBtn.innerHTML = '×';
+  closeBtn.onclick = closeModal;
+  document.body.appendChild(closeBtn);
+};
 
-  // Ensure close button stays on top and background is disabled
-  setTimeout(() => {
-    const closeBtn = document.querySelector('.custom-close-button');
-    if (closeBtn) {
-      closeBtn.style.zIndex = '999999';
-    }
-    document.body.style.pointerEvents = 'none';
-  }, 200);
+const closeModal = () => {
+  // Remove the modal-open class
+  document.body.classList.remove('modal-open');
+  
+  // Remove the Calendly overlay
+  const overlay = document.querySelector('.calendly-overlay');
+  if (overlay) {
+    overlay.remove();
+  }
+  
+  // Remove any Calendly popup
+  const popup = document.querySelector('.calendly-popup');
+  if (popup) {
+    popup.remove();
+  }
+  
+  // Remove our custom close button
+  const closeBtn = document.getElementById('custom-close-btn');
+  if (closeBtn) {
+    closeBtn.remove();
+  }
+  
+  // Re-enable pointer events
+  document.body.style.pointerEvents = 'auto';
+  
+  // Remove any inline styles that might have been added
+  document.body.style.removeProperty('filter');
 };
 
 const HomePage = () => {
