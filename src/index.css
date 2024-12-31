@@ -82,12 +82,20 @@ body {
   background: #f8f8f8 !important;
 }
 
-/* Prevent background interaction */
-body.modal-open {
-  overflow: hidden !important;
+/* Industry Card styles */
+.industry-card {
+  min-height: 220px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-body.modal-open > *:not(.calendly-overlay):not(.calendly-popup):not(#custom-close-btn) {
-  pointer-events: none !important;
+/* Prevent background interaction when modal is open */
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-open > *:not(.calendly-overlay):not(.calendly-popup):not(#custom-close-btn) {
   filter: blur(5px);
+  pointer-events: none;
 }
