@@ -34,15 +34,16 @@ const initCalendly = () => {
 
     // Add custom close button
     setTimeout(() => {
-  const popup = document.querySelector('.calendly-popup');
-  if (popup && !document.querySelector('.calendly-popup-close')) {
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'calendly-popup-close';
-    closeBtn.innerHTML = '✕'; // Using a better X symbol
-    closeBtn.onclick = cleanup;
-    popup.appendChild(closeBtn); // Append to popup instead of body
-  }
-}, 100);
+      const popup = document.querySelector('.calendly-popup');
+      if (popup && !document.querySelector('.calendly-popup-close')) {
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'calendly-popup-close';
+        closeBtn.innerHTML = '✕';  // Using a better X symbol
+        closeBtn.onclick = cleanup;
+        popup.appendChild(closeBtn);  // Append to popup instead of body
+      }
+    }, 100);
+  }, 100);
 };
 
 const openCalendlyModal = () => {
