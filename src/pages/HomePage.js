@@ -34,15 +34,14 @@ const initCalendly = () => {
       onClose: cleanup
     });
 
-    // Add custom close button
+    // Add custom close button with delay to ensure Calendly is loaded
     setTimeout(() => {
-      const popup = document.querySelector('.calendly-popup');
-      if (popup && !document.querySelector('.calendly-popup-close')) {
+      if (!document.querySelector('.calendly-popup-close')) {
         const closeBtn = document.createElement('button');
         closeBtn.className = 'calendly-popup-close';
         closeBtn.innerHTML = '✕';  // Using a better X symbol
-        closeBtn.onclick = cleanup;
-        popup.appendChild(closeBtn);  // Append to popup instead of body
+        closeBtn.addEventListener('click', cleanup);
+        document.body.appendChild(closeBtn);
       }
     }, 100);
   }, 100);
