@@ -13,24 +13,24 @@ import {
 
 const FeatureCard = ({ icon, title, description, highlights }) => (
   <div className="bg-white text-black backdrop-blur-lg rounded-xl p-6 hover:bg-gray-100 transition-all duration-300">
-    <div className="flex items-center mb-4">
-      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
-        <FontAwesomeIcon icon={icon} className="text-xl text-white" />
-      </div>
-      <h3 className="text-xl font-bold">{title}</h3>
+  <div className="flex items-center mb-4">
+    <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+      <FontAwesomeIcon icon={icon} className="text-xl text-white" />
     </div>
-    <p className="text-blue-100 mb-4">{description}</p>
-    {highlights && (
-      <ul className="space-y-2">
-        {highlights.map((highlight, index) => (
-          <li key={index} className="flex items-center text-sm text-blue-200">
-            <span className="mr-2">•</span>
-            {highlight}
-          </li>
-        ))}
-      </ul>
-    )}
+    <h3 className="text-xl font-bold">{title}</h3>
   </div>
+  <p className="mb-4">{description}</p>
+  {highlights && (
+    <ul className="space-y-2">
+      {highlights.map((highlight, index) => (
+        <li key={index} className="flex items-center text-sm">
+          <span className="mr-2">•</span>
+          {highlight}
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
 );
 
 const FeaturesPage = () => {
