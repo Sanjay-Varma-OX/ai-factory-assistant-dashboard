@@ -30,22 +30,26 @@ const openCalendlyModal = () => {
     }
   });
 
-  // Add custom close button after a short delay to ensure Calendly is loaded
+  // Wait for Calendly to load and add custom close button
   setTimeout(() => {
-    const existingCloseBtn = document.querySelector('.calendly-popup-close');
-    if (!existingCloseBtn) {
+    if (!document.querySelector('.calendly-popup-close')) {
+      // Create custom close button
       const closeBtn = document.createElement('button');
       closeBtn.className = 'calendly-popup-close';
       closeBtn.innerHTML = '×';
       closeBtn.onclick = () => {
+        // Remove overlay class
         document.body.classList.remove('calendly-overlay-open');
+        // Remove Calendly overlay
         const overlay = document.querySelector('.calendly-overlay');
         if (overlay) overlay.remove();
+        // Remove close button
         closeBtn.remove();
       };
+      // Add button to body
       document.body.appendChild(closeBtn);
     }
-  }, 500);
+  }, 1000);
 };
 
 const HomePage = () => {
