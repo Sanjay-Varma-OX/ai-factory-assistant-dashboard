@@ -16,69 +16,58 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
-const initCalendly = () => {
-  // Wait for any existing instances to be fully removed
-  const cleanup = () => {
-    // Remove all existing Calendly elements
-    const elements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
-    elements.forEach(el => el.remove());
-    
-    // Reset body styles
-    document.body.style.overflow = 'auto';
-    document.body.style.pointerEvents = 'auto';
-  };
-
-  // Create close button
-  const createCloseButton = () => {
-    // Only create if it doesn't exist
-    if (!document.querySelector('.calendly-close-indicator')) {
-      const closeBtn = document.createElement('div');
-      closeBtn.className = 'calendly-close-indicator';
-      closeBtn.innerHTML = `
-        <span class="close-text">Close Meeting</span>
-        <span class="close-icon">✕</span>
-      `;
-      closeBtn.onclick = cleanup;
-      document.body.appendChild(closeBtn);
-    }
-  };
-
-  // Main initialization
-  const initialize = () => {
-    // Ensure Calendly exists
-    if (typeof window.Calendly !== 'undefined') {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/oxmaintapp/30min',
-        onClose: cleanup
-      });
-      
-      // Add close button after a short delay
-      setTimeout(createCloseButton, 300);
-    }
-  };
-
-  // First cleanup, then initialize after a delay
-  cleanup();
-  setTimeout(initialize, 500);
-};
+let isCalendlyOpen = false;
 
 const openCalendlyModal = () => {
-  // Check if Calendly is loaded
-  if (typeof window.Calendly === 'undefined') {
-    console.error('Calendly is not loaded');
-    return;
-  }
+    // If Calendly is already open or not loaded, don't proceed
+    if (isCalendlyOpen || !window.Calendly) {
+        return;
+    }
 
-  // Remove any existing instances and initialize new one
-  const elements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
-  elements.forEach(el => el.remove());
+    // Function to clean up Calendly elements
+    const cleanupCalendly = () => {
+        const elements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
+        elements.forEach(el => {
+            if (el && el.parentElement) {
+                el.parentElement.removeChild(el);
+            }
+        });
+        document.body.style.overflow = 'auto';
+        isCalendlyOpen = false;
+    };
 
-  // Reset body styles
-  document.body.style.overflow = 'auto';
-  document.body.style.pointerEvents = 'auto';
+    // Clean up any existing instances
+    cleanupCalendly();
 
-  // Initialize new instance after a short delay
-  setTimeout(initCalendly, 300);
+    // Set flag and initialize
+    isCalendlyOpen = true;
+
+    // Initialize Calendly with minimal configuration
+    window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/oxmaintapp/30min',
+        onClose: () => {
+            cleanupCalendly();
+            const closeButton = document.querySelector('.calendly-close-indicator');
+            if (closeButton) closeButton.remove();
+        }
+    });
+
+    // Add close button after Calendly is initialized
+    setTimeout(() => {
+        if (!document.querySelector('.calendly-close-indicator')) {
+            const closeButton = document.createElement('div');
+            closeButton.className = 'calendly-close-indicator';
+            closeButton.innerHTML = `
+                <span class="close-text">Close Meeting</span>
+                <span class="close-icon">✕</span>
+            `;
+            closeButton.onclick = () => {
+                cleanupCalendly();
+                closeButton.remove();
+            };
+            document.body.appendChild(closeButton);
+        }
+    }, 100);
 };
 
 const HomePage = () => {
