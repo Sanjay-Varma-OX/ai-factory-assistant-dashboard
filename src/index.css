@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,12 +10,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* Calendly specific styles */
 .calendly-inline-widget {
   position: relative !important;
   min-width: 320px !important;
   height: 100% !important;
 }
+
 .calendly-overlay {
   position: fixed !important;
   top: 0 !important;
@@ -24,6 +27,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7) !important;
   z-index: 9999 !important;
 }
+
 .calendly-popup {
   position: fixed !important;
   top: 50% !important;
@@ -35,18 +39,21 @@ body {
   background: white !important;
   border-radius: 8px !important;
   z-index: 10000 !important;
-  overflow: visible !important; / Changed to visible to show the close button /
+  overflow: visible !important; /* Changed to visible to show the close button */
   padding: 0 !important;
 }
+
 .calendly-popup iframe {
   width: 100% !important;
   height: 100% !important;
   border: none !important;
 }
+
 .calendly-popup-content {
   height: 100% !important;
   width: 100% !important;
 }
+
 .calendly-popup-close {
   position: fixed !important;
   top: 20px !important;
@@ -66,18 +73,22 @@ body {
   padding: 0 !important;
   margin: 0 !important;
 }
+
 .calendly-popup-close .fas {
   font-size: 20px !important;
   color: #333 !important;
 }
+
 .calendly-popup-close:hover {
   transform: scale(1.1) !important;
   background: #f8f8f8 !important;
 }
+
 .calendly-popup-close:hover .fas {
   color: #666 !important;
 }
-/ Industry Card Styles /
+
+/* Industry Card Styles */
 .industry-card {
   height: 100% !important;
   min-height: 240px !important;
@@ -86,16 +97,20 @@ body {
   justify-content: flex-start !important;
   padding: 1.5rem !important;
 }
+
 .industry-card-icon {
   margin-bottom: 1rem !important;
 }
+
 .industry-card-title {
   margin-bottom: 1rem !important;
   font-weight: 600 !important;
 }
+
 .industry-card-description {
   flex-grow: 1 !important;
 }
+
 .calendly-close-indicator {
   position: fixed !important;
   top: 10px !important;
@@ -108,24 +123,27 @@ body {
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
-  z-index: 100001 !important; / Ensure this is higher than Calendly's modal /
+  z-index: 100001 !important; /* Ensure this is higher than Calendly's modal */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
   font-size: 18px !important;
   font-weight: bold !important;
   color: #333 !important;
   line-height: 1 !important;
-  border: 1px solid #ddd !important; / Optional: To make the button more defined /
+  border: 1px solid #ddd !important; /* Optional: To make the button more defined */
 }
+
 .calendly-close-indicator::before {
-  content: "×"; / Unicode for the 'X' symbol /
-  font-size: 24px !important; / Adjust font size for better visibility */
+  content: "×"; /* Unicode for the 'X' symbol */
+  font-size: 24px !important; /* Adjust font size for better visibility */
   font-weight: bold !important;
   color: #333 !important;
 }
+
 .calendly-close-indicator:hover {
   transform: scale(1.1) !important;
   background: #f8f8f8 !important;
 }
+
 .calendly-close-indicator:hover::before {
   color: #666 !important;
 }
