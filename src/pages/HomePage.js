@@ -11,6 +11,42 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
+const openCalendlyModal = () => {
+  if (!window.Calendly) {
+    console.error('Calendly is not loaded');
+    return;
+  }
+
+  // Add class to body to prevent scrolling
+  document.body.classList.add('calendly-overlay-open');
+
+  // Initialize Calendly popup
+  window.Calendly.initPopupWidget({
+    url: 'https://calendly.com/oxmaintapp/30min',
+    onClose: () => {
+      document.body.classList.remove('calendly-overlay-open');
+      const closeBtn = document.querySelector('.calendly-popup-close');
+      if (closeBtn) closeBtn.remove();
+    }
+  });
+
+  // Add custom close button after a short delay to ensure Calendly is loaded
+  setTimeout(() => {
+    const existingCloseBtn = document.querySelector('.calendly-popup-close');
+    if (!existingCloseBtn) {
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'calendly-popup-close';
+      closeBtn.innerHTML = '×';
+      closeBtn.onclick = () => {
+        document.body.classList.remove('calendly-overlay-open');
+        const overlay = document.querySelector('.calendly-overlay');
+        if (overlay) overlay.remove();
+        closeBtn.remove();
+      };
+      document.body.appendChild(closeBtn);
+    }
+  }, 500);
+};
 
 const HomePage = () => {
   const industries = [
@@ -97,41 +133,12 @@ const HomePage = () => {
           <p className="text-2xl mb-8">Revolutionizing maintenance with artificial intelligence</p>
           <p className="text-xl mb-12">Predictive maintenance, real-time monitoring, and intelligent optimization for all industries</p>
           <div className="flex justify-center gap-4">
-        <button
-  className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-  onClick={() => {
-    if (window.Calendly && typeof window.Calendly.initPopupWidget === "function") {
-      // Add the overlay class to body
-      document.body.classList.add("calendly-overlay-open");
-
-      // Open Calendly popup
-      window.Calendly.initPopupWidget({
-        url: "https://calendly.com/oxmaintapp/30min",
-      });
-
-      // Inject a close button
-      setTimeout(() => {
-        const calendlyModal = document.querySelector(".calendly-popup");
-        if (calendlyModal && !document.querySelector(".calendly-popup-close")) {
-          const closeButton = document.createElement("button");
-          closeButton.innerHTML = "&#x2715;"; // X symbol
-          closeButton.className = "calendly-popup-close";
-          closeButton.onclick = () => {
-            document.body.classList.remove("calendly-overlay-open");
-            calendlyModal.remove(); // Remove Calendly modal
-          };
-          calendlyModal.appendChild(closeButton);
-        }
-      }, 1000); // Wait for Calendly modal to render
-    } else {
-      console.error("Calendly is not defined.");
-    }
-  }}
->
-  Request Demo
-</button>
-
-
+            <button
+              className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              onClick={openCalendlyModal}
+            >
+              Request Demo
+            </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
               Learn More
             </button>
@@ -170,7 +177,9 @@ const HomePage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {industries.map((industry, index) => (
-              <IndustryCard key={index} {...industry} />
+              <Link key={index} to={industry.link}>
+                <IndustryCard {...industry} />
+              </Link>
             ))}
           </div>
         </div>
@@ -181,24 +190,12 @@ const HomePage = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Maintenance Operations?</h2>
           <p className="text-xl mb-8">Schedule a demo to see how Oxmaint AI can help your organization</p>
-          <Link
-  to="#"
-  className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block"
-  onClick={(e) => {
-    e.preventDefault();
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/oxmaintapp/30min',
-      });
-    } else {
-      console.error('Calendly is not defined.');
-    }
-  }}
->
-  Try Factory Demo
-</Link>
-
-
+          <button
+            className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            onClick={openCalendlyModal}
+          >
+            Try Factory Demo
+          </button>
         </div>
       </section>
     </div>
