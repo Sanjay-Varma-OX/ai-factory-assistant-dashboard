@@ -101,34 +101,6 @@ const openCalendlyModal = () => {
   }
 };
 
-
-const openCalendlyModal = () => {
-  if (!window.Calendly) {
-    console.error('Calendly is not loaded');
-    return;
-  }
-
-  try {
-    initCalendly();
-  } catch (error) {
-    console.error('Error opening Calendly modal:', error);
-
-    // Cleanup on error
-    const elementsToRemove = document.querySelectorAll(
-      '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
-    );
-    elementsToRemove.forEach((el) => {
-      try {
-        el.parentNode.removeChild(el);
-      } catch (error) {
-        console.warn('Error during error cleanup:', error);
-      }
-    });
-    document.body.style.overflow = 'auto';
-  }
-};
-
-
 const HomePage = () => {
   const industries = [
     {
