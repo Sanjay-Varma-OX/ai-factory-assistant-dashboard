@@ -19,7 +19,7 @@ const IndustryCard = ({ icon, title, description }) => (
 const initCalendly = () => {
   // Cleanup function
   const cleanup = () => {
-    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
     elementsToRemove.forEach(el => {
       try {
         el?.parentNode?.removeChild(el); // Ensure the element exists before trying to remove it
@@ -27,7 +27,6 @@ const initCalendly = () => {
         console.warn('Error during cleanup:', error);
       }
     });
-
     // Reset body styles
     document.body.style.overflow = 'auto';
   };
@@ -43,6 +42,24 @@ const initCalendly = () => {
         cleanup();
       },
     });
+
+    // Add close button after a small delay to ensure Calendly is loaded
+    setTimeout(() => {
+      if (!document.querySelector('.calendly-close-indicator')) {
+        const closeButton = document.createElement('div');
+        closeButton.className = 'calendly-close-indicator';
+        closeButton.innerHTML = `
+          <span class="close-text">Close Meeting</span>
+          <span class="close-icon">✕</span>
+        `;
+        closeButton.onclick = () => {
+          cleanup();
+          // Force re-enable body interactions
+          document.body.style.pointerEvents = 'auto';
+        };
+        document.body.appendChild(closeButton);
+      }
+    }, 100);
   } catch (error) {
     console.error('Error initializing Calendly:', error);
     cleanup();
@@ -54,14 +71,12 @@ const openCalendlyModal = () => {
     console.error('Calendly is not loaded');
     return;
   }
-
   try {
     initCalendly();
   } catch (error) {
     console.error('Error opening Calendly modal:', error);
-
     // Cleanup in case of error
-    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
     elementsToRemove.forEach(el => {
       try {
         el?.parentNode?.removeChild(el); // Ensure safe removal
