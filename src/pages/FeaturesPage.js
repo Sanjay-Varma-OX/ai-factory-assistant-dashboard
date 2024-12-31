@@ -126,7 +126,7 @@ const FeaturesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-900">
+    <div className="min-h-screen bg-gradient-to-r from-blue-800 to-blue-600">
       {/* Hero Section */}
       <div className="relative pt-24 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
