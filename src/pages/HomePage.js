@@ -97,40 +97,48 @@ const HomePage = () => {
           <p className="text-2xl mb-8">Revolutionizing maintenance with artificial intelligence</p>
           <p className="text-xl mb-12">Predictive maintenance, real-time monitoring, and intelligent optimization for all industries</p>
           <div className="flex justify-center gap-4">
-          <button
+         <button
   className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
   onClick={() => {
-    if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
-      // Add class to prevent background scrolling
-      document.body.style.overflow = 'hidden';
+    if (window.Calendly && typeof window.Calendly.initPopupWidget === "function") {
+      // Prevent scrolling in the background
+      document.body.style.overflow = "hidden";
 
-      console.log('Opening Calendly popup...');
+      // Open the Calendly popup
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/oxmaintapp/30min',
+        url: "https://calendly.com/oxmaintapp/30min",
       });
 
-      // Restore scrolling when the popup is closed
-      const restoreScrolling = () => {
-        document.body.style.overflow = 'auto';
-      };
-
-      // Listen for popup close event
+      // Inject close button after a short delay
       setTimeout(() => {
-        restoreScrolling();
-      }, 500); // Optional fallback
+        const calendlyPopup = document.querySelector(".calendly-popup");
+        if (calendlyPopup && !document.querySelector(".calendly-popup-close")) {
+          const closeButton = document.createElement("button");
+          closeButton.innerHTML = "&#x2715;"; // X symbol
+          closeButton.className = "calendly-popup-close";
+          closeButton.style.position = "absolute";
+          closeButton.style.top = "15px";
+          closeButton.style.right = "15px";
+          closeButton.style.fontSize = "24px";
+          closeButton.style.background = "none";
+          closeButton.style.border = "none";
+          closeButton.style.cursor = "pointer";
+          closeButton.style.zIndex = "10001";
+          closeButton.onclick = () => {
+            document.body.style.overflow = "auto";
+            calendlyPopup.remove(); // Remove popup
+          };
+          calendlyPopup.appendChild(closeButton);
+        }
+      }, 1000); // Delay to ensure Calendly widget has loaded
     } else {
-      console.error('Calendly is not defined.');
+      console.error("Calendly is not defined.");
     }
     return false;
   }}
 >
   Request Demo
 </button>
-
-
-
-
-
 
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
               Learn More
