@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import FactoryDemo from './pages/FactoryDemo.js';
-//import FoodAndBeveragePage from './pages/FoodAndBeveragePage';
+import BenefitsPage from './pages/BenefitsPage';
+import FeaturesPage from './pages/FeaturesPage';
 import Footer from './components/Footer';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/factory_demo" element={<FactoryDemo />} />
+            <Route path="/benefits" element={<BenefitsPage />} />
+            <Route path="/features" element={<FeaturesPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
