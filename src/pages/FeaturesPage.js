@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const FeatureCard = ({ icon, title, description, highlights }) => (
-  <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300">
+  <div className="bg-white text-black backdrop-blur-lg rounded-xl p-6 hover:bg-gray-100 transition-all duration-300">
     <div className="flex items-center mb-4">
       <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
         <FontAwesomeIcon icon={icon} className="text-xl text-white" />
