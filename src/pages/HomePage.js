@@ -17,82 +17,68 @@ const IndustryCard = ({ icon, title, description }) => (
 );
 
 const initCalendly = () => {
-  // Define cleanup function
-  const cleanup = () => {
-    try {
-      // First remove our custom elements
-      const customElements = document.querySelector('.calendly-close-indicator');
-      if (customElements) {
-        customElements.remove();
-      }
-
-      // Then remove Calendly elements safely
-      const calendlyElements = document.querySelectorAll('.calendly-overlay, .calendly-popup');
-      calendlyElements.forEach(el => {
-        if (el && el.parentElement) {
-          el.parentElement.removeChild(el);
+  // Remove all existing Calendly elements first
+  const removeElements = () => {
+    document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')
+      .forEach(element => {
+        if (element && element.parentNode) {
+          element.parentNode.removeChild(element);
         }
       });
-
-      // Reset body styles
-      document.body.style.overflow = 'auto';
-      document.body.style.pointerEvents = 'auto';
-    } catch (error) {
-      console.warn('Cleanup error:', error);
-    }
+    document.body.style.overflow = 'auto';
   };
 
-  // Initial cleanup
-  cleanup();
+  removeElements();
 
-  // Delay initialization slightly to ensure cleanup is complete
+  // Wait a bit before initializing new instance
   setTimeout(() => {
-    try {
+    if (window.Calendly) {
       window.Calendly.initPopupWidget({
         url: 'https://calendly.com/oxmaintapp/30min',
-        onClose: cleanup
+        onClose: removeElements,
       });
-
-      // Add close button
-      const closeButton = document.createElement('div');
-      closeButton.className = 'calendly-close-indicator';
-      closeButton.innerHTML = `
-        <span class="close-text">Close Meeting</span>
-        <span class="close-icon">✕</span>
-      `;
-      closeButton.onclick = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        cleanup();
-      };
-      document.body.appendChild(closeButton);
-    } catch (error) {
-      console.error('Calendly initialization error:', error);
-      cleanup();
     }
-  }, 200);
+  }, 500);
+
+  // Add close button after Calendly loads
+  setTimeout(() => {
+    const closeBtn = document.createElement('div');
+    closeBtn.className = 'calendly-close-indicator';
+    closeBtn.innerHTML = `
+      <span class="close-text">Close Meeting</span>
+      <span class="close-icon">✕</span>
+    `;
+    
+    closeBtn.addEventListener('click', () => {
+      removeElements();
+      window.Calendly?.closePopupWidget?.();
+    });
+
+    document.body.appendChild(closeBtn);
+  }, 1000);
 };
 
+// Simpler open function
 const openCalendlyModal = () => {
-  if (!window.Calendly) {
-    console.error('Calendly is not loaded');
-    return;
-  }
-
-  // Always ensure clean state before opening
-  const cleanup = () => {
-    const elements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
-    elements.forEach(el => {
-      if (el && el.parentElement) {
-        el.parentElement.removeChild(el);
+  // Remove any existing calendly elements first
+  document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')
+    .forEach(element => {
+      if (element && element.parentNode) {
+        element.parentNode.removeChild(element);
       }
     });
-    document.body.style.overflow = 'auto';
-    document.body.style.pointerEvents = 'auto';
-  };
 
-  cleanup();
-  initCalendly();
+  // Reset body style
+  document.body.style.overflow = 'auto';
+
+  // Initialize after cleanup
+  setTimeout(() => {
+    if (window.Calendly) {
+      initCalendly();
+    } else {
+      console.error('Calendly is not loaded');
+    }
+  }, 100);
 };
 
 const HomePage = () => {
