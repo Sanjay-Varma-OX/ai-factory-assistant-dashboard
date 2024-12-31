@@ -4,55 +4,53 @@ import { faIndustry, faBuilding, faTools, faCar, faHospital, faGraduationCap, fa
 import { Link } from 'react-router-dom';
 
 const IndustryCard = ({ icon, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer industry-card">
-    <FontAwesomeIcon icon={icon} className="text-4xl text-blue-600 mb-4" />
-    <h3 className="text-xl font-semibold mb-4">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+  <div className="bg-white rounded-lg shadow-lg transition-all hover:shadow-xl cursor-pointer industry-card">
+    <FontAwesomeIcon 
+      icon={icon} 
+      className="text-4xl text-blue-600 industry-card-icon"
+    />
+    <h3 className="text-xl industry-card-title">{title}</h3>
+    <p className="text-gray-600 industry-card-description">{description}</p>
   </div>
 );
 
 const initCalendly = () => {
-  // Clear any existing Calendly instances first
-  const existingElements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close');
-  existingElements.forEach(element => element.remove());
+  // Clean up existing instances
+  const cleanup = () => {
+    document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close')
+      .forEach(el => el.remove());
+    document.body.style.overflow = 'auto';
+  };
 
-  // Delay initialization to ensure cleanup is complete
+  // Clean up first
+  cleanup();
+
+  // Initialize new instance
   setTimeout(() => {
     window.Calendly.initPopupWidget({
       url: 'https://calendly.com/oxmaintapp/30min',
-      onClose: () => {
-        // Remove modal-related elements and styles
-        const elements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close');
-        elements.forEach(element => element.remove());
-        document.body.style.overflow = 'auto';
-      }
+      onClose: cleanup
     });
 
-    // Add close button after Calendly initialization
+    // Add custom close button
     setTimeout(() => {
       const popup = document.querySelector('.calendly-popup');
       if (popup && !document.querySelector('.calendly-popup-close')) {
-        const closeButton = document.createElement('button');
-        closeButton.className = 'calendly-popup-close';
-        closeButton.innerHTML = '×';
-        closeButton.onclick = () => {
-          document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close')
-            .forEach(element => element.remove());
-          document.body.style.overflow = 'auto';
-        };
-        document.body.appendChild(closeButton);
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'calendly-popup-close';
+        closeBtn.innerHTML = '×';
+        closeBtn.onclick = cleanup;
+        document.body.appendChild(closeBtn);
       }
     }, 100);
   }, 100);
 };
 
 const openCalendlyModal = () => {
-  if (typeof window.Calendly === 'undefined') {
+  if (!window.Calendly) {
     console.error('Calendly is not loaded');
     return;
   }
-  
-  // Initialize Calendly
   initCalendly();
 };
 
@@ -185,7 +183,7 @@ const HomePage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
   {industries.map((industry, index) => (
-    <div key={index} onClick={(e) => e.preventDefault()}>
+    <div key={index}>
       <IndustryCard {...industry} />
     </div>
   ))}
