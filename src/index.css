@@ -128,22 +128,23 @@ body {
   font-weight: bold !important;
   color: #333 !important;
   line-height: 1 !important;
-  border: 1px solid #ddd !important; /* Optional: To make the button more defined */
+  border: 1px solid #ddd !important; /* Ensures visibility against the background */
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease !important; /* Smooth transitions */
 }
 
 .calendly-close-indicator::before {
   content: "×"; /* Unicode for the 'X' symbol */
   font-size: 20px !important;
   font-weight: bold !important;
-  color: #333 !important;
+  color: inherit; /* Inherits color from the parent for hover effect */
 }
 
 .calendly-close-indicator:hover {
-  transform: scale(1.1) !important;
-  background: #f8f8f8 !important;
+  transform: scale(1.1) !important; /* Slightly enlarges the button */
+  background: #f8f8f8 !important; /* Lighter background on hover */
+  color: #666 !important; /* Updates the color of the 'X' */
 }
 
 .calendly-close-indicator:hover::before {
-  color: #666 !important;
+  color: inherit; /* Ensures the hover color applies to the 'X' */
 }
-
