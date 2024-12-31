@@ -11,90 +11,73 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Calendly Modal Styles */
+/* Reset Calendly default styles */
 .calendly-inline-widget,
-.calendly-inline-widget iframe {
-  width: 100%;
-  height: 100%;
-  min-width: 320px;
+.calendly-inline-widget iframe,
+.calendly-popup-content iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 320px !important;
 }
 
+/* Override Calendly styles */
 .calendly-overlay {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
   width: 100% !important;
   height: 100% !important;
   background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
   z-index: 9999 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
 }
 
 .calendly-popup {
-  display: flex !important;
-  flex-direction: row !important;
-  position: relative !important;
-  width: 95% !important;
-  height: 95vh !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 90% !important;
+  height: 90vh !important;
   max-width: 1200px !important;
   background: white !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
 }
 
-.calendly-popup-content {
-  width: 100% !important;
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: row !important;
-}
-
-.calendly-popup-content > div {
-  width: 50% !important;
-  height: 100% !important;
-}
-
-.calendly-popup-iframe {
-  border: none !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.calendly-popup-close {
-  position: absolute !important;
-  top: 16px !important;
-  right: 16px !important;
-  width: 32px !important;
-  height: 32px !important;
-  background: white !important;
+.custom-close-button {
+  position: fixed !important;
+  top: calc(5vh + 10px) !important;
+  right: calc(5vw + 10px) !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: white !important;
   border: none !important;
   border-radius: 50% !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-size: 24px !important;
-  font-weight: bold !important;
   color: #333 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  z-index: 100000 !important;
+  z-index: 999999 !important;
   transition: all 0.2s ease !important;
 }
 
-.calendly-popup-close:hover {
+.custom-close-button:hover {
   transform: scale(1.1) !important;
-  background: #f8f8f8 !important;
+  background-color: #f8f8f8 !important;
 }
 
-/* Prevent background interaction when modal is open */
-body.calendly-overlay-open {
+/* Prevent background interaction */
+body.modal-open {
   overflow: hidden !important;
 }
 
-/* Blur effect for background */
-body.calendly-overlay-open > *:not(.calendly-overlay):not(.calendly-popup):not(.calendly-popup-close) {
-  filter: blur(5px);
-  pointer-events: none;
+body.modal-open > *:not(.calendly-overlay):not(.calendly-popup):not(.custom-close-button) {
+  pointer-events: none !important;
 }
