@@ -19,10 +19,10 @@ const IndustryCard = ({ icon, title, description }) => (
 const initCalendly = () => {
   // Cleanup function
   const cleanup = () => {
-    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
     elementsToRemove.forEach(el => {
       try {
-        el?.parentNode?.removeChild(el); // Ensure the element exists before trying to remove it
+        el?.parentNode?.removeChild(el); // Ensure safe removal
       } catch (error) {
         console.warn('Error during cleanup:', error);
       }
@@ -32,10 +32,10 @@ const initCalendly = () => {
     document.body.style.overflow = 'auto';
   };
 
-  // Cleanup first to remove any previous instances
+  // Perform cleanup first to remove any previous instances
   cleanup();
 
-  // Initialize Calendly widget
+  // Initialize the Calendly widget
   try {
     window.Calendly.initPopupWidget({
       url: 'https://calendly.com/oxmaintapp/30min',
@@ -43,6 +43,34 @@ const initCalendly = () => {
         cleanup();
       },
     });
+
+    // Add a close button after a slight delay
+    setTimeout(() => {
+      const closeButton = document.createElement('div');
+      closeButton.className = 'calendly-close-indicator';
+      closeButton.style.position = 'fixed';
+      closeButton.style.top = '10px';
+      closeButton.style.right = '10px';
+      closeButton.style.backgroundColor = '#fff';
+      closeButton.style.borderRadius = '50%';
+      closeButton.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.2)';
+      closeButton.style.padding = '10px';
+      closeButton.style.cursor = 'pointer';
+      closeButton.style.zIndex = '10001';
+      closeButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" style="width: 16px; height: 16px;">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      `;
+
+      // Close button functionality
+      closeButton.onclick = () => {
+        cleanup();
+      };
+
+      document.body.appendChild(closeButton);
+    }, 100);
   } catch (error) {
     console.error('Error initializing Calendly:', error);
     cleanup();
@@ -61,10 +89,10 @@ const openCalendlyModal = () => {
     console.error('Error opening Calendly modal:', error);
 
     // Cleanup in case of error
-    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
     elementsToRemove.forEach(el => {
       try {
-        el?.parentNode?.removeChild(el); // Ensure safe removal
+        el?.parentNode?.removeChild(el); // Safe removal
       } catch (error) {
         console.warn('Error during error cleanup:', error);
       }
