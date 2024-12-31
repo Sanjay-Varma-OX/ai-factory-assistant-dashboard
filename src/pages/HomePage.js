@@ -11,14 +11,13 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
-
 const openCalendlyModal = () => {
   if (!window.Calendly) {
     console.error('Calendly is not loaded');
     return;
   }
 
-  // Add class to body to prevent scrolling and enable blur
+  // Add class to body
   document.body.classList.add('calendly-overlay-open');
 
   // Initialize Calendly popup
@@ -31,10 +30,10 @@ const openCalendlyModal = () => {
     }
   });
 
-  // Add custom close button after a short delay to ensure Calendly is loaded
+  // Add custom close button immediately
   setTimeout(() => {
-    const existingCloseBtn = document.querySelector('.calendly-popup-close');
-    if (!existingCloseBtn) {
+    const popup = document.querySelector('.calendly-popup');
+    if (popup && !document.querySelector('.calendly-popup-close')) {
       const closeBtn = document.createElement('button');
       closeBtn.className = 'calendly-popup-close';
       closeBtn.innerHTML = '×';
@@ -43,12 +42,15 @@ const openCalendlyModal = () => {
         const overlay = document.querySelector('.calendly-overlay');
         if (overlay) {
           overlay.remove();
-          closeBtn.remove();
         }
+        closeBtn.remove();
       };
-      document.body.appendChild(closeBtn);
+      popup.appendChild(closeBtn);
+
+      // Ensure the button stays on top
+      closeBtn.style.zIndex = '100000';
     }
-  }, 500);
+  }, 100);
 };
 
 const HomePage = () => {
