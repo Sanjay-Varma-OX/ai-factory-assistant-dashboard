@@ -11,43 +11,49 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
+const initCalendly = () => {
+  // Clear any existing Calendly instances first
+  const existingElements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close');
+  existingElements.forEach(element => element.remove());
+
+  // Delay initialization to ensure cleanup is complete
+  setTimeout(() => {
+    window.Calendly.initPopupWidget({
+      url: 'https://calendly.com/oxmaintapp/30min',
+      onClose: () => {
+        // Remove modal-related elements and styles
+        const elements = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close');
+        elements.forEach(element => element.remove());
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Add close button after Calendly initialization
+    setTimeout(() => {
+      const popup = document.querySelector('.calendly-popup');
+      if (popup && !document.querySelector('.calendly-popup-close')) {
+        const closeButton = document.createElement('button');
+        closeButton.className = 'calendly-popup-close';
+        closeButton.innerHTML = '×';
+        closeButton.onclick = () => {
+          document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close')
+            .forEach(element => element.remove());
+          document.body.style.overflow = 'auto';
+        };
+        document.body.appendChild(closeButton);
+      }
+    }, 100);
+  }, 100);
+};
+
 const openCalendlyModal = () => {
-  if (!window.Calendly) {
+  if (typeof window.Calendly === 'undefined') {
     console.error('Calendly is not loaded');
     return;
   }
-
-  // Remove any existing Calendly instances
-  const existingOverlay = document.querySelector('.calendly-overlay');
-  const existingPopup = document.querySelector('.calendly-popup');
-  const existingCloseBtn = document.querySelector('.calendly-popup-close');
-
-  if (existingOverlay) existingOverlay.remove();
-  if (existingPopup) existingPopup.remove();
-  if (existingCloseBtn) existingCloseBtn.remove();
-
-  // Initialize new Calendly instance
-  window.Calendly.initPopupWidget({
-    url: 'https://calendly.com/oxmaintapp/30min',
-  });
-
-  // Wait for Calendly to create its elements
-  setTimeout(() => {
-    const popup = document.querySelector('.calendly-popup');
-    if (popup) {
-      const closeBtn = document.createElement('button');
-      closeBtn.className = 'calendly-popup-close';
-      closeBtn.innerHTML = '×';
-      closeBtn.onclick = () => {
-        const overlay = document.querySelector('.calendly-overlay');
-        if (overlay) overlay.remove();
-        if (popup) popup.remove();
-        closeBtn.remove();
-        document.body.style.overflow = 'auto';
-      };
-      document.body.appendChild(closeBtn);
-    }
-  }, 100);
+  
+  // Initialize Calendly
+  initCalendly();
 };
 
 const HomePage = () => {
