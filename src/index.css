@@ -11,21 +11,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Calendly styles */
-.calendly-inline-widget {
+/* Fullscreen Calendly Modal Styles */
+.calendly-inline-widget,
+.calendly-inline-widget iframe {
   width: 100%;
   height: 100%;
   min-width: 320px;
 }
 
 .calendly-overlay {
-  background-color: rgba(0, 0, 0, 0.8) !important;
-  backdrop-filter: blur(4px) !important;
-  width: 100% !important;
-  height: 100% !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
   z-index: 9999 !important;
   display: flex !important;
   align-items: center !important;
@@ -33,21 +35,24 @@ body {
 }
 
 .calendly-popup {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  max-height: none !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  padding: 0 !important;
   margin: 0 !important;
-  background: white !important;
+  background: #ffffff !important;
   border-radius: 0 !important;
 }
 
 .calendly-popup-content {
+  position: relative !important;
+  width: 100% !important;
   height: 100% !important;
 }
 
@@ -65,15 +70,16 @@ body {
   align-items: center !important;
   justify-content: center !important;
   font-size: 24px !important;
-  color: #333 !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-  z-index: 100000 !important;
-  transition: all 0.2s !important;
+  font-weight: bold !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  z-index: 999999 !important;
+  transition: all 0.2s ease !important;
 }
 
 .calendly-popup-close:hover {
-  background: #f8f8f8 !important;
   transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
 body.calendly-overlay-open {
