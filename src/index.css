@@ -12,50 +12,46 @@ body {
 }
 
 /* Calendly Overlay */
-/* Ensure the Calendly overlay covers the screen */
+/* Full-screen dim overlay */
 .calendly-overlay {
-  display: block;
-  position: fixed;
+  display: block !important;
+  position: fixed !important;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Dark background for overlay */
-  z-index: 9999;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 9999 !important;
+  background: rgba(0, 0, 0, 0.6); /* Background dim effect */
 }
 
-/* Center the Calendly popup */
+/* Center Calendly popup */
 .calendly-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  width: 100%;
-  max-width: 600px; /* Limit modal width */
-  max-height: 90vh; /* Ensure it fits within the viewport */
-  overflow-y: auto; /* Allow scrolling for long content */
-  border-radius: 8px;
-  z-index: 10000;
-  padding: 20px; /* Add padding for content */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  max-height: 80vh; /* Ensure the height does not exceed the viewport */
+  overflow-y: auto; /* Enable scrolling within the modal */
+  background: white !important;
+  border-radius: 10px;
+  z-index: 10000 !important;
 }
 
-/* Add a close button to the Calendly popup */
+/* Close button for Calendly */
 .calendly-popup-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 20px;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
   font-weight: bold;
+  background: none;
+  border: none;
   cursor: pointer;
   z-index: 10001;
-  color: #333;
+  color: #333; /* Close button color */
 }
-
-
 
 /* Prevent body from interfering with the popup */
 body.calendly-overlay-open {
