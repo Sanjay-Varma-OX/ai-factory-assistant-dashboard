@@ -16,26 +16,27 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
-let calendlyInstanceActive = false; // Guard for active Calendly instance
+let calendlyInstanceActive = false; // Track if Calendly is active
 
 const cleanupCalendly = () => {
   console.log('Cleaning up Calendly modal...');
-  calendlyInstanceActive = false; // Reset guard
+  calendlyInstanceActive = false; // Reset the active guard
 
   const elementsToRemove = document.querySelectorAll(
     '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
   );
+
   elementsToRemove.forEach((el) => {
     if (el && el.parentNode) {
       try {
         el.parentNode.removeChild(el);
       } catch (error) {
-        console.warn('Error cleaning up Calendly element:', error);
+        console.warn('Error removing Calendly element:', error);
       }
     }
   });
 
-  // Reset any modified styles
+  // Reset body styles
   document.body.style.overflow = 'auto';
   document.body.style.pointerEvents = 'auto';
 };
@@ -58,27 +59,29 @@ const initCalendly = () => {
 
     // Create a custom close button
     setTimeout(() => {
-      const closeButton = document.createElement('div');
-      closeButton.className = 'calendly-close-indicator';
-      closeButton.style.position = 'fixed';
-      closeButton.style.top = '10px';
-      closeButton.style.right = '10px';
-      closeButton.style.backgroundColor = '#fff';
-      closeButton.style.padding = '10px';
-      closeButton.style.borderRadius = '50%';
-      closeButton.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.2)';
-      closeButton.style.cursor = 'pointer';
-      closeButton.style.zIndex = '10001';
-      closeButton.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      `;
+      if (!document.querySelector('.calendly-close-indicator')) {
+        const closeButton = document.createElement('div');
+        closeButton.className = 'calendly-close-indicator';
+        closeButton.style.position = 'fixed';
+        closeButton.style.top = '10px';
+        closeButton.style.right = '10px';
+        closeButton.style.backgroundColor = '#fff';
+        closeButton.style.padding = '10px';
+        closeButton.style.borderRadius = '50%';
+        closeButton.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.2)';
+        closeButton.style.cursor = 'pointer';
+        closeButton.style.zIndex = '10001';
+        closeButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        `;
 
-      // Close the modal on click
-      closeButton.onclick = cleanupCalendly;
-      document.body.appendChild(closeButton);
+        // Close the modal on click
+        closeButton.onclick = cleanupCalendly;
+        document.body.appendChild(closeButton);
+      }
     }, 200); // Delay ensures modal is ready
   } catch (error) {
     console.error('Error initializing Calendly:', error);
@@ -92,8 +95,9 @@ const openCalendlyModal = () => {
     return;
   }
 
-  // Try to initialize Calendly
+  // Attempt to initialize Calendly
   try {
+    cleanupCalendly(); // Always start by cleaning up any existing instance
     initCalendly();
   } catch (error) {
     console.error('Error opening Calendly modal:', error);
