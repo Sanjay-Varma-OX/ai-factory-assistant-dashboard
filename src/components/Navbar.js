@@ -16,7 +16,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="/benefits" className="hover:text-blue-200">Benefits</a>
-            /*<a href="#industries" className="hover:text-blue-200">Industries</a>*/
+{/* <a href="#industries" className="hover:text-blue-200">Industries</a> */}
             <a href="/features" className="hover:text-blue-200">Features</a>
             <Link to="/factory_demo" className="bg-blue-700 px-4 py-2 rounded-lg hover:bg-blue-600">Factory Demo</Link>
           </div>
