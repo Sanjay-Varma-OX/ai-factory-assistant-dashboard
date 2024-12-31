@@ -16,9 +16,12 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
+let calendlyInitialized = false; // Guard to track initialization
+
 const initCalendly = () => {
   // Cleanup function to remove Calendly elements
   const cleanup = () => {
+    calendlyInitialized = false; // Reset the guard
     const elementsToRemove = document.querySelectorAll(
       '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
     );
@@ -35,15 +38,20 @@ const initCalendly = () => {
     document.body.style.pointerEvents = 'auto';
   };
 
-  // Perform cleanup to avoid duplicate elements
-  cleanup();
+  // Prevent reinitialization if already active
+  if (calendlyInitialized) {
+    console.warn('Calendly is already initialized');
+    return;
+  }
+
+  calendlyInitialized = true; // Set the guard
 
   // Try initializing Calendly widget
   try {
     window.Calendly.initPopupWidget({
       url: 'https://calendly.com/oxmaintapp/30min',
       onClose: () => {
-        cleanup();
+        cleanup(); // Ensure cleanup on close
       },
     });
 
