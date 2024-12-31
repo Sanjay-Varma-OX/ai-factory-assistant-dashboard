@@ -68,7 +68,7 @@ const cleanupModal = () => {
   });
   
   // Force a small repaint to ensure all styles are cleared
-  document.body.offsetHeight;
+  void document.body.offsetHeight;
 };
 
 const HomePage = () => {
