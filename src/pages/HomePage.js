@@ -4,13 +4,15 @@ import { faIndustry, faBuilding, faTools, faCar, faHospital, faGraduationCap, fa
 import { Link } from 'react-router-dom';
 
 const IndustryCard = ({ icon, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg transition-all hover:shadow-xl cursor-pointer industry-card">
-    <FontAwesomeIcon 
-      icon={icon} 
-      className="text-4xl text-blue-600 industry-card-icon"
-    />
-    <h3 className="text-xl industry-card-title">{title}</h3>
-    <p className="text-gray-600 industry-card-description">{description}</p>
+  <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer min-h-[220px] flex flex-col">
+    <div className="flex items-start"> {/* Changed from center to start */}
+      <FontAwesomeIcon 
+        icon={icon} 
+        className="text-4xl text-blue-600 mb-4"
+      />
+    </div>
+    <h3 className="text-xl font-semibold mb-4">{title}</h3>
+    <p className="text-gray-600 flex-grow">{description}</p>
   </div>
 );
 
