@@ -34,22 +34,24 @@ body {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   width: 90% !important;
-  height: 90vh !important;
-  max-width: 1200px !important;
+  height: 85vh !important; /* Reduced height to prevent overflow */
+  max-width: 1000px !important; /* Adjusted max-width */
   background: white !important;
   border-radius: 8px !important;
   z-index: 10000 !important;
-  position: relative !important; /* Add this */
+  overflow: hidden !important;
 }
+
 
 .calendly-popup iframe {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 8px !important;
+  border: none !important;
 }
 
 .calendly-popup-content {
   height: 100% !important;
+  width: 100% !important;
 }
 
 .calendly-popup-close {
