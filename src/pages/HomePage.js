@@ -21,8 +21,12 @@ const initCalendly = () => {
   const cleanup = () => {
     const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator');
     elementsToRemove.forEach(el => {
-      if (el && el.parentNode) {
-        el.parentNode.removeChild(el);
+      try {
+        if (el && el.parentNode) {
+          el.parentNode.removeChild(el);
+        }
+      } catch (error) {
+        console.warn('Element already removed or null:', el, error);
       }
     });
 
@@ -84,11 +88,18 @@ const openCalendlyModal = () => {
 
     // Cleanup on error
     document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')
-      .forEach(el => el.remove());
+      .forEach(el => {
+        try {
+          if (el && el.parentNode) {
+            el.parentNode.removeChild(el);
+          }
+        } catch (error) {
+          console.warn('Error during cleanup on error:', el, error);
+        }
+      });
     document.body.style.overflow = 'auto';
   }
 };
-
 
 
 const HomePage = () => {
