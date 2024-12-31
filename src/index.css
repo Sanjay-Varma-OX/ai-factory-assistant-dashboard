@@ -39,7 +39,7 @@ body {
   background: white !important;
   border-radius: 8px !important;
   z-index: 10000 !important;
-  overflow: visible !important; /* Changed to visible to show the close button */
+  overflow: visible !important;
   padding: 0 !important;
 }
 
@@ -54,39 +54,6 @@ body {
   width: 100% !important;
 }
 
-.calendly-popup-close {
-  position: fixed !important;
-  top: 20px !important;
-  right: 20px !important;
-  width: 40px !important;
-  height: 40px !important;
-  background: white !important;
-  border-radius: 50% !important;
-  border: none !important;
-  cursor: pointer !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  z-index: 999999 !important;
-  transition: all 0.2s ease !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.calendly-popup-close .fas {
-  font-size: 20px !important;
-  color: #333 !important;
-}
-
-.calendly-popup-close:hover {
-  transform: scale(1.1) !important;
-  background: #f8f8f8 !important;
-}
-
-.calendly-popup-close:hover .fas {
-  color: #666 !important;
-}
 /* Industry Card Styles */
 .industry-card {
   height: 100% !important;
@@ -110,39 +77,57 @@ body {
   flex-grow: 1 !important;
 }
 
+/* Close Indicator Styles */
 .calendly-close-indicator {
   position: fixed !important;
-  top: 10px !important;
-  right: 10px !important;
-  width: 40px !important;
-  height: 40px !important;
+  top: 20px !important;
+  right: 20px !important;
   background: white !important;
-  border-radius: 50% !important;
+  padding: 8px 16px !important;
+  border-radius: 24px !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  gap: 8px !important;
   cursor: pointer !important;
-  z-index: 100001 !important; /* Ensure this is higher than Calendly's modal */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  font-size: 18px !important;
-  font-weight: bold !important;
-  color: #333 !important;
-  line-height: 1 !important;
-  border: 1px solid #ddd !important; /* Optional: To make the button more defined */
+  z-index: 100001 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease !important;
+  font-family: inherit !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .calendly-close-indicator::before {
-  content: "×"; /* Unicode for the 'X' symbol */
-  font-size: 24px !important; /* Adjust font size for better visibility */
-  font-weight: bold !important;
+  content: 'Close' !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
   color: #333 !important;
 }
 
-.calendly-close-indicator:hover {
-  transform: scale(1.1) !important;
-  background: #f8f8f8 !important;
+.calendly-close-indicator::after {
+  content: '✕' !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  color: #333 !important;
+  width: 20px !important;
+  height: 20px !important;
+  background: #f0f0f0 !important;
+  border-radius: 50% !important;
+  margin-left: 4px !important;
 }
 
-.calendly-close-indicator:hover::before {
-  color: #666 !important;
+.calendly-close-indicator:hover {
+  transform: scale(1.05) !important;
+  background: #f8f8f8 !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.calendly-close-indicator {
+  animation: fadeIn 0.3s ease-out !important;
 }
