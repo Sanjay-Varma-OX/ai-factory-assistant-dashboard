@@ -19,7 +19,7 @@ const IndustryCard = ({ icon, title, description }) => (
 const initCalendly = () => {
   // Clean up existing instances
   const cleanup = () => {
-    document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-popup-close')
+    document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')
       .forEach(el => el.remove());
     document.body.style.overflow = 'auto';
   };
@@ -34,15 +34,17 @@ const initCalendly = () => {
       onClose: cleanup
     });
 
-    // Add custom close button with Font Awesome icon
+    // Add custom close indicator with text
     setTimeout(() => {
-      if (!document.querySelector('.calendly-popup-close')) {
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'calendly-popup-close';
-        // Using Font Awesome icon
-        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-        closeBtn.addEventListener('click', cleanup);
-        document.body.appendChild(closeBtn);
+      if (!document.querySelector('.calendly-close-indicator')) {
+        const closeIndicator = document.createElement('div');
+        closeIndicator.className = 'calendly-close-indicator';
+        closeIndicator.innerHTML = `
+          <span class="close-text">Close</span>
+          <span class="close-icon">×</span>
+        `;
+        closeIndicator.addEventListener('click', cleanup);
+        document.body.appendChild(closeIndicator);
       }
     }, 100);
   }, 100);
