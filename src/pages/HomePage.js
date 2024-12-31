@@ -17,68 +17,98 @@ const IndustryCard = ({ icon, title, description }) => (
 );
 
 const initCalendly = () => {
-  // Remove all existing Calendly elements first
-  const removeElements = () => {
-    document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')
-      .forEach(element => {
-        if (element && element.parentNode) {
-          element.parentNode.removeChild(element);
-        }
-      });
-    document.body.style.overflow = 'auto';
-  };
-
-  removeElements();
-
-  // Wait a bit before initializing new instance
-  setTimeout(() => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/oxmaintapp/30min',
-        onClose: removeElements,
-      });
-    }
-  }, 500);
-
-  // Add close button after Calendly loads
-  setTimeout(() => {
-    const closeBtn = document.createElement('div');
-    closeBtn.className = 'calendly-close-indicator';
-    closeBtn.innerHTML = `
-      <span class="close-text">Close Meeting</span>
-      <span class="close-icon">✕</span>
-    `;
-    
-    closeBtn.addEventListener('click', () => {
-      removeElements();
-      window.Calendly?.closePopupWidget?.();
-    });
-
-    document.body.appendChild(closeBtn);
-  }, 1000);
-};
-
-// Simpler open function
-const openCalendlyModal = () => {
-  // Remove any existing calendly elements first
-  document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')
-    .forEach(element => {
+  // Function to safely remove elements
+  const safeRemoveElement = (element) => {
+    try {
       if (element && element.parentNode) {
         element.parentNode.removeChild(element);
       }
-    });
-
-  // Reset body style
-  document.body.style.overflow = 'auto';
-
-  // Initialize after cleanup
-  setTimeout(() => {
-    if (window.Calendly) {
-      initCalendly();
-    } else {
-      console.error('Calendly is not loaded');
+    } catch (error) {
+      console.warn('Error removing element:', error);
     }
-  }, 100);
+  };
+
+  // Cleanup function
+  const cleanup = () => {
+    // Remove all Calendly-related elements
+    [...document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')]
+      .forEach(safeRemoveElement);
+    
+    // Reset body styles
+    document.body.style.overflow = 'auto';
+    document.body.style.pointerEvents = 'auto';
+  };
+
+  // Initial cleanup
+  cleanup();
+
+  // Initialize Calendly with proper waiting
+  const initializeCalendly = () => {
+    return new Promise((resolve) => {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/oxmaintapp/30min',
+        onClose: () => {
+          cleanup();
+          resolve();
+        }
+      });
+      resolve();
+    });
+  };
+
+  // Main initialization sequence
+  const init = async () => {
+    try {
+      await initializeCalendly();
+
+      // Add close button after Calendly initializes
+      const closeBtn = document.createElement('div');
+      closeBtn.className = 'calendly-close-indicator';
+      closeBtn.innerHTML = `
+        <span class="close-text">Close Meeting</span>
+        <span class="close-icon">✕</span>
+      `;
+      
+      closeBtn.onclick = (e) => {
+        e.preventDefault();
+        cleanup();
+      };
+
+      document.body.appendChild(closeBtn);
+    } catch (error) {
+      console.error('Error in Calendly initialization:', error);
+      cleanup();
+    }
+  };
+
+  // Start initialization with a delay
+  setTimeout(init, 300);
+};
+
+const openCalendlyModal = () => {
+  if (!window.Calendly) {
+    console.error('Calendly is not loaded');
+    return;
+  }
+
+  // Remove any existing instances first
+  const cleanup = () => {
+    [...document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')]
+      .forEach(el => {
+        if (el && el.parentNode) {
+          el.parentNode.removeChild(el);
+        }
+      });
+    document.body.style.overflow = 'auto';
+    document.body.style.pointerEvents = 'auto';
+  };
+
+  cleanup();
+
+  // Wait a bit before reinitializing
+  setTimeout(() => {
+    initCalendly();
+  }, 500);
 };
 
 const HomePage = () => {
