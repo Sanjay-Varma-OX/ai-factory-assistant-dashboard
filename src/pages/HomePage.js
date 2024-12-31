@@ -17,7 +17,7 @@ const openCalendlyModal = () => {
     return;
   }
 
-  // First, ensure any existing modal elements are cleaned up
+  // First clean up any existing modal state
   cleanupModal();
 
   // Add class to body
@@ -31,7 +31,7 @@ const openCalendlyModal = () => {
     }
   });
 
-  // Create and add custom close button
+  // Add custom close button
   setTimeout(() => {
     const closeBtn = document.createElement('button');
     closeBtn.id = 'custom-close-btn';
@@ -41,34 +41,46 @@ const openCalendlyModal = () => {
   }, 100);
 };
 
-// Separate cleanup function
 const cleanupModal = () => {
-  // Remove modal-open class
+  // Remove classes first
   document.body.classList.remove('modal-open');
-  
-  // Remove Calendly elements
-  const overlay = document.querySelector('.calendly-overlay');
-  if (overlay) overlay.remove();
-  
-  const popup = document.querySelector('.calendly-popup');
-  if (popup) popup.remove();
-  
+
+  // Remove all Calendly-related elements
+  ['calendly-overlay', 'calendly-popup', 'calendly-popup-content', 'calendly-popup-close'].forEach(className => {
+    const elements = document.getElementsByClassName(className);
+    while (elements.length > 0) {
+      elements[0].remove();
+    }
+  });
+
+  // Remove custom close button
   const closeBtn = document.getElementById('custom-close-btn');
   if (closeBtn) closeBtn.remove();
+
+  // Reset body styles
+  document.body.style = '';
   
-  // Clean up any inline styles from body and all elements
-  document.body.style.removeProperty('overflow');
-  document.body.style.removeProperty('filter');
-  
-  // Re-enable pointer events for all elements
-  const elements = document.querySelectorAll('*');
-  elements.forEach(element => {
-    element.style.removeProperty('pointer-events');
-    element.style.removeProperty('filter');
+  // Reset all element styles
+  document.querySelectorAll('*').forEach(element => {
+    if (element.style) {
+      // Only remove specific styles we added
+      element.style.removeProperty('filter');
+      element.style.removeProperty('pointer-events');
+      element.style.removeProperty('overflow');
+    }
   });
+
+  // Allow clicking everywhere again
+  document.body.style.pointerEvents = 'auto';
   
-  // Force a small repaint to ensure all styles are cleared
-  void document.body.offsetHeight;
+  // Clear any remaining blur
+  document.body.style.filter = 'none';
+  
+  // Force DOM update
+  window.requestAnimationFrame(() => {
+    document.body.style.filter = 'none';
+    document.body.style.pointerEvents = 'auto';
+  });
 };
 
 const HomePage = () => {
