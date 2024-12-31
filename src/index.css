@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fix Calendly Overlay */
+/* Calendly Overlay */
 .calendly-overlay {
   display: block !important;
   position: fixed !important;
@@ -19,36 +19,37 @@ body {
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  z-index: 9999 !important; /* Ensure it appears above everything */
-  background: rgba(0, 0, 0, 0.7) !important; /* Dim the background */
+  background: rgba(0, 0, 0, 0.6) !important; /* Dim background */
+  z-index: 9999 !important; /* Ensure it's on top */
 }
 
-/* Fix Calendly Popup */
+/* Calendly Popup */
 .calendly-popup {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   width: 90% !important;
-  max-width: 600px !important; /* Set a max width */
+  max-width: 600px !important; /* Set a max width for responsiveness */
   max-height: 80vh !important;
-  overflow-y: auto !important; /* Scroll if content exceeds height */
+  overflow-y: auto !important; /* Add scrolling for long content */
   background: #ffffff !important;
   border-radius: 10px !important;
-  z-index: 10000 !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  z-index: 10000 !important; /* Ensure it appears above the overlay */
 }
 
-/* Close Button Styling */
-.calendly-popup .calendly-close {
+/* Close Button for Calendly */
+.calendly-popup-close {
   position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
+  top: 15px !important;
+  right: 15px !important;
   font-size: 24px !important;
   color: #000 !important;
   cursor: pointer !important;
   z-index: 10001 !important;
 }
+
 
 .calendly-popup .calendly-close:before {
   content: '×';
