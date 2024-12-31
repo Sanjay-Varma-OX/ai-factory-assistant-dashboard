@@ -4,7 +4,7 @@ import { faIndustry, faBuilding, faTools, faCar, faHospital, faGraduationCap, fa
 import { Link } from 'react-router-dom';
 
 const IndustryCard = ({ icon, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer">
+  <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer industry-card">
     <FontAwesomeIcon icon={icon} className="text-4xl text-blue-600 mb-4" />
     <h3 className="text-xl font-semibold mb-4">{title}</h3>
     <p className="text-gray-600">{description}</p>
@@ -58,11 +58,15 @@ const closeModal = () => {
     closeBtn.remove();
   }
   
-  // Re-enable pointer events
-  document.body.style.pointerEvents = 'auto';
-  
-  // Remove any inline styles that might have been added
+  // Re-enable scrolling and remove filters
+  document.body.style.overflow = 'auto';
   document.body.style.removeProperty('filter');
+  
+  // Re-enable pointer events
+  const elements = document.querySelectorAll('*');
+  elements.forEach(element => {
+    element.style.pointerEvents = 'auto';
+  });
 };
 
 const HomePage = () => {
@@ -193,12 +197,12 @@ const HomePage = () => {
           <p className="text-xl text-gray-600 text-center mb-12">Tailored AI solutions for every sector</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {industries.map((industry, index) => (
-              <Link key={index} to={industry.link}>
-                <IndustryCard {...industry} />
-              </Link>
-            ))}
-          </div>
+  {industries.map((industry, index) => (
+    <div key={index} onClick={(e) => e.preventDefault()}>
+      <IndustryCard {...industry} />
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
