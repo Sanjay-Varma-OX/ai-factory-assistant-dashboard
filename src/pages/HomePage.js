@@ -17,37 +17,66 @@ const IndustryCard = ({ icon, title, description }) => (
 );
 
 const initCalendly = () => {
-  // Clean up existing instances
+  // First remove any existing Calendly instances and elements
   const cleanup = () => {
-    document.querySelectorAll('.calendly-overlay, .calendly-popup, .calendly-close-indicator')
-      .forEach(el => el.remove());
-    document.body.style.overflow = 'auto';
+    // Remove custom elements first
+    const customElements = document.querySelectorAll('.calendly-close-indicator');
+    customElements.forEach(el => el.remove());
+
+    // Wait a moment before cleaning up Calendly elements
+    setTimeout(() => {
+      // Remove Calendly elements if they exist
+      const calendlyElements = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+      calendlyElements.forEach(el => {
+        if (el && el.parentNode) {
+          el.parentNode.removeChild(el);
+        }
+      });
+      
+      // Reset body styles
+      document.body.style.overflow = 'auto';
+    }, 100);
   };
 
   // Clean up first
   cleanup();
 
-  // Initialize new instance
+  // Initialize new instance with a slight delay
   setTimeout(() => {
+    // Initialize Calendly
     window.Calendly.initPopupWidget({
       url: 'https://calendly.com/oxmaintapp/30min',
-      onClose: cleanup
+      onClose: () => {
+        cleanup();
+      }
     });
 
-    // Add custom close indicator with text
+    // Add custom close indicator
     setTimeout(() => {
-      if (!document.querySelector('.calendly-close-indicator')) {
-        const closeIndicator = document.createElement('div');
-        closeIndicator.className = 'calendly-close-indicator';
-        closeIndicator.innerHTML = `
-          <span class="close-text">Close</span>
-          <span class="close-icon">×</span>
-        `;
-        closeIndicator.addEventListener('click', cleanup);
-        document.body.appendChild(closeIndicator);
-      }
-    }, 100);
-  }, 100);
+      const closeIndicator = document.createElement('div');
+      closeIndicator.className = 'calendly-close-indicator';
+      closeIndicator.innerHTML = `
+        <span class="close-text">Close</span>
+        <span class="close-icon">×</span>
+      `;
+      closeIndicator.onclick = () => {
+        // First remove our custom elements
+        closeIndicator.remove();
+        
+        // Then trigger Calendly's close
+        const calendlyOverlay = document.querySelector('.calendly-overlay');
+        if (calendlyOverlay) {
+          const closeButton = calendlyOverlay.querySelector('.calendly-close-button');
+          if (closeButton) {
+            closeButton.click();
+          } else {
+            cleanup();
+          }
+        }
+      };
+      document.body.appendChild(closeIndicator);
+    }, 200);
+  }, 300);
 };
 
 const openCalendlyModal = () => {
