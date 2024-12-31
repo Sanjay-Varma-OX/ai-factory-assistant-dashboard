@@ -11,7 +11,7 @@ import {
 const BenefitCard = ({ icon, title, description, stats }) => (
   <div className="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
     <div className="flex items-center mb-6">
-      <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+      <div className="w-12 h-12 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg flex items-center justify-center mr-4">
         <FontAwesomeIcon icon={icon} className="text-2xl text-white" />
       </div>
       <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
