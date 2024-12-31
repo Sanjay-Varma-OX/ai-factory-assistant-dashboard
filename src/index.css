@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Calendly styles */
+/* Calendly Modal Styles */
 .calendly-inline-widget,
 .calendly-inline-widget iframe {
   width: 100%;
@@ -27,42 +27,56 @@ body {
   height: 100% !important;
   background-color: rgba(0, 0, 0, 0.7) !important;
   z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .calendly-popup {
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 90% !important;
-  min-width: 320px !important;
-  height: 90vh !important;
-  max-width: 800px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative !important;
+  width: 95% !important;
+  height: 95vh !important;
+  max-width: 1200px !important;
   background: white !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  z-index: 10000 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
 }
 
 .calendly-popup-content {
-  height: 100% !important;
   width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.calendly-popup-content > div {
+  width: 50% !important;
+  height: 100% !important;
+}
+
+.calendly-popup-iframe {
+  border: none !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .calendly-popup-close {
-  position: fixed !important;
-  top: calc(5vh - 20px) !important;
-  right: calc(5vw - 20px) !important;
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  width: 32px !important;
+  height: 32px !important;
   background: white !important;
   border: none !important;
+  border-radius: 50% !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-size: 24px !important;
+  font-weight: bold !important;
   color: #333 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
   z-index: 100000 !important;
@@ -74,16 +88,13 @@ body {
   background: #f8f8f8 !important;
 }
 
-.calendly-popup-content iframe {
-  border-radius: 8px !important;
-}
-
+/* Prevent background interaction when modal is open */
 body.calendly-overlay-open {
   overflow: hidden !important;
 }
 
-/* Blur effect for background when modal is open */
+/* Blur effect for background */
 body.calendly-overlay-open > *:not(.calendly-overlay):not(.calendly-popup):not(.calendly-popup-close) {
   filter: blur(5px);
-  transition: filter 0.3s ease;
+  pointer-events: none;
 }
