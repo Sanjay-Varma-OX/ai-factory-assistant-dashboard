@@ -16,46 +16,47 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
-let calendlyInitialized = false; // Guard to track initialization
+let calendlyInstanceActive = false; // Guard for active Calendly instance
 
-const initCalendly = () => {
-  // Cleanup function to remove Calendly elements
-  const cleanup = () => {
-    calendlyInitialized = false; // Reset the guard
-    const elementsToRemove = document.querySelectorAll(
-      '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
-    );
-    elementsToRemove.forEach((el) => {
+const cleanupCalendly = () => {
+  console.log('Cleaning up Calendly modal...');
+  calendlyInstanceActive = false; // Reset guard
+
+  const elementsToRemove = document.querySelectorAll(
+    '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
+  );
+  elementsToRemove.forEach((el) => {
+    if (el && el.parentNode) {
       try {
         el.parentNode.removeChild(el);
       } catch (error) {
-        console.warn('Error removing Calendly element:', error);
+        console.warn('Error cleaning up Calendly element:', error);
       }
-    });
+    }
+  });
 
-    // Reset body styles
-    document.body.style.overflow = 'auto';
-    document.body.style.pointerEvents = 'auto';
-  };
+  // Reset any modified styles
+  document.body.style.overflow = 'auto';
+  document.body.style.pointerEvents = 'auto';
+};
 
-  // Prevent reinitialization if already active
-  if (calendlyInitialized) {
-    console.warn('Calendly is already initialized');
+const initCalendly = () => {
+  // Prevent multiple instances
+  if (calendlyInstanceActive) {
+    console.warn('Calendly is already initialized.');
     return;
   }
 
-  calendlyInitialized = true; // Set the guard
+  calendlyInstanceActive = true; // Mark Calendly as active
 
-  // Try initializing Calendly widget
   try {
+    // Initialize Calendly widget
     window.Calendly.initPopupWidget({
       url: 'https://calendly.com/oxmaintapp/30min',
-      onClose: () => {
-        cleanup(); // Ensure cleanup on close
-      },
+      onClose: cleanupCalendly, // Ensure cleanup on modal close
     });
 
-    // Add a close button to the modal
+    // Create a custom close button
     setTimeout(() => {
       const closeButton = document.createElement('div');
       closeButton.className = 'calendly-close-indicator';
@@ -69,24 +70,37 @@ const initCalendly = () => {
       closeButton.style.cursor = 'pointer';
       closeButton.style.zIndex = '10001';
       closeButton.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" style="width: 16px; height: 16px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       `;
 
-      // Add functionality to close the modal
-      closeButton.onclick = () => {
-        cleanup();
-      };
-
+      // Close the modal on click
+      closeButton.onclick = cleanupCalendly;
       document.body.appendChild(closeButton);
-    }, 100);
+    }, 200); // Delay ensures modal is ready
   } catch (error) {
     console.error('Error initializing Calendly:', error);
-    cleanup();
+    cleanupCalendly(); // Cleanup if initialization fails
   }
 };
+
+const openCalendlyModal = () => {
+  if (!window.Calendly) {
+    console.error('Calendly is not loaded.');
+    return;
+  }
+
+  // Try to initialize Calendly
+  try {
+    initCalendly();
+  } catch (error) {
+    console.error('Error opening Calendly modal:', error);
+    cleanupCalendly(); // Cleanup on failure
+  }
+};
+
 
 const openCalendlyModal = () => {
   if (!window.Calendly) {
