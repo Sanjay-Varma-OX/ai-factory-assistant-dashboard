@@ -17,70 +17,37 @@ const openCalendlyModal = () => {
     return;
   }
 
-  // First clean up any existing modal state
-  cleanupModal();
+  // Remove any existing Calendly instances
+  const existingOverlay = document.querySelector('.calendly-overlay');
+  const existingPopup = document.querySelector('.calendly-popup');
+  const existingCloseBtn = document.querySelector('.calendly-popup-close');
 
-  // Add class to body
-  document.body.classList.add('modal-open');
+  if (existingOverlay) existingOverlay.remove();
+  if (existingPopup) existingPopup.remove();
+  if (existingCloseBtn) existingCloseBtn.remove();
 
-  // Initialize Calendly popup
+  // Initialize new Calendly instance
   window.Calendly.initPopupWidget({
     url: 'https://calendly.com/oxmaintapp/30min',
-    onClose: () => {
-      cleanupModal();
-    }
   });
 
-  // Add custom close button
+  // Wait for Calendly to create its elements
   setTimeout(() => {
-    const closeBtn = document.createElement('button');
-    closeBtn.id = 'custom-close-btn';
-    closeBtn.innerHTML = '×';
-    closeBtn.onclick = cleanupModal;
-    document.body.appendChild(closeBtn);
+    const popup = document.querySelector('.calendly-popup');
+    if (popup) {
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'calendly-popup-close';
+      closeBtn.innerHTML = '×';
+      closeBtn.onclick = () => {
+        const overlay = document.querySelector('.calendly-overlay');
+        if (overlay) overlay.remove();
+        if (popup) popup.remove();
+        closeBtn.remove();
+        document.body.style.overflow = 'auto';
+      };
+      document.body.appendChild(closeBtn);
+    }
   }, 100);
-};
-
-const cleanupModal = () => {
-  // Remove classes first
-  document.body.classList.remove('modal-open');
-
-  // Remove all Calendly-related elements
-  ['calendly-overlay', 'calendly-popup', 'calendly-popup-content', 'calendly-popup-close'].forEach(className => {
-    const elements = document.getElementsByClassName(className);
-    while (elements.length > 0) {
-      elements[0].remove();
-    }
-  });
-
-  // Remove custom close button
-  const closeBtn = document.getElementById('custom-close-btn');
-  if (closeBtn) closeBtn.remove();
-
-  // Reset body styles
-  document.body.style = '';
-  
-  // Reset all element styles
-  document.querySelectorAll('*').forEach(element => {
-    if (element.style) {
-      // Only remove specific styles we added
-      element.style.removeProperty('filter');
-      element.style.removeProperty('pointer-events');
-      element.style.removeProperty('overflow');
-    }
-  });
-
-  // Allow clicking everywhere again
-  document.body.style.pointerEvents = 'auto';
-  
-  // Clear any remaining blur
-  document.body.style.filter = 'none';
-  
-  // Force DOM update
-  window.requestAnimationFrame(() => {
-    document.body.style.filter = 'none';
-    document.body.style.pointerEvents = 'auto';
-  });
 };
 
 const HomePage = () => {
