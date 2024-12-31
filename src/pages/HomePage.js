@@ -17,6 +17,9 @@ const openCalendlyModal = () => {
     return;
   }
 
+  // First, ensure any existing modal elements are cleaned up
+  cleanupModal();
+
   // Add class to body
   document.body.classList.add('modal-open');
 
@@ -24,49 +27,48 @@ const openCalendlyModal = () => {
   window.Calendly.initPopupWidget({
     url: 'https://calendly.com/oxmaintapp/30min',
     onClose: () => {
-      closeModal();
+      cleanupModal();
     }
   });
 
   // Create and add custom close button
-  const closeBtn = document.createElement('button');
-  closeBtn.id = 'custom-close-btn';
-  closeBtn.innerHTML = '×';
-  closeBtn.onclick = closeModal;
-  document.body.appendChild(closeBtn);
+  setTimeout(() => {
+    const closeBtn = document.createElement('button');
+    closeBtn.id = 'custom-close-btn';
+    closeBtn.innerHTML = '×';
+    closeBtn.onclick = cleanupModal;
+    document.body.appendChild(closeBtn);
+  }, 100);
 };
 
-const closeModal = () => {
-  // Remove the modal-open class
+// Separate cleanup function
+const cleanupModal = () => {
+  // Remove modal-open class
   document.body.classList.remove('modal-open');
   
-  // Remove the Calendly overlay
+  // Remove Calendly elements
   const overlay = document.querySelector('.calendly-overlay');
-  if (overlay) {
-    overlay.remove();
-  }
+  if (overlay) overlay.remove();
   
-  // Remove any Calendly popup
   const popup = document.querySelector('.calendly-popup');
-  if (popup) {
-    popup.remove();
-  }
+  if (popup) popup.remove();
   
-  // Remove our custom close button
   const closeBtn = document.getElementById('custom-close-btn');
-  if (closeBtn) {
-    closeBtn.remove();
-  }
+  if (closeBtn) closeBtn.remove();
   
-  // Re-enable scrolling and remove filters
-  document.body.style.overflow = 'auto';
+  // Clean up any inline styles from body and all elements
+  document.body.style.removeProperty('overflow');
   document.body.style.removeProperty('filter');
   
-  // Re-enable pointer events
+  // Re-enable pointer events for all elements
   const elements = document.querySelectorAll('*');
   elements.forEach(element => {
-    element.style.pointerEvents = 'auto';
+    element.style.removeProperty('pointer-events');
+    element.style.removeProperty('filter');
   });
+  
+  // Force a small repaint to ensure all styles are cleared
+  document.body.offsetHeight;
 };
 
 const HomePage = () => {
