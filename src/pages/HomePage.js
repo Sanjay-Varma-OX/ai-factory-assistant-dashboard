@@ -34,12 +34,13 @@ const initCalendly = () => {
       onClose: cleanup
     });
 
-    // Add custom close button with delay to ensure Calendly is loaded
+    // Add custom close button with Font Awesome icon
     setTimeout(() => {
       if (!document.querySelector('.calendly-popup-close')) {
         const closeBtn = document.createElement('button');
         closeBtn.className = 'calendly-popup-close';
-        closeBtn.innerHTML = '✕';  // Using a better X symbol
+        // Using Font Awesome icon
+        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
         closeBtn.addEventListener('click', cleanup);
         document.body.appendChild(closeBtn);
       }
