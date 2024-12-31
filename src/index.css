@@ -11,91 +11,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Calendly styles */
-.calendly-inline-widget,
-.calendly-inline-widget iframe {
-  width: 100% !important;
-  height: 100% !important;
-  min-width: 320px !important;
-}
-
+/* Base Calendly styles */
 .calendly-overlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
   background-color: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(5px) !important;
   z-index: 9999 !important;
 }
 
 .calendly-popup {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 90% !important;
-  height: 90vh !important;
-  max-width: 1200px !important;
   background: white !important;
-  border-radius: 8px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.calendly-popup-content {
-  height: 100% !important;
-  width: 100% !important;
-}
-
-.calendly-popup iframe {
+  min-width: 320px !important;
+  max-height: 100% !important;
   width: 100% !important;
   height: 100% !important;
-  border-radius: 8px !important;
 }
 
-#custom-close-btn {
+.calendly-popup-close {
   position: fixed !important;
-  top: 20px !important;
   right: 20px !important;
-  width: 40px !important;
-  height: 40px !important;
-  background: white !important;
-  border: none !important;
+  top: 20px !important;
+  width: 36px !important;
+  height: 36px !important;
   border-radius: 50% !important;
+  background: white !important;
   cursor: pointer !important;
+  z-index: 99999 !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 24px !important;
+  font-size: 20px !important;
   color: #333 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  z-index: 999999 !important;
-  transition: all 0.2s ease !important;
-}
-
-#custom-close-btn:hover {
-  transform: scale(1.1) !important;
-  background: #f8f8f8 !important;
-}
-
-/* Industry Card styles */
-.industry-card {
-  min-height: 220px !important;
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-/* Prevent background interaction when modal is open */
-.modal-open {
-  overflow: hidden;
-}
-
-.modal-open > *:not(.calendly-overlay):not(.calendly-popup):not(#custom-close-btn) {
-  filter: blur(5px);
-  pointer-events: none;
 }
