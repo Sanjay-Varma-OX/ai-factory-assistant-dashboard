@@ -17,16 +17,14 @@ const IndustryCard = ({ icon, title, description }) => (
 );
 
 const initCalendly = () => {
-  // Cleanup function to remove Calendly elements
+  // Cleanup function
   const cleanup = () => {
-    const elementsToRemove = document.querySelectorAll(
-      '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
-    );
-    elementsToRemove.forEach((el) => {
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    elementsToRemove.forEach(el => {
       try {
-        el.parentNode.removeChild(el);
+        el?.parentNode?.removeChild(el); // Ensure the element exists before trying to remove it
       } catch (error) {
-        console.warn('Error removing Calendly element:', error);
+        console.warn('Error during cleanup:', error);
       }
     });
 
@@ -34,25 +32,17 @@ const initCalendly = () => {
     document.body.style.overflow = 'auto';
   };
 
-  // Perform cleanup to avoid duplicate elements
+  // Cleanup first to remove any previous instances
   cleanup();
 
-  // Try initializing Calendly widget
+  // Initialize Calendly widget
   try {
     window.Calendly.initPopupWidget({
       url: 'https://calendly.com/oxmaintapp/30min',
       onClose: () => {
-        cleanup(); // Ensure cleanup on close
+        cleanup();
       },
     });
-
-    // Add a close button to the modal
-    setTimeout(() => {
-      const closeButton = document.createElement('div');
-      closeButton.className = 'calendly-close-indicator';
-      closeButton.onclick = cleanup; // Call cleanup on click
-      document.body.appendChild(closeButton);
-    }, 100);
   } catch (error) {
     console.error('Error initializing Calendly:', error);
     cleanup();
@@ -70,13 +60,11 @@ const openCalendlyModal = () => {
   } catch (error) {
     console.error('Error opening Calendly modal:', error);
 
-    // Cleanup on error
-    const elementsToRemove = document.querySelectorAll(
-      '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
-    );
-    elementsToRemove.forEach((el) => {
+    // Cleanup in case of error
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    elementsToRemove.forEach(el => {
       try {
-        el.parentNode.removeChild(el);
+        el?.parentNode?.removeChild(el); // Ensure safe removal
       } catch (error) {
         console.warn('Error during error cleanup:', error);
       }
@@ -84,7 +72,6 @@ const openCalendlyModal = () => {
     document.body.style.overflow = 'auto';
   }
 };
-
 
 const HomePage = () => {
   const industries = [
