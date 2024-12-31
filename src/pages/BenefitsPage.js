@@ -88,7 +88,7 @@ const BenefitsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-blue-900">
+    <div className="min-h-screen bg-gradient-to-r from-blue-800 to-blue-600">
       {/* Hero Section */}
       <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
