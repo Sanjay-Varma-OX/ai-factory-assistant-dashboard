@@ -34,14 +34,14 @@ body {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   width: 90% !important;
-  height: 85vh !important; /* Reduced height to prevent overflow */
-  max-width: 1000px !important; /* Adjusted max-width */
+  height: 85vh !important;
+  max-width: 1000px !important;
   background: white !important;
   border-radius: 8px !important;
   z-index: 10000 !important;
-  overflow: hidden !important;
+  overflow: visible !important; /* Changed to visible to show the close button */
+  padding: 0 !important;
 }
-
 
 .calendly-popup iframe {
   width: 100% !important;
@@ -55,11 +55,11 @@ body {
 }
 
 .calendly-popup-close {
-  position: absolute !important;
-  top: -20px !important;
-  right: -20px !important;
-  width: 40px !important;
-  height: 40px !important;
+  position: absolute !important; /* Changed from fixed to absolute */
+  top: 16px !important; /* Adjusted positioning */
+  right: 16px !important; /* Adjusted positioning */
+  width: 36px !important;
+  height: 36px !important;
   background: white !important;
   border-radius: 50% !important;
   border: none !important;
