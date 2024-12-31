@@ -16,92 +16,60 @@ const IndustryCard = ({ icon, title, description }) => (
   </div>
 );
 
-let calendlyInstanceActive = false; // Track if Calendly is active
-
-const cleanupCalendly = () => {
-  console.log('Cleaning up Calendly modal...');
-  calendlyInstanceActive = false; // Reset the active guard
-
-  const elementsToRemove = document.querySelectorAll(
-    '.calendly-overlay, .calendly-popup, .calendly-close-indicator'
-  );
-
-  elementsToRemove.forEach((el) => {
-    if (el && el.parentNode) {
-      try {
-        el.parentNode.removeChild(el);
-      } catch (error) {
-        console.warn('Error removing Calendly element:', error);
-      }
-    }
-  });
-
-  // Reset body styles
-  document.body.style.overflow = 'auto';
-  document.body.style.pointerEvents = 'auto';
-};
-
 const initCalendly = () => {
-  // Prevent multiple instances
-  if (calendlyInstanceActive) {
-    console.warn('Calendly is already initialized.');
-    return;
-  }
-
-  calendlyInstanceActive = true; // Mark Calendly as active
-
-  try {
-    // Initialize Calendly widget
-    window.Calendly.initPopupWidget({
-      url: 'https://calendly.com/oxmaintapp/30min',
-      onClose: cleanupCalendly, // Ensure cleanup on modal close
+  // Cleanup function
+  const cleanup = () => {
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    elementsToRemove.forEach(el => {
+      try {
+        el?.parentNode?.removeChild(el); // Ensure the element exists before trying to remove it
+      } catch (error) {
+        console.warn('Error during cleanup:', error);
+      }
     });
 
-    // Create a custom close button
-    setTimeout(() => {
-      if (!document.querySelector('.calendly-close-indicator')) {
-        const closeButton = document.createElement('div');
-        closeButton.className = 'calendly-close-indicator';
-        closeButton.style.position = 'fixed';
-        closeButton.style.top = '10px';
-        closeButton.style.right = '10px';
-        closeButton.style.backgroundColor = '#fff';
-        closeButton.style.padding = '10px';
-        closeButton.style.borderRadius = '50%';
-        closeButton.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.2)';
-        closeButton.style.cursor = 'pointer';
-        closeButton.style.zIndex = '10001';
-        closeButton.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        `;
+    // Reset body styles
+    document.body.style.overflow = 'auto';
+  };
 
-        // Close the modal on click
-        closeButton.onclick = cleanupCalendly;
-        document.body.appendChild(closeButton);
-      }
-    }, 200); // Delay ensures modal is ready
+  // Cleanup first to remove any previous instances
+  cleanup();
+
+  // Initialize Calendly widget
+  try {
+    window.Calendly.initPopupWidget({
+      url: 'https://calendly.com/oxmaintapp/30min',
+      onClose: () => {
+        cleanup();
+      },
+    });
   } catch (error) {
     console.error('Error initializing Calendly:', error);
-    cleanupCalendly(); // Cleanup if initialization fails
+    cleanup();
   }
 };
 
 const openCalendlyModal = () => {
   if (!window.Calendly) {
-    console.error('Calendly is not loaded.');
+    console.error('Calendly is not loaded');
     return;
   }
 
-  // Attempt to initialize Calendly
   try {
-    cleanupCalendly(); // Always start by cleaning up any existing instance
     initCalendly();
   } catch (error) {
     console.error('Error opening Calendly modal:', error);
-    cleanupCalendly(); // Cleanup on failure
+
+    // Cleanup in case of error
+    const elementsToRemove = document.querySelectorAll('.calendly-overlay, .calendly-popup');
+    elementsToRemove.forEach(el => {
+      try {
+        el?.parentNode?.removeChild(el); // Ensure safe removal
+      } catch (error) {
+        console.warn('Error during error cleanup:', error);
+      }
+    });
+    document.body.style.overflow = 'auto';
   }
 };
 
