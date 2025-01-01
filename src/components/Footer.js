@@ -3,14 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faMapMarkerAlt, 
   faEnvelope, 
-  faPhone 
+  faPhone,
+  faSquareFacebook,
+  faInstagramSquare,
+  faLinkedin,
+  faYoutubeSquare
 } from '@fortawesome/free-solid-svg-icons';
-import { 
-  faFacebookF, 
-  faInstagram, 
-  faLinkedinIn, 
-  faYoutube 
-} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -80,26 +78,26 @@ const Footer = () => {
                   <a href="https://www.facebook.com/profile.php?id=100088709356711" 
                      target="_blank" 
                      rel="noopener noreferrer"
-                     className="text-gray-300 hover:text-[#1877f2] transition-colors duration-300">
-                    <FontAwesomeIcon icon={faFacebookF} className="w-5 h-5" />
+                     className="text-gray-300 hover:text-white transition-colors duration-300">
+                    <FontAwesomeIcon icon={faSquareFacebook} className="w-5 h-5" />
                   </a>
                   <a href="https://www.instagram.com/oxmaintapp/" 
                      target="_blank" 
                      rel="noopener noreferrer"
-                     className="text-gray-300 hover:text-[#e4405f] transition-colors duration-300">
-                    <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
+                     className="text-gray-300 hover:text-white transition-colors duration-300">
+                    <FontAwesomeIcon icon={faInstagramSquare} className="w-5 h-5" />
                   </a>
                   <a href="https://www.linkedin.com/company/oxmaint/" 
                      target="_blank" 
                      rel="noopener noreferrer"
-                     className="text-gray-300 hover:text-[#0077b5] transition-colors duration-300">
-                    <FontAwesomeIcon icon={faLinkedinIn} className="w-5 h-5" />
+                     className="text-gray-300 hover:text-white transition-colors duration-300">
+                    <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
                   </a>
                   <a href="https://www.youtube.com/channel/UCcZOKgJbv0Qoey6R6LM8_Nw" 
                      target="_blank" 
                      rel="noopener noreferrer"
-                     className="text-gray-300 hover:text-[#ff0000] transition-colors duration-300">
-                    <FontAwesomeIcon icon={faYoutube} className="w-5 h-5" />
+                     className="text-gray-300 hover:text-white transition-colors duration-300">
+                    <FontAwesomeIcon icon={faYoutubeSquare} className="w-5 h-5" />
                   </a>
                 </div>
               </div>
