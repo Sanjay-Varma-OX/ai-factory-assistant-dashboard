@@ -8,6 +8,7 @@ import {
   faBell
 } from '@fortawesome/free-solid-svg-icons';
 import DowntimeModal from '../components/DowntimeModal';
+import PredictiveModal from '../components/PredictiveModal';
 
 const BenefitCard = ({ icon, title, description, stats }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,12 +42,18 @@ const BenefitCard = ({ icon, title, description, stats }) => {
       </div>
 
       {/* Modal */}
-      {title === "Downtime Reduction" && (
-        <DowntimeModal 
-          isOpen={isModalOpen} 
-          onClose={() => setIsModalOpen(false)} 
-        />
-      )}
+{title === "Downtime Reduction" && (
+  <DowntimeModal 
+    isOpen={isModalOpen} 
+    onClose={() => setIsModalOpen(false)} 
+  />
+)}
+{title === "Predictive Maintenance" && (
+  <PredictiveModal 
+    isOpen={isModalOpen} 
+    onClose={() => setIsModalOpen(false)} 
+  />
+)}
     </>
   );
 };
