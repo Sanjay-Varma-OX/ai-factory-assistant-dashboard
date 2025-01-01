@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faChartLine, 
@@ -8,31 +8,9 @@ import {
   faBell
 } from '@fortawesome/free-solid-svg-icons';
 
-const BenefitCard = ({ icon, title, description, stats }) => (
+const BenefitCard = ({ icon, title, description, stats }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  <div className="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-    <div className="flex items-center mb-6">
-      <div className="w-12 h-12 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg flex items-center justify-center mr-4">
-        <FontAwesomeIcon icon={icon} className="text-2xl text-white" />
-      </div>
-      <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
-    </div>
-    <p className="text-gray-600 mb-6">{description}</p>
-    {stats && (
-      <div className="bg-blue-50 rounded-lg p-4">
-        <div className="flex justify-between">
-          <div>
-            <p className="text-blue-600 font-bold text-2xl">{stats.value}</p>
-            <p className="text-sm text-gray-600">{stats.label}</p>
-          </div>
-          <div className="flex items-center text-green-500">
-            <span className="text-lg font-semibold">↑ {stats.improvement}</span>
-          </div>
-        </div>
-      </div>
-    )}
-  </div>
-);
+
   return (
     <>
       <div 
