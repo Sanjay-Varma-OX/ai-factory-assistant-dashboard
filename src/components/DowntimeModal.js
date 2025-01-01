@@ -47,17 +47,37 @@ const DowntimeModal = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Dashboard Preview */}
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Real-time Monitoring Dashboard</h3>
-            <div className="bg-gray-100 rounded-lg p-4 aspect-video flex items-center justify-center">
-              {/* Replace this with an actual dashboard image */}
-              <div className="text-center text-gray-500">
-                <FontAwesomeIcon icon={faChartLine} className="text-5xl mb-2" />
-                <p>Interactive Dashboard Preview</p>
-              </div>
-            </div>
-          </div>
+         {/* Dashboard Preview */}
+<div className="mb-8">
+  <h3 className="text-xl font-bold text-gray-800 mb-4">Real-time Monitoring Dashboard</h3>
+  <div className="bg-gray-50 rounded-lg p-8 text-center">
+    <div className="flex flex-col items-center justify-center space-y-4">
+      <FontAwesomeIcon icon={faChartLine} className="text-5xl text-blue-600 mb-2" />
+      <h4 className="text-xl font-semibold text-gray-800">AI-Powered Intelligence</h4>
+      <p className="text-gray-600 max-w-2xl">
+        Our advanced AI algorithms process millions of data points in real-time to predict and prevent equipment failures. 
+        The actual dashboard provides live monitoring of your equipment health, predictive maintenance alerts, and cost-saving insights.
+      </p>
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-2xl">
+        <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="font-bold text-blue-600">500K+</div>
+          <div className="text-sm text-gray-600">Data Points/Day</div>
+        </div>
+        <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="font-bold text-blue-600">99.9%</div>
+          <div className="text-sm text-gray-600">Prediction Accuracy</div>
+        </div>
+        <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="font-bold text-blue-600">15min</div>
+          <div className="text-sm text-gray-600">Early Warning</div>
+        </div>
+      </div>
+    </div>
+    <p className="text-sm text-gray-500 mt-6">
+      * Preview purposes only. Actual dashboard contains sensitive operational data and advanced visualization tools.
+    </p>
+  </div>
+</div>
 
           {/* Key Features */}
           <div className="mb-8">
