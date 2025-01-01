@@ -20,4 +20,4 @@ A React-based web interface for monitoring and reducing factory downtime using A
 
 ## Live Demo
 
-Visit [https://vedant-chidgopkar-OX.github.io/ai-factory-assistant-dashboard](https://vedant-chidgopkar-OX.github.io/ai-factory-assistant-dashboard)
+Visit [https://oxmaint.ai/](https://oxmaint.ai/)
