@@ -9,6 +9,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import DowntimeModal from '../components/DowntimeModal';
 import PredictiveModal from '../components/PredictiveModal';
+import CostReductionModal from '../components/CostReductionModal';
+import RealTimeModal from '../components/RealTimeModal';
+import HistoricInsightsModal from '../components/HistoricInsightsModal';
+
 
 const BenefitCard = ({ icon, title, description, stats }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,6 +54,24 @@ const BenefitCard = ({ icon, title, description, stats }) => {
 )}
 {title === "Predictive Maintenance" && (
   <PredictiveModal 
+    isOpen={isModalOpen} 
+    onClose={() => setIsModalOpen(false)} 
+  />
+)}
+{title === "Cost Reduction" && (
+  <CostReductionModal 
+    isOpen={isModalOpen} 
+    onClose={() => setIsModalOpen(false)} 
+  />
+)}
+{title === "Real-time Insights & Alerts" && (
+  <RealTimeModal 
+    isOpen={isModalOpen} 
+    onClose={() => setIsModalOpen(false)} 
+  />
+)}
+{title === "Historic Insights & Prediction" && (
+  <HistoricInsightsModal 
     isOpen={isModalOpen} 
     onClose={() => setIsModalOpen(false)} 
   />
