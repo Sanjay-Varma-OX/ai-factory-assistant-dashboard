@@ -41,7 +41,7 @@ const RealTimeModal = ({ isOpen, onClose }) => {
           {/* Key Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-blue-50 rounded-lg p-4 text-center">
-              <div className="text-3xl font-bold text-blue-600">< 1min</div>
+              <div className="text-3xl font-bold text-blue-600">&lt; 1min</div>
               <div className="text-sm text-gray-600">Alert Response Time</div>
               <div className="text-green-500 text-sm">↑ 45% YoY</div>
             </div>
