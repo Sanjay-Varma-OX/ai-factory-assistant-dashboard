@@ -7,6 +7,7 @@ import LandingPage from './pages/LandingPage';
 import FactoryDemo from './pages/FactoryDemo.js';
 import BenefitsPage from './pages/BenefitsPage';
 import FeaturesPage from './pages/FeaturesPage';
+import ThreadPage from './pages/ThreadPage';
 import CommunityPage from './pages/CommunityPage';
 import Footer from './components/Footer';
 
