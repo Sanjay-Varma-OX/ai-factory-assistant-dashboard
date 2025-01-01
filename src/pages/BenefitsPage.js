@@ -7,6 +7,7 @@ import {
   faMoneyBillTrendUp, 
   faBell
 } from '@fortawesome/free-solid-svg-icons';
+import DowntimeModal from '../components/DowntimeModal';
 
 const BenefitCard = ({ icon, title, description, stats }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
