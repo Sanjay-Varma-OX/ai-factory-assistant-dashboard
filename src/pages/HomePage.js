@@ -67,6 +67,7 @@ const openCalendlyModal = () => {
   }
 };
 const HomePage = () => {
+  const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
   const industries = [
     {
       icon: faIndustry,
