@@ -1,0 +1,80 @@
+{
+  "threads": [
+    {
+      "id": "001",
+      "title": "Best Practices for Implementing Predictive Maintenance in Manufacturing",
+      "author": {
+        "id": "user123",
+        "name": "John Anderson",
+        "role": "Maintenance Manager",
+        "avatar": "/avatars/john.jpg"
+      },
+      "created_at": "2024-01-15T08:30:00Z",
+      "last_activity": "2024-01-15T14:45:00Z",
+      "views": 234,
+      "category": "Predictive Maintenance",
+      "tags": ["predictive-maintenance", "manufacturing", "best-practices", "ai-implementation"],
+      "seo": {
+        "keywords": ["predictive maintenance", "manufacturing maintenance", "AI in manufacturing", "maintenance best practices"],
+        "description": "Discussion on implementing predictive maintenance strategies in manufacturing facilities using AI and machine learning technologies."
+      }
+    },
+    {
+      "id": "002",
+      "title": "Machine Learning Models for Equipment Failure Prediction",
+      "author": {
+        "id": "user456",
+        "name": "Sarah Chen",
+        "role": "Data Scientist",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2024-01-14T10:15:00Z",
+      "last_activity": "2024-01-15T16:20:00Z",
+      "views": 187,
+      "category": "Machine Learning",
+      "tags": ["machine-learning", "equipment-failure", "predictive-analytics", "data-science"],
+      "seo": {
+        "keywords": ["machine learning models", "equipment failure prediction", "predictive analytics", "maintenance AI"],
+        "description": "Technical discussion about effective machine learning models for predicting equipment failures in industrial settings."
+      }
+    },
+    {
+      "id": "003",
+      "title": "ROI Calculation for AI-Powered Maintenance Solutions",
+      "author": {
+        "id": "user789",
+        "name": "Michael Roberts",
+        "role": "Plant Manager",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2024-01-13T15:45:00Z",
+      "last_activity": "2024-01-15T09:30:00Z",
+      "views": 156,
+      "category": "Business Analytics",
+      "tags": ["roi", "cost-analysis", "ai-implementation", "business-case"],
+      "seo": {
+        "keywords": ["maintenance ROI", "AI maintenance solutions", "cost analysis", "maintenance cost savings"],
+        "description": "Guide to calculating return on investment for implementing AI-powered maintenance solutions in industrial facilities."
+      }
+    },
+    {
+      "id": "004",
+      "title": "Real-time Monitoring Best Practices for Food & Beverage Industry",
+      "author": {
+        "id": "user101",
+        "name": "Emily Thompson",
+        "role": "Quality Assurance Manager",
+        "avatar": "/avatars/emily.jpg"
+      },
+      "created_at": "2024-01-12T11:20:00Z",
+      "last_activity": "2024-01-15T13:15:00Z",
+      "views": 198,
+      "category": "Industry Specific",
+      "tags": ["food-beverage", "real-time-monitoring", "quality-control", "industry-specific"],
+      "seo": {
+        "keywords": ["food and beverage monitoring", "real-time quality control", "F&B maintenance", "industry 4.0"],
+        "description": "Discussion about implementing real-time monitoring systems in food and beverage manufacturing facilities."
+      }
+    }
+  ]
+}
