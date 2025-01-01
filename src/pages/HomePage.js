@@ -216,6 +216,10 @@ const HomePage = () => {
           </button>
         </div>
       </section>
+              <LearnMoreModal 
+        isOpen={isLearnMoreOpen} 
+        onClose={() => setIsLearnMoreOpen(false)} 
+      />
     </div>
   );
 };
