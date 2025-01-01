@@ -16,8 +16,8 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="/benefits" className="hover:text-blue-200">Benefits</a>
-{/* <a href="#industries" className="hover:text-blue-200">Industries</a> */}
             <a href="/features" className="hover:text-blue-200">Features</a>
+            <Link to="/community" className="hover:text-blue-200">Community</Link>
             <Link to="/factory_demo" className="bg-blue-700 px-4 py-2 rounded-lg hover:bg-blue-600">Factory Demo</Link>
           </div>
 
@@ -31,10 +31,10 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden pt-4 pb-2">
             <div className="flex flex-col space-y-4">
-              <a href="#benefits" className="hover:text-blue-200" onClick={() => setIsOpen(false)}>Benefits</a>
-              <a href="#industries" className="hover:text-blue-200" onClick={() => setIsOpen(false)}>Industries</a>
-              <a href="#features" className="hover:text-blue-200" onClick={() => setIsOpen(false)}>Features</a>
-              <Link to="/factory" className="bg-blue-700 px-4 py-2 rounded-lg hover:bg-blue-600 inline-block" onClick={() => setIsOpen(false)}>Factory Demo</Link>
+              <a href="/benefits" className="hover:text-blue-200" onClick={() => setIsOpen(false)}>Benefits</a>
+              <a href="/features" className="hover:text-blue-200" onClick={() => setIsOpen(false)}>Features</a>
+              <Link to="/community" className="hover:text-blue-200" onClick={() => setIsOpen(false)}>Community</Link>
+              <Link to="/factory_demo" className="bg-blue-700 px-4 py-2 rounded-lg hover:bg-blue-600 inline-block" onClick={() => setIsOpen(false)}>Factory Demo</Link>
             </div>
           </div>
         )}
