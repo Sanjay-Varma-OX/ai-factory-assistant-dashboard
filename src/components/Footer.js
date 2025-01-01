@@ -3,12 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faMapMarkerAlt, 
   faEnvelope, 
-  faPhone,
-  faSquareFacebook,
-  faInstagramSquare,
-  faLinkedin,
-  faYoutubeSquare
+  faPhone
 } from '@fortawesome/free-solid-svg-icons';
+
+import { 
+  faSquareFacebook, 
+  faInstagramSquare, 
+  faLinkedin, 
+  faYoutubeSquare 
+} from '@fortawesome/free-brands-svg-icons';
+
 
 const Footer = () => {
   const [email, setEmail] = useState('');
