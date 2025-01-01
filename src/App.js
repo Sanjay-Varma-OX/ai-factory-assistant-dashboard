@@ -23,7 +23,7 @@ function App() {
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/community" element={<CommunityPage />} />
             {/* Add route for individual thread pages - we'll implement ThreadPage component later */}
-            <Route path="/community/thread/:threadId" element={<CommunityPage />} />
+            <Route path="/community/thread/:threadId" element={<ThreadPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
