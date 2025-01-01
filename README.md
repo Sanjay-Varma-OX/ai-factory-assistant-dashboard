@@ -1,6 +1,6 @@
 # AI Factory Assistant Dashboard
 
-A React-based web interface for monitoring and reducing factory downtime using AI.
+A React-based web interface for monitoring and reducing factory downtime using AI. The dashboard provides real-time insights and AI-powered assistance for factory operations.
 
 ## Features
 
