@@ -11,9 +11,8 @@ const ThreadPage = () => {
   useEffect(() => {
     const loadThread = async () => {
       try {
-        const response = await fetch(`/src/data/forum/thread-${threadId}.json`);
-        const data = await response.json();
-        setThread(data);
+        const threadData = await import(`../data/forum/thread-${threadId}.json`);
+        setThread(threadData.default);
         setLoading(false);
       } catch (error) {
         console.error('Error loading thread:', error);
@@ -47,7 +46,6 @@ const ThreadPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header Section */}
       <div className="bg-blue-900 text-white py-8">
         <div className="container mx-auto px-4">
           <Link to="/community" className="inline-flex items-center text-blue-200 hover:text-white mb-4">
@@ -55,8 +53,6 @@ const ThreadPage = () => {
             Back to Community
           </Link>
           <h1 className="text-3xl font-bold mb-4">{thread.title}</h1>
-          
-          {/* Thread Meta Info */}
           <div className="flex flex-wrap items-center text-sm text-blue-200 space-x-6">
             <div className="flex items-center">
               <FontAwesomeIcon icon={faUser} className="mr-2" />
@@ -74,10 +70,8 @@ const ThreadPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Original Post */}
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-start">
               <img 
@@ -93,8 +87,6 @@ const ThreadPage = () => {
                 <div className="prose max-w-none">
                   <p className="whitespace-pre-wrap">{thread.content}</p>
                 </div>
-                
-                {/* Tags */}
                 <div className="mt-4 flex flex-wrap gap-2">
                   {thread.tags.map((tag) => (
                     <span 
@@ -109,7 +101,6 @@ const ThreadPage = () => {
             </div>
           </div>
 
-          {/* Replies */}
           <div className="divide-y divide-gray-200">
             {thread.replies.map((reply) => (
               <div key={reply.id} className="p-6">
@@ -143,7 +134,6 @@ const ThreadPage = () => {
           </div>
         </div>
 
-        {/* Reply Form */}
         <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-semibold mb-4">Leave a Reply</h3>
           <form className="space-y-4">
