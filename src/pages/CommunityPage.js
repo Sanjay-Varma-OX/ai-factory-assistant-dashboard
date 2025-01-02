@@ -3,36 +3,27 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faComments, faClock } from '@fortawesome/free-solid-svg-icons';
 
+// Import thread data directly
+import thread1 from '../data/forum/thread-001.json';
+import thread2 from '../data/forum/thread-002.json';
+import thread3 from '../data/forum/thread-003.json';
+import thread4 from '../data/forum/thread-004.json';
+
 const CommunityPage = () => {
   const [threads, setThreads] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadThreads = async () => {
-      try {
-        // Load all thread files
-        const threadFiles = ['001', '002', '003', '004'];
-        const loadedThreads = await Promise.all(
-          threadFiles.map(async (id) => {
-            const response = await fetch(`/src/data/forum/thread-${id}.json`);
-            return response.json();
-          })
-        );
-        
-        // Sort threads by last activity
-        const sortedThreads = loadedThreads.sort((a, b) => 
-          new Date(b.last_activity) - new Date(a.last_activity)
-        );
-        
-        setThreads(sortedThreads);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error loading threads:', error);
-        setLoading(false);
-      }
-    };
-
-    loadThreads();
+    // Combine all threads
+    const allThreads = [thread1, thread2, thread3, thread4];
+    
+    // Sort threads by last activity
+    const sortedThreads = allThreads.sort((a, b) => 
+      new Date(b.last_activity) - new Date(a.last_activity)
+    );
+    
+    setThreads(sortedThreads);
+    setLoading(false);
   }, []);
 
   const formatDate = (dateString) => {
