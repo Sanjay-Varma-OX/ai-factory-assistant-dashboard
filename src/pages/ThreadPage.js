@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faEye, faCalendarAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { loadSingleThread } from '../utils/forumUtils';
 
 const ThreadPage = () => {
   const { threadId } = useParams();
@@ -11,31 +12,22 @@ const ThreadPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const loadThread = async () => {
-      try {
-        // Format the thread number with leading zeros
-        const paddedId = threadId.padStart(3, '0');
-        const response = await fetch(`/src/data/forum/thread-${paddedId}.json`);
-        
-        if (!response.ok) {
-          throw new Error('Thread not found');
-        }
-        
-        const data = await response.json();
-        setThread(data);
+    const fetchThread = async () => {
+      setLoading(true);
+      const threadData = await loadSingleThread(threadId);
+      if (threadData) {
+        setThread(threadData);
         setError(null);
-      } catch (error) {
-        console.error('Error loading thread:', error);
+      } else {
         setError('Failed to load thread');
-        // Optionally redirect to community page after a delay
+        // Redirect after 3 seconds if thread not found
         setTimeout(() => navigate('/community'), 3000);
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     };
 
     if (threadId) {
-      loadThread();
+      fetchThread();
     }
   }, [threadId, navigate]);
 
