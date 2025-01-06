@@ -1,37 +1,76 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faEye, faCalendarAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const ThreadPage = () => {
   const { threadId } = useParams();
+  const navigate = useNavigate();
   const [thread, setThread] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const loadThread = async () => {
       try {
-        const threadData = await import(`../data/forum/thread-${threadId}.json`);
-        setThread(threadData.default);
-        setLoading(false);
+        // Format the thread number with leading zeros
+        const paddedId = threadId.padStart(3, '0');
+        const response = await fetch(`/src/data/forum/thread-${paddedId}.json`);
+        
+        if (!response.ok) {
+          throw new Error('Thread not found');
+        }
+        
+        const data = await response.json();
+        setThread(data);
+        setError(null);
       } catch (error) {
         console.error('Error loading thread:', error);
+        setError('Failed to load thread');
+        // Optionally redirect to community page after a delay
+        setTimeout(() => navigate('/community'), 3000);
+      } finally {
         setLoading(false);
       }
     };
 
-    loadThread();
-  }, [threadId]);
+    if (threadId) {
+      loadThread();
+    }
+  }, [threadId, navigate]);
 
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    const options = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric', 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">Loading thread...</div>
+        <div className="text-xl text-gray-600">Loading thread...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-xl text-red-600 mb-4">{error}</div>
+          <Link 
+            to="/community" 
+            className="text-blue-600 hover:text-blue-800 flex items-center justify-center"
+          >
+            <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+            Return to Community
+          </Link>
+        </div>
       </div>
     );
   }
@@ -39,20 +78,25 @@ const ThreadPage = () => {
   if (!thread) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">Thread not found</div>
+        <div className="text-xl text-gray-600">Thread not found</div>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Header Section */}
       <div className="bg-blue-900 text-white py-8">
         <div className="container mx-auto px-4">
-          <Link to="/community" className="inline-flex items-center text-blue-200 hover:text-white mb-4">
+          <Link 
+            to="/community" 
+            className="inline-flex items-center text-blue-200 hover:text-white transition-colors mb-4"
+          >
             <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
             Back to Community
           </Link>
           <h1 className="text-3xl font-bold mb-4">{thread.title}</h1>
+          
           <div className="flex flex-wrap items-center text-sm text-blue-200 space-x-6">
             <div className="flex items-center">
               <FontAwesomeIcon icon={faUser} className="mr-2" />
@@ -70,8 +114,10 @@ const ThreadPage = () => {
         </div>
       </div>
 
+      {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          {/* Original Post */}
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-start">
               <img 
@@ -87,6 +133,7 @@ const ThreadPage = () => {
                 <div className="prose max-w-none">
                   <p className="whitespace-pre-wrap">{thread.content}</p>
                 </div>
+                
                 <div className="mt-4 flex flex-wrap gap-2">
                   {thread.tags.map((tag) => (
                     <span 
@@ -101,6 +148,7 @@ const ThreadPage = () => {
             </div>
           </div>
 
+          {/* Replies */}
           <div className="divide-y divide-gray-200">
             {thread.replies.map((reply) => (
               <div key={reply.id} className="p-6">
@@ -134,6 +182,7 @@ const ThreadPage = () => {
           </div>
         </div>
 
+        {/* Reply Form */}
         <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-semibold mb-4">Leave a Reply</h3>
           <form className="space-y-4">
