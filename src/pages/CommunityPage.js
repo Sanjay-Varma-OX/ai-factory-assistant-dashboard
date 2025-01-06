@@ -10,26 +10,29 @@ const CommunityPage = () => {
   useEffect(() => {
     const loadThreads = async () => {
       try {
-        const threadIds = ['001', '002', '003', '004'];
-        const loadedThreads = await Promise.all(
-          threadIds.map(async (id) => {
-            try {
-              // Using window.fs.readFile API instead of fetch
-              const response = await window.fs.readFile(`/src/data/forum/thread-${id}.json`, { encoding: 'utf8' });
-              return JSON.parse(response);
-            } catch (error) {
-              console.error(`Error loading thread-${id}.json:`, error);
-              return null;
-            }
-          })
-        );
+        // Hard-coded thread data for testing
+        const threadsData = [
+          {
+            id: "001",
+            title: "Best Practices for Implementing Predictive Maintenance in Manufacturing",
+            content: "I'm looking to implement a predictive maintenance program in our manufacturing facility...",
+            author: {
+              name: "John Anderson",
+              role: "Maintenance Manager",
+              avatar: "/avatars/john.jpg"
+            },
+            created_at: "2024-01-15T08:30:00Z",
+            last_activity: "2024-01-15T14:45:00Z",
+            views: 234,
+            replies: [
+              // ... replies data
+            ],
+            tags: ["predictive-maintenance", "manufacturing", "best-practices"]
+          },
+          // Add more thread data here...
+        ];
 
-        const validThreads = loadedThreads.filter(Boolean);
-        const sortedThreads = validThreads.sort((a, b) => 
-          new Date(b.last_activity) - new Date(a.last_activity)
-        );
-        
-        setThreads(sortedThreads);
+        setThreads(threadsData);
       } catch (error) {
         console.error('Error loading threads:', error);
       } finally {
@@ -44,14 +47,6 @@ const CommunityPage = () => {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-xl text-gray-600">Loading discussions...</div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -69,25 +64,24 @@ const CommunityPage = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-semibold">Recent Discussions</h2>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
             Start New Discussion
           </button>
         </div>
 
-        {threads.length > 0 ? (
-          <div className="bg-white rounded-lg shadow divide-y divide-gray-200">
+        {loading ? (
+          <div className="text-center py-8">Loading discussions...</div>
+        ) : threads.length > 0 ? (
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             {threads.map((thread) => (
               <div 
                 key={thread.id}
-                className="p-6 hover:bg-gray-50 transition-colors"
+                className="border-b border-gray-200 p-6 hover:bg-gray-50 transition-colors"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                      <Link 
-                        to={`/community/thread/${thread.id}`} 
-                        className="hover:text-blue-700 transition-colors"
-                      >
+                      <Link to={`/community/thread/${thread.id}`} className="hover:text-blue-700">
                         {thread.title}
                       </Link>
                     </h3>
@@ -111,7 +105,7 @@ const CommunityPage = () => {
 
                   <div className="ml-6 flex items-center">
                     <img 
-                      src={thread.author.avatar} 
+                      src={thread.author.avatar}
                       alt={thread.author.name}
                       className="w-10 h-10 rounded-full"
                       onError={(e) => {
