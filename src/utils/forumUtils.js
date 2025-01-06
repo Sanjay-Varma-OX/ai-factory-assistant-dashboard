@@ -1,1 +1,30 @@
-ZXhwb3J0IGNvbnN0IGxvYWRUaHJlYWRzRGF0YSA9IGFzeW5jICgpID0+IHsKICB0cnkgewogICAgY29uc3QgdGhyZWFkSWRzID0gWycwMDEnLCAnMDAyJywgJzAwMycsICcwMDQnXTsKICAgIGNvbnN0IHByb21pc2VzID0gdGhyZWFkSWRzLm1hcChhc3luYyAoaWQpID0+IHsKICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChgL2RhdGEvZm9ydW0vdGhyZWFkLSR7aWR9Lmpzb25gKTsKICAgICAgaWYgKCFyZXNwb25zZS5vaykgewogICAgICAgIHRocm93IG5ldyBFcnJvcihgSFRUUCBlcnJvciEgc3RhdHVzOiAke3Jlc3BvbnNlLnN0YXR1c31gKTsKICAgICAgfQogICAgICByZXR1cm4gYXdhaXQgcmVzcG9uc2UuanNvbigpOwogICAgfSk7CiAgICAKICAgIHJldHVybiBhd2FpdCBQcm9taXNlLmFsbChwcm9taXNlcyk7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIGNvbnNvbGUuZXJyb3IoJ0Vycm9yIGxvYWRpbmcgdGhyZWFkczonLCBlcnJvcik7CiAgICByZXR1cm4gW107CiAgfQp9OwoKZXhwb3J0IGNvbnN0IGxvYWRTaW5nbGVUaHJlYWQgPSBhc3luYyAodGhyZWFkSWQpID0+IHsKICB0cnkgewogICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChgL2RhdGEvZm9ydW0vdGhyZWFkLSR7dGhyZWFkSWR9Lmpzb25gKTsKICAgIGlmICghcmVzcG9uc2Uub2spIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKGBIVFRQIGVycm9yISBzdGF0dXM6ICR7cmVzcG9uc2Uuc3RhdHVzfWApOwogICAgfQogICAgcmV0dXJuIGF3YWl0IHJlc3BvbnNlLmpzb24oKTsKICB9IGNhdGNoIChlcnJvcikgewogICAgY29uc29sZS5lcnJvcihgRXJyb3IgbG9hZGluZyB0aHJlYWQgJHt0aHJlYWRJZH06YCwgZXJyb3IpOwogICAgcmV0dXJuIG51bGw7CiAgfQp9Ow==
+export const loadThreadsData = async () => {
+  try {
+    // Get the list of files from the directory
+    const response = await window.fs.readFile('/data/forum');
+    const files = await response.json();
+    
+    // Filter for thread JSON files and get their data
+    const promises = files
+      .filter(file => file.name.startsWith('thread-') && file.name.endsWith('.json'))
+      .map(async (file) => {
+        const threadResponse = await window.fs.readFile(`/data/forum/${file.name}`, { encoding: 'utf8' });
+        return JSON.parse(threadResponse);
+      });
+    
+    return await Promise.all(promises);
+  } catch (error) {
+    console.error('Error loading threads:', error);
+    return [];
+  }
+};
+
+export const loadSingleThread = async (threadId) => {
+  try {
+    const response = await window.fs.readFile(`/data/forum/thread-${threadId}.json`, { encoding: 'utf8' });
+    return JSON.parse(response);
+  } catch (error) {
+    console.error(`Error loading thread ${threadId}:`, error);
+    return null;
+  }
+};
