@@ -10,21 +10,22 @@ const CommunityPage = () => {
   useEffect(() => {
     const loadThreads = async () => {
       try {
-        // Load all thread files (we know we have 4 threads for now)
-        const threadPromises = Array.from({ length: 4 }, (_, i) => {
-          const threadNumber = String(i + 1).padStart(3, '0');
-          return fetch(`/src/data/forum/thread-${threadNumber}.json`)
-            .then(response => response.json())
-            .catch(error => {
-              console.error(`Error loading thread-${threadNumber}.json:`, error);
+        const threadIds = ['001', '002', '003', '004'];
+        const loadedThreads = await Promise.all(
+          threadIds.map(async (id) => {
+            try {
+              // Using window.fs.readFile API instead of fetch
+              const response = await window.fs.readFile(`/src/data/forum/thread-${id}.json`, { encoding: 'utf8' });
+              return JSON.parse(response);
+            } catch (error) {
+              console.error(`Error loading thread-${id}.json:`, error);
               return null;
-            });
-        });
+            }
+          })
+        );
 
-        const loadedThreads = (await Promise.all(threadPromises)).filter(Boolean);
-        
-        // Sort threads by last activity
-        const sortedThreads = loadedThreads.sort((a, b) => 
+        const validThreads = loadedThreads.filter(Boolean);
+        const sortedThreads = validThreads.sort((a, b) => 
           new Date(b.last_activity) - new Date(a.last_activity)
         );
         
