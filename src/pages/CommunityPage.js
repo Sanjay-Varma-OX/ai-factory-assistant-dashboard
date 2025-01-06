@@ -2,45 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faComments, faClock } from '@fortawesome/free-solid-svg-icons';
+import { loadThreadsData } from '../utils/forumUtils';
 
 const CommunityPage = () => {
   const [threads, setThreads] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadThreads = async () => {
-      try {
-        // Hard-coded thread data for testing
-        const threadsData = [
-          {
-            id: "001",
-            title: "Best Practices for Implementing Predictive Maintenance in Manufacturing",
-            content: "I'm looking to implement a predictive maintenance program in our manufacturing facility...",
-            author: {
-              name: "John Anderson",
-              role: "Maintenance Manager",
-              avatar: "/avatars/john.jpg"
-            },
-            created_at: "2024-01-15T08:30:00Z",
-            last_activity: "2024-01-15T14:45:00Z",
-            views: 234,
-            replies: [
-              // ... replies data
-            ],
-            tags: ["predictive-maintenance", "manufacturing", "best-practices"]
-          },
-          // Add more thread data here...
-        ];
-
-        setThreads(threadsData);
-      } catch (error) {
-        console.error('Error loading threads:', error);
-      } finally {
-        setLoading(false);
+    const fetchThreads = async () => {
+      setLoading(true);
+      const threadsData = await loadThreadsData();
+      if (threadsData) {
+        const sortedThreads = threadsData.sort((a, b) =>
+          new Date(b.last_activity) - new Date(a.last_activity)
+        );
+        setThreads(sortedThreads);
       }
+      setLoading(false);
     };
 
-    loadThreads();
+    fetchThreads();
   }, []);
 
   const formatDate = (dateString) => {
