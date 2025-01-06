@@ -1,6 +1,6 @@
 const readThreadFile = async (threadId) => {
   try {
-    const response = await fetch(`/src/data/forum/thread-${threadId}.json`);
+    const response = await fetch(`/data/forum/thread-${threadId}.json`);
     if (!response.ok) {
       throw new Error(`Failed to fetch thread file: ${response.statusText}`);
     }
