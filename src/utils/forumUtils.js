@@ -1,11 +1,10 @@
-// forumUtils.js
-
-// Use readFileSync to directly read the JSON content
 const readThreadFile = async (threadId) => {
   try {
-    // Using the window.fs.readFile API that's available in your environment
-    const fileContent = await window.fs.readFile(`src/data/forum/thread-${threadId}.json`, { encoding: 'utf8' });
-    return JSON.parse(fileContent);
+    const response = await fetch(`/src/data/forum/thread-${threadId}.json`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch thread file: ${response.statusText}`);
+    }
+    return await response.json();
   } catch (error) {
     console.error(`Error reading thread ${threadId}:`, error);
     return null;
@@ -14,7 +13,7 @@ const readThreadFile = async (threadId) => {
 
 export const loadThreadsData = async () => {
   try {
-    // Instead of reading directory, we'll start with known thread files
+    // Start with known thread files
     const threadIds = ['001', '002', '003', '004'];
     const threadPromises = threadIds.map(id => readThreadFile(id));
     const threads = await Promise.all(threadPromises);
