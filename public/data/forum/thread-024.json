@@ -1,0 +1,76 @@
+{
+  "id": "024",
+  "title": "AI-Driven Spare Parts Inventory Management",
+  "content": "Hello inventory optimization experts,\n\nWe're implementing AI for spare parts management. Key focus areas:\n\n1. Demand forecasting\n2. Stock level optimization\n3. Reorder point automation\n4. Supplier lead time analysis\n\nSpecifically interested in:\n- ML model selection\n- Data preparation approach\n- Integration with ERP\n- Performance metrics\n\nWhat strategies have worked well?",
+  "author": {
+    "id": "user440",
+    "name": "Rachel Kim",
+    "role": "Inventory Manager",
+    "avatar": "/avatars/rachel.jpg"
+  },
+  "created_at": "2023-12-22T09:30:00Z",
+  "last_activity": "2023-12-24T09:20:00Z",
+  "views": 276,
+  "replies": [
+    {
+      "id": "reply440a",
+      "content": "Rachel, implemented AI inventory management last quarter. Results:\n\n1. 35% inventory reduction\n2. 98% parts availability\n3. Reduced emergency orders\n4. Better supplier relationships\n\nROI in 6 months.",
+      "author": {
+        "id": "user441",
+        "name": "Mark Johnson",
+        "role": "Supply Chain Director",
+        "avatar": "/avatars/mark.jpg"
+      },
+      "created_at": "2023-12-22T14:15:00Z"
+    },
+    {
+      "id": "reply440b",
+      "content": "ML model selection:\n- LSTM for demand patterns\n- Random Forest for classification\n- XGBoost for lead times\n- Ensemble for final decisions\n\nHybrid approach works best.",
+      "author": {
+        "id": "user442",
+        "name": "Dr. Lisa Chen",
+        "role": "Data Science Lead",
+        "avatar": "/avatars/lisa.jpg"
+      },
+      "created_at": "2023-12-23T10:30:00Z"
+    },
+    {
+      "id": "reply440c",
+      "content": "Mark, impressive results! How did you handle seasonal variations and new part introductions?",
+      "author": {
+        "id": "user440",
+        "name": "Rachel Kim",
+        "role": "Inventory Manager",
+        "avatar": "/avatars/rachel.jpg"
+      },
+      "created_at": "2023-12-23T15:45:00Z"
+    },
+    {
+      "id": "reply440d",
+      "content": "Rachel, we used:\n1. Seasonal decomposition\n2. Similar part clustering\n3. Market trend analysis\n4. Expert input integration\n\nAdaptive approach essential.",
+      "author": {
+        "id": "user441",
+        "name": "Mark Johnson",
+        "role": "Supply Chain Director",
+        "avatar": "/avatars/mark.jpg"
+      },
+      "created_at": "2023-12-24T09:20:00Z"
+    }
+  ],
+  "category": "Inventory Management",
+  "tags": [
+    "spare-parts",
+    "inventory-optimization",
+    "ai-inventory",
+    "demand-forecasting"
+  ],
+  "seo": {
+    "keywords": [
+      "AI spare parts management",
+      "inventory optimization ML",
+      "predictive inventory control",
+      "smart parts management"
+    ],
+    "description": "Expert discussion on implementing AI-driven spare parts inventory management, covering demand forecasting, stock optimization, and automated reordering systems."
+  }
+}

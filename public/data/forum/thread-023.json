@@ -1,0 +1,87 @@
+{
+  "id": "023",
+  "title": "Energy Optimization in Manufacturing",
+  "content": "Hello energy management experts,\n\nWe're implementing AI-driven energy optimization. Key focus areas:\n\n1. Real-time consumption monitoring\n2. Peak load prediction\n3. Process energy efficiency\n4. Automated optimization controls\n\nSpecifically interested in:\n- Sensor deployment strategy\n- ML model selection\n- ROI calculation methods\n- Integration challenges\n\nWhat approaches have proven successful?",
+  "author": {
+    "id": "user430",
+    "name": "Marcus Chen",
+    "role": "Energy Systems Manager",
+    "avatar": "/avatars/marcus.jpg"
+  },
+  "created_at": "2023-12-21T08:45:00Z",
+  "last_activity": "2023-12-24T11:45:00Z",
+  "views": 289,
+  "replies": [
+    {
+      "id": "reply430a",
+      "content": "Marcus, implemented energy optimization last year. Key results:\n\n1. 23% energy reduction\n2. Peak load smoothing\n3. Process efficiency gains\n4. Carbon footprint reduction\n\nROI achieved in 8 months.",
+      "author": {
+        "id": "user431",
+        "name": "Sarah Thompson",
+        "role": "Sustainability Director",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-12-21T13:30:00Z"
+    },
+    {
+      "id": "reply430b",
+      "content": "Sensor deployment strategy:\n- Energy meters per zone\n- Process-specific monitoring\n- Environmental sensors\n- Power quality analysis\n\nComprehensive coverage essential.",
+      "author": {
+        "id": "user432",
+        "name": "Alex Rivera",
+        "role": "Industrial IoT Specialist",
+        "avatar": "/avatars/alex.jpg"
+      },
+      "created_at": "2023-12-22T10:15:00Z"
+    },
+    {
+      "id": "reply430c",
+      "content": "Sarah, impressive results! How did you handle process variations and seasonal changes?",
+      "author": {
+        "id": "user430",
+        "name": "Marcus Chen",
+        "role": "Energy Systems Manager",
+        "avatar": "/avatars/marcus.jpg"
+      },
+      "created_at": "2023-12-22T15:45:00Z"
+    },
+    {
+      "id": "reply430d",
+      "content": "Marcus, we used:\n1. Seasonal ML models\n2. Production schedule integration\n3. Weather data correlation\n4. Adaptive thresholds\n\nKey is dynamic optimization.",
+      "author": {
+        "id": "user431",
+        "name": "Sarah Thompson",
+        "role": "Sustainability Director",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-12-23T09:30:00Z"
+    },
+    {
+      "id": "reply430e",
+      "content": "ML model selection approach:\n- LSTM for consumption patterns\n- Random Forest for anomaly detection\n- Neural Networks for optimization\n- Ensemble methods for prediction\n\nHybrid approach works best.",
+      "author": {
+        "id": "user433",
+        "name": "Dr. James Wilson",
+        "role": "ML Energy Specialist",
+        "avatar": "/avatars/james.jpg"
+      },
+      "created_at": "2023-12-24T11:45:00Z"
+    }
+  ],
+  "category": "Energy Management",
+  "tags": [
+    "energy-optimization",
+    "manufacturing-efficiency",
+    "ai-energy-management",
+    "sustainability"
+  ],
+  "seo": {
+    "keywords": [
+      "AI energy optimization",
+      "manufacturing energy efficiency",
+      "smart energy management",
+      "industrial energy ML"
+    ],
+    "description": "Expert discussion on implementing AI-driven energy optimization in manufacturing, covering real-time monitoring, peak load prediction, and process efficiency improvements."
+  }
+}

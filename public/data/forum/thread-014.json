@@ -1,0 +1,87 @@
+{
+  "id": "014",
+  "title": "Change Management in Transitioning to AI-Powered Maintenance",
+  "content": "Fellow maintenance leaders,\n\nWe're six months into our AI transformation journey, and change management has been our biggest challenge. Key issues we're facing:\n\n1. Resistance from experienced technicians\n2. Communication gaps between IT and maintenance teams\n3. Maintaining morale during the transition\n4. Balancing traditional skills with new AI requirements\n\nHow did you handle the human side of AI implementation? What strategies worked best for getting buy-in from veteran team members?",
+  "author": {
+    "id": "user340",
+    "name": "Thomas Anderson",
+    "role": "Maintenance Director",
+    "avatar": "/avatars/thomas.jpg"
+  },
+  "created_at": "2023-12-12T08:30:00Z",
+  "last_activity": "2023-12-16T15:45:00Z",
+  "views": 289,
+  "replies": [
+    {
+      "id": "reply340a",
+      "content": "Thomas, successful change management starts with early involvement. We:\n\n1. Created an AI transition committee with veteran techs\n2. Let them influence tool selection and workflow design\n3. Celebrated early wins and shared success stories\n4. Provided clear career progression paths\n\nKey was making them partners, not just users.",
+      "author": {
+        "id": "user341",
+        "name": "Sarah Mitchell",
+        "role": "Change Management Specialist",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-12-12T10:15:00Z"
+    },
+    {
+      "id": "reply340b",
+      "content": "Sarah's approach is spot-on. We also found success with:\n- Peer mentoring programs\n- Regular feedback sessions\n- Transparent communication about job security\n- Recognition programs for AI champions\n\nTook time, but resistance dropped significantly when people saw their colleagues succeeding.",
+      "author": {
+        "id": "user342",
+        "name": "Robert Kim",
+        "role": "HR Director",
+        "avatar": "/avatars/robert.jpg"
+      },
+      "created_at": "2023-12-13T09:30:00Z"
+    },
+    {
+      "id": "reply340c",
+      "content": "Thanks for the insights. How did you handle the IT-maintenance communication gap? Our IT team speaks 'AI language' while maintenance speaks 'equipment language.'",
+      "author": {
+        "id": "user340",
+        "name": "Thomas Anderson",
+        "role": "Maintenance Director",
+        "avatar": "/avatars/thomas.jpg"
+      },
+      "created_at": "2023-12-14T11:20:00Z"
+    },
+    {
+      "id": "reply340d",
+      "content": "We appointed 'translators' - technically inclined maintenance staff who understood both worlds. They became our bridge between IT and maintenance. Also created a shared glossary of terms that both teams use.",
+      "author": {
+        "id": "user343",
+        "name": "Linda Martinez",
+        "role": "IT Integration Manager",
+        "avatar": "/avatars/linda.jpg"
+      },
+      "created_at": "2023-12-14T14:45:00Z"
+    },
+    {
+      "id": "reply340e",
+      "content": "Don't underestimate the power of small wins. We started with simple AI applications that showed immediate benefits - like automated work order prioritization. Built confidence before moving to more complex predictive maintenance.",
+      "author": {
+        "id": "user344",
+        "name": "David Chen",
+        "role": "Operations Excellence Lead",
+        "avatar": "/avatars/david.jpg"
+      },
+      "created_at": "2023-12-15T13:30:00Z"
+    }
+  ],
+  "category": "Team Management & Training",
+  "tags": [
+    "change-management",
+    "team-transition",
+    "ai-implementation",
+    "employee-engagement"
+  ],
+  "seo": {
+    "keywords": [
+      "change management maintenance",
+      "AI transition strategy",
+      "maintenance team transformation",
+      "digital transformation maintenance"
+    ],
+    "description": "Expert discussion on effective change management strategies for transitioning maintenance teams to AI-powered systems, including employee engagement, communication strategies, and overcoming resistance to change."
+  }
+}
