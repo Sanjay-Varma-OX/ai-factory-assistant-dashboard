@@ -1,0 +1,66 @@
+{
+  "id": "006",
+  "title": "Manufacturing: Balancing Production Demands with Maintenance Schedules",
+  "content": "Running a high-volume manufacturing plant with just-in-time production creates constant tension between maintenance needs and production targets. We're struggling to find the right balance.\n\nCurrent challenges:\n1. Production managers pushing back on scheduled maintenance\n2. Increasing emergency repairs due to delayed maintenance\n3. Difficulty coordinating maintenance windows across production lines\n4. Pressure to maintain 95% OEE while ensuring equipment health\n\nHow are other manufacturing facilities handling this balance? Especially interested in how AI/predictive maintenance has helped optimize this trade-off.",
+  "author": {
+    "id": "user701",
+    "name": "Steve Morrison",
+    "role": "Plant Operations Manager",
+    "avatar": "/avatars/steve.jpg"
+  },
+  "created_at": "2024-01-07T15:05:00Z",
+  "last_activity": "2024-01-07T19:50:00Z",
+  "views": 203,
+  "replies": [
+    {
+      "id": "reply001",
+      "content": "We solved this by implementing what we call 'Dynamic Maintenance Windows' using AI predictions:\n\n1. AI analyzes production schedules and equipment health\n2. Suggests optimal maintenance windows with minimal impact\n3. Predicts maintenance duration based on historical data\n4. Automatically adjusts production schedule to accommodate maintenance\n\nResult: Increased OEE to 97% while reducing emergency repairs by 65%. The key was getting buy-in from both maintenance and production teams by showing them the data.",
+      "author": {
+        "id": "user702",
+        "name": "Linda Zhang",
+        "role": "Smart Factory Director",
+        "avatar": "/avatars/linda.jpg"
+      },
+      "created_at": "2024-01-07T15:45:00Z"
+    },
+    {
+      "id": "reply002",
+      "content": "@Linda - Interesting approach! What kind of data are you collecting to make these predictions? We have basic sensors but still struggle with accuracy in maintenance duration predictions. Also, how did you handle resistance from traditional production planners?",
+      "author": {
+        "id": "user703",
+        "name": "Mike O'Brien",
+        "role": "Production Planning Manager",
+        "avatar": "/avatars/mike.jpg"
+      },
+      "created_at": "2024-01-07T16:30:00Z"
+    },
+    {
+      "id": "reply003",
+      "content": "Mike, we implemented a similar system last year. Key data points we track:\n\n1. Vibration patterns\n2. Power consumption trends\n3. Temperature variations\n4. Production quality metrics\n5. Historical maintenance records\n\nThe game-changer was correlating quality metrics with equipment health. When we showed planners how equipment condition directly impacts product quality, they became our biggest supporters.",
+      "author": {
+        "id": "user704",
+        "name": "Raj Patel",
+        "role": "Quality Systems Engineer",
+        "avatar": "/avatars/raj.jpg"
+      },
+      "created_at": "2024-01-07T17:15:00Z"
+    },
+    {
+      "id": "reply004",
+      "content": "Adding to this discussion - we created a shared KPI between maintenance and production teams: 'Balanced Operation Score' that combines:\n\n- OEE (40%)\n- Maintenance Compliance (30%)\n- Emergency Repair Rate (30%)\n\nBoth teams' bonuses are tied to this score. Suddenly, everyone's working together to find the optimal balance. Sometimes the simple solutions work best!",
+      "author": {
+        "id": "user705",
+        "name": "Hannah Thompson",
+        "role": "Operations Excellence Manager",
+        "avatar": "/avatars/hannah.jpg"
+      },
+      "created_at": "2024-01-07T18:45:00Z"
+    }
+  ],
+  "category": "Industry-Specific Discussions",
+  "tags": ["manufacturing", "maintenance-scheduling", "production-planning", "oee-optimization", "predictive-maintenance"],
+  "seo": {
+    "keywords": ["manufacturing maintenance schedule", "production vs maintenance", "OEE optimization", "predictive maintenance manufacturing", "maintenance planning", "smart factory maintenance", "production efficiency"],
+    "description": "Expert discussion on balancing manufacturing production demands with maintenance schedules using AI and predictive maintenance, focusing on OEE optimization and reducing emergency repairs."
+  }
+}
