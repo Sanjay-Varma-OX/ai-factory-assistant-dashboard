@@ -101,59 +101,60 @@ const CommunityPage = () => {
           <>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               {currentThreads.map((thread) => (
-                <div 
-                  key={thread.id}
-                  className="border-b border-gray-200 p-6 hover:bg-gray-50 transition-colors"
-                >
-                  {/* Thread content (same as before) */}
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                        <Link to={`/community/thread/${thread.id}`} className="hover:text-blue-700">
-                          {thread.title}
-                        </Link>
-                      </h3>
-                      <p className="text-gray-600 mb-3 line-clamp-2">{thread.content}</p>
-                      
-                      <div className="flex items-center text-sm text-gray-500 space-x-6">
-                        <div className="flex items-center">
-                          <FontAwesomeIcon icon={faEye} className="mr-2" />
-                          {thread.views} views
-                        </div>
-                        <div className="flex items-center">
-                          <FontAwesomeIcon icon={faComments} className="mr-2" />
-                          {thread.replies?.length || 0} replies
-                        </div>
-                        <div className="flex items-center">
-                          <FontAwesomeIcon icon={faClock} className="mr-2" />
-                          {formatDate(thread.last_activity)}
-                        </div>
-                      </div>
-                    </div>
+  <div 
+    key={thread.id}
+    className="border-b border-gray-200 p-6 hover:bg-gray-50 transition-colors"
+  >
+    <div className="flex items-start justify-between">
+      <div className="flex-1">
+        <h3 className="text-xl font-semibold text-blue-900 mb-2">
+          <Link to={`/community/thread/${thread.id}`} className="hover:text-blue-700">
+            {thread.title}
+          </Link>
+        </h3>
+        <p className="text-gray-600 mb-3 line-clamp-2">{thread.content}</p>
+        
+        <div className="flex items-center text-sm text-gray-500 space-x-6">
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faEye} className="mr-2" />
+            {thread.views} views
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faComments} className="mr-2" />
+            {thread.replies?.length || 0} replies
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faClock} className="mr-2" />
+            {formatDate(thread.last_activity)}
+          </div>
+        </div>
+      </div>
 
-                    <div className="ml-6 flex items-center">
-  <UserAvatar 
-    name={thread.author.name} 
-    size="md"
-    className="flex-shrink-0"
-  />
-  <div className="ml-3">
-    <p className="text-sm font-medium">{thread.author.name}</p>
-    <p className="text-xs text-gray-500">{thread.author.role}</p>
+      <div className="ml-6 flex items-center">
+        <UserAvatar 
+          name={thread.author.name} 
+          size="md"
+          className="flex-shrink-0"
+        />
+        <div className="ml-3">
+          <p className="text-sm font-medium">{thread.author.name}</p>
+          <p className="text-xs text-gray-500">{thread.author.role}</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="mt-4 flex flex-wrap gap-2">
+      {thread.tags.map((tag) => (
+        <span 
+          key={tag}
+          className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
   </div>
-</div>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {thread.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+))}
             </div>
 
             {/* Pagination */}
