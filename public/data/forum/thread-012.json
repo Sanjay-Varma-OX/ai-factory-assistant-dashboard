@@ -1,0 +1,87 @@
+{
+  "id": "012",
+  "title": "Data Security in AI-Powered Maintenance Systems",
+  "content": "Hello maintenance professionals,\n\nAs our facility moves towards AI-powered maintenance, data security has become a major concern. We need to ensure compliance while protecting sensitive operational data. Key areas we're looking at:\n\n1. Data encryption requirements for sensor data\n2. Access control protocols for AI systems\n3. Compliance with industry standards (GDPR, CCPA, etc.)\n4. Secure data sharing between maintenance teams\n\nWhat security measures have you implemented in your AI maintenance systems? Any pitfalls to avoid?",
+  "author": {
+    "id": "user320",
+    "name": "Jennifer Martinez",
+    "role": "Information Security Manager",
+    "avatar": "/avatars/jennifer.jpg"
+  },
+  "created_at": "2023-12-06T09:30:00Z",
+  "last_activity": "2023-12-10T16:45:00Z",
+  "views": 312,
+  "replies": [
+    {
+      "id": "reply320a",
+      "content": "Jennifer, great questions. We implemented a multi-layered security approach:\n\n1. End-to-end encryption for all sensor data\n2. Role-based access control (RBAC) for different maintenance teams\n3. Regular security audits of AI systems\n4. VPN requirements for remote access\n\nThe biggest challenge was balancing security with accessibility - technicians need quick access during emergencies.",
+      "author": {
+        "id": "user321",
+        "name": "Michael Chang",
+        "role": "Cybersecurity Specialist",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-06T11:15:00Z"
+    },
+    {
+      "id": "reply320b",
+      "content": "Thanks Michael. How do you handle emergency access situations? We're concerned about maintaining security without impeding rapid response times.",
+      "author": {
+        "id": "user320",
+        "name": "Jennifer Martinez",
+        "role": "Information Security Manager",
+        "avatar": "/avatars/jennifer.jpg"
+      },
+      "created_at": "2023-12-07T08:30:00Z"
+    },
+    {
+      "id": "reply320c",
+      "content": "One often overlooked aspect is data retention policies. Make sure your AI system isn't storing sensitive operational data longer than necessary. We use automated data lifecycle management - keeps us compliant with GDPR's data minimization principle.",
+      "author": {
+        "id": "user322",
+        "name": "Sarah O'Connor",
+        "role": "Compliance Officer",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-12-08T10:45:00Z"
+    },
+    {
+      "id": "reply320d",
+      "content": "For emergency access, we implemented a break-glass procedure with temporary elevated privileges. It requires dual authorization and automatically alerts security team. All emergency access is logged and reviewed within 24 hours.",
+      "author": {
+        "id": "user321",
+        "name": "Michael Chang",
+        "role": "Cybersecurity Specialist",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-08T14:20:00Z"
+    },
+    {
+      "id": "reply320e",
+      "content": "Don't forget about third-party integrations! We learned the hard way when a maintenance software vendor had a data breach. Now we require SOC 2 compliance from all vendors and implement API security gateways.",
+      "author": {
+        "id": "user323",
+        "name": "David Wilson",
+        "role": "IT Infrastructure Manager",
+        "avatar": "/avatars/david.jpg"
+      },
+      "created_at": "2023-12-09T09:15:00Z"
+    }
+  ],
+  "category": "Compliance & Standards",
+  "tags": [
+    "data-security",
+    "compliance",
+    "ai-maintenance",
+    "cybersecurity"
+  ],
+  "seo": {
+    "keywords": [
+      "AI maintenance data security",
+      "industrial IoT security",
+      "maintenance system compliance",
+      "secure maintenance data management"
+    ],
+    "description": "Expert discussion on implementing data security measures in AI-powered maintenance systems, covering encryption, access control, compliance requirements, and best practices for protecting sensitive operational data."
+  }
+}
