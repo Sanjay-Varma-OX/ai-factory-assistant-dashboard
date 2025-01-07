@@ -1,3 +1,5 @@
+// forumUtils.js
+
 const readThreadFile = async (threadId) => {
   try {
     const response = await fetch(`/data/forum/thread-${threadId}.json`);
@@ -13,16 +15,28 @@ const readThreadFile = async (threadId) => {
 
 export const loadThreadsData = async () => {
   try {
-    // Start with known thread files
-    const threadIds = ['001', '002', '003', '004'];
-    const threadPromises = threadIds.map(id => readThreadFile(id));
-    const threads = await Promise.all(threadPromises);
+    // Get directory listing from public/data/forum
+    let allThreads = [];
+    let currentId = 1;
+    let consecutiveFailures = 0;
     
-    // Filter out any null results (failed reads) and sort by last activity
-    return threads
-      .filter(thread => thread !== null)
-      .sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
+    // Try to load files until we hit multiple consecutive failures
+    while (consecutiveFailures < 3) {  // Stop after 3 consecutive failures
+      const paddedId = String(currentId).padStart(3, '0');  // Convert 1 to "001"
+      const thread = await readThreadFile(paddedId);
       
+      if (thread) {
+        allThreads.push(thread);
+        consecutiveFailures = 0;  // Reset counter on success
+      } else {
+        consecutiveFailures++;
+      }
+      
+      currentId++;
+    }
+
+    // Sort threads by last activity
+    return allThreads.sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
   } catch (error) {
     console.error('Error loading threads:', error);
     return [];
@@ -31,7 +45,8 @@ export const loadThreadsData = async () => {
 
 export const loadSingleThread = async (threadId) => {
   try {
-    return await readThreadFile(threadId);
+    const paddedId = String(threadId).padStart(3, '0');
+    return await readThreadFile(paddedId);
   } catch (error) {
     console.error(`Error loading thread ${threadId}:`, error);
     return null;
