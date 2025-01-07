@@ -1,0 +1,66 @@
+{
+  "id": "008",
+  "title": "Data Collection Best Practices for AI-Powered Maintenance",
+  "content": "Our maintenance data collection is inconsistent across different facilities, making it difficult to implement AI effectively. Need guidance on:\n\n1. Standardizing data collection methods\n2. Determining optimal sampling frequencies\n3. Handling missing/incomplete data\n4. Data quality validation processes\n5. Storage and retention policies\n\nWhat practices have worked well in your organizations?",
+  "author": {
+    "id": "user901",
+    "name": "Rachel Chang",
+    "role": "Data Quality Manager",
+    "avatar": "/avatars/rachel.jpg"
+  },
+  "created_at": "2023-11-15T10:00:00Z",
+  "last_activity": "2023-11-18T16:30:00Z",
+  "views": 312,
+  "replies": [
+    {
+      "id": "reply001",
+      "content": "We standardized our data collection across 12 sites. Key steps:\n\n1. Created unified data dictionary\n2. Implemented automated validation rules\n3. Set up real-time quality monitoring\n4. Established data governance team\n\nBiggest impact came from involving maintenance technicians in the process - they helped identify what data was actually useful vs. theoretical requirements.",
+      "author": {
+        "id": "user902",
+        "name": "Michael Foster",
+        "role": "Enterprise Data Architect",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-11-15T11:45:00Z"
+    },
+    {
+      "id": "reply002",
+      "content": "@Michael - How did you handle resistance from technicians? We're struggling with compliance in manual data entry, especially during busy periods.",
+      "author": {
+        "id": "user903",
+        "name": "Lisa Wong",
+        "role": "Maintenance Supervisor",
+        "avatar": "/avatars/lisa.jpg"
+      },
+      "created_at": "2023-11-16T09:30:00Z"
+    },
+    {
+      "id": "reply003",
+      "content": "Lisa, we solved this by:\n\n1. Mobile data entry apps\n2. Voice-to-text for quick notes\n3. Automated data capture where possible\n4. Weekly review meetings\n\nKey was showing techs how better data directly improved their work - faster diagnosis, fewer repeat issues, more planned vs. reactive work.",
+      "author": {
+        "id": "user904",
+        "name": "Carlos Mendoza",
+        "role": "Digital Solutions Lead",
+        "avatar": "/avatars/carlos.jpg"
+      },
+      "created_at": "2023-11-16T14:15:00Z"
+    },
+    {
+      "id": "reply004",
+      "content": "For sampling frequencies, we use this framework:\n\n1. Critical equipment: 5-minute intervals\n2. High-impact: 15-minute intervals\n3. Standard: Hourly\n4. Low-priority: Daily\n\nStorage policy: Raw data for 3 months, aggregated data for 5 years. Using time-series DB for efficiency.",
+      "author": {
+        "id": "user905",
+        "name": "Sarah O'Connor",
+        "role": "Industrial Data Scientist",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-11-17T13:45:00Z"
+    }
+  ],
+  "category": "AI & Technology Integration",
+  "tags": ["data-collection", "data-quality", "maintenance-data", "ai-implementation", "best-practices"],
+  "seo": {
+    "keywords": ["maintenance data collection", "data quality management", "AI data requirements", "industrial data collection", "maintenance data standards", "data governance", "data sampling frequency"],
+    "description": "Expert discussion on best practices for collecting and managing maintenance data for AI-powered systems, including standardization, quality control, and practical implementation strategies."
+  }
+}
