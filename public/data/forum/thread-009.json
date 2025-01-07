@@ -1,0 +1,66 @@
+{
+  "id": "009",
+  "title": "Budget Planning for AI Maintenance Implementation",
+  "content": "Planning our 2024 maintenance budget and need insights on AI implementation costs. Key areas:\n\n1. Initial infrastructure setup\n2. Sensor deployment costs\n3. Software licensing and customization\n4. Training and change management\n5. Ongoing maintenance and updates\n\nLooking for real numbers and experiences, especially from medium-sized manufacturing facilities.",
+  "author": {
+    "id": "user1001",
+    "name": "Frank Thompson",
+    "role": "Financial Controller",
+    "avatar": "/avatars/frank.jpg"
+  },
+  "created_at": "2023-12-10T09:00:00Z",
+  "last_activity": "2023-12-13T16:15:00Z",
+  "views": 289,
+  "replies": [
+    {
+      "id": "reply001",
+      "content": "Implemented AI maintenance across our 200,000 sq ft facility last year. Here's the breakdown:\n\n1. Infrastructure (servers, network upgrades): $120K\n2. Sensors (750 units + installation): $280K\n3. Software licensing (3-year contract): $150K/year\n4. Training program: $75K\n5. Contingency: $100K\n\nROI achieved in 14 months through:\n- 45% reduction in downtime\n- 30% decrease in maintenance costs\n- 25% energy savings",
+      "author": {
+        "id": "user1002",
+        "name": "Victoria Martinez",
+        "role": "Plant Manager",
+        "avatar": "/avatars/victoria.jpg"
+      },
+      "created_at": "2023-12-10T10:30:00Z"
+    },
+    {
+      "id": "reply002",
+      "content": "@Victoria - Those are impressive numbers. How did you handle the training budget? We're struggling to justify the costs to our board, especially for the initial knowledge transfer phase.",
+      "author": {
+        "id": "user1003",
+        "name": "Derek Chen",
+        "role": "Operations Manager",
+        "avatar": "/avatars/derek.jpg"
+      },
+      "created_at": "2023-12-11T08:45:00Z"
+    },
+    {
+      "id": "reply003",
+      "content": "Derek, we split our training budget into phases:\n\n1. Initial awareness (online): $15K\n2. Core team deep-dive: $35K\n3. Hands-on workshops: $45K\n4. Ongoing support: $25K/year\n\nKey tip: Document everything during pilot phase - helps justify full rollout costs later.",
+      "author": {
+        "id": "user1004",
+        "name": "Maria Santos",
+        "role": "Training Coordinator",
+        "avatar": "/avatars/maria.jpg"
+      },
+      "created_at": "2023-12-11T14:20:00Z"
+    },
+    {
+      "id": "reply004",
+      "content": "Important budget consideration: Factor in these often-overlooked costs:\n\n1. Data storage expansion: ~$50K/year\n2. Security upgrades: $40-60K\n3. Integration consulting: $80-100K\n4. Backup systems: $30-40K\n\nWe learned this after initial deployment - better to budget upfront than scramble later.",
+      "author": {
+        "id": "user1005",
+        "name": "Alan Wright",
+        "role": "IT Infrastructure Manager",
+        "avatar": "/avatars/alan.jpg"
+      },
+      "created_at": "2023-12-12T11:30:00Z"
+    }
+  ],
+  "category": "Cost & ROI Discussions",
+  "tags": ["budget-planning", "implementation-costs", "roi-analysis", "ai-maintenance", "cost-breakdown"],
+  "seo": {
+    "keywords": ["AI maintenance budget", "implementation costs", "maintenance ROI", "industrial AI costs", "predictive maintenance budget", "AI infrastructure costs", "maintenance training budget"],
+    "description": "Detailed discussion on budget planning for AI maintenance implementation, including real cost breakdowns, ROI analysis, and practical insights from industry professionals."
+  }
+}
