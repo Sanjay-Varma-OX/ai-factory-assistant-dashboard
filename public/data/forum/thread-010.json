@@ -1,0 +1,66 @@
+{
+  "id": "010",
+  "title": "Success Metrics: KPIs for Maintenance Teams Using AI",
+  "content": "Hi everyone, I'm looking to establish comprehensive KPIs for our maintenance team as we transition to AI-powered solutions. We want to measure both the technical and business impacts.\n\nKey areas we're considering:\n1. Equipment reliability metrics\n2. Maintenance team productivity\n3. Cost savings indicators\n4. AI prediction accuracy\n\nWhat KPIs have worked well in your organizations? How do you track and report them effectively?",
+  "author": {
+    "id": "user310",
+    "name": "Sarah Martinez",
+    "role": "Performance Analytics Manager",
+    "avatar": "/avatars/sarah.jpg"
+  },
+  "created_at": "2023-12-01T14:30:00Z",
+  "last_activity": "2023-12-05T16:45:00Z",
+  "views": 245,
+  "replies": [
+    {
+      "id": "reply1010",
+      "content": "Great question, Sarah! Here are the key KPIs we've found most valuable:\n\n- Mean Time Between Failures (MTBF) - increased by 40% with AI\n- First-time Fix Rate - improved from 75% to 92%\n- Planned vs Unplanned Maintenance Ratio - now at 80:20\n- Cost per Asset - reduced by 25%\n\nWe use Power BI dashboards to track these in real-time. Happy to share our dashboard template if interested.",
+      "author": {
+        "id": "user311",
+        "name": "Michael Wong",
+        "role": "Maintenance Director",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-02T09:15:00Z"
+    },
+    {
+      "id": "reply1011",
+      "content": "Michael, those are impressive improvements! Could you share more about how you measure AI prediction accuracy? We're struggling with false positives in our system.",
+      "author": {
+        "id": "user312",
+        "name": "Elena Rodriguez",
+        "role": "Data Science Lead",
+        "avatar": "/avatars/elena.jpg"
+      },
+      "created_at": "2023-12-03T11:20:00Z"
+    },
+    {
+      "id": "reply1012",
+      "content": "Elena, we use these metrics for AI accuracy:\n\n1. Precision Rate: (True Positives)/(True Positives + False Positives)\n2. Recall Rate: (True Positives)/(True Positives + False Negatives)\n3. Lead Time: Average time between prediction and actual failure\n\nWe found that maintaining a precision rate above 85% while keeping a 2-week lead time works best for our operations.",
+      "author": {
+        "id": "user311",
+        "name": "Michael Wong",
+        "role": "Maintenance Director",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-04T13:45:00Z"
+    },
+    {
+      "id": "reply1013",
+      "content": "Adding to Michael's points, don't forget about workforce-related KPIs:\n\n- Training completion rates for AI tools\n- Time spent on preventive vs reactive tasks\n- Employee satisfaction scores\n- Knowledge base contribution metrics\n\nWe've found these human factors equally important for successful AI implementation.",
+      "author": {
+        "id": "user313",
+        "name": "David Park",
+        "role": "HR Technology Manager",
+        "avatar": "/avatars/david.jpg"
+      },
+      "created_at": "2023-12-05T10:30:00Z"
+    }
+  ],
+  "category": "Cost & ROI Discussions",
+  "tags": ["kpi-metrics", "maintenance-analytics", "ai-implementation", "performance-tracking"],
+  "seo": {
+    "keywords": ["maintenance KPIs", "AI maintenance metrics", "performance tracking", "maintenance analytics", "predictive maintenance ROI"],
+    "description": "Comprehensive guide to establishing and tracking KPIs for maintenance teams using AI-powered solutions, including technical metrics and business impact indicators."
+  }
+}
