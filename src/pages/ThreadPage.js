@@ -107,24 +107,24 @@ const ThreadPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
+     {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Original Post */}
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-start">
-              <div className="ml-6 flex items-center">
-                <UserAvatar 
-                  name={thread.author.name} 
-                  size="md"
-                  className="flex-shrink-0"
-                />
-                <div className="ml-3">
-                  <p className="text-sm font-medium">{thread.author.name}</p>
-                  <p className="text-xs text-gray-500">{thread.author.role}</p>
-                </div>
-              </div>
+              <UserAvatar 
+                name={thread.author.name} 
+                size="lg"
+                className="flex-shrink-0 mr-4"
+              />
               <div className="flex-1">
+                <div className="flex items-center mb-4">
+                  <div>
+                    <p className="font-medium text-lg">{thread.author.name}</p>
+                    <p className="text-sm text-gray-500">{thread.author.role}</p>
+                  </div>
+                </div>
                 <div className="prose max-w-none">
                   <p className="whitespace-pre-wrap">{thread.content}</p>
                 </div>
@@ -148,14 +148,10 @@ const ThreadPage = () => {
             {thread.replies.map((reply) => (
               <div key={reply.id} className="p-6">
                 <div className="flex items-start">
-                  <img 
-                    src={reply.author.avatar}
-                    alt={reply.author.name}
-                    className="w-12 h-12 rounded-full mr-4"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = 'https://via.placeholder.com/48';
-                    }}
+                  <UserAvatar 
+                    name={reply.author.name} 
+                    size="md"
+                    className="flex-shrink-0 mr-4"
                   />
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
