@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faEye, faCalendarAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { loadSingleThread } from '../utils/forumUtils';
+import UserAvatar from '../components/UserAvatar';
 
 const ThreadPage = () => {
   const { threadId } = useParams();
@@ -112,15 +113,17 @@ const ThreadPage = () => {
           {/* Original Post */}
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-start">
-              <img 
-                src={thread.author.avatar}
-                alt={thread.author.name}
-                className="w-12 h-12 rounded-full mr-4"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = 'https://via.placeholder.com/48';
-                }}
-              />
+              <div className="ml-6 flex items-center">
+                <UserAvatar 
+                  name={thread.author.name} 
+                  size="md"
+                  className="flex-shrink-0"
+                />
+                <div className="ml-3">
+                  <p className="text-sm font-medium">{thread.author.name}</p>
+                  <p className="text-xs text-gray-500">{thread.author.role}</p>
+                </div>
+              </div>
               <div className="flex-1">
                 <div className="prose max-w-none">
                   <p className="whitespace-pre-wrap">{thread.content}</p>
