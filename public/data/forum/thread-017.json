@@ -1,0 +1,109 @@
+{
+  "id": "017",
+  "title": "AI-Driven Spare Parts Inventory Management",
+  "content": "Hi maintenance professionals,\n\nWe're exploring AI solutions for spare parts inventory optimization. Key challenges:\n\n1. Predicting parts demand accurately\n2. Balancing inventory costs vs. downtime risk\n3. Managing obsolescence\n4. Integrating with existing ERP\n\nLooking for experiences with AI inventory management systems. What metrics should we track? Any specific AI models that worked well?",
+  "author": {
+    "id": "user370",
+    "name": "Christopher Lee",
+    "role": "Inventory Manager",
+    "avatar": "/avatars/chris.jpg"
+  },
+  "created_at": "2023-12-15T09:30:00Z",
+  "last_activity": "2023-12-19T14:45:00Z",
+  "views": 312,
+  "replies": [
+    {
+      "id": "reply370a",
+      "content": "Chris, implemented AI inventory management last quarter. Key success factors:\n\n1. Historical failure data analysis\n2. Machine learning for demand forecasting\n3. Real-time usage tracking\n4. Supplier lead time integration\n\nReduced inventory costs by 28% while maintaining 99.5% availability.",
+      "author": {
+        "id": "user371",
+        "name": "Rebecca Martinez",
+        "role": "Supply Chain Manager",
+        "avatar": "/avatars/rebecca.jpg"
+      },
+      "created_at": "2023-12-15T11:45:00Z"
+    },
+    {
+      "id": "reply370b",
+      "content": "For metrics, we track:\n- Stock turnover rate\n- Emergency order frequency\n- Stockout impact\n- Carrying costs\n- Obsolescence rate\n\nAI model uses LSTM for time series prediction, works great for seasonal patterns.",
+      "author": {
+        "id": "user372",
+        "name": "Daniel Wong",
+        "role": "Data Scientist",
+        "avatar": "/avatars/daniel.jpg"
+      },
+      "created_at": "2023-12-16T10:20:00Z"
+    },
+    {
+      "id": "reply370c",
+      "content": "Rebecca, impressive results! How did you handle the ERP integration? Our legacy system is causing headaches.",
+      "author": {
+        "id": "user370",
+        "name": "Christopher Lee",
+        "role": "Inventory Manager",
+        "avatar": "/avatars/chris.jpg"
+      },
+      "created_at": "2023-12-16T14:15:00Z"
+    },
+    {
+      "id": "reply370d",
+      "content": "Chris, we used API middleware for ERP integration. Key steps:\n1. Data mapping exercise\n2. Custom API development\n3. Real-time sync validation\n4. Fallback procedures\n\nTook 2 months but worth the effort.",
+      "author": {
+        "id": "user371",
+        "name": "Rebecca Martinez",
+        "role": "Supply Chain Manager",
+        "avatar": "/avatars/rebecca.jpg"
+      },
+      "created_at": "2023-12-17T09:30:00Z"
+    },
+    {
+      "id": "reply370e",
+      "content": "For obsolescence management:\n- Set up automatic alerts for aging inventory\n- Use market data for part lifecycle prediction\n- Implement dynamic reorder points\n- Consider consignment for critical parts\n\nReduced obsolete inventory by 45%.",
+      "author": {
+        "id": "user373",
+        "name": "Mark Johnson",
+        "role": "Materials Manager",
+        "avatar": "/avatars/mark.jpg"
+      },
+      "created_at": "2023-12-17T15:45:00Z"
+    },
+    {
+      "id": "reply370f",
+      "content": "Important consideration: data quality. We spent 3 months cleaning historical data before AI implementation. Focus areas:\n- Part classification standardization\n- Usage history validation\n- Lead time accuracy\n- Cost data normalization",
+      "author": {
+        "id": "user374",
+        "name": "Sarah Kim",
+        "role": "Data Quality Analyst",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-12-18T11:20:00Z"
+    },
+    {
+      "id": "reply370g",
+      "content": "We're using reinforcement learning for inventory optimization. Algorithm considers:\n- Carrying costs\n- Stockout penalties\n- Lead time variations\n- Demand uncertainty\n\nOutperforms traditional min-max systems by 35%.",
+      "author": {
+        "id": "user375",
+        "name": "Alex Turner",
+        "role": "AI Solutions Architect",
+        "avatar": "/avatars/alex.jpg"
+      },
+      "created_at": "2023-12-19T14:45:00Z"
+    }
+  ],
+  "category": "Cost & ROI Discussions",
+  "tags": [
+    "inventory-management",
+    "spare-parts",
+    "ai-optimization",
+    "cost-reduction"
+  ],
+  "seo": {
+    "keywords": [
+      "AI inventory management",
+      "spare parts optimization",
+      "predictive inventory control",
+      "maintenance inventory AI"
+    ],
+    "description": "Expert discussion on implementing AI-driven spare parts inventory management systems, including demand prediction, cost optimization, obsolescence management, and ERP integration strategies."
+  }
+}

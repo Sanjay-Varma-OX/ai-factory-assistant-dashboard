@@ -1,0 +1,98 @@
+{
+  "id": "013",
+  "title": "Training Maintenance Teams for the AI Era",
+  "content": "Hi maintenance professionals,\n\nAs our facility's Training Manager, I'm developing a comprehensive program to prepare our maintenance teams for AI-powered systems. Key areas we're focusing on:\n\n1. Technical skills gap assessment\n2. Hands-on training with AI predictive tools\n3. Data interpretation workshops\n4. Change management strategies\n\nWhat training approaches have worked well in your organizations? How did you address resistance to new technology?\n\nLooking for practical insights and lessons learned.",
+  "author": {
+    "id": "user330",
+    "name": "Emily Rodriguez",
+    "role": "Maintenance Training Manager",
+    "avatar": "/avatars/emily.jpg"
+  },
+  "created_at": "2023-12-11T10:00:00Z",
+  "last_activity": "2023-12-15T16:30:00Z",
+  "views": 245,
+  "replies": [
+    {
+      "id": "reply330a",
+      "content": "Emily, we successfully transitioned our team last year. Here's what worked:\n\n1. Started with basic AI concepts using real maintenance scenarios\n2. Created mentor-mentee pairs (tech-savvy with experienced techs)\n3. Developed micro-learning modules (15-20 min)\n4. Set up a sandbox environment for practice\n\nKey learning: Focus on practical applications over theory. Show how AI helps their daily work.",
+      "author": {
+        "id": "user331",
+        "name": "Marcus Thompson",
+        "role": "Maintenance Operations Director",
+        "avatar": "/avatars/marcus.jpg"
+      },
+      "created_at": "2023-12-11T11:45:00Z"
+    },
+    {
+      "id": "reply330b",
+      "content": "Thanks Marcus! How long did your transition take? We're trying to balance thorough training with maintaining regular maintenance schedules.",
+      "author": {
+        "id": "user330",
+        "name": "Emily Rodriguez",
+        "role": "Maintenance Training Manager",
+        "avatar": "/avatars/emily.jpg"
+      },
+      "created_at": "2023-12-12T09:15:00Z"
+    },
+    {
+      "id": "reply330c",
+      "content": "One effective approach we used was gamification. Created competitions for accurate fault prediction using AI tools. Teams earned points for correct diagnoses. Really helped overcome initial resistance and made learning fun.",
+      "author": {
+        "id": "user332",
+        "name": "Lisa Chen",
+        "role": "L&D Specialist",
+        "avatar": "/avatars/lisa.jpg"
+      },
+      "created_at": "2023-12-13T14:20:00Z"
+    },
+    {
+      "id": "reply330d",
+      "content": "Emily, our transition took about 6 months. We did modular training - 2 hours per week per team. Staggered the schedule so maintenance coverage wasn't impacted. Used overtime for initial sessions, then integrated into regular schedules once basics were covered.",
+      "author": {
+        "id": "user331",
+        "name": "Marcus Thompson",
+        "role": "Maintenance Operations Director",
+        "avatar": "/avatars/marcus.jpg"
+      },
+      "created_at": "2023-12-13T15:45:00Z"
+    },
+    {
+      "id": "reply330e",
+      "content": "Don't forget soft skills! We included modules on:\n- Critical thinking with AI insights\n- Communication between AI systems and human judgment\n- Documentation in the AI era\n- Collaborative problem-solving\n\nThese were as important as technical training.",
+      "author": {
+        "id": "user333",
+        "name": "James Wilson",
+        "role": "HR Training Coordinator",
+        "avatar": "/avatars/james.jpg"
+      },
+      "created_at": "2023-12-14T10:30:00Z"
+    },
+    {
+      "id": "reply330f",
+      "content": "Great point about soft skills, James. We're incorporating those into our program. Anyone have experience with virtual reality training for maintenance procedures? We're considering it for safe practice environments.",
+      "author": {
+        "id": "user330",
+        "name": "Emily Rodriguez",
+        "role": "Maintenance Training Manager",
+        "avatar": "/avatars/emily.jpg"
+      },
+      "created_at": "2023-12-15T16:30:00Z"
+    }
+  ],
+  "category": "Team Management & Training",
+  "tags": [
+    "training",
+    "skill-development",
+    "ai-adoption",
+    "change-management"
+  ],
+  "seo": {
+    "keywords": [
+      "maintenance team training",
+      "AI maintenance skills",
+      "industrial training programs",
+      "maintenance workforce development"
+    ],
+    "description": "Expert discussion on developing effective training programs for maintenance teams transitioning to AI-powered systems, including practical strategies, change management, and skill development approaches."
+  }
+}

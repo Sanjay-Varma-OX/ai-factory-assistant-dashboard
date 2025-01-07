@@ -1,0 +1,98 @@
+{
+  "id": "021",
+  "title": "AI-Driven Maintenance Training Programs",
+  "content": "Hello maintenance training professionals,\n\nWe're developing AI-enhanced training programs for our maintenance team. Focus areas:\n\n1. Virtual reality simulations\n2. Adaptive learning paths\n3. Performance tracking\n4. Skill gap analysis\n\nSpecifically interested in:\n- VR/AR implementation strategies\n- AI-driven assessment methods\n- Content personalization approaches\n- ROI measurement\n\nWhat best practices have you discovered?",
+  "author": {
+    "id": "user410",
+    "name": "Nathan Foster",
+    "role": "Training Development Manager",
+    "avatar": "/avatars/nathan.jpg"
+  },
+  "created_at": "2023-12-19T10:30:00Z",
+  "last_activity": "2023-12-23T10:15:00Z",
+  "views": 276,
+  "replies": [
+    {
+      "id": "reply410a",
+      "content": "Nathan, implemented AI training last year. Key successes:\n\n1. Personalized learning paths\n2. Real-time feedback loops\n3. Scenario-based training\n4. Skill progression tracking\n\nReduced training time by 40%, improved retention by 65%.",
+      "author": {
+        "id": "user411",
+        "name": "Diana Martinez",
+        "role": "Learning Technology Director",
+        "avatar": "/avatars/diana.jpg"
+      },
+      "created_at": "2023-12-19T14:15:00Z"
+    },
+    {
+      "id": "reply410b",
+      "content": "VR implementation tips:\n- Start with critical procedures\n- Include failure scenarios\n- Enable team training modes\n- Track performance metrics\n\nTook 3 months to develop first modules.",
+      "author": {
+        "id": "user412",
+        "name": "Chris Anderson",
+        "role": "VR Training Specialist",
+        "avatar": "/avatars/chris.jpg"
+      },
+      "created_at": "2023-12-20T11:30:00Z"
+    },
+    {
+      "id": "reply410c",
+      "content": "Diana, impressive results! How did you handle the initial resistance from experienced technicians?",
+      "author": {
+        "id": "user410",
+        "name": "Nathan Foster",
+        "role": "Training Development Manager",
+        "avatar": "/avatars/nathan.jpg"
+      },
+      "created_at": "2023-12-20T16:45:00Z"
+    },
+    {
+      "id": "reply410d",
+      "content": "Nathan, we used:\n1. Peer mentoring program\n2. Gamification elements\n3. Expert recognition system\n4. Gradual rollout\n\nKey was involving veterans in content development.",
+      "author": {
+        "id": "user411",
+        "name": "Diana Martinez",
+        "role": "Learning Technology Director",
+        "avatar": "/avatars/diana.jpg"
+      },
+      "created_at": "2023-12-21T09:20:00Z"
+    },
+    {
+      "id": "reply410e",
+      "content": "ROI metrics we track:\n- Time to competency\n- Error reduction rates\n- Knowledge retention scores\n- Certification speed\n\nQuarterly reviews show consistent improvements.",
+      "author": {
+        "id": "user413",
+        "name": "Michael Chang",
+        "role": "Training Analytics Manager",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-22T13:30:00Z"
+    },
+    {
+      "id": "reply410f",
+      "content": "Content personalization approach:\n1. Skill assessment baseline\n2. Learning style analysis\n3. Progress-based adaptation\n4. Peer comparison insights\n\nAI adjusts difficulty automatically.",
+      "author": {
+        "id": "user414",
+        "name": "Sarah Wilson",
+        "role": "Adaptive Learning Specialist",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-12-23T10:15:00Z"
+    }
+  ],
+  "category": "Training & Development",
+  "tags": [
+    "ai-training",
+    "virtual-reality",
+    "skill-development",
+    "maintenance-education"
+  ],
+  "seo": {
+    "keywords": [
+      "AI maintenance training",
+      "VR maintenance education",
+      "adaptive learning maintenance",
+      "smart training programs"
+    ],
+    "description": "Expert discussion on implementing AI-driven maintenance training programs, covering virtual reality simulations, adaptive learning, and performance tracking methodologies."
+  }
+}
