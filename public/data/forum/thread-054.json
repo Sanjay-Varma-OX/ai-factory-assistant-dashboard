@@ -1,0 +1,99 @@
+{
+  "id": "054",
+  "title": "Asset Health Scoring Methods",
+  "content": "Dear maintenance professionals,\n\nWe're developing an asset health scoring system and need input on:\n\n1. Scoring methodologies\n2. Key performance indicators\n3. Weighting factors\n4. Risk assessment integration\n5. Threshold definitions\n\nSpecific questions:\n- Which parameters are most critical?\n- How to normalize scores?\n- Update frequency?\n- Integration with maintenance planning?\n\nAppreciate your expertise!",
+  "author": {
+    "id": "user526",
+    "name": "Michael Chang",
+    "role": "Asset Performance Manager",
+    "avatar": "/avatars/michael_c.jpg"
+  },
+  "created_at": "2023-12-07T10:15:00Z",
+  "last_activity": "2023-12-14T16:30:00Z",
+  "views": 623,
+  "replies": [
+    {
+      "id": "reply454_1",
+      "content": "Our scoring framework:\n\n1. Equipment condition (30%)\n   - Vibration levels\n   - Temperature trends\n   - Oil analysis\n2. Performance metrics (25%)\n   - Efficiency\n   - Output quality\n3. Age/lifecycle (20%)\n4. Maintenance history (15%)\n5. Environmental factors (10%)\n\nAchieved 89% accuracy in failure prediction.",
+      "author": {
+        "id": "user527",
+        "name": "Dr. James Wilson",
+        "role": "Reliability Engineer",
+        "avatar": "/avatars/james_w.jpg"
+      },
+      "created_at": "2023-12-08T13:45:00Z"
+    },
+    {
+      "id": "reply454_2",
+      "content": "Normalization approach:\n\n1. Min-max scaling\n2. Equipment-specific baselines\n3. Operating context adjustment\n4. Seasonal factor correction\n\nReduced false alarms by 76%.",
+      "author": {
+        "id": "user528",
+        "name": "Sarah Martinez",
+        "role": "Data Scientist",
+        "avatar": "/avatars/sarah_m.jpg"
+      },
+      "created_at": "2023-12-09T15:20:00Z"
+    },
+    {
+      "id": "reply454_3",
+      "content": "Update frequency strategy:\n\n1. Real-time monitoring (critical parameters)\n2. Daily updates (performance metrics)\n3. Weekly reviews (trend analysis)\n4. Monthly assessments (overall health)\n\nOptimized resource allocation by 45%.",
+      "author": {
+        "id": "user529",
+        "name": "Robert Kim",
+        "role": "Operations Manager",
+        "avatar": "/avatars/robert_k.jpg"
+      },
+      "created_at": "2023-12-10T11:30:00Z"
+    },
+    {
+      "id": "reply454_4",
+      "content": "Question about your weighting factors - how do you adjust them for different equipment types? Our current approach seems too rigid.",
+      "author": {
+        "id": "user530",
+        "name": "Emily Chen",
+        "role": "Maintenance Planner",
+        "avatar": "/avatars/emily_c.jpg"
+      },
+      "created_at": "2023-12-11T14:15:00Z"
+    },
+    {
+      "id": "reply454_5",
+      "content": "Emily, our dynamic weighting system:\n\n1. Equipment criticality matrix\n2. Historical failure impact\n3. Production context\n4. Maintenance cost history\n\nImproved accuracy by 34%.",
+      "author": {
+        "id": "user531",
+        "name": "David Thompson",
+        "role": "Asset Management Specialist",
+        "avatar": "/avatars/david_t.jpg"
+      },
+      "created_at": "2023-12-12T16:45:00Z"
+    },
+    {
+      "id": "reply454_6",
+      "content": "Integration with maintenance planning:\n\n1. Automated work order triggers\n2. Resource optimization\n3. Spare parts forecasting\n4. Budget allocation\n\nReduced maintenance costs by 28%.",
+      "author": {
+        "id": "user532",
+        "name": "Lisa Park",
+        "role": "Maintenance Coordinator",
+        "avatar": "/avatars/lisa_p.jpg"
+      },
+      "created_at": "2023-12-13T12:20:00Z"
+    },
+    {
+      "id": "reply454_7",
+      "content": "Risk assessment integration:\n\n1. Safety impact scoring\n2. Environmental risk factors\n3. Production loss potential\n4. Compliance requirements\n\nEnhanced decision accuracy by 56%.",
+      "author": {
+        "id": "user533",
+        "name": "Thomas Lee",
+        "role": "Risk Management Expert",
+        "avatar": "/avatars/thomas_l.jpg"
+      },
+      "created_at": "2023-12-14T15:30:00Z"
+    }
+  ],
+  "category": "Predictive Maintenance",
+  "tags": ["asset-health", "scoring-methods", "performance-metrics", "risk-assessment"],
+  "seo": {
+    "keywords": ["asset health scoring", "equipment health index", "maintenance scoring system", "asset performance metrics", "condition assessment", "risk-based maintenance", "asset reliability", "predictive maintenance", "equipment monitoring", "maintenance planning"],
+    "description": "Expert discussion on developing and implementing asset health scoring systems, covering methodologies, KPIs, risk assessment, and integration with maintenance planning."
+  }
+}
