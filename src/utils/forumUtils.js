@@ -16,33 +16,36 @@ const readThreadFile = async (threadId) => {
   }
 };
 
-// Get total number of threads (using a cache)
-export const getTotalThreadCount = async () => {
-  if (allThreads !== null) {
-    return allThreads.length;
-  }
-  
-  let count = 0;
-  let consecutiveFailures = 0;
-  let currentId = 1;
+// Export this function
+export const startBackgroundLoading = async () => {
+  if (allThreads !== null) return allThreads;
 
-  while (consecutiveFailures < 3) {
-    const thread = await readThreadFile(currentId);
-    if (thread) {
-      count++;
-      consecutiveFailures = 0;
-    } else {
-      consecutiveFailures++;
+  try {
+    let threads = [];
+    let consecutiveFailures = 0;
+    let currentId = 1;
+
+    while (consecutiveFailures < 3) {
+      const thread = await readThreadFile(currentId);
+      if (thread) {
+        threads.push(thread);
+        consecutiveFailures = 0;
+      } else {
+        consecutiveFailures++;
+      }
+      currentId++;
     }
-    currentId++;
+
+    allThreads = threads.sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
+    return allThreads;
+  } catch (error) {
+    console.error('Error in background loading:', error);
+    return [];
   }
-  return count;
 };
 
-// Load threads for a specific page
 export const loadThreadsForPage = async (page) => {
   try {
-    // Calculate thread IDs for this page
     const startId = (page - 1) * THREADS_PER_PAGE + 1;
     const endId = startId + THREADS_PER_PAGE - 1;
     const pagePromises = [];
@@ -52,8 +55,7 @@ export const loadThreadsForPage = async (page) => {
     }
 
     const threads = await Promise.all(pagePromises);
-    return threads
-      .filter(thread => thread !== null)
+    return threads.filter(thread => thread !== null)
       .sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
   } catch (error) {
     console.error('Error loading page threads:', error);
@@ -61,7 +63,11 @@ export const loadThreadsForPage = async (page) => {
   }
 };
 
-// Load single thread
+export const getTotalThreadCount = async () => {
+  const threads = await startBackgroundLoading();
+  return threads.length;
+};
+
 export const loadSingleThread = async (threadId) => {
   return await readThreadFile(threadId);
 };
