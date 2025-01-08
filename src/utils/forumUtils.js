@@ -1,5 +1,8 @@
 // forumUtils.js
 
+const THREADS_PER_PAGE = 10;
+let allThreads = null; // Cache for background-loaded threads
+
 const readThreadFile = async (threadId) => {
   try {
     const response = await fetch(`/data/forum/thread-${threadId}.json`);
@@ -13,37 +16,76 @@ const readThreadFile = async (threadId) => {
   }
 };
 
-export const loadThreadsData = async () => {
+// Function to load threads for a specific page
+export const loadThreadsForPage = async (page) => {
   try {
-    // Get directory listing from public/data/forum
-    let allThreads = [];
-    let currentId = 1;
-    let consecutiveFailures = 0;
-    
-    // Try to load files until we hit multiple consecutive failures
-    while (consecutiveFailures < 3) {  // Stop after 3 consecutive failures
-      const paddedId = String(currentId).padStart(3, '0');  // Convert 1 to "001"
-      const thread = await readThreadFile(paddedId);
-      
-      if (thread) {
-        allThreads.push(thread);
-        consecutiveFailures = 0;  // Reset counter on success
-      } else {
-        consecutiveFailures++;
-      }
-      
-      currentId++;
+    const startId = (page - 1) * THREADS_PER_PAGE + 1;
+    const endId = startId + THREADS_PER_PAGE - 1;
+    const pageThreadPromises = [];
+
+    // Load threads for current page
+    for (let id = startId; id <= endId; id++) {
+      const paddedId = String(id).padStart(3, '0');
+      pageThreadPromises.push(readThreadFile(paddedId));
     }
 
-    // Sort threads by last activity
-    return allThreads.sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
+    const pageThreads = await Promise.all(pageThreadPromises);
+    return pageThreads.filter(thread => thread !== null)
+      .sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
+
   } catch (error) {
-    console.error('Error loading threads:', error);
+    console.error('Error loading page threads:', error);
     return [];
   }
 };
 
+// Background loader for all threads
+export const startBackgroundLoading = async () => {
+  if (allThreads !== null) return allThreads; // Return cached threads if available
+
+  try {
+    let threads = [];
+    let currentId = 1;
+    let consecutiveFailures = 0;
+
+    while (consecutiveFailures < 3) {
+      const paddedId = String(currentId).padStart(3, '0');
+      const thread = await readThreadFile(paddedId);
+
+      if (thread) {
+        threads.push(thread);
+        consecutiveFailures = 0;
+      } else {
+        consecutiveFailures++;
+      }
+
+      currentId++;
+    }
+
+    allThreads = threads.sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
+    return allThreads;
+
+  } catch (error) {
+    console.error('Error in background loading:', error);
+    return [];
+  }
+};
+
+// Get total thread count (for pagination)
+export const getTotalThreadCount = async () => {
+  const threads = await startBackgroundLoading();
+  return threads.length;
+};
+
+// Load single thread
 export const loadSingleThread = async (threadId) => {
+  // First check cache if available
+  if (allThreads !== null) {
+    const thread = allThreads.find(t => t.id === threadId);
+    if (thread) return thread;
+  }
+
+  // If not in cache, load directly
   try {
     const paddedId = String(threadId).padStart(3, '0');
     return await readThreadFile(paddedId);
