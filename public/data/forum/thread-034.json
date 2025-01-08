@@ -1,0 +1,99 @@
+{
+  "id": "034",
+  "title": "Skill Development Programs for Modern Maintenance",
+  "content": "Hello maintenance training experts,\n\nWe're developing a comprehensive skill development program for our maintenance team. Looking for insights on modern training approaches.\n\nKey areas:\n1. Technical skills upgrade\n2. Digital literacy training\n3. AI/ML fundamentals\n4. Soft skills development\n5. Certification paths\n\nSpecific questions:\n- Which skills are most critical?\n- Recommended training methods?\n- Assessment approaches?\n- ROI measurement?\n\nThanks in advance!\n\nRegards,\nKaren",
+  "author": {
+    "id": "user382",
+    "name": "Karen Mitchell",
+    "role": "Training & Development Manager",
+    "avatar": "/avatars/karen.jpg"
+  },
+  "created_at": "2023-12-01T08:30:00Z",
+  "last_activity": "2023-12-07T15:45:00Z",
+  "views": 289,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Critical skills for modern maintenance:\n1. Data analysis & interpretation\n2. IoT system management\n3. Predictive maintenance tools\n4. Digital documentation\n5. Cross-functional communication\n\nPrioritize these in training.",
+      "author": {
+        "id": "user383",
+        "name": "Dr. Thomas Brown",
+        "role": "Industrial Skills Expert",
+        "avatar": "/avatars/thomas_b.jpg"
+      },
+      "created_at": "2023-12-01T11:45:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "Effective training methods:\n- Blended learning approach\n- Virtual reality simulations\n- Hands-on workshops\n- Micro-learning modules\n- Peer mentoring programs\n\nImplement in 3-month cycles.",
+      "author": {
+        "id": "user384",
+        "name": "Patricia Wong",
+        "role": "Learning Technology Specialist",
+        "avatar": "/avatars/patricia.jpg"
+      },
+      "created_at": "2023-12-02T14:20:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "Assessment framework:\n1. Skills matrix evaluation\n2. Practical demonstrations\n3. Project-based assessments\n4. Digital competency tests\n5. 360-degree feedback\n\nQuarterly reviews recommended.",
+      "author": {
+        "id": "user385",
+        "name": "Mark Anderson",
+        "role": "Performance Assessment Manager",
+        "avatar": "/avatars/mark_a.jpg"
+      },
+      "created_at": "2023-12-03T09:30:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "ROI measurement metrics:\n- Maintenance efficiency gains\n- Error reduction rates\n- Time-to-competency\n- Certification success rates\n- Productivity improvements\n\nTracking over 12 months ideal.",
+      "author": {
+        "id": "user386",
+        "name": "Rachel Cohen",
+        "role": "Training ROI Analyst",
+        "avatar": "/avatars/rachel.jpg"
+      },
+      "created_at": "2023-12-04T13:15:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "Question about VR simulations - which platforms are most effective for maintenance training?",
+      "author": {
+        "id": "user382",
+        "name": "Karen Mitchell",
+        "role": "Training & Development Manager",
+        "avatar": "/avatars/karen.jpg"
+      },
+      "created_at": "2023-12-05T10:45:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "Top VR platforms we've tested:\n1. SimforMaint Pro\n2. VirtualTech Training\n3. MaintenanceVR Suite\n4. RealEquip Simulator\n\nSimforMaint best for industrial.",
+      "author": {
+        "id": "user387",
+        "name": "Alex Turner",
+        "role": "VR Training Specialist",
+        "avatar": "/avatars/alex_t.jpg"
+      },
+      "created_at": "2023-12-06T16:30:00Z"
+    },
+    {
+      "id": "reply_7",
+      "content": "Certification roadmap suggestion:\n1. Basic digital skills (3 months)\n2. AI/ML fundamentals (6 months)\n3. Advanced diagnostics (6 months)\n4. Specialized certifications\n\nTotal 18-month program.",
+      "author": {
+        "id": "user388",
+        "name": "Michelle Patel",
+        "role": "Certification Program Director",
+        "avatar": "/avatars/michelle.jpg"
+      },
+      "created_at": "2023-12-07T15:45:00Z"
+    }
+  ],
+  "category": "Team Management & Training",
+  "tags": ["skill-development", "maintenance-training", "digital-skills", "certification", "training-programs"],
+  "seo": {
+    "keywords": ["maintenance skill development", "modern maintenance training", "digital maintenance skills", "maintenance certification", "training programs", "maintenance education"],
+    "description": "Expert discussion on developing comprehensive skill development programs for modern maintenance teams, including technical skills, digital literacy, AI/ML fundamentals, and certification paths."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "040",
+  "title": "Data Quality Management in AI Systems",
+  "content": "Fellow AI practitioners,\n\nStruggling with data quality issues in our AI maintenance system. Need expert advice on:\n\n1. Data validation methods\n2. Cleaning strategies\n3. Quality metrics\n4. Monitoring tools\n5. Best practices\n\nSpecific challenges:\n- Sensor data accuracy\n- Missing values\n- Outlier detection\n- Data consistency\n\nThanks in advance,\nData Quality Team",
+  "author": {
+    "id": "user424",
+    "name": "Dr. Elena Rodriguez",
+    "role": "Data Quality Manager",
+    "avatar": "/avatars/elena.jpg"
+  },
+  "created_at": "2023-12-07T08:45:00Z",
+  "last_activity": "2023-12-12T15:30:00Z",
+  "views": 298,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Data validation approach:\n1. Automated range checks\n2. Cross-sensor validation\n3. Statistical analysis\n4. Domain rules\n5. Time-series validation\n\n95% accuracy achieved.",
+      "author": {
+        "id": "user425",
+        "name": "Tom Zhang",
+        "role": "Data Validation Expert",
+        "avatar": "/avatars/tom.jpg"
+      },
+      "created_at": "2023-12-07T13:20:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "Cleaning strategies we use:\n- Moving average smoothing\n- Kalman filtering\n- Interpolation methods\n- Anomaly detection\n- Data reconciliation\n\nReduced errors by 80%.",
+      "author": {
+        "id": "user426",
+        "name": "Sarah Williams",
+        "role": "Data Cleaning Specialist",
+        "avatar": "/avatars/sarah_w.jpg"
+      },
+      "created_at": "2023-12-08T10:45:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "Key quality metrics:\n1. Completeness score\n2. Accuracy percentage\n3. Consistency index\n4. Timeliness rating\n5. Validity measure\n\nMonthly tracking essential.",
+      "author": {
+        "id": "user427",
+        "name": "David Chen",
+        "role": "Quality Metrics Analyst",
+        "avatar": "/avatars/david_c.jpg"
+      },
+      "created_at": "2023-12-09T15:30:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "Recommended monitoring tools:\n- DataDog for real-time\n- Grafana dashboards\n- Custom Python scripts\n- Apache NiFi\n- Great Expectations\n\nComprehensive coverage.",
+      "author": {
+        "id": "user428",
+        "name": "Lisa Thompson",
+        "role": "Tools Integration Lead",
+        "avatar": "/avatars/lisa_t.jpg"
+      },
+      "created_at": "2023-12-10T11:15:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "Question about Kalman filtering - what parameters are you using for sensor data?",
+      "author": {
+        "id": "user424",
+        "name": "Dr. Elena Rodriguez",
+        "role": "Data Quality Manager",
+        "avatar": "/avatars/elena.jpg"
+      },
+      "created_at": "2023-12-11T09:30:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "Kalman filter settings:\n- Process noise: 0.1\n- Measurement noise: 0.8\n- Initial estimate: sensor mean\n- Update rate: 100ms\n\nOptimized for sensors.",
+      "author": {
+        "id": "user429",
+        "name": "Dr. Michael Park",
+        "role": "Signal Processing Expert",
+        "avatar": "/avatars/michael_p.jpg"
+      },
+      "created_at": "2023-12-12T15:30:00Z"
+    }
+  ],
+  "category": "Best Practices & Tips",
+  "tags": ["data-quality", "validation", "cleaning", "monitoring", "best-practices"],
+  "seo": {
+    "keywords": ["data quality management", "AI data validation", "data cleaning strategies", "quality metrics", "monitoring tools"],
+    "description": "Expert discussion on managing data quality in AI maintenance systems, covering validation methods, cleaning strategies, quality metrics, and monitoring tools."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "031",
+  "title": "Regulatory Compliance in AI-Based Maintenance",
+  "content": "Dear maintenance compliance experts,\n\nWe're implementing AI-based maintenance systems and need guidance on regulatory compliance requirements. Key areas of concern:\n\n1. Data privacy regulations\n2. Equipment safety standards\n3. AI model transparency requirements\n4. Audit trail documentation\n5. Industry-specific certifications\n\nSpecific questions:\n- Which regulations apply to AI maintenance systems?\n- How do you ensure GDPR compliance with sensor data?\n- What documentation is required for audits?\n- How do you handle model decisions transparency?\n\nThanks in advance!\n\nBest regards,\nAlex",
+  "author": {
+    "id": "user361",
+    "name": "Alex Rodriguez",
+    "role": "Compliance Manager",
+    "avatar": "/avatars/alex.jpg"
+  },
+  "created_at": "2023-11-28T10:30:00Z",
+  "last_activity": "2023-12-04T16:45:00Z",
+  "views": 412,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Key regulations for AI maintenance:\n1. ISO/IEC 27001 for data security\n2. ISO 31000 for risk management\n3. IEC 62443 for industrial automation\n4. Regional data protection laws\n\nRecommend creating compliance matrix for each.",
+      "author": {
+        "id": "user362",
+        "name": "Emma Thompson",
+        "role": "Regulatory Affairs Director",
+        "avatar": "/avatars/emma.jpg"
+      },
+      "created_at": "2023-11-28T14:15:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "For GDPR compliance with sensor data:\n- Anonymize equipment IDs\n- Implement data retention policies\n- Establish data access controls\n- Document data processing purposes\n- Enable data portability\n\nWe maintain separate EU data centers.",
+      "author": {
+        "id": "user363",
+        "name": "Hans Weber",
+        "role": "Data Protection Officer",
+        "avatar": "/avatars/hans.jpg"
+      },
+      "created_at": "2023-11-29T09:45:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "Required audit documentation:\n1. Model training procedures\n2. Data validation methods\n3. Decision-making algorithms\n4. Risk assessment reports\n5. Incident response plans\n6. Regular compliance reviews\n\nStore everything with version control.",
+      "author": {
+        "id": "user364",
+        "name": "Maria Santos",
+        "role": "Quality Assurance Lead",
+        "avatar": "/avatars/maria.jpg"
+      },
+      "created_at": "2023-11-30T11:20:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "For model transparency, we implement:\n- Explainable AI frameworks\n- Decision audit trails\n- Confidence scoring\n- Human oversight protocols\n- Regular bias assessments\n\nKey is documenting decision rationale.",
+      "author": {
+        "id": "user365",
+        "name": "Dr. James Wilson",
+        "role": "AI Ethics Officer",
+        "avatar": "/avatars/james.jpg"
+      },
+      "created_at": "2023-12-01T13:30:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "Question about equipment safety standards - how do you handle conflicting requirements between AI optimization and traditional safety protocols?",
+      "author": {
+        "id": "user361",
+        "name": "Alex Rodriguez",
+        "role": "Compliance Manager",
+        "avatar": "/avatars/alex.jpg"
+      },
+      "created_at": "2023-12-02T10:15:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "We use a hierarchical approach:\n1. Safety standards always override AI recommendations\n2. AI suggests optimizations within safety parameters\n3. Human approval required for boundary cases\n4. Continuous monitoring of safety metrics\n5. Regular safety-AI integration audits",
+      "author": {
+        "id": "user366",
+        "name": "Sarah O'Connor",
+        "role": "Industrial Safety Specialist",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-12-03T14:20:00Z"
+    },
+    {
+      "id": "reply_7",
+      "content": "Additional certification requirements:\n- ISO 9001:2015 updates for AI processes\n- ML model validation certificates\n- Cybersecurity compliance (NIST framework)\n- Industry-specific safety certs\n\nPlan 6-8 months for full certification.",
+      "author": {
+        "id": "user367",
+        "name": "Richard Lee",
+        "role": "Certification Manager",
+        "avatar": "/avatars/richard.jpg"
+      },
+      "created_at": "2023-12-04T16:45:00Z"
+    }
+  ],
+  "category": "Compliance & Standards",
+  "tags": ["regulatory-compliance", "ai-regulations", "safety-standards", "gdpr", "audit-requirements"],
+  "seo": {
+    "keywords": ["AI maintenance compliance", "regulatory requirements", "GDPR compliance", "maintenance safety standards", "AI audit requirements", "compliance documentation", "industrial compliance"],
+    "description": "Expert discussion on regulatory compliance requirements for AI-based maintenance systems, including data privacy, safety standards, transparency, and audit documentation requirements."
+  }
+}
