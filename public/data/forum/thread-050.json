@@ -1,0 +1,99 @@
+{
+  "id": "050",
+  "title": "Condition-Based Monitoring Strategies",
+  "content": "Hello maintenance community,\n\nWe're revamping our condition-based monitoring program and looking for best practices. Our focus areas:\n\n1. Equipment condition parameters\n2. Monitoring frequency optimization\n3. Alert threshold setting\n4. Data analysis techniques\n5. Action plan development\n\nSpecific questions:\n- Which parameters are most reliable for different equipment types?\n- How do you determine optimal monitoring intervals?\n- What's your approach to setting alert thresholds?\n- How do you handle false positives?\n\nAppreciate your insights!",
+  "author": {
+    "id": "user495",
+    "name": "Chris Peterson",
+    "role": "Reliability Engineer",
+    "avatar": "/avatars/chris_p.jpg"
+  },
+  "created_at": "2023-12-03T08:45:00Z",
+  "last_activity": "2023-12-10T16:30:00Z",
+  "views": 456,
+  "replies": [
+    {
+      "id": "reply450_1",
+      "content": "Chris, here's our parameter selection framework:\n\n1. Rotating Equipment:\n   - Vibration signatures\n   - Temperature trends\n   - Oil analysis\n   - Current draw\n\n2. Static Equipment:\n   - Thickness measurements\n   - Thermal imaging\n   - Pressure drops\n   - Corrosion monitoring\n\nReduced false alarms by 67%.",
+      "author": {
+        "id": "user496",
+        "name": "Dr. James Wilson",
+        "role": "Equipment Monitoring Specialist",
+        "avatar": "/avatars/james_w.jpg"
+      },
+      "created_at": "2023-12-04T10:30:00Z"
+    },
+    {
+      "id": "reply450_2",
+      "content": "For monitoring intervals, we use:\n\n1. Criticality assessment\n2. Failure mode analysis\n3. Historical data trends\n4. OEM recommendations\n\nOptimized intervals saved 42% in monitoring costs.",
+      "author": {
+        "id": "user497",
+        "name": "Maria Rodriguez",
+        "role": "Maintenance Strategist",
+        "avatar": "/avatars/maria_r.jpg"
+      },
+      "created_at": "2023-12-05T13:15:00Z"
+    },
+    {
+      "id": "reply450_3",
+      "content": "Alert threshold strategy:\n\n1. Baseline establishment (30 days minimum)\n2. Statistical analysis (3-sigma approach)\n3. Equipment-specific adjustments\n4. Seasonal considerations\n\nAchieved 89% alert accuracy.",
+      "author": {
+        "id": "user498",
+        "name": "David Chang",
+        "role": "Data Analyst",
+        "avatar": "/avatars/david_c.jpg"
+      },
+      "created_at": "2023-12-06T15:45:00Z"
+    },
+    {
+      "id": "reply450_4",
+      "content": "Question about your baseline establishment - how do you handle equipment with varying load conditions? Our current approach seems to generate too many false positives during load changes.",
+      "author": {
+        "id": "user499",
+        "name": "Linda Martinez",
+        "role": "Process Engineer",
+        "avatar": "/avatars/linda_m.jpg"
+      },
+      "created_at": "2023-12-07T09:20:00Z"
+    },
+    {
+      "id": "reply450_5",
+      "content": "Linda, we solved that using:\n\n1. Load-based threshold bands\n2. Dynamic baseline adjustment\n3. Operating mode classification\n4. Multi-parameter correlation\n\nReduced load-related false positives by 83%.",
+      "author": {
+        "id": "user500",
+        "name": "Michael Thompson",
+        "role": "Automation Engineer",
+        "avatar": "/avatars/michael_t.jpg"
+      },
+      "created_at": "2023-12-08T11:40:00Z"
+    },
+    {
+      "id": "reply450_6",
+      "content": "Action plan development framework:\n\n1. Severity classification\n2. Response time matrix\n3. Resource allocation rules\n4. Escalation procedures\n\nImproved response time by 56%.",
+      "author": {
+        "id": "user501",
+        "name": "Sarah Anderson",
+        "role": "Maintenance Planning Manager",
+        "avatar": "/avatars/sarah_a.jpg"
+      },
+      "created_at": "2023-12-09T14:25:00Z"
+    },
+    {
+      "id": "reply450_7",
+      "content": "Cost-benefit analysis of our CBM program:\n\n1. Implementation costs: $450K\n2. Annual savings: $1.2M\n   - Reduced downtime: 62%\n   - Lower repair costs: 45%\n   - Extended equipment life: 28%\n\nROI achieved in 4.5 months.",
+      "author": {
+        "id": "user502",
+        "name": "Robert Lee",
+        "role": "Financial Analyst",
+        "avatar": "/avatars/robert_l.jpg"
+      },
+      "created_at": "2023-12-10T13:50:00Z"
+    }
+  ],
+  "category": "Predictive Maintenance",
+  "tags": ["condition-monitoring", "equipment-monitoring", "predictive-maintenance", "reliability-engineering"],
+  "seo": {
+    "keywords": ["condition-based monitoring", "equipment condition monitoring", "CBM strategy", "predictive maintenance", "monitoring parameters", "alert thresholds", "equipment reliability", "maintenance optimization", "condition monitoring techniques", "industrial monitoring"],
+    "description": "Expert discussion on implementing effective condition-based monitoring strategies, covering parameter selection, monitoring intervals, threshold setting, and action plan development for industrial equipment."
+  }
+}

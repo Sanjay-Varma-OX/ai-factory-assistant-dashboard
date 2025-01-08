@@ -1,0 +1,88 @@
+{
+  "id": "053",
+  "title": "Data Quality for Predictive Models",
+  "content": "Hi maintenance analytics experts,\n\nWe're focusing on improving data quality for our predictive maintenance models. Key areas:\n\n1. Data validation methods\n2. Cleaning techniques\n3. Quality metrics\n4. Automated checks\n5. Data governance\n\nSpecific challenges:\n- Handling sensor noise\n- Missing data points\n- Data consistency\n- Quality standards\n\nWhat strategies have proven effective in your experience?\n\nThanks for sharing!",
+  "author": {
+    "id": "user519",
+    "name": "Rachel Anderson",
+    "role": "Data Quality Manager",
+    "avatar": "/avatars/rachel_a.jpg"
+  },
+  "created_at": "2023-12-06T08:30:00Z",
+  "last_activity": "2023-12-13T15:45:00Z",
+  "views": 542,
+  "replies": [
+    {
+      "id": "reply453_1",
+      "content": "Rachel, our validation framework:\n\n1. Range checks\n   - Equipment-specific limits\n   - Operating conditions\n   - Historical patterns\n   - Statistical bounds\n\n2. Consistency checks\n   - Cross-sensor validation\n   - Physics-based rules\n   - Time-series continuity\n\nReduced invalid data by 92%.",
+      "author": {
+        "id": "user520",
+        "name": "Dr. Thomas Lee",
+        "role": "Data Validation Expert",
+        "avatar": "/avatars/thomas_l.jpg"
+      },
+      "created_at": "2023-12-07T11:20:00Z"
+    },
+    {
+      "id": "reply453_2",
+      "content": "Cleaning techniques we use:\n\n1. Outlier detection\n   - Z-score method\n   - IQR analysis\n   - DBSCAN clustering\n2. Noise reduction\n   - Moving average\n   - Kalman filtering\n   - Wavelet transform\n\nImproved data reliability by 85%.",
+      "author": {
+        "id": "user521",
+        "name": "Sophie Wilson",
+        "role": "Signal Processing Engineer",
+        "avatar": "/avatars/sophie_w.jpg"
+      },
+      "created_at": "2023-12-08T14:45:00Z"
+    },
+    {
+      "id": "reply453_3",
+      "content": "Quality metrics dashboard:\n\n1. Completeness score\n2. Accuracy index\n3. Consistency rating\n4. Timeliness measure\n\nAchieved 94% quality score.",
+      "author": {
+        "id": "user522",
+        "name": "Mark Thompson",
+        "role": "Analytics Manager",
+        "avatar": "/avatars/mark_t.jpg"
+      },
+      "created_at": "2023-12-09T16:30:00Z"
+    },
+    {
+      "id": "reply453_4",
+      "content": "Question about your noise reduction - how do you handle sudden but legitimate changes vs. noise? We're struggling with this distinction.",
+      "author": {
+        "id": "user523",
+        "name": "Linda Chen",
+        "role": "Process Engineer",
+        "avatar": "/avatars/linda_c.jpg"
+      },
+      "created_at": "2023-12-10T09:15:00Z"
+    },
+    {
+      "id": "reply453_5",
+      "content": "Linda, our approach:\n\n1. Multi-parameter correlation\n2. Change point detection\n3. Domain rules integration\n4. Expert system validation\n\nReduced false noise flags by 78%.",
+      "author": {
+        "id": "user524",
+        "name": "David Park",
+        "role": "Machine Learning Engineer",
+        "avatar": "/avatars/david_p.jpg"
+      },
+      "created_at": "2023-12-11T12:40:00Z"
+    },
+    {
+      "id": "reply453_6",
+      "content": "Data governance structure:\n\n1. Quality standards\n2. Ownership matrix\n3. Audit procedures\n4. Training programs\n\nMaintained 96% compliance rate.",
+      "author": {
+        "id": "user525",
+        "name": "Jennifer Brown",
+        "role": "Data Governance Lead",
+        "avatar": "/avatars/jennifer_b.jpg"
+      },
+      "created_at": "2023-12-12T15:25:00Z"
+    }
+  ],
+  "category": "Predictive Maintenance",
+  "tags": ["data-quality", "predictive-models", "data-validation", "quality-assurance"],
+  "seo": {
+    "keywords": ["data quality maintenance", "predictive model data", "maintenance data validation", "data cleaning techniques", "quality metrics", "data governance", "sensor data quality", "predictive maintenance data", "data reliability", "maintenance analytics"],
+    "description": "Expert discussion on improving data quality for predictive maintenance models, covering validation methods, cleaning techniques, quality metrics, and data governance strategies."
+  }
+}

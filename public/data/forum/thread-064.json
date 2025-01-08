@@ -1,0 +1,88 @@
+{
+  "id": "064",
+  "title": "Manufacturing Line Optimization",
+  "content": "Manufacturing professionals,\n\nWe're optimizing our production lines and seeking expertise on:\n\n1. Line efficiency\n2. Quality control\n3. Throughput optimization\n4. Bottleneck identification\n5. Automation integration\n\nKey areas:\n- Production scheduling\n- Equipment performance\n- Quality metrics\n- Workforce coordination\n\nWhat strategies have proven successful in your facilities?\n\nAppreciate your insights!",
+  "author": {
+    "id": "user592",
+    "name": "Michael Zhang",
+    "role": "Production Manager",
+    "avatar": "/avatars/michael_z.jpg"
+  },
+  "created_at": "2023-12-18T08:45:00Z",
+  "last_activity": "2023-12-24T16:30:00Z",
+  "views": 756,
+  "replies": [
+    {
+      "id": "reply464_1",
+      "content": "Line efficiency improvements:\n\n1. OEE monitoring\n   - Availability tracking\n   - Performance metrics\n   - Quality rates\n\n2. Real-time analytics\n   - Production KPIs\n   - Trend analysis\n   - Predictive alerts\n\nEfficiency increase: 35%",
+      "author": {
+        "id": "user593",
+        "name": "Jennifer Parker",
+        "role": "Operations Excellence Lead",
+        "avatar": "/avatars/jennifer_p.jpg"
+      },
+      "created_at": "2023-12-19T11:30:00Z"
+    },
+    {
+      "id": "reply464_2",
+      "content": "Bottleneck management:\n\n1. Analysis methods\n   - Theory of Constraints\n   - Value Stream Mapping\n   - Simulation modeling\n\n2. Solutions implemented\n   - Buffer optimization\n   - Capacity balancing\n   - Workflow redesign\n\nThroughput improvement: 40%",
+      "author": {
+        "id": "user594",
+        "name": "David Wilson",
+        "role": "Industrial Engineer",
+        "avatar": "/avatars/david_w.jpg"
+      },
+      "created_at": "2023-12-20T13:45:00Z"
+    },
+    {
+      "id": "reply464_3",
+      "content": "Quality control system:\n\n1. Inspection points\n   - Automated vision\n   - In-line testing\n   - Final QC\n\n2. Data integration\n   - SPC charts\n   - Defect tracking\n   - Root cause analysis\n\nDefect reduction: 75%",
+      "author": {
+        "id": "user595",
+        "name": "Sarah Thompson",
+        "role": "Quality Manager",
+        "avatar": "/avatars/sarah_t.jpg"
+      },
+      "created_at": "2023-12-21T15:20:00Z"
+    },
+    {
+      "id": "reply464_4",
+      "content": "Question about automated vision systems - what software/hardware combination are you using for defect detection?",
+      "author": {
+        "id": "user596",
+        "name": "Robert Chen",
+        "role": "Automation Engineer",
+        "avatar": "/avatars/robert_c.jpg"
+      },
+      "created_at": "2023-12-22T10:15:00Z"
+    },
+    {
+      "id": "reply464_5",
+      "content": "Vision system setup:\n\n1. Hardware\n   - High-speed cameras\n   - LED lighting arrays\n   - GPU processors\n\n2. Software stack\n   - Deep learning models\n   - Custom algorithms\n   - Real-time processing\n\nAccuracy rate: 99.7%",
+      "author": {
+        "id": "user595",
+        "name": "Sarah Thompson",
+        "role": "Quality Manager",
+        "avatar": "/avatars/sarah_t.jpg"
+      },
+      "created_at": "2023-12-23T12:40:00Z"
+    },
+    {
+      "id": "reply464_6",
+      "content": "Workforce coordination:\n\n1. Digital systems\n   - Work instructions\n   - Skills matrix\n   - Training tracking\n\n2. Communication tools\n   - Real-time alerts\n   - Performance feedback\n   - Team collaboration\n\nProductivity gain: 28%",
+      "author": {
+        "id": "user597",
+        "name": "Mark Rodriguez",
+        "role": "Workforce Development Manager",
+        "avatar": "/avatars/mark_r.jpg"
+      },
+      "created_at": "2023-12-24T14:15:00Z"
+    }
+  ],
+  "category": "Manufacturing Operations",
+  "tags": ["manufacturing", "line-optimization", "quality-control", "automation"],
+  "seo": {
+    "keywords": ["manufacturing line optimization", "production efficiency", "quality control systems", "bottleneck management", "automation integration", "workforce coordination", "throughput optimization", "OEE monitoring", "vision inspection", "production scheduling"],
+    "description": "Expert discussion on manufacturing line optimization strategies, covering efficiency improvements, quality control systems, bottleneck management, and automation integration in production facilities."
+  }
+}

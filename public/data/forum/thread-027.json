@@ -91,9 +91,23 @@
     }
   ],
   "category": "AI & Technology Integration",
-  "tags": ["machine-learning", "predictive-maintenance", "failure-prediction", "model-selection", "data-science"],
+  "tags": [
+    "machine-learning",
+    "predictive-maintenance",
+    "failure-prediction",
+    "model-selection",
+    "data-science"
+  ],
   "seo": {
-    "keywords": ["machine learning failure prediction", "predictive maintenance ML", "equipment failure models", "ML model selection", "failure prediction algorithms", "maintenance data science", "predictive analytics"],
+    "keywords": [
+      "machine learning failure prediction",
+      "predictive maintenance ML",
+      "equipment failure models",
+      "ML model selection",
+      "failure prediction algorithms",
+      "maintenance data science",
+      "predictive analytics"
+    ],
     "description": "Expert discussion on implementing machine learning models for equipment failure prediction, covering model selection, feature engineering, and handling imbalanced data in industrial maintenance."
   }
 }
