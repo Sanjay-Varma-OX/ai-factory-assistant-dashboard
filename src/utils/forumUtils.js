@@ -47,3 +47,31 @@ export const loadRemainingThreads = async (startFromId) => {
     return [];
   }
 };
+
+const readThreadFile = async (threadId) => {
+  try {
+    const paddedId = String(threadId).padStart(3, '0');
+    const response = await fetch(`/data/forum/thread-${paddedId}.json`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch thread file: ${response.statusText}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(`Error reading thread ${threadId}:`, error);
+    return null;
+  }
+};
+
+// Add this export
+export const loadSingleThread = async (threadId) => {
+  try {
+    const thread = await readThreadFile(threadId);
+    if (!thread) {
+      throw new Error(`Thread ${threadId} not found`);
+    }
+    return thread;
+  } catch (error) {
+    console.error(`Error loading thread ${threadId}:`, error);
+    return null;
+  }
+};
