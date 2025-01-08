@@ -1,0 +1,110 @@
+{
+  "id": "041",
+  "title": "AI Maintenance in Smart Manufacturing",
+  "content": "Success Story: AI-Driven Maintenance Transformation\n\nProud to share our smart manufacturing facility's journey:\n\n1. 85% reduction in downtime\n2. 40% maintenance cost savings\n3. 60% improved equipment lifespan\n4. 30% energy optimization\n\nKey implementations:\n- Sensor network integration\n- Real-time monitoring\n- Predictive analytics\n- Digital twin modeling\n\nHappy to share details and lessons learned.",
+  "author": {
+    "id": "user430",
+    "name": "Jennifer Martinez",
+    "role": "Smart Factory Director",
+    "avatar": "/avatars/jennifer.jpg"
+  },
+  "created_at": "2023-11-15T10:30:00Z",
+  "last_activity": "2023-11-22T16:45:00Z",
+  "views": 428,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Impressive results! Could you share more about your sensor network setup? Particularly interested in:\n- Sensor types used\n- Data collection frequency\n- Integration challenges",
+      "author": {
+        "id": "user431",
+        "name": "Dr. Alex Kumar",
+        "role": "IoT Solutions Architect",
+        "avatar": "/avatars/alex.jpg"
+      },
+      "created_at": "2023-11-16T09:15:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "Sensor implementation details:\n- Vibration sensors: 1000Hz sampling\n- Temperature: 5-min intervals\n- Pressure: Real-time monitoring\n- Power consumption: Continuous\n\nKey challenge: Data synchronization across systems. Solved using edge computing.",
+      "author": {
+        "id": "user430",
+        "name": "Jennifer Martinez",
+        "role": "Smart Factory Director",
+        "avatar": "/avatars/jennifer.jpg"
+      },
+      "created_at": "2023-11-17T11:30:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "What ML models are you using for predictive analytics? We're seeing great results with LSTM networks for time-series prediction.",
+      "author": {
+        "id": "user432",
+        "name": "Dr. Thomas Lee",
+        "role": "ML Engineering Lead",
+        "avatar": "/avatars/thomas.jpg"
+      },
+      "created_at": "2023-11-18T14:20:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "Our ML stack:\n1. Random Forest for anomaly detection\n2. LSTM for failure prediction\n3. XGBoost for maintenance scheduling\n4. CNN for visual inspections\n\nAccuracy improved 25% after fine-tuning.",
+      "author": {
+        "id": "user433",
+        "name": "Maria Santos",
+        "role": "Data Science Manager",
+        "avatar": "/avatars/maria.jpg"
+      },
+      "created_at": "2023-11-19T13:45:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "Digital twin integration was key for us too. Which platform did you use for modeling?",
+      "author": {
+        "id": "user434",
+        "name": "David Wilson",
+        "role": "Digital Twin Specialist",
+        "avatar": "/avatars/david.jpg"
+      },
+      "created_at": "2023-11-20T15:30:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "We used Siemens Mindsphere for digital twin modeling. Integration with our existing PLCs was seamless. Happy to share configuration details offline.",
+      "author": {
+        "id": "user430",
+        "name": "Jennifer Martinez",
+        "role": "Smart Factory Director",
+        "avatar": "/avatars/jennifer.jpg"
+      },
+      "created_at": "2023-11-21T10:15:00Z"
+    },
+    {
+      "id": "reply_7",
+      "content": "ROI timeline question - how long did it take to achieve the 40% maintenance cost savings?",
+      "author": {
+        "id": "user435",
+        "name": "Robert Chang",
+        "role": "Financial Controller",
+        "avatar": "/avatars/robert.jpg"
+      },
+      "created_at": "2023-11-21T16:30:00Z"
+    },
+    {
+      "id": "reply_8",
+      "content": "ROI breakdown:\n- Initial investment recovered in 14 months\n- 20% savings by month 6\n- 40% savings achieved by month 12\n- Additional benefits: reduced inventory, optimized staffing\n\nKey to quick ROI: phased implementation approach.",
+      "author": {
+        "id": "user430",
+        "name": "Jennifer Martinez",
+        "role": "Smart Factory Director",
+        "avatar": "/avatars/jennifer.jpg"
+      },
+      "created_at": "2023-11-22T16:45:00Z"
+    }
+  ],
+  "category": "Success Stories & Case Studies",
+  "tags": ["smart-manufacturing", "ai-maintenance", "success-story", "digital-twin", "predictive-analytics"],
+  "seo": {
+    "keywords": ["AI maintenance success", "smart manufacturing case study", "predictive maintenance ROI", "digital twin implementation", "industrial IoT success"],
+    "description": "Real-world success story of AI-driven maintenance implementation in smart manufacturing, achieving significant improvements in downtime reduction, cost savings, and equipment lifespan."
+  }
+}
