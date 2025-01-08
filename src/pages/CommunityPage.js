@@ -10,70 +10,73 @@ const CommunityPage = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalThreads, setTotalThreads] = useState(0);
-  const [pageData, setPageData] = useState({}); // Add this to cache page data
+  const [pageData, setPageData] = useState({});
   const threadsPerPage = 10;
+  const preloadPages = 5;
 
-  // Load total count once
+  // Initial load of first 50 threads
   useEffect(() => {
-    const initializeData = async () => {
-      // Start background loading of all threads
-      startBackgroundLoading();
-      
-      // Get total thread count
-      const total = await getTotalThreadCount();
-      setTotalThreads(total);
-    };
-
-    initializeData();
-  }, []);
-
-  // Load current page threads with caching
-  useEffect(() => {
-    const loadCurrentPage = async () => {
+    const initializeThreads = async () => {
       setLoading(true);
-      
-      // Check if we already have this page's data
-      if (pageData[currentPage]) {
-        setThreads(pageData[currentPage]);
-        setLoading(false);
-        return;
-      }
+      try {
+        // Load first 50 threads immediately
+        const initialThreads = await loadInitialThreads(preloadPages);
+        
+        // Organize threads into pages
+        const pages = {};
+        initialThreads.forEach((thread, index) => {
+          const pageNumber = Math.floor(index / threadsPerPage) + 1;
+          if (!pages[pageNumber]) pages[pageNumber] = [];
+          pages[pageNumber].push(thread);
+        });
 
-      // If not, load it
-      const pageThreads = await loadThreadsForPage(currentPage);
-      
-      // Cache the page data
-      setPageData(prev => ({
-        ...prev,
-        [currentPage]: pageThreads
-      }));
-      
-      setThreads(pageThreads);
-      setLoading(false);
+        setPageData(pages);
+        setThreads(pages[1] || []); // Set first page
+        setTotalThreads(initialThreads.length);
+        
+        // Start loading remaining threads in background
+        loadRemainingThreadsInBackground(initialThreads.length);
+      } catch (error) {
+        console.error('Error in initial load:', error);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    loadCurrentPage();
-  }, [currentPage]);
-
-  // Handle page change
-  const changePage = (newPage) => {
-    setCurrentPage(newPage);
-    window.scrollTo(0, 0);
-  };
+    initializeThreads();
+  }, []);
 
 const startThread = (currentPage - 1) * threadsPerPage + 1;
 const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
   
-  // Calculate page numbers
-  const pageCount = Math.ceil(totalThreads / threadsPerPage);
-  const pageNumbers = [];
-  for (let i = 1; i <= pageCount; i++) {
-    pageNumbers.push(i);
-  }
+// Background loading of remaining threads
+  const loadRemainingThreadsInBackground = async (startFromId) => {
+    try {
+      const remainingThreads = await loadRemainingThreads(startFromId + 1);
+      if (remainingThreads.length > 0) {
+        // Update total count
+        setTotalThreads(prev => prev + remainingThreads.length);
+        
+        // Organize new threads into pages
+        const newPages = { ...pageData };
+        remainingThreads.forEach((thread, index) => {
+          const pageNumber = Math.floor((index + startFromId) / threadsPerPage) + 1;
+          if (!newPages[pageNumber]) newPages[pageNumber] = [];
+          newPages[pageNumber].push(thread);
+        });
 
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+        setPageData(newPages);
+      }
+    } catch (error) {
+      console.error('Error loading remaining threads:', error);
+    }
+  };
+
+  // Handle page changes
+  const changePage = (newPage) => {
+    setCurrentPage(newPage);
+    setThreads(pageData[newPage] || []);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -88,28 +91,28 @@ const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
         </div>
       </div>
 
-      {/* Main Content */}
+        {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
-  <div>
-    <h2 className="text-2xl font-semibold">Recent Discussions</h2>
-    <p className="text-gray-600 mt-1">
-      {totalThreads > 0 
-        ? `Showing ${startThread}-${endThread} of ${totalThreads} threads`
-        : 'Loading threads...'}
-    </p>
-  </div>
-  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-    Start New Discussion
-  </button>
-</div>
+          <div>
+            <h2 className="text-2xl font-semibold">Recent Discussions</h2>
+            <p className="text-gray-600 mt-1">
+              {totalThreads > 0 
+                ? `Showing ${((currentPage - 1) * threadsPerPage) + 1}-${Math.min(currentPage * threadsPerPage, totalThreads)} of ${totalThreads} threads`
+                : 'Loading threads...'}
+            </p>
+          </div>
+          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            Start New Discussion
+          </button>
+        </div>
 
         {loading ? (
-  <div className="text-center py-8">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900 mx-auto"></div>
-    <p className="text-gray-600 mt-4">Loading discussions...</p>
-  </div>
-) : threads.length > 0 ? (
+          <div className="text-center py-8">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900 mx-auto"></div>
+            <p className="text-gray-600 mt-4">Loading discussions...</p>
+          </div>
+        ) : threads.length > 0 ? (
           <>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               {threads.map((thread) => (
