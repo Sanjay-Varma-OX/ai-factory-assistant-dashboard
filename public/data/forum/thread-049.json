@@ -1,0 +1,99 @@
+{
+  "id": "049",
+  "title": "Automated Maintenance Scheduling",
+  "content": "Hi maintenance professionals,\n\nWe're implementing an automated maintenance scheduling system across our manufacturing plants. Key objectives:\n\n1. Resource optimization\n2. Workload balancing\n3. Priority-based scheduling\n4. Integration with predictive maintenance\n5. Compliance tracking\n\nLooking for advice on:\n- Scheduling algorithms\n- Resource allocation strategies\n- Integration approaches\n- Change management\n\nWhat strategies have worked in your facilities? Any lessons learned?\n\nThanks in advance!",
+  "author": {
+    "id": "user487",
+    "name": "Michael Foster",
+    "role": "Maintenance Planning Manager",
+    "avatar": "/avatars/michael_f.jpg"
+  },
+  "created_at": "2023-12-02T09:15:00Z",
+  "last_activity": "2023-12-09T14:30:00Z",
+  "views": 389,
+  "replies": [
+    {
+      "id": "reply449_1",
+      "content": "Michael, here's what worked for our multi-site operation:\n\n1. Scheduling Algorithm:\n   - Dynamic priority scoring\n   - Resource availability matching\n   - Travel time optimization\n   - Emergency buffer allocation\n\nReduced scheduling conflicts by 82%.",
+      "author": {
+        "id": "user488",
+        "name": "Jennifer Lee",
+        "role": "Operations Research Specialist",
+        "avatar": "/avatars/jennifer_l.jpg"
+      },
+      "created_at": "2023-12-03T11:20:00Z"
+    },
+    {
+      "id": "reply449_2",
+      "content": "Resource allocation strategy we use:\n\n1. Skill matrix mapping\n2. Real-time availability tracking\n3. Cross-training consideration\n4. Contractor integration\n\nImproved resource utilization by 45%.",
+      "author": {
+        "id": "user489",
+        "name": "Thomas Anderson",
+        "role": "Resource Manager",
+        "avatar": "/avatars/thomas_a.jpg"
+      },
+      "created_at": "2023-12-04T14:45:00Z"
+    },
+    {
+      "id": "reply449_3",
+      "content": "Integration approach success factors:\n\n1. API-first architecture\n2. Real-time data sync\n3. Mobile app integration\n4. Offline capability\n\nReduced manual scheduling time by 76%.",
+      "author": {
+        "id": "user490",
+        "name": "Sarah Williams",
+        "role": "IT Systems Architect",
+        "avatar": "/avatars/sarah_w.jpg"
+      },
+      "created_at": "2023-12-05T16:30:00Z"
+    },
+    {
+      "id": "reply449_4",
+      "content": "Question about emergency maintenance - how do you handle urgent requests without disrupting the automated schedule?",
+      "author": {
+        "id": "user491",
+        "name": "David Martinez",
+        "role": "Maintenance Supervisor",
+        "avatar": "/avatars/david_m.jpg"
+      },
+      "created_at": "2023-12-06T10:15:00Z"
+    },
+    {
+      "id": "reply449_5",
+      "content": "David, we implemented:\n\n1. Emergency response teams\n2. Dynamic schedule adjustment\n3. Priority override protocols\n4. Resource reallocation rules\n\nMaintained 92% schedule adherence even with emergencies.",
+      "author": {
+        "id": "user492",
+        "name": "Lisa Thompson",
+        "role": "Emergency Response Coordinator",
+        "avatar": "/avatars/lisa_t.jpg"
+      },
+      "created_at": "2023-12-07T13:40:00Z"
+    },
+    {
+      "id": "reply449_6",
+      "content": "Change management was crucial. Our approach:\n\n1. Stakeholder engagement\n2. Phased implementation\n3. Training programs\n4. Feedback loops\n\nAchieved 94% user adoption in 3 months.",
+      "author": {
+        "id": "user493",
+        "name": "Robert Wilson",
+        "role": "Change Management Specialist",
+        "avatar": "/avatars/robert_w.jpg"
+      },
+      "created_at": "2023-12-08T15:25:00Z"
+    },
+    {
+      "id": "reply449_7",
+      "content": "Key metrics we track:\n\n1. Schedule compliance\n2. Resource utilization\n3. Response times\n4. Maintenance backlog\n5. Cost per work order\n\nProvides clear ROI visibility.",
+      "author": {
+        "id": "user494",
+        "name": "Amanda Chen",
+        "role": "Performance Analytics Manager",
+        "avatar": "/avatars/amanda_c.jpg"
+      },
+      "created_at": "2023-12-09T12:10:00Z"
+    }
+  ],
+  "category": "Predictive Maintenance",
+  "tags": ["automated-scheduling", "maintenance-planning", "resource-optimization", "workflow-automation"],
+  "seo": {
+    "keywords": ["automated maintenance scheduling", "maintenance planning automation", "resource optimization", "maintenance workflow", "scheduling algorithms", "maintenance management", "automated work orders", "maintenance efficiency", "resource allocation", "maintenance automation"],
+    "description": "Expert discussion on implementing automated maintenance scheduling systems, covering scheduling algorithms, resource allocation strategies, integration approaches, and change management best practices."
+  }
+}
