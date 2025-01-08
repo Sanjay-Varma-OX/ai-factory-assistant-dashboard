@@ -1,6 +1,6 @@
 {
   "id": "004",
-  "title": "Machine Learning Models for Equipment Failure Prediction",
+  "title": "Advanced ML Algorithms for Predictive Equipment Failure Analysis",
   "content": "We're exploring different ML models for predicting equipment failures. Currently considering:\n\n1. Random Forest\n2. LSTM Networks\n3. Gradient Boosting\n\nWhat has been your experience with different models? Looking for insights on accuracy, false positives, and implementation complexity.",
   "author": {
     "id": "user505",
