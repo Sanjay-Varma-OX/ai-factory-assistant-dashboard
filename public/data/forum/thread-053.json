@@ -8,8 +8,8 @@
     "role": "Data Quality Manager",
     "avatar": "/avatars/rachel_a.jpg"
   },
-  "created_at": "2023-12-06T08:30:00Z",
-  "last_activity": "2023-12-13T15:45:00Z",
+  "created_at": "2024-11-17T12:14:00.000000Z",
+  "last_activity": "2024-11-17T13:14:00.000000Z",
   "views": 542,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Data Validation Expert",
         "avatar": "/avatars/thomas_l.jpg"
       },
-      "created_at": "2023-12-07T11:20:00Z"
+      "created_at": "2024-11-17T12:36:00.000000Z"
     },
     {
       "id": "reply453_2",
@@ -32,7 +32,7 @@
         "role": "Signal Processing Engineer",
         "avatar": "/avatars/sophie_w.jpg"
       },
-      "created_at": "2023-12-08T14:45:00Z"
+      "created_at": "2024-11-17T12:48:00.000000Z"
     },
     {
       "id": "reply453_3",
@@ -43,7 +43,7 @@
         "role": "Analytics Manager",
         "avatar": "/avatars/mark_t.jpg"
       },
-      "created_at": "2023-12-09T16:30:00Z"
+      "created_at": "2024-11-17T13:44:00.000000Z"
     },
     {
       "id": "reply453_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/linda_c.jpg"
       },
-      "created_at": "2023-12-10T09:15:00Z"
+      "created_at": "2024-11-17T14:14:00.000000Z"
     },
     {
       "id": "reply453_5",
@@ -65,7 +65,7 @@
         "role": "Machine Learning Engineer",
         "avatar": "/avatars/david_p.jpg"
       },
-      "created_at": "2023-12-11T12:40:00Z"
+      "created_at": "2024-11-17T14:44:00.000000Z"
     },
     {
       "id": "reply453_6",
@@ -76,13 +76,29 @@
         "role": "Data Governance Lead",
         "avatar": "/avatars/jennifer_b.jpg"
       },
-      "created_at": "2023-12-12T15:25:00Z"
+      "created_at": "2024-11-17T13:56:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["data-quality", "predictive-models", "data-validation", "quality-assurance"],
+  "tags": [
+    "data-quality",
+    "predictive-models",
+    "data-validation",
+    "quality-assurance"
+  ],
   "seo": {
-    "keywords": ["data quality maintenance", "predictive model data", "maintenance data validation", "data cleaning techniques", "quality metrics", "data governance", "sensor data quality", "predictive maintenance data", "data reliability", "maintenance analytics"],
+    "keywords": [
+      "data quality maintenance",
+      "predictive model data",
+      "maintenance data validation",
+      "data cleaning techniques",
+      "quality metrics",
+      "data governance",
+      "sensor data quality",
+      "predictive maintenance data",
+      "data reliability",
+      "maintenance analytics"
+    ],
     "description": "Expert discussion on improving data quality for predictive maintenance models, covering validation methods, cleaning techniques, quality metrics, and data governance strategies."
   }
 }

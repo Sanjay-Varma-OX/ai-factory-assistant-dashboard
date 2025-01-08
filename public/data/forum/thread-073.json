@@ -8,8 +8,8 @@
     "role": "Quality Manager",
     "avatar": "/avatars/user_19.jpg"
   },
-  "created_at": "2024-12-24T17:50:33.564740Z",
-  "last_activity": "2025-01-08T17:50:33.564748Z",
+  "created_at": "2024-11-05T13:22:00.000000Z",
+  "last_activity": "2024-11-05T16:22:00.000000Z",
   "views": 768,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-27T22:50:33.564753Z"
+      "created_at": "2024-11-05T13:50:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-29T00:50:33.564753Z"
+      "created_at": "2024-11-05T13:52:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2024-12-30T02:50:33.564753Z"
+      "created_at": "2024-11-05T14:22:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_15.jpg"
       },
-      "created_at": "2024-12-31T05:50:33.564753Z"
+      "created_at": "2024-11-05T14:22:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2024-12-31T23:50:33.564753Z"
+      "created_at": "2024-11-05T15:37:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",

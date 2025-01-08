@@ -8,8 +8,8 @@
     "role": "Data Quality Manager",
     "avatar": "/avatars/elena.jpg"
   },
-  "created_at": "2023-12-07T08:45:00Z",
-  "last_activity": "2023-12-12T15:30:00Z",
+  "created_at": "2024-11-10T16:38:00.000000Z",
+  "last_activity": "2024-11-10T17:38:00.000000Z",
   "views": 298,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Data Validation Expert",
         "avatar": "/avatars/tom.jpg"
       },
-      "created_at": "2023-12-07T13:20:00Z"
+      "created_at": "2024-11-10T16:57:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Data Cleaning Specialist",
         "avatar": "/avatars/sarah_w.jpg"
       },
-      "created_at": "2023-12-08T10:45:00Z"
+      "created_at": "2024-11-10T17:20:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Quality Metrics Analyst",
         "avatar": "/avatars/david_c.jpg"
       },
-      "created_at": "2023-12-09T15:30:00Z"
+      "created_at": "2024-11-10T18:02:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Tools Integration Lead",
         "avatar": "/avatars/lisa_t.jpg"
       },
-      "created_at": "2023-12-10T11:15:00Z"
+      "created_at": "2024-11-10T18:06:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Data Quality Manager",
         "avatar": "/avatars/elena.jpg"
       },
-      "created_at": "2023-12-11T09:30:00Z"
+      "created_at": "2024-11-10T17:58:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,13 +76,25 @@
         "role": "Signal Processing Expert",
         "avatar": "/avatars/michael_p.jpg"
       },
-      "created_at": "2023-12-12T15:30:00Z"
+      "created_at": "2024-11-10T18:44:00.000000Z"
     }
   ],
   "category": "Best Practices & Tips",
-  "tags": ["data-quality", "validation", "cleaning", "monitoring", "best-practices"],
+  "tags": [
+    "data-quality",
+    "validation",
+    "cleaning",
+    "monitoring",
+    "best-practices"
+  ],
   "seo": {
-    "keywords": ["data quality management", "AI data validation", "data cleaning strategies", "quality metrics", "monitoring tools"],
+    "keywords": [
+      "data quality management",
+      "AI data validation",
+      "data cleaning strategies",
+      "quality metrics",
+      "monitoring tools"
+    ],
     "description": "Expert discussion on managing data quality in AI maintenance systems, covering validation methods, cleaning strategies, quality metrics, and monitoring tools."
   }
 }

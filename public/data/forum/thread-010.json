@@ -8,8 +8,8 @@
     "role": "Performance Analytics Manager",
     "avatar": "/avatars/sarah.jpg"
   },
-  "created_at": "2023-12-01T14:30:00Z",
-  "last_activity": "2023-12-05T16:45:00Z",
+  "created_at": "2024-12-05T13:11:00.000000Z",
+  "last_activity": "2024-12-05T16:11:00.000000Z",
   "views": 245,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Maintenance Director",
         "avatar": "/avatars/michael.jpg"
       },
-      "created_at": "2023-12-02T09:15:00Z"
+      "created_at": "2024-12-05T13:34:00.000000Z"
     },
     {
       "id": "reply1011",
@@ -32,7 +32,7 @@
         "role": "Data Science Lead",
         "avatar": "/avatars/elena.jpg"
       },
-      "created_at": "2023-12-03T11:20:00Z"
+      "created_at": "2024-12-05T14:01:00.000000Z"
     },
     {
       "id": "reply1012",
@@ -43,7 +43,7 @@
         "role": "Maintenance Director",
         "avatar": "/avatars/michael.jpg"
       },
-      "created_at": "2023-12-04T13:45:00Z"
+      "created_at": "2024-12-05T14:29:00.000000Z"
     },
     {
       "id": "reply1013",
@@ -54,13 +54,24 @@
         "role": "HR Technology Manager",
         "avatar": "/avatars/david.jpg"
       },
-      "created_at": "2023-12-05T10:30:00Z"
+      "created_at": "2024-12-05T14:11:00.000000Z"
     }
   ],
   "category": "Cost & ROI Discussions",
-  "tags": ["kpi-metrics", "maintenance-analytics", "ai-implementation", "performance-tracking"],
+  "tags": [
+    "kpi-metrics",
+    "maintenance-analytics",
+    "ai-implementation",
+    "performance-tracking"
+  ],
   "seo": {
-    "keywords": ["maintenance KPIs", "AI maintenance metrics", "performance tracking", "maintenance analytics", "predictive maintenance ROI"],
+    "keywords": [
+      "maintenance KPIs",
+      "AI maintenance metrics",
+      "performance tracking",
+      "maintenance analytics",
+      "predictive maintenance ROI"
+    ],
     "description": "Comprehensive guide to establishing and tracking KPIs for maintenance teams using AI-powered solutions, including technical metrics and business impact indicators."
   }
 }

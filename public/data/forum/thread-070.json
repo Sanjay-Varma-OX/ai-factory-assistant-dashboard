@@ -8,8 +8,8 @@
     "role": "Operations Manager",
     "avatar": "/avatars/user_18.jpg"
   },
-  "created_at": "2024-12-27T17:50:33.563183Z",
-  "last_activity": "2025-01-07T17:50:33.563194Z",
+  "created_at": "2024-11-02T17:00:00.000000Z",
+  "last_activity": "2024-11-02T18:00:00.000000Z",
   "views": 276,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_19.jpg"
       },
-      "created_at": "2024-12-26T18:50:33.563202Z"
+      "created_at": "2024-11-02T17:17:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_15.jpg"
       },
-      "created_at": "2024-12-28T01:50:33.563202Z"
+      "created_at": "2024-11-02T17:32:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2024-12-28T19:50:33.563202Z"
+      "created_at": "2024-11-02T17:54:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-29T19:50:33.563202Z"
+      "created_at": "2024-11-02T18:40:00.000000Z"
     }
   ],
   "category": "Digital Transformation",

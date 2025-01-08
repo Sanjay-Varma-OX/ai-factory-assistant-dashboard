@@ -8,8 +8,8 @@
     "role": "Systems Architect",
     "avatar": "/avatars/user_13.jpg"
   },
-  "created_at": "2024-12-23T17:50:33.584796Z",
-  "last_activity": "2025-01-08T17:50:33.584804Z",
+  "created_at": "2024-12-17T11:24:00.000000Z",
+  "last_activity": "2024-12-17T13:24:00.000000Z",
   "views": 721,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_1.jpg"
       },
-      "created_at": "2024-12-23T23:50:33.584809Z"
+      "created_at": "2024-12-17T11:53:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2024-12-24T18:50:33.584809Z"
+      "created_at": "2024-12-17T12:20:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-25T23:50:33.584809Z"
+      "created_at": "2024-12-17T12:09:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,18 +54,18 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-27T00:50:33.584809Z"
+      "created_at": "2024-12-17T12:48:00.000000Z"
     },
     {
       "id": "reply_5",
-      "content": "Based on our implementation experience:\n\n1. Key Success Factors:\n   - Comprehensive planning\n   - Stakeholder engagement\n   - Regular monitoring\n   - Continuous improvement\n\n2. Measured Improvements:\n   - 28% efficiency increase\n   - 34% cost reduction\n   - 32% quality improvement\n\n3. Implementation Timeline:\n   - Planning: 2-3 months\n   - Pilot: 1-2 months\n   - Full rollout: 3-4 months",
+      "content": "Project implementation insights:\n\n1. Critical Components\n   - Strategic planning\n   - Team alignment\n   - Technology roadmap\n   - Change management\n\n2. Measured Outcomes\n   - Timeline accuracy: 93%\n   - Budget adherence: 94%\n   - Stakeholder satisfaction: 95%\n   - ROI achieved: 289%\n\nImplementation completed in 7 months.",
       "author": {
         "id": "user473",
         "name": "Jennifer Martinez",
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2024-12-27T21:50:33.584809Z"
+      "created_at": "2024-12-17T13:09:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-28T19:50:33.584809Z"
+      "created_at": "2024-12-17T14:24:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_1.jpg"
       },
-      "created_at": "2024-12-30T04:50:33.584809Z"
+      "created_at": "2024-12-17T13:37:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_15.jpg"
       },
-      "created_at": "2024-12-31T04:50:33.584809Z"
+      "created_at": "2024-12-17T15:00:00.000000Z"
     },
     {
       "id": "reply_9",
@@ -109,7 +109,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-31T22:50:33.584809Z"
+      "created_at": "2024-12-17T14:51:00.000000Z"
     },
     {
       "id": "reply_10",
@@ -120,7 +120,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_1.jpg"
       },
-      "created_at": "2025-01-01T23:50:33.584809Z"
+      "created_at": "2024-12-17T14:44:00.000000Z"
     }
   ],
   "category": "Environmental Compliance",

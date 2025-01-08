@@ -8,8 +8,8 @@
     "role": "Technical Director",
     "avatar": "/avatars/user_4.jpg"
   },
-  "created_at": "2024-12-22T17:50:33.610703Z",
-  "last_activity": "2025-01-07T17:50:33.610711Z",
+  "created_at": "2024-12-11T10:46:00.000000Z",
+  "last_activity": "2024-12-11T11:46:00.000000Z",
   "views": 333,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-12T00:50:33.610715Z"
+      "created_at": "2024-12-11T11:16:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-12T23:50:33.610715Z"
+      "created_at": "2024-12-11T11:36:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2024-12-14T00:50:33.610715Z"
+      "created_at": "2024-12-11T11:31:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_7.jpg"
       },
-      "created_at": "2024-12-15T04:50:33.610715Z"
+      "created_at": "2024-12-11T12:06:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2024-12-15T23:50:33.610715Z"
+      "created_at": "2024-12-11T12:46:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_3.jpg"
       },
-      "created_at": "2024-12-17T02:50:33.610715Z"
+      "created_at": "2024-12-11T13:28:00.000000Z"
     }
   ],
   "category": "Supply Chain",

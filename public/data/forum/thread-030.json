@@ -8,8 +8,8 @@
     "role": "Cost Analysis Manager",
     "avatar": "/avatars/michael.jpg"
   },
-  "created_at": "2023-12-03T09:15:00Z",
-  "last_activity": "2023-12-07T15:30:00Z",
+  "created_at": "2024-11-05T15:00:00.000000Z",
+  "last_activity": "2024-11-05T17:00:00.000000Z",
   "views": 289,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "IT Infrastructure Manager",
         "avatar": "/avatars/linda.jpg"
       },
-      "created_at": "2023-12-03T11:45:00Z"
+      "created_at": "2024-11-05T15:20:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Systems Architecture Lead",
         "avatar": "/avatars/thomas.jpg"
       },
-      "created_at": "2023-12-04T10:20:00Z"
+      "created_at": "2024-11-05T15:56:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "ML Operations Manager",
         "avatar": "/avatars/rachel.jpg"
       },
-      "created_at": "2023-12-05T13:40:00Z"
+      "created_at": "2024-11-05T16:21:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Cost Analysis Manager",
         "avatar": "/avatars/michael.jpg"
       },
-      "created_at": "2023-12-06T09:15:00Z"
+      "created_at": "2024-11-05T16:24:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,13 +65,27 @@
         "role": "Legal & Compliance Director",
         "avatar": "/avatars/david.jpg"
       },
-      "created_at": "2023-12-07T15:30:00Z"
+      "created_at": "2024-11-05T17:30:00.000000Z"
     }
   ],
   "category": "Cost & ROI Discussions",
-  "tags": ["tco-analysis", "ai-costs", "maintenance-budgeting", "cost-planning", "infrastructure-costs"],
+  "tags": [
+    "tco-analysis",
+    "ai-costs",
+    "maintenance-budgeting",
+    "cost-planning",
+    "infrastructure-costs"
+  ],
   "seo": {
-    "keywords": ["AI maintenance TCO", "total cost of ownership AI", "maintenance cost analysis", "AI implementation costs", "maintenance budgeting", "AI infrastructure costs", "maintenance contracts"],
+    "keywords": [
+      "AI maintenance TCO",
+      "total cost of ownership AI",
+      "maintenance cost analysis",
+      "AI implementation costs",
+      "maintenance budgeting",
+      "AI infrastructure costs",
+      "maintenance contracts"
+    ],
     "description": "Expert discussion on calculating the total cost of ownership for AI maintenance solutions, including hidden costs, scalability considerations, and long-term maintenance expenses."
   }
 }

@@ -8,8 +8,8 @@
     "role": "Reliability Engineer",
     "avatar": "/avatars/chris_p.jpg"
   },
-  "created_at": "2023-12-03T08:45:00Z",
-  "last_activity": "2023-12-10T16:30:00Z",
+  "created_at": "2024-11-15T13:24:00.000000Z",
+  "last_activity": "2024-11-15T14:24:00.000000Z",
   "views": 456,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Equipment Monitoring Specialist",
         "avatar": "/avatars/james_w.jpg"
       },
-      "created_at": "2023-12-04T10:30:00Z"
+      "created_at": "2024-11-15T13:54:00.000000Z"
     },
     {
       "id": "reply450_2",
@@ -32,7 +32,7 @@
         "role": "Maintenance Strategist",
         "avatar": "/avatars/maria_r.jpg"
       },
-      "created_at": "2023-12-05T13:15:00Z"
+      "created_at": "2024-11-15T14:00:00.000000Z"
     },
     {
       "id": "reply450_3",
@@ -43,7 +43,7 @@
         "role": "Data Analyst",
         "avatar": "/avatars/david_c.jpg"
       },
-      "created_at": "2023-12-06T15:45:00Z"
+      "created_at": "2024-11-15T14:48:00.000000Z"
     },
     {
       "id": "reply450_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/linda_m.jpg"
       },
-      "created_at": "2023-12-07T09:20:00Z"
+      "created_at": "2024-11-15T15:24:00.000000Z"
     },
     {
       "id": "reply450_5",
@@ -65,7 +65,7 @@
         "role": "Automation Engineer",
         "avatar": "/avatars/michael_t.jpg"
       },
-      "created_at": "2023-12-08T11:40:00Z"
+      "created_at": "2024-11-15T14:54:00.000000Z"
     },
     {
       "id": "reply450_6",
@@ -76,7 +76,7 @@
         "role": "Maintenance Planning Manager",
         "avatar": "/avatars/sarah_a.jpg"
       },
-      "created_at": "2023-12-09T14:25:00Z"
+      "created_at": "2024-11-15T15:36:00.000000Z"
     },
     {
       "id": "reply450_7",
@@ -87,13 +87,29 @@
         "role": "Financial Analyst",
         "avatar": "/avatars/robert_l.jpg"
       },
-      "created_at": "2023-12-10T13:50:00Z"
+      "created_at": "2024-11-15T15:37:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["condition-monitoring", "equipment-monitoring", "predictive-maintenance", "reliability-engineering"],
+  "tags": [
+    "condition-monitoring",
+    "equipment-monitoring",
+    "predictive-maintenance",
+    "reliability-engineering"
+  ],
   "seo": {
-    "keywords": ["condition-based monitoring", "equipment condition monitoring", "CBM strategy", "predictive maintenance", "monitoring parameters", "alert thresholds", "equipment reliability", "maintenance optimization", "condition monitoring techniques", "industrial monitoring"],
+    "keywords": [
+      "condition-based monitoring",
+      "equipment condition monitoring",
+      "CBM strategy",
+      "predictive maintenance",
+      "monitoring parameters",
+      "alert thresholds",
+      "equipment reliability",
+      "maintenance optimization",
+      "condition monitoring techniques",
+      "industrial monitoring"
+    ],
     "description": "Expert discussion on implementing effective condition-based monitoring strategies, covering parameter selection, monitoring intervals, threshold setting, and action plan development for industrial equipment."
   }
 }

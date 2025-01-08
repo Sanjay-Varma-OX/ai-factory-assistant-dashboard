@@ -8,8 +8,8 @@
     "role": "Systems Architect",
     "avatar": "/avatars/user_20.jpg"
   },
-  "created_at": "2024-12-09T17:50:33.600037Z",
-  "last_activity": "2025-01-08T17:50:33.600045Z",
+  "created_at": "2025-01-04T13:51:00.000000Z",
+  "last_activity": "2025-01-04T14:51:00.000000Z",
   "views": 355,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_13.jpg"
       },
-      "created_at": "2024-12-30T05:50:33.600049Z"
+      "created_at": "2025-01-04T14:15:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-31T05:50:33.600049Z"
+      "created_at": "2025-01-04T14:39:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_1.jpg"
       },
-      "created_at": "2024-12-31T21:50:33.600049Z"
+      "created_at": "2025-01-04T15:00:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2025-01-01T20:50:33.600049Z"
+      "created_at": "2025-01-04T14:59:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_13.jpg"
       },
-      "created_at": "2025-01-02T19:50:33.600049Z"
+      "created_at": "2025-01-04T16:16:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_4.jpg"
       },
-      "created_at": "2025-01-04T01:50:33.600049Z"
+      "created_at": "2025-01-04T16:51:00.000000Z"
     }
   ],
   "category": "Energy Efficiency",

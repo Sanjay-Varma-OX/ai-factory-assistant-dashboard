@@ -8,8 +8,8 @@
     "role": "Operations Manager",
     "avatar": "/avatars/user_4.jpg"
   },
-  "created_at": "2024-12-31T17:50:33.593252Z",
-  "last_activity": "2025-01-08T17:50:33.593260Z",
+  "created_at": "2024-12-24T17:20:00.000000Z",
+  "last_activity": "2024-12-24T19:20:00.000000Z",
   "views": 773,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-25T22:50:33.593265Z"
+      "created_at": "2024-12-24T17:44:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_19.jpg"
       },
-      "created_at": "2024-12-27T00:50:33.593265Z"
+      "created_at": "2024-12-24T18:12:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,18 +43,18 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_8.jpg"
       },
-      "created_at": "2024-12-27T18:50:33.593265Z"
+      "created_at": "2024-12-24T18:20:00.000000Z"
     },
     {
       "id": "reply_4",
-      "content": "Our key learnings:\n\n1. Critical Considerations:\n   - Technology selection\n   - Team training\n   - Process integration\n   - Change management\n\n2. Success Metrics:\n   - ROI achieved in 9 months\n   - 34% performance improvement\n   - 40% reduction in downtime\n\nRecommendation: Focus on incremental implementation with clear success metrics.",
+      "content": "Implementation strategy details:\n\n1. Success Metrics\n   - Process optimization: 48%\n   - Resource utilization: 36%\n   - Error reduction: 47%\n   - Time savings: 28%\n\n2. Key Learnings\n   - Continuous monitoring\n   - Team enablement\n   - Iterative improvement\n   - Knowledge sharing\n\nProject duration: 6 months",
       "author": {
         "id": "user748",
         "name": "Dr. Thomas Lee",
         "role": "Technical Lead",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-28T20:50:33.593265Z"
+      "created_at": "2024-12-24T19:08:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,18 +65,18 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_17.jpg"
       },
-      "created_at": "2024-12-29T21:50:33.593265Z"
+      "created_at": "2024-12-24T19:05:00.000000Z"
     },
     {
       "id": "reply_6",
-      "content": "Our key learnings:\n\n1. Critical Considerations:\n   - Technology selection\n   - Team training\n   - Process integration\n   - Change management\n\n2. Success Metrics:\n   - ROI achieved in 12 months\n   - 40% performance improvement\n   - 31% reduction in downtime\n\nRecommendation: Focus on incremental implementation with clear success metrics.",
+      "content": "Implementation strategy details:\n\n1. Success Metrics\n   - Process optimization: 36%\n   - Resource utilization: 48%\n   - Error reduction: 47%\n   - Time savings: 35%\n\n2. Key Learnings\n   - Continuous monitoring\n   - Team enablement\n   - Iterative improvement\n   - Knowledge sharing\n\nProject duration: 7 months",
       "author": {
         "id": "user909",
         "name": "Dr. Alex Kumar",
         "role": "Industry Expert",
         "avatar": "/avatars/user_3.jpg"
       },
-      "created_at": "2024-12-31T05:50:33.593265Z"
+      "created_at": "2024-12-24T19:56:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_8.jpg"
       },
-      "created_at": "2025-01-01T02:50:33.593265Z"
+      "created_at": "2024-12-24T19:05:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2025-01-02T04:50:33.593265Z"
+      "created_at": "2024-12-24T20:56:00.000000Z"
     }
   ],
   "category": "Process Optimization",

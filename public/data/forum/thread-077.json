@@ -8,8 +8,8 @@
     "role": "Technical Director",
     "avatar": "/avatars/user_9.jpg"
   },
-  "created_at": "2024-12-19T17:50:33.566429Z",
-  "last_activity": "2025-01-08T17:50:33.566437Z",
+  "created_at": "2024-11-09T09:24:00.000000Z",
+  "last_activity": "2024-11-09T10:24:00.000000Z",
   "views": 287,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_15.jpg"
       },
-      "created_at": "2024-12-21T23:50:33.566442Z"
+      "created_at": "2024-11-09T09:50:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2024-12-23T05:50:33.566442Z"
+      "created_at": "2024-11-09T10:22:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-24T04:50:33.566442Z"
+      "created_at": "2024-11-09T10:12:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2024-12-25T03:50:33.566442Z"
+      "created_at": "2024-11-09T11:08:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-25T19:50:33.566442Z"
+      "created_at": "2024-11-09T10:49:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-26T18:50:33.566442Z"
+      "created_at": "2024-11-09T11:48:00.000000Z"
     }
   ],
   "category": "Quality Control",

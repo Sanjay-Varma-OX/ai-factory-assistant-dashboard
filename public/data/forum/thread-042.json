@@ -1,15 +1,15 @@
 {
   "id": "042",
   "title": "Predictive Maintenance Success in Power Plants",
-  "content": "Excited to share our success story implementing predictive maintenance at a 1.2GW combined cycle power plant:\n\n✓ 92% accuracy in failure prediction\n✓ $2.4M annual maintenance savings\n✓ 35% reduction in unplanned outages\n✓ 28% improvement in equipment lifespan\n\nKey achievements:\n- Early detection of turbine bearing issues\n- Optimized maintenance scheduling\n- Reduced spare parts inventory\n- Enhanced safety compliance\n\nHappy to discuss implementation details and lessons learned.",
+  "content": "Excited to share our success story implementing predictive maintenance at a 1.2GW combined cycle power plant:\n\n\u2713 92% accuracy in failure prediction\n\u2713 $2.4M annual maintenance savings\n\u2713 35% reduction in unplanned outages\n\u2713 28% improvement in equipment lifespan\n\nKey achievements:\n- Early detection of turbine bearing issues\n- Optimized maintenance scheduling\n- Reduced spare parts inventory\n- Enhanced safety compliance\n\nHappy to discuss implementation details and lessons learned.",
   "author": {
     "id": "user440",
     "name": "Michael Chen",
     "role": "Plant Operations Manager",
     "avatar": "/avatars/michael.jpg"
   },
-  "created_at": "2023-11-25T09:00:00Z",
-  "last_activity": "2023-12-02T15:45:00Z",
+  "created_at": "2024-11-11T09:23:00.000000Z",
+  "last_activity": "2024-11-11T12:23:00.000000Z",
   "views": 385,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Instrumentation Engineer",
         "avatar": "/avatars/sarah.jpg"
       },
-      "created_at": "2023-11-26T10:30:00Z"
+      "created_at": "2024-11-11T09:41:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Plant Operations Manager",
         "avatar": "/avatars/michael.jpg"
       },
-      "created_at": "2023-11-27T11:15:00Z"
+      "created_at": "2024-11-11T10:11:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Compliance Manager",
         "avatar": "/avatars/james.jpg"
       },
-      "created_at": "2023-11-28T14:20:00Z"
+      "created_at": "2024-11-11T10:35:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Plant Operations Manager",
         "avatar": "/avatars/michael.jpg"
       },
-      "created_at": "2023-11-29T09:45:00Z"
+      "created_at": "2024-11-11T10:59:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Data Science Lead",
         "avatar": "/avatars/elena.jpg"
       },
-      "created_at": "2023-11-30T13:30:00Z"
+      "created_at": "2024-11-11T11:38:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "AI Implementation Lead",
         "avatar": "/avatars/kevin.jpg"
       },
-      "created_at": "2023-12-01T10:15:00Z"
+      "created_at": "2024-11-11T10:59:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Financial Analyst",
         "avatar": "/avatars/linda.jpg"
       },
-      "created_at": "2023-12-02T11:30:00Z"
+      "created_at": "2024-11-11T11:15:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,13 +98,25 @@
         "role": "Plant Operations Manager",
         "avatar": "/avatars/michael.jpg"
       },
-      "created_at": "2023-12-02T15:45:00Z"
+      "created_at": "2024-11-11T12:51:00.000000Z"
     }
   ],
   "category": "Success Stories & Case Studies",
-  "tags": ["power-plant", "predictive-maintenance", "success-story", "ml-implementation", "roi-analysis"],
+  "tags": [
+    "power-plant",
+    "predictive-maintenance",
+    "success-story",
+    "ml-implementation",
+    "roi-analysis"
+  ],
   "seo": {
-    "keywords": ["power plant maintenance", "predictive maintenance success", "maintenance ROI", "power generation efficiency", "industrial IoT implementation"],
+    "keywords": [
+      "power plant maintenance",
+      "predictive maintenance success",
+      "maintenance ROI",
+      "power generation efficiency",
+      "industrial IoT implementation"
+    ],
     "description": "Real-world success story of predictive maintenance implementation in a combined cycle power plant, achieving significant improvements in failure prediction, cost savings, and operational efficiency."
   }
 }

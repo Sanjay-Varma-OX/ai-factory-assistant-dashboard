@@ -8,8 +8,8 @@
     "role": "Industrial IoT Manager",
     "avatar": "/avatars/daniel.jpg"
   },
-  "created_at": "2023-11-30T09:45:00Z",
-  "last_activity": "2023-12-07T15:20:00Z",
+  "created_at": "2024-11-14T17:40:00.000000Z",
+  "last_activity": "2024-11-14T20:40:00.000000Z",
   "views": 345,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Network Architecture Specialist",
         "avatar": "/avatars/michelle.jpg"
       },
-      "created_at": "2023-12-01T11:30:00Z"
+      "created_at": "2024-11-14T17:56:00.000000Z"
     },
     {
       "id": "reply447_2",
@@ -32,7 +32,7 @@
         "role": "Automation Engineer",
         "avatar": "/avatars/thomas_s.jpg"
       },
-      "created_at": "2023-12-02T14:15:00Z"
+      "created_at": "2024-11-14T18:16:00.000000Z"
     },
     {
       "id": "reply447_3",
@@ -43,7 +43,7 @@
         "role": "Data Infrastructure Lead",
         "avatar": "/avatars/sarah_m.jpg"
       },
-      "created_at": "2023-12-03T16:45:00Z"
+      "created_at": "2024-11-14T18:58:00.000000Z"
     },
     {
       "id": "reply447_4",
@@ -54,7 +54,7 @@
         "role": "Maintenance Supervisor",
         "avatar": "/avatars/james_l.jpg"
       },
-      "created_at": "2023-12-04T10:20:00Z"
+      "created_at": "2024-11-14T19:32:00.000000Z"
     },
     {
       "id": "reply447_5",
@@ -65,7 +65,7 @@
         "role": "Network Reliability Engineer",
         "avatar": "/avatars/rachel_b.jpg"
       },
-      "created_at": "2023-12-05T13:40:00Z"
+      "created_at": "2024-11-14T19:15:00.000000Z"
     },
     {
       "id": "reply447_6",
@@ -76,7 +76,7 @@
         "role": "Systems Architect",
         "avatar": "/avatars/michael_c.jpg"
       },
-      "created_at": "2023-12-06T15:55:00Z"
+      "created_at": "2024-11-14T20:22:00.000000Z"
     },
     {
       "id": "reply447_7",
@@ -87,13 +87,31 @@
         "role": "Energy Systems Engineer",
         "avatar": "/avatars/lisa_a.jpg"
       },
-      "created_at": "2023-12-07T12:30:00Z"
+      "created_at": "2024-11-14T21:10:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["smart-sensors", "industry-4.0", "iot", "sensor-networks", "industrial-automation", "predictive-maintenance"],
+  "tags": [
+    "smart-sensors",
+    "industry-4.0",
+    "iot",
+    "sensor-networks",
+    "industrial-automation",
+    "predictive-maintenance"
+  ],
   "seo": {
-    "keywords": ["smart sensor networks", "Industry 4.0", "industrial IoT", "sensor network architecture", "predictive maintenance", "industrial automation", "IIoT security", "industrial connectivity", "smart manufacturing", "industrial sensor deployment"],
+    "keywords": [
+      "smart sensor networks",
+      "Industry 4.0",
+      "industrial IoT",
+      "sensor network architecture",
+      "predictive maintenance",
+      "industrial automation",
+      "IIoT security",
+      "industrial connectivity",
+      "smart manufacturing",
+      "industrial sensor deployment"
+    ],
     "description": "Expert discussion on implementing smart sensor networks for Industry 4.0, covering network architecture, sensor selection, data management, and security considerations for industrial IoT applications."
   }
 }

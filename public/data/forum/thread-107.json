@@ -8,8 +8,8 @@
     "role": "Systems Architect",
     "avatar": "/avatars/user_20.jpg"
   },
-  "created_at": "2024-12-25T17:50:33.580224Z",
-  "last_activity": "2025-01-07T17:50:33.580232Z",
+  "created_at": "2024-12-14T10:13:00.000000Z",
+  "last_activity": "2024-12-14T13:13:00.000000Z",
   "views": 533,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-11T20:50:33.580237Z"
+      "created_at": "2024-12-14T10:34:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-12T18:50:33.580237Z"
+      "created_at": "2024-12-14T11:11:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2024-12-14T04:50:33.580237Z"
+      "created_at": "2024-12-14T11:28:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2024-12-14T21:50:33.580237Z"
+      "created_at": "2024-12-14T11:45:00.000000Z"
     }
   ],
   "category": "Workforce Development",

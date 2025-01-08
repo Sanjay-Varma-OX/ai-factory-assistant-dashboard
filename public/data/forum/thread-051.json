@@ -8,8 +8,8 @@
     "role": "Data Science Lead",
     "avatar": "/avatars/emily_z.jpg"
   },
-  "created_at": "2023-12-04T10:30:00Z",
-  "last_activity": "2023-12-11T15:45:00Z",
+  "created_at": "2024-11-16T14:52:00.000000Z",
+  "last_activity": "2024-11-16T17:52:00.000000Z",
   "views": 523,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Machine Learning Engineer",
         "avatar": "/avatars/alan_p.jpg"
       },
-      "created_at": "2023-12-05T13:20:00Z"
+      "created_at": "2024-11-16T15:15:00.000000Z"
     },
     {
       "id": "reply451_2",
@@ -32,7 +32,7 @@
         "role": "AI Specialist",
         "avatar": "/avatars/sophie_c.jpg"
       },
-      "created_at": "2023-12-06T16:45:00Z"
+      "created_at": "2024-11-16T15:44:00.000000Z"
     },
     {
       "id": "reply451_3",
@@ -43,7 +43,7 @@
         "role": "Validation Engineer",
         "avatar": "/avatars/mark_j.jpg"
       },
-      "created_at": "2023-12-07T11:30:00Z"
+      "created_at": "2024-11-16T16:16:00.000000Z"
     },
     {
       "id": "reply451_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/rachel_k.jpg"
       },
-      "created_at": "2023-12-08T14:15:00Z"
+      "created_at": "2024-11-16T16:48:00.000000Z"
     },
     {
       "id": "reply451_5",
@@ -65,7 +65,7 @@
         "role": "Data Quality Specialist",
         "avatar": "/avatars/tom_w.jpg"
       },
-      "created_at": "2023-12-09T09:40:00Z"
+      "created_at": "2024-11-16T17:22:00.000000Z"
     },
     {
       "id": "reply451_6",
@@ -76,13 +76,29 @@
         "role": "Implementation Manager",
         "avatar": "/avatars/lisa_b.jpg"
       },
-      "created_at": "2023-12-10T12:25:00Z"
+      "created_at": "2024-11-16T17:52:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["pattern-recognition", "failure-analysis", "machine-learning", "predictive-maintenance"],
+  "tags": [
+    "pattern-recognition",
+    "failure-analysis",
+    "machine-learning",
+    "predictive-maintenance"
+  ],
   "seo": {
-    "keywords": ["failure pattern recognition", "predictive maintenance", "machine learning maintenance", "pattern analysis", "failure prediction", "maintenance AI", "pattern recognition system", "failure mode analysis", "predictive analytics", "industrial AI"],
+    "keywords": [
+      "failure pattern recognition",
+      "predictive maintenance",
+      "machine learning maintenance",
+      "pattern analysis",
+      "failure prediction",
+      "maintenance AI",
+      "pattern recognition system",
+      "failure mode analysis",
+      "predictive analytics",
+      "industrial AI"
+    ],
     "description": "Expert discussion on implementing failure pattern recognition systems, covering pattern identification methods, data preprocessing, machine learning models, and implementation strategies for industrial maintenance."
   }
 }

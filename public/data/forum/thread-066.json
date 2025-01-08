@@ -8,8 +8,8 @@
     "role": "Mining Operations Manager",
     "avatar": "/avatars/daniel_c.jpg"
   },
-  "created_at": "2023-12-19T09:45:00Z",
-  "last_activity": "2023-12-24T16:20:00Z",
+  "created_at": "2024-11-23T10:05:00.000000Z",
+  "last_activity": "2024-11-23T12:05:00.000000Z",
   "views": 745,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Equipment Reliability Specialist",
         "avatar": "/avatars/rachel_t.jpg"
       },
-      "created_at": "2023-12-20T11:30:00Z"
+      "created_at": "2024-11-23T10:33:00.000000Z"
     },
     {
       "id": "reply466_2",
@@ -32,7 +32,7 @@
         "role": "Conveyor Systems Engineer",
         "avatar": "/avatars/mike_j.jpg"
       },
-      "created_at": "2023-12-21T14:15:00Z"
+      "created_at": "2024-11-23T10:35:00.000000Z"
     },
     {
       "id": "reply466_3",
@@ -43,7 +43,7 @@
         "role": "Maintenance Technician",
         "avatar": "/avatars/sarah_w.jpg"
       },
-      "created_at": "2023-12-22T09:45:00Z"
+      "created_at": "2024-11-23T11:05:00.000000Z"
     },
     {
       "id": "reply466_4",
@@ -54,7 +54,7 @@
         "role": "Conveyor Systems Engineer",
         "avatar": "/avatars/mike_j.jpg"
       },
-      "created_at": "2023-12-23T12:20:00Z"
+      "created_at": "2024-11-23T11:45:00.000000Z"
     },
     {
       "id": "reply466_5",
@@ -65,7 +65,7 @@
         "role": "Crushing Plant Supervisor",
         "avatar": "/avatars/alan_p.jpg"
       },
-      "created_at": "2023-12-24T10:45:00Z"
+      "created_at": "2024-11-23T11:50:00.000000Z"
     },
     {
       "id": "reply466_6",
@@ -76,13 +76,29 @@
         "role": "Environmental Systems Engineer",
         "avatar": "/avatars/emma_l.jpg"
       },
-      "created_at": "2023-12-24T15:30:00Z"
+      "created_at": "2024-11-23T11:47:00.000000Z"
     }
   ],
   "category": "Mining Operations",
-  "tags": ["mining-equipment", "monitoring-systems", "predictive-maintenance", "environmental-control"],
+  "tags": [
+    "mining-equipment",
+    "monitoring-systems",
+    "predictive-maintenance",
+    "environmental-control"
+  ],
   "seo": {
-    "keywords": ["mining equipment monitoring", "heavy machinery maintenance", "conveyor system monitoring", "crushing unit maintenance", "environmental monitoring mining", "predictive analytics mining", "mining safety systems", "remote diagnostics mining", "mining equipment reliability", "mining maintenance solutions"],
+    "keywords": [
+      "mining equipment monitoring",
+      "heavy machinery maintenance",
+      "conveyor system monitoring",
+      "crushing unit maintenance",
+      "environmental monitoring mining",
+      "predictive analytics mining",
+      "mining safety systems",
+      "remote diagnostics mining",
+      "mining equipment reliability",
+      "mining maintenance solutions"
+    ],
     "description": "Expert discussion on mining equipment monitoring systems, covering heavy machinery health, conveyor systems, crushing units, and environmental monitoring in mining operations."
   }
 }

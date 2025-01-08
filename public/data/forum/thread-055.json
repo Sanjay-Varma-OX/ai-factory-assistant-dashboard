@@ -8,8 +8,8 @@
     "role": "Maintenance Operations Manager",
     "avatar": "/avatars/andrew_p.jpg"
   },
-  "created_at": "2023-12-08T09:30:00Z",
-  "last_activity": "2023-12-15T14:45:00Z",
+  "created_at": "2024-11-18T14:58:00.000000Z",
+  "last_activity": "2024-11-18T15:58:00.000000Z",
   "views": 589,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Process Automation Expert",
         "avatar": "/avatars/maria_r.jpg"
       },
-      "created_at": "2023-12-09T11:45:00Z"
+      "created_at": "2024-11-18T15:22:00.000000Z"
     },
     {
       "id": "reply455_2",
@@ -32,7 +32,7 @@
         "role": "Systems Integration Engineer",
         "avatar": "/avatars/steve_c.jpg"
       },
-      "created_at": "2023-12-10T14:20:00Z"
+      "created_at": "2024-11-18T15:48:00.000000Z"
     },
     {
       "id": "reply455_3",
@@ -43,7 +43,7 @@
         "role": "Documentation Manager",
         "avatar": "/avatars/jessica_t.jpg"
       },
-      "created_at": "2023-12-11T16:30:00Z"
+      "created_at": "2024-11-18T16:13:00.000000Z"
     },
     {
       "id": "reply455_4",
@@ -54,7 +54,7 @@
         "role": "Emergency Response Coordinator",
         "avatar": "/avatars/michael_l.jpg"
       },
-      "created_at": "2023-12-12T10:15:00Z"
+      "created_at": "2024-11-18T16:54:00.000000Z"
     },
     {
       "id": "reply455_5",
@@ -65,13 +65,29 @@
         "role": "Workflow Optimization Lead",
         "avatar": "/avatars/sarah_w.jpg"
       },
-      "created_at": "2023-12-13T13:40:00Z"
+      "created_at": "2024-11-18T16:58:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["workflow-automation", "maintenance-processes", "system-integration", "efficiency"],
+  "tags": [
+    "workflow-automation",
+    "maintenance-processes",
+    "system-integration",
+    "efficiency"
+  ],
   "seo": {
-    "keywords": ["maintenance workflow automation", "work order automation", "maintenance process optimization", "automated maintenance scheduling", "maintenance efficiency", "workflow integration", "maintenance documentation", "automated approvals", "maintenance KPIs", "CMMS automation"],
+    "keywords": [
+      "maintenance workflow automation",
+      "work order automation",
+      "maintenance process optimization",
+      "automated maintenance scheduling",
+      "maintenance efficiency",
+      "workflow integration",
+      "maintenance documentation",
+      "automated approvals",
+      "maintenance KPIs",
+      "CMMS automation"
+    ],
     "description": "Expert discussion on implementing maintenance workflow automation, covering work order management, resource scheduling, documentation flow, and system integration strategies."
   }
 }

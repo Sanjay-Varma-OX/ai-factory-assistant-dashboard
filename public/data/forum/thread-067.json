@@ -8,8 +8,8 @@
     "role": "Process Safety Manager",
     "avatar": "/avatars/patricia_c.jpg"
   },
-  "created_at": "2023-12-19T10:30:00Z",
-  "last_activity": "2023-12-24T17:45:00Z",
+  "created_at": "2024-11-24T12:23:00.000000Z",
+  "last_activity": "2024-11-24T13:23:00.000000Z",
   "views": 678,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Control Systems Engineer",
         "avatar": "/avatars/marcus_b.jpg"
       },
-      "created_at": "2023-12-20T13:15:00Z"
+      "created_at": "2024-11-24T12:42:00.000000Z"
     },
     {
       "id": "reply467_2",
@@ -32,7 +32,7 @@
         "role": "Instrumentation Specialist",
         "avatar": "/avatars/lisa_w.jpg"
       },
-      "created_at": "2023-12-21T15:45:00Z"
+      "created_at": "2024-11-24T13:13:00.000000Z"
     },
     {
       "id": "reply467_3",
@@ -43,7 +43,7 @@
         "role": "Safety Systems Engineer",
         "avatar": "/avatars/james_m.jpg"
       },
-      "created_at": "2023-12-22T11:20:00Z"
+      "created_at": "2024-11-24T13:38:00.000000Z"
     },
     {
       "id": "reply467_4",
@@ -54,7 +54,7 @@
         "role": "Instrumentation Specialist",
         "avatar": "/avatars/lisa_w.jpg"
       },
-      "created_at": "2023-12-23T14:30:00Z"
+      "created_at": "2024-11-24T13:51:00.000000Z"
     },
     {
       "id": "reply467_5",
@@ -65,7 +65,7 @@
         "role": "Risk Assessment Manager",
         "avatar": "/avatars/thomas_h.jpg"
       },
-      "created_at": "2023-12-24T12:15:00Z"
+      "created_at": "2024-11-24T14:38:00.000000Z"
     },
     {
       "id": "reply467_6",
@@ -76,7 +76,7 @@
         "role": "Emergency Response Coordinator",
         "avatar": "/avatars/sarah_o.jpg"
       },
-      "created_at": "2023-12-24T16:45:00Z"
+      "created_at": "2024-11-24T14:17:00.000000Z"
     },
     {
       "id": "reply467_7",
@@ -87,13 +87,29 @@
         "role": "Containment Systems Engineer",
         "avatar": "/avatars/robert_k.jpg"
       },
-      "created_at": "2023-12-24T17:30:00Z"
+      "created_at": "2024-11-24T15:39:00.000000Z"
     }
   ],
   "category": "Process Safety",
-  "tags": ["chemical-safety", "process-monitoring", "emergency-protocols", "risk-assessment"],
+  "tags": [
+    "chemical-safety",
+    "process-monitoring",
+    "emergency-protocols",
+    "risk-assessment"
+  ],
   "seo": {
-    "keywords": ["chemical process safety", "safety instrumentation", "emergency protocols", "risk assessment chemical industry", "process monitoring systems", "containment systems", "pressure management", "temperature control", "reaction control", "safety system optimization"],
+    "keywords": [
+      "chemical process safety",
+      "safety instrumentation",
+      "emergency protocols",
+      "risk assessment chemical industry",
+      "process monitoring systems",
+      "containment systems",
+      "pressure management",
+      "temperature control",
+      "reaction control",
+      "safety system optimization"
+    ],
     "description": "Expert discussion on chemical process safety optimization, covering monitoring systems, emergency protocols, equipment integrity, and risk assessment in chemical processing facilities."
   }
 }

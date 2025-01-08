@@ -8,8 +8,8 @@
     "role": "Maintenance Planning Manager",
     "avatar": "/avatars/michael_f.jpg"
   },
-  "created_at": "2023-12-02T09:15:00Z",
-  "last_activity": "2023-12-09T14:30:00Z",
+  "created_at": "2024-11-15T13:43:00.000000Z",
+  "last_activity": "2024-11-15T14:43:00.000000Z",
   "views": 389,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Operations Research Specialist",
         "avatar": "/avatars/jennifer_l.jpg"
       },
-      "created_at": "2023-12-03T11:20:00Z"
+      "created_at": "2024-11-15T14:08:00.000000Z"
     },
     {
       "id": "reply449_2",
@@ -32,7 +32,7 @@
         "role": "Resource Manager",
         "avatar": "/avatars/thomas_a.jpg"
       },
-      "created_at": "2023-12-04T14:45:00Z"
+      "created_at": "2024-11-15T14:29:00.000000Z"
     },
     {
       "id": "reply449_3",
@@ -43,7 +43,7 @@
         "role": "IT Systems Architect",
         "avatar": "/avatars/sarah_w.jpg"
       },
-      "created_at": "2023-12-05T16:30:00Z"
+      "created_at": "2024-11-15T14:58:00.000000Z"
     },
     {
       "id": "reply449_4",
@@ -54,7 +54,7 @@
         "role": "Maintenance Supervisor",
         "avatar": "/avatars/david_m.jpg"
       },
-      "created_at": "2023-12-06T10:15:00Z"
+      "created_at": "2024-11-15T15:19:00.000000Z"
     },
     {
       "id": "reply449_5",
@@ -65,7 +65,7 @@
         "role": "Emergency Response Coordinator",
         "avatar": "/avatars/lisa_t.jpg"
       },
-      "created_at": "2023-12-07T13:40:00Z"
+      "created_at": "2024-11-15T15:48:00.000000Z"
     },
     {
       "id": "reply449_6",
@@ -76,7 +76,7 @@
         "role": "Change Management Specialist",
         "avatar": "/avatars/robert_w.jpg"
       },
-      "created_at": "2023-12-08T15:25:00Z"
+      "created_at": "2024-11-15T16:07:00.000000Z"
     },
     {
       "id": "reply449_7",
@@ -87,13 +87,29 @@
         "role": "Performance Analytics Manager",
         "avatar": "/avatars/amanda_c.jpg"
       },
-      "created_at": "2023-12-09T12:10:00Z"
+      "created_at": "2024-11-15T16:38:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["automated-scheduling", "maintenance-planning", "resource-optimization", "workflow-automation"],
+  "tags": [
+    "automated-scheduling",
+    "maintenance-planning",
+    "resource-optimization",
+    "workflow-automation"
+  ],
   "seo": {
-    "keywords": ["automated maintenance scheduling", "maintenance planning automation", "resource optimization", "maintenance workflow", "scheduling algorithms", "maintenance management", "automated work orders", "maintenance efficiency", "resource allocation", "maintenance automation"],
+    "keywords": [
+      "automated maintenance scheduling",
+      "maintenance planning automation",
+      "resource optimization",
+      "maintenance workflow",
+      "scheduling algorithms",
+      "maintenance management",
+      "automated work orders",
+      "maintenance efficiency",
+      "resource allocation",
+      "maintenance automation"
+    ],
     "description": "Expert discussion on implementing automated maintenance scheduling systems, covering scheduling algorithms, resource allocation strategies, integration approaches, and change management best practices."
   }
 }

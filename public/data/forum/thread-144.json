@@ -8,8 +8,8 @@
     "role": "Senior Engineer",
     "avatar": "/avatars/user_11.jpg"
   },
-  "created_at": "2024-12-09T17:50:33.596778Z",
-  "last_activity": "2025-01-08T17:50:33.596786Z",
+  "created_at": "2025-01-02T12:37:00.000000Z",
+  "last_activity": "2025-01-02T14:37:00.000000Z",
   "views": 557,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-11T03:50:33.596791Z"
+      "created_at": "2025-01-02T12:55:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-12T01:50:33.596791Z"
+      "created_at": "2025-01-02T13:07:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-13T03:50:33.596791Z"
+      "created_at": "2025-01-02T13:55:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_13.jpg"
       },
-      "created_at": "2024-12-13T21:50:33.596791Z"
+      "created_at": "2025-01-02T14:37:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,29 +65,29 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_10.jpg"
       },
-      "created_at": "2024-12-15T00:50:33.596791Z"
+      "created_at": "2025-01-02T15:02:00.000000Z"
     },
     {
       "id": "reply_6",
-      "content": "Based on our implementation experience:\n\n1. Key Success Factors:\n   - Comprehensive planning\n   - Stakeholder engagement\n   - Regular monitoring\n   - Continuous improvement\n\n2. Measured Improvements:\n   - 29% efficiency increase\n   - 21% cost reduction\n   - 46% quality improvement\n\n3. Implementation Timeline:\n   - Planning: 2-3 months\n   - Pilot: 1-2 months\n   - Full rollout: 3-4 months",
+      "content": "Project implementation insights:\n\n1. Critical Components\n   - Strategic planning\n   - Team alignment\n   - Technology roadmap\n   - Change management\n\n2. Measured Outcomes\n   - Timeline accuracy: 97%\n   - Budget adherence: 92%\n   - Stakeholder satisfaction: 95%\n   - ROI achieved: 257%\n\nImplementation completed in 8 months.",
       "author": {
         "id": "user972",
         "name": "Dr. Alex Kumar",
         "role": "Process Engineer",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-16T00:50:33.596791Z"
+      "created_at": "2025-01-02T15:07:00.000000Z"
     },
     {
       "id": "reply_7",
-      "content": "Based on our implementation experience:\n\n1. Key Success Factors:\n   - Comprehensive planning\n   - Stakeholder engagement\n   - Regular monitoring\n   - Continuous improvement\n\n2. Measured Improvements:\n   - 27% efficiency increase\n   - 30% cost reduction\n   - 39% quality improvement\n\n3. Implementation Timeline:\n   - Planning: 2-3 months\n   - Pilot: 1-2 months\n   - Full rollout: 3-4 months",
+      "content": "Project implementation insights:\n\n1. Critical Components\n   - Strategic planning\n   - Team alignment\n   - Technology roadmap\n   - Change management\n\n2. Measured Outcomes\n   - Timeline accuracy: 95%\n   - Budget adherence: 93%\n   - Stakeholder satisfaction: 90%\n   - ROI achieved: 224%\n\nImplementation completed in 5 months.",
       "author": {
         "id": "user784",
         "name": "Dr. Alex Kumar",
         "role": "Operations Director",
         "avatar": "/avatars/user_19.jpg"
       },
-      "created_at": "2024-12-17T00:50:33.596791Z"
+      "created_at": "2025-01-02T14:57:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_3.jpg"
       },
-      "created_at": "2024-12-18T05:50:33.596791Z"
+      "created_at": "2025-01-02T15:09:00.000000Z"
     }
   ],
   "category": "Process Optimization",

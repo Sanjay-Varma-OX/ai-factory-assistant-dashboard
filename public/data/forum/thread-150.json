@@ -8,8 +8,8 @@
     "role": "Technical Director",
     "avatar": "/avatars/user_7.jpg"
   },
-  "created_at": "2024-12-26T17:50:33.599247Z",
-  "last_activity": "2025-01-07T17:50:33.599255Z",
+  "created_at": "2025-01-04T16:52:00.000000Z",
+  "last_activity": "2025-01-04T19:52:00.000000Z",
   "views": 627,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-18T04:50:33.599260Z"
+      "created_at": "2025-01-04T17:10:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-19T02:50:33.599260Z"
+      "created_at": "2025-01-04T17:50:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2024-12-19T23:50:33.599260Z"
+      "created_at": "2025-01-04T17:43:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_18.jpg"
       },
-      "created_at": "2024-12-21T04:50:33.599260Z"
+      "created_at": "2025-01-04T17:56:00.000000Z"
     }
   ],
   "category": "Environmental Compliance",

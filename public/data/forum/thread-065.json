@@ -8,8 +8,8 @@
     "role": "Plant Maintenance Director",
     "avatar": "/avatars/alexander_w.jpg"
   },
-  "created_at": "2023-12-19T08:15:00Z",
-  "last_activity": "2023-12-24T15:45:00Z",
+  "created_at": "2024-11-23T15:36:00.000000Z",
+  "last_activity": "2024-11-23T16:36:00.000000Z",
   "views": 834,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Turbine Specialist",
         "avatar": "/avatars/emily_r.jpg"
       },
-      "created_at": "2023-12-20T10:30:00Z"
+      "created_at": "2024-11-23T15:58:00.000000Z"
     },
     {
       "id": "reply465_2",
@@ -32,7 +32,7 @@
         "role": "Boiler Systems Engineer",
         "avatar": "/avatars/carlos_m.jpg"
       },
-      "created_at": "2023-12-21T13:45:00Z"
+      "created_at": "2024-11-23T16:08:00.000000Z"
     },
     {
       "id": "reply465_3",
@@ -43,7 +43,7 @@
         "role": "Equipment Reliability Engineer",
         "avatar": "/avatars/lisa_c.jpg"
       },
-      "created_at": "2023-12-22T09:20:00Z"
+      "created_at": "2024-11-23T16:54:00.000000Z"
     },
     {
       "id": "reply465_4",
@@ -54,7 +54,7 @@
         "role": "Boiler Systems Engineer",
         "avatar": "/avatars/carlos_m.jpg"
       },
-      "created_at": "2023-12-23T11:35:00Z"
+      "created_at": "2024-11-23T17:16:00.000000Z"
     },
     {
       "id": "reply465_5",
@@ -65,13 +65,29 @@
         "role": "Generator Maintenance Specialist",
         "avatar": "/avatars/james_f.jpg"
       },
-      "created_at": "2023-12-24T14:25:00Z"
+      "created_at": "2024-11-23T18:06:00.000000Z"
     }
   ],
   "category": "Power Generation",
-  "tags": ["power-plant", "equipment-maintenance", "turbine-care", "boiler-efficiency"],
+  "tags": [
+    "power-plant",
+    "equipment-maintenance",
+    "turbine-care",
+    "boiler-efficiency"
+  ],
   "seo": {
-    "keywords": ["power plant equipment maintenance", "turbine maintenance", "boiler efficiency", "generator reliability", "control systems maintenance", "environmental compliance", "preventive maintenance power plant", "performance monitoring", "emissions control", "power generation equipment"],
+    "keywords": [
+      "power plant equipment maintenance",
+      "turbine maintenance",
+      "boiler efficiency",
+      "generator reliability",
+      "control systems maintenance",
+      "environmental compliance",
+      "preventive maintenance power plant",
+      "performance monitoring",
+      "emissions control",
+      "power generation equipment"
+    ],
     "description": "Expert discussion on power plant equipment maintenance strategies, covering turbine care, boiler efficiency, generator reliability, and environmental compliance in power generation facilities."
   }
 }

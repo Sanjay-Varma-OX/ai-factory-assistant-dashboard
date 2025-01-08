@@ -8,8 +8,8 @@
     "role": "Energy Systems Manager",
     "avatar": "/avatars/emily_r.jpg"
   },
-  "created_at": "2023-12-14T09:30:00Z",
-  "last_activity": "2023-12-22T16:15:00Z",
+  "created_at": "2024-11-20T16:00:00.000000Z",
+  "last_activity": "2024-11-20T17:00:00.000000Z",
   "views": 685,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Energy Optimization Expert",
         "avatar": "/avatars/samuel_l.jpg"
       },
-      "created_at": "2023-12-15T11:45:00Z"
+      "created_at": "2024-11-20T16:25:00.000000Z"
     },
     {
       "id": "reply460_2",
@@ -32,7 +32,7 @@
         "role": "Performance Analytics Manager",
         "avatar": "/avatars/jessica_c.jpg"
       },
-      "created_at": "2023-12-16T14:20:00Z"
+      "created_at": "2024-11-20T16:50:00.000000Z"
     },
     {
       "id": "reply460_3",
@@ -43,7 +43,7 @@
         "role": "Automation Engineer",
         "avatar": "/avatars/michael_f.jpg"
       },
-      "created_at": "2023-12-17T16:55:00Z"
+      "created_at": "2024-11-20T17:06:00.000000Z"
     },
     {
       "id": "reply460_4",
@@ -54,7 +54,7 @@
         "role": "Data Scientist",
         "avatar": "/avatars/sarah_w.jpg"
       },
-      "created_at": "2023-12-18T10:30:00Z"
+      "created_at": "2024-11-20T17:52:00.000000Z"
     },
     {
       "id": "reply460_5",
@@ -65,7 +65,7 @@
         "role": "Automation Engineer",
         "avatar": "/avatars/michael_f.jpg"
       },
-      "created_at": "2023-12-19T13:45:00Z"
+      "created_at": "2024-11-20T17:55:00.000000Z"
     },
     {
       "id": "reply460_6",
@@ -76,7 +76,7 @@
         "role": "Sustainability Coordinator",
         "avatar": "/avatars/amanda_t.jpg"
       },
-      "created_at": "2023-12-20T15:20:00Z"
+      "created_at": "2024-11-20T17:42:00.000000Z"
     },
     {
       "id": "reply460_7",
@@ -87,13 +87,29 @@
         "role": "Operations Manager",
         "avatar": "/avatars/robert_p.jpg"
       },
-      "created_at": "2023-12-21T12:10:00Z"
+      "created_at": "2024-11-20T18:55:00.000000Z"
     }
   ],
   "category": "Energy Management",
-  "tags": ["energy-efficiency", "optimization", "sustainability", "automation"],
+  "tags": [
+    "energy-efficiency",
+    "optimization",
+    "sustainability",
+    "automation"
+  ],
   "seo": {
-    "keywords": ["energy efficiency optimization", "industrial energy management", "energy consumption monitoring", "sustainability metrics", "automated energy controls", "peak load management", "equipment efficiency", "energy ROI", "sustainable maintenance", "energy optimization"],
+    "keywords": [
+      "energy efficiency optimization",
+      "industrial energy management",
+      "energy consumption monitoring",
+      "sustainability metrics",
+      "automated energy controls",
+      "peak load management",
+      "equipment efficiency",
+      "energy ROI",
+      "sustainable maintenance",
+      "energy optimization"
+    ],
     "description": "Expert discussion on implementing energy efficiency optimization strategies in industrial facilities, covering monitoring systems, consumption patterns, automation, and sustainability metrics."
   }
 }

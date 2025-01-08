@@ -8,8 +8,8 @@
     "role": "Asset Integrity Manager",
     "avatar": "/avatars/james_m.jpg"
   },
-  "created_at": "2023-12-17T09:30:00Z",
-  "last_activity": "2023-12-24T17:15:00Z",
+  "created_at": "2024-11-22T13:13:00.000000Z",
+  "last_activity": "2024-11-22T15:13:00.000000Z",
   "views": 892,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Offshore Operations Specialist",
         "avatar": "/avatars/sarah_o.jpg"
       },
-      "created_at": "2023-12-18T12:45:00Z"
+      "created_at": "2024-11-22T13:42:00.000000Z"
     },
     {
       "id": "reply463_2",
@@ -32,7 +32,7 @@
         "role": "Pipeline Integrity Engineer",
         "avatar": "/avatars/robert_h.jpg"
       },
-      "created_at": "2023-12-19T14:20:00Z"
+      "created_at": "2024-11-22T14:09:00.000000Z"
     },
     {
       "id": "reply463_3",
@@ -43,7 +43,7 @@
         "role": "Data Analytics Manager",
         "avatar": "/avatars/linda_m.jpg"
       },
-      "created_at": "2023-12-20T10:15:00Z"
+      "created_at": "2024-11-22T14:25:00.000000Z"
     },
     {
       "id": "reply463_4",
@@ -54,7 +54,7 @@
         "role": "Pipeline Integrity Engineer",
         "avatar": "/avatars/robert_h.jpg"
       },
-      "created_at": "2023-12-21T13:40:00Z"
+      "created_at": "2024-11-22T14:21:00.000000Z"
     },
     {
       "id": "reply463_5",
@@ -65,7 +65,7 @@
         "role": "Process Engineering Manager",
         "avatar": "/avatars/thomas_a.jpg"
       },
-      "created_at": "2023-12-22T15:30:00Z"
+      "created_at": "2024-11-22T14:43:00.000000Z"
     },
     {
       "id": "reply463_6",
@@ -76,13 +76,29 @@
         "role": "Storage Facility Supervisor",
         "avatar": "/avatars/maria_g.jpg"
       },
-      "created_at": "2023-12-23T11:25:00Z"
+      "created_at": "2024-11-22T14:43:00.000000Z"
     }
   ],
   "category": "Oil & Gas",
-  "tags": ["asset-management", "equipment-reliability", "safety-protocols", "regulatory-compliance"],
+  "tags": [
+    "asset-management",
+    "equipment-reliability",
+    "safety-protocols",
+    "regulatory-compliance"
+  ],
   "seo": {
-    "keywords": ["oil and gas asset management", "equipment reliability", "offshore platform maintenance", "pipeline integrity", "processing equipment maintenance", "storage facility management", "regulatory compliance", "safety protocols", "condition monitoring", "risk assessment"],
+    "keywords": [
+      "oil and gas asset management",
+      "equipment reliability",
+      "offshore platform maintenance",
+      "pipeline integrity",
+      "processing equipment maintenance",
+      "storage facility management",
+      "regulatory compliance",
+      "safety protocols",
+      "condition monitoring",
+      "risk assessment"
+    ],
     "description": "Expert discussion on oil and gas asset management strategies, covering equipment reliability, safety protocols, regulatory compliance, and condition monitoring for offshore platforms, pipelines, and processing facilities."
   }
 }
