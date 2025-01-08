@@ -24,6 +24,11 @@ const CommunityPage = () => {
     loadCurrentPage();
   }, [currentPage]);
 
+  // Add this effect for scroll to top
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, [currentPage]);
+
   // Start background loading and get total count
   useEffect(() => {
     const initializeData = async () => {
@@ -146,54 +151,60 @@ const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
 ))}
             </div>
 
-// Add this effect for scroll to top
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, [currentPage]);
 
 {/* Pagination */}
-{totalThreads > 0 && (
-  <div className="mt-8 flex justify-center items-center space-x-2">
-    <button
-      onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-      disabled={currentPage === 1}
-      className={`px-3 py-1 rounded ${
-        currentPage === 1 
-          ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-          : 'bg-blue-600 text-white hover:bg-blue-700'
-      }`}
-    >
-      <FontAwesomeIcon icon={faChevronLeft} />
-    </button>
-    
-    {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
-      <button
-        key={i + 1}
-        onClick={() => setCurrentPage(i + 1)}
-        className={`px-4 py-2 rounded ${
-          currentPage === i + 1
-            ? 'bg-blue-600 text-white'
-            : 'bg-white text-blue-600 hover:bg-blue-50'
-        }`}
-      >
-        {i + 1}
-      </button>
-    ))}
+          {totalThreads > 0 && (
+            <div className="mt-8 flex justify-center items-center space-x-2">
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className={`px-3 py-1 rounded ${
+                  currentPage === 1 
+                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                }`}
+              >
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+              
+              {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
+                <button
+                  key={i + 1}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`px-4 py-2 rounded ${
+                    currentPage === i + 1
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-white text-blue-600 hover:bg-blue-50'
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
 
-    <button
-      onClick={() => setCurrentPage(prev => 
-        Math.min(prev + 1, Math.ceil(totalThreads / threadsPerPage))
+              <button
+                onClick={() => setCurrentPage(prev => 
+                  Math.min(prev + 1, Math.ceil(totalThreads / threadsPerPage))
+                )}
+                disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
+                className={`px-3 py-1 rounded ${
+                  currentPage === Math.ceil(totalThreads / threadsPerPage)
+                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                }`}
+              >
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="text-center py-8 text-gray-600">
+          No discussions found.
+        </div>
       )}
-      disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
-      className={`px-3 py-1 rounded ${
-        currentPage === Math.ceil(totalThreads / threadsPerPage)
-          ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-          : 'bg-blue-600 text-white hover:bg-blue-700'
-      }`}
-    >
-      <FontAwesomeIcon icon={faChevronRight} />
-    </button>
-  </div>
-)}
+      </div>
+    </div>
+  );
+};
 
 export default CommunityPage;
