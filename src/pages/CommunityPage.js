@@ -38,13 +38,11 @@ const CommunityPage = () => {
     initializeData();
   }, []);
 
-  // Get current threads for pagination
-  const indexOfLastThread = currentPage * threadsPerPage;
-  const indexOfFirstThread = indexOfLastThread - threadsPerPage;
-  const currentThreads = threads.slice(indexOfFirstThread, indexOfLastThread);
-
+const startThread = (currentPage - 1) * threadsPerPage + 1;
+const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
+  
   // Calculate page numbers
-  const pageCount = Math.ceil(threads.length / threadsPerPage);
+  const pageCount = Math.ceil(totalThreads / threadsPerPage);
   const pageNumbers = [];
   for (let i = 1; i <= pageCount; i++) {
     pageNumbers.push(i);
@@ -53,26 +51,6 @@ const CommunityPage = () => {
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(undefined, options);
-  };
-
-  // Handle page navigation
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo(0, 0); // Scroll to top when changing pages
-  };
-
-  // Previous page
-  const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      paginate(currentPage - 1);
-    }
-  };
-
-  // Next page
-  const goToNextPage = () => {
-    if (currentPage < pageCount) {
-      paginate(currentPage + 1);
-    }
   };
 
   return (
@@ -90,26 +68,28 @@ const CommunityPage = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
-          <div>
-            <h2 className="text-2xl font-semibold">Recent Discussions</h2>
-            <p className="text-gray-600 mt-1">
-              Showing {indexOfFirstThread + 1}-{Math.min(indexOfLastThread, totalThreads)} of {totalThreads} threads
-            </p>
-          </div>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-            Start New Discussion
-          </button>
-        </div>
+  <div>
+    <h2 className="text-2xl font-semibold">Recent Discussions</h2>
+    <p className="text-gray-600 mt-1">
+      {totalThreads > 0 
+        ? `Showing ${startThread}-${endThread} of ${totalThreads} threads`
+        : 'Loading threads...'}
+    </p>
+  </div>
+  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+    Start New Discussion
+  </button>
+</div>
 
         {loading ? (
-          <div className="text-center py-8">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900 mx-auto"></div>
-            <p className="text-gray-600 mt-4">Loading discussions...</p>
-          </div>
-        ) : currentThreads.length > 0 ? (
+  <div className="text-center py-8">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900 mx-auto"></div>
+    <p className="text-gray-600 mt-4">Loading discussions...</p>
+  </div>
+) : threads.length > 0 ? (
           <>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              {currentThreads.map((thread) => (
+              {threads.map((thread) => (
   <div 
     key={thread.id}
     className="border-b border-gray-200 p-6 hover:bg-gray-50 transition-colors"
@@ -166,59 +146,54 @@ const CommunityPage = () => {
 ))}
             </div>
 
-            {/* Pagination */}
-            {/* Pagination section */}
-    <div className="mt-8 flex justify-center items-center space-x-2">
-      <button
-        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-        disabled={currentPage === 1}
-        className={`px-3 py-1 rounded ${
-          currentPage === 1 
-            ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-            : 'bg-blue-600 text-white hover:bg-blue-700'
-        }`}
-      >
-        Previous
-      </button>
-      
-      {/* Page numbers */}
-      {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
-        <button
-          key={i + 1}
-          onClick={() => setCurrentPage(i + 1)}
-          className={`px-4 py-2 rounded ${
-            currentPage === i + 1
-              ? 'bg-blue-600 text-white'
-              : 'bg-white text-blue-600 hover:bg-blue-50'
-          }`}
-        >
-          {i + 1}
-        </button>
-      ))}
+// Add this effect for scroll to top
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, [currentPage]);
 
+{/* Pagination */}
+{totalThreads > 0 && (
+  <div className="mt-8 flex justify-center items-center space-x-2">
+    <button
+      onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+      disabled={currentPage === 1}
+      className={`px-3 py-1 rounded ${
+        currentPage === 1 
+          ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+          : 'bg-blue-600 text-white hover:bg-blue-700'
+      }`}
+    >
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </button>
+    
+    {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
       <button
-        onClick={() => setCurrentPage(prev => 
-          Math.min(prev + 1, Math.ceil(totalThreads / threadsPerPage))
-        )}
-        disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
-        className={`px-3 py-1 rounded ${
-          currentPage === Math.ceil(totalThreads / threadsPerPage)
-            ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-            : 'bg-blue-600 text-white hover:bg-blue-700'
+        key={i + 1}
+        onClick={() => setCurrentPage(i + 1)}
+        className={`px-4 py-2 rounded ${
+          currentPage === i + 1
+            ? 'bg-blue-600 text-white'
+            : 'bg-white text-blue-600 hover:bg-blue-50'
         }`}
       >
-        Next
+        {i + 1}
       </button>
-    </div>
-          </>
-        ) : (
-          <div className="text-center py-8 text-gray-600">
-            No discussions found.
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
+    ))}
+
+    <button
+      onClick={() => setCurrentPage(prev => 
+        Math.min(prev + 1, Math.ceil(totalThreads / threadsPerPage))
+      )}
+      disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
+      className={`px-3 py-1 rounded ${
+        currentPage === Math.ceil(totalThreads / threadsPerPage)
+          ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+          : 'bg-blue-600 text-white hover:bg-blue-700'
+      }`}
+    >
+      <FontAwesomeIcon icon={faChevronRight} />
+    </button>
+  </div>
+)}
 
 export default CommunityPage;
