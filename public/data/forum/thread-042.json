@@ -1,0 +1,110 @@
+{
+  "id": "042",
+  "title": "Predictive Maintenance Success in Power Plants",
+  "content": "Excited to share our success story implementing predictive maintenance at a 1.2GW combined cycle power plant:\n\n✓ 92% accuracy in failure prediction\n✓ $2.4M annual maintenance savings\n✓ 35% reduction in unplanned outages\n✓ 28% improvement in equipment lifespan\n\nKey achievements:\n- Early detection of turbine bearing issues\n- Optimized maintenance scheduling\n- Reduced spare parts inventory\n- Enhanced safety compliance\n\nHappy to discuss implementation details and lessons learned.",
+  "author": {
+    "id": "user440",
+    "name": "Michael Chen",
+    "role": "Plant Operations Manager",
+    "avatar": "/avatars/michael.jpg"
+  },
+  "created_at": "2023-11-25T09:00:00Z",
+  "last_activity": "2023-12-02T15:45:00Z",
+  "views": 385,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Impressive results! Could you share details about your sensor deployment strategy? Particularly interested in:\n- Sensor types and locations\n- Data collection frequency\n- Integration with existing SCADA",
+      "author": {
+        "id": "user441",
+        "name": "Sarah Thompson",
+        "role": "Instrumentation Engineer",
+        "avatar": "/avatars/sarah.jpg"
+      },
+      "created_at": "2023-11-26T10:30:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "Our sensor network:\n- Vibration sensors on turbines (1000Hz)\n- Temperature sensors (1-min intervals)\n- Oil analysis sensors (real-time)\n- Acoustic sensors (continuous)\n\nAll integrated with existing SCADA via OPC-UA protocol. Happy to share architecture diagrams offline.",
+      "author": {
+        "id": "user440",
+        "name": "Michael Chen",
+        "role": "Plant Operations Manager",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-11-27T11:15:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "Great implementation! How did you handle the regulatory compliance aspects, especially regarding critical infrastructure protection (CIP) standards?",
+      "author": {
+        "id": "user442",
+        "name": "James Wilson",
+        "role": "Compliance Manager",
+        "avatar": "/avatars/james.jpg"
+      },
+      "created_at": "2023-11-28T14:20:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "Compliance approach:\n1. Isolated OT network\n2. End-to-end encryption\n3. Regular security audits\n4. Role-based access control\n5. Continuous monitoring\n\nAll aligned with NERC CIP standards. Documentation available for reference.",
+      "author": {
+        "id": "user440",
+        "name": "Michael Chen",
+        "role": "Plant Operations Manager",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-11-29T09:45:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "What ML models are you using for failure prediction? We're considering implementing something similar at our hydro plant.",
+      "author": {
+        "id": "user443",
+        "name": "Dr. Elena Rodriguez",
+        "role": "Data Science Lead",
+        "avatar": "/avatars/elena.jpg"
+      },
+      "created_at": "2023-11-30T13:30:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "Our ML stack:\n- LSTM networks for time-series prediction\n- Random Forest for anomaly detection\n- Gradient Boosting for remaining useful life\n- Custom ensemble for final predictions\n\nKey to success: High-quality training data spanning 5 years of operations.",
+      "author": {
+        "id": "user444",
+        "name": "Kevin Park",
+        "role": "AI Implementation Lead",
+        "avatar": "/avatars/kevin.jpg"
+      },
+      "created_at": "2023-12-01T10:15:00Z"
+    },
+    {
+      "id": "reply_7",
+      "content": "How did you calculate the $2.4M savings? Looking to build a similar business case.",
+      "author": {
+        "id": "user445",
+        "name": "Linda Martinez",
+        "role": "Financial Analyst",
+        "avatar": "/avatars/linda.jpg"
+      },
+      "created_at": "2023-12-02T11:30:00Z"
+    },
+    {
+      "id": "reply_8",
+      "content": "Savings breakdown:\n- Reduced unplanned outages: $1.2M\n- Optimized maintenance: $600K\n- Extended equipment life: $400K\n- Inventory reduction: $200K\n\nROI achieved in 14 months. Full analysis methodology available.",
+      "author": {
+        "id": "user440",
+        "name": "Michael Chen",
+        "role": "Plant Operations Manager",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-02T15:45:00Z"
+    }
+  ],
+  "category": "Success Stories & Case Studies",
+  "tags": ["power-plant", "predictive-maintenance", "success-story", "ml-implementation", "roi-analysis"],
+  "seo": {
+    "keywords": ["power plant maintenance", "predictive maintenance success", "maintenance ROI", "power generation efficiency", "industrial IoT implementation"],
+    "description": "Real-world success story of predictive maintenance implementation in a combined cycle power plant, achieving significant improvements in failure prediction, cost savings, and operational efficiency."
+  }
+}
