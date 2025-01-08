@@ -1,0 +1,77 @@
+{
+  "id": "058",
+  "title": "Machine Health Monitoring",
+  "content": "Hi maintenance professionals,\n\nWe're upgrading our machine health monitoring systems and looking for insights on:\n\n1. Key health indicators\n2. Monitoring frequency\n3. Alert thresholds\n4. Data visualization\n5. Integration with CMMS\n\nSpecific areas of interest:\n- Critical component monitoring\n- Real-time vs. periodic monitoring\n- Trend analysis methods\n- Failure prediction accuracy\n\nWhat strategies have proven most effective in your experience?\n\nThanks in advance!",
+  "author": {
+    "id": "user555",
+    "name": "Michael Zhang",
+    "role": "Maintenance Systems Engineer",
+    "avatar": "/avatars/michael_z.jpg"
+  },
+  "created_at": "2023-12-12T10:30:00Z",
+  "last_activity": "2023-12-20T16:45:00Z",
+  "views": 642,
+  "replies": [
+    {
+      "id": "reply458_1",
+      "content": "Our effective monitoring framework:\n\n1. Vibration analysis\n   - Bearing frequencies\n   - Misalignment patterns\n   - Imbalance detection\n\n2. Temperature monitoring\n   - Thermal imaging\n   - Continuous temp logging\n\n3. Oil analysis\n   - Particle counting\n   - Viscosity tracking\n\nReduced failures by 75%.",
+      "author": {
+        "id": "user556",
+        "name": "Sarah Johnson",
+        "role": "Reliability Engineer",
+        "avatar": "/avatars/sarah_j.jpg"
+      },
+      "created_at": "2023-12-13T14:20:00Z"
+    },
+    {
+      "id": "reply458_2",
+      "content": "Alert threshold strategy:\n\n1. Machine learning baselines\n2. Dynamic thresholds\n3. Context-aware alerts\n4. Multi-parameter correlation\n\nFalse positives down 80%.",
+      "author": {
+        "id": "user557",
+        "name": "Dr. James Lee",
+        "role": "Data Science Lead",
+        "avatar": "/avatars/james_l.jpg"
+      },
+      "created_at": "2023-12-14T11:45:00Z"
+    },
+    {
+      "id": "reply458_3",
+      "content": "Question about your ML baselines - what training period do you recommend for establishing reliable thresholds?",
+      "author": {
+        "id": "user558",
+        "name": "Emma Wilson",
+        "role": "Process Engineer",
+        "avatar": "/avatars/emma_w.jpg"
+      },
+      "created_at": "2023-12-15T09:30:00Z"
+    },
+    {
+      "id": "reply458_4",
+      "content": "Training periods vary:\n\n1. Simple equipment: 3-6 months\n2. Complex systems: 6-12 months\n3. Seasonal equipment: Full year\n4. Custom periods based on:\n   - Operating cycles\n   - Environmental factors\n   - Production patterns",
+      "author": {
+        "id": "user557",
+        "name": "Dr. James Lee",
+        "role": "Data Science Lead",
+        "avatar": "/avatars/james_l.jpg"
+      },
+      "created_at": "2023-12-16T13:15:00Z"
+    },
+    {
+      "id": "reply458_5",
+      "content": "CMMS integration approach:\n\n1. API-based connectivity\n2. Automated work orders\n3. Resource scheduling\n4. Maintenance history correlation\n\nMaintenance efficiency up 40%.",
+      "author": {
+        "id": "user559",
+        "name": "Robert Chen",
+        "role": "Systems Integration Specialist",
+        "avatar": "/avatars/robert_c.jpg"
+      },
+      "created_at": "2023-12-17T15:40:00Z"
+    }
+  ],
+  "category": "Predictive Maintenance",
+  "tags": ["machine-health", "monitoring-systems", "predictive-maintenance", "cmms-integration"],
+  "seo": {
+    "keywords": ["machine health monitoring", "predictive maintenance", "condition monitoring", "equipment health", "maintenance alerts", "CMMS integration", "vibration analysis", "thermal monitoring", "oil analysis", "machine learning maintenance"],
+    "description": "Expert discussion on implementing effective machine health monitoring systems, covering key indicators, monitoring frequencies, alert thresholds, and CMMS integration strategies."
+  }
+}

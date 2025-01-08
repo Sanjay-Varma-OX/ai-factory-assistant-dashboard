@@ -1,0 +1,110 @@
+{
+  "id": "062",
+  "title": "Pharmaceutical Equipment Maintenance",
+  "content": "Fellow pharmaceutical maintenance professionals,\n\nWe're upgrading our equipment maintenance protocols and seeking input on:\n\n1. GMP compliance strategies\n2. Validation procedures\n3. Contamination prevention\n4. Documentation systems\n5. Calibration schedules\n\nKey areas:\n- Clean room equipment\n- Production machinery\n- Quality control instruments\n- Environmental monitoring systems\n\nWhat approaches have proven most effective in your facilities?\n\nThank you for sharing your expertise!",
+  "author": {
+    "id": "user578",
+    "name": "Dr. Maria Santos",
+    "role": "Pharmaceutical Maintenance Director",
+    "avatar": "/avatars/maria_s.jpg"
+  },
+  "created_at": "2023-12-16T10:15:00Z",
+  "last_activity": "2023-12-24T14:45:00Z",
+  "views": 815,
+  "replies": [
+    {
+      "id": "reply462_1",
+      "content": "GMP compliance framework:\n\n1. Documentation\n   - Electronic records\n   - Audit trails\n   - Change control\n\n2. Training\n   - SOP compliance\n   - Technical skills\n   - Documentation practices\n\nAudit success rate: 98%",
+      "author": {
+        "id": "user579",
+        "name": "Thomas Anderson",
+        "role": "GMP Compliance Manager",
+        "avatar": "/avatars/thomas_a.jpg"
+      },
+      "created_at": "2023-12-17T13:30:00Z"
+    },
+    {
+      "id": "reply462_2",
+      "content": "Clean room maintenance:\n\n1. HVAC systems\n   - HEPA filtration\n   - Pressure differentials\n   - Air changes\n\n2. Surface cleaning\n   - Validated procedures\n   - Material compatibility\n   - Residue monitoring\n\nContamination incidents: Zero in 12 months",
+      "author": {
+        "id": "user580",
+        "name": "Sarah Martinez",
+        "role": "Clean Room Specialist",
+        "avatar": "/avatars/sarah_m.jpg"
+      },
+      "created_at": "2023-12-18T15:45:00Z"
+    },
+    {
+      "id": "reply462_3",
+      "content": "Calibration management:\n\n1. Schedule optimization\n   - Risk-based approach\n   - Equipment criticality\n   - Usage patterns\n\n2. Documentation\n   - Calibration records\n   - Deviation tracking\n   - Trend analysis\n\nCalibration compliance: 99.9%",
+      "author": {
+        "id": "user581",
+        "name": "David Kim",
+        "role": "Calibration Engineer",
+        "avatar": "/avatars/david_k.jpg"
+      },
+      "created_at": "2023-12-19T11:20:00Z"
+    },
+    {
+      "id": "reply462_4",
+      "content": "Question about calibration approach - how do you handle emergency calibrations during production runs?",
+      "author": {
+        "id": "user582",
+        "name": "Rachel Thompson",
+        "role": "Production Supervisor",
+        "avatar": "/avatars/rachel_t.jpg"
+      },
+      "created_at": "2023-12-20T09:15:00Z"
+    },
+    {
+      "id": "reply462_5",
+      "content": "Emergency calibration protocol:\n\n1. Risk assessment\n   - Product impact\n   - Process criticality\n   - Backup systems\n\n2. Rapid response\n   - On-call technicians\n   - Mobile calibration kit\n   - Validated procedures\n\n3. Documentation\n   - Deviation reports\n   - Impact analysis\n   - CAPA implementation\n\nResponse time: <30 minutes",
+      "author": {
+        "id": "user581",
+        "name": "David Kim",
+        "role": "Calibration Engineer",
+        "avatar": "/avatars/david_k.jpg"
+      },
+      "created_at": "2023-12-21T10:45:00Z"
+    },
+    {
+      "id": "reply462_6",
+      "content": "Environmental monitoring:\n\n1. Particle counting\n   - Real-time monitoring\n   - Alert thresholds\n   - Trend analysis\n\n2. Microbial monitoring\n   - Sampling locations\n   - Testing frequency\n   - Data analysis\n\nCompliance rate: 99.8%",
+      "author": {
+        "id": "user583",
+        "name": "Emily Watson",
+        "role": "Environmental Monitoring Specialist",
+        "avatar": "/avatars/emily_w.jpg"
+      },
+      "created_at": "2023-12-22T14:30:00Z"
+    },
+    {
+      "id": "reply462_7",
+      "content": "Validation strategy:\n\n1. Equipment qualification\n   - IQ/OQ/PQ protocols\n   - Risk assessments\n   - Change control\n\n2. Process validation\n   - Critical parameters\n   - Acceptance criteria\n   - Documentation\n\nValidation success: 100%",
+      "author": {
+        "id": "user584",
+        "name": "Michael Chen",
+        "role": "Validation Manager",
+        "avatar": "/avatars/michael_c.jpg"
+      },
+      "created_at": "2023-12-23T16:20:00Z"
+    },
+    {
+      "id": "reply462_8",
+      "content": "Preventive maintenance program:\n\n1. Risk-based scheduling\n2. Critical spares inventory\n3. Predictive analytics\n4. Training requirements\n\nDowntime reduction: 45%",
+      "author": {
+        "id": "user585",
+        "name": "Laura Rodriguez",
+        "role": "Maintenance Supervisor",
+        "avatar": "/avatars/laura_r.jpg"
+      },
+      "created_at": "2023-12-24T12:15:00Z"
+    }
+  ],
+  "category": "Pharmaceutical Manufacturing",
+  "tags": ["pharmaceutical", "equipment-maintenance", "GMP-compliance", "validation"],
+  "seo": {
+    "keywords": ["pharmaceutical equipment maintenance", "GMP compliance", "clean room maintenance", "equipment validation", "calibration management", "contamination prevention", "environmental monitoring", "pharmaceutical manufacturing", "equipment qualification", "preventive maintenance"],
+    "description": "Expert discussion on pharmaceutical equipment maintenance practices, covering GMP compliance, validation procedures, contamination prevention, and calibration management in pharmaceutical manufacturing facilities."
+  }
+}

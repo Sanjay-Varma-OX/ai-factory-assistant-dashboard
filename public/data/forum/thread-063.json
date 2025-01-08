@@ -1,0 +1,88 @@
+{
+  "id": "063",
+  "title": "Oil & Gas Asset Management",
+  "content": "Fellow O&G maintenance professionals,\n\nWe're revamping our asset management strategy and need insights on:\n\n1. Equipment reliability\n2. Safety protocols\n3. Regulatory compliance\n4. Condition monitoring\n5. Risk assessment\n\nKey focus areas:\n- Offshore platforms\n- Pipeline systems\n- Processing equipment\n- Storage facilities\n\nWhat strategies have proven effective in your operations?\n\nLooking forward to your expertise!",
+  "author": {
+    "id": "user586",
+    "name": "James Morrison",
+    "role": "Asset Integrity Manager",
+    "avatar": "/avatars/james_m.jpg"
+  },
+  "created_at": "2023-12-17T09:30:00Z",
+  "last_activity": "2023-12-24T17:15:00Z",
+  "views": 892,
+  "replies": [
+    {
+      "id": "reply463_1",
+      "content": "Offshore platform management:\n\n1. Critical systems\n   - Safety systems\n   - Production equipment\n   - Utility systems\n\n2. Monitoring approach\n   - Real-time data\n   - Predictive analytics\n   - Risk-based inspection\n\nDowntime reduction: 40%",
+      "author": {
+        "id": "user587",
+        "name": "Sarah O'Connor",
+        "role": "Offshore Operations Specialist",
+        "avatar": "/avatars/sarah_o.jpg"
+      },
+      "created_at": "2023-12-18T12:45:00Z"
+    },
+    {
+      "id": "reply463_2",
+      "content": "Pipeline integrity:\n\n1. Inspection methods\n   - Smart PIGs\n   - Ultrasonic testing\n   - Corrosion monitoring\n\n2. Data analysis\n   - Defect tracking\n   - Trend analysis\n   - Risk assessment\n\nLeak prevention rate: 99.9%",
+      "author": {
+        "id": "user588",
+        "name": "Dr. Robert Hughes",
+        "role": "Pipeline Integrity Engineer",
+        "avatar": "/avatars/robert_h.jpg"
+      },
+      "created_at": "2023-12-19T14:20:00Z"
+    },
+    {
+      "id": "reply463_3",
+      "content": "Question about smart PIGs - what data analysis tools are you using for the inspection results?",
+      "author": {
+        "id": "user589",
+        "name": "Linda Martinez",
+        "role": "Data Analytics Manager",
+        "avatar": "/avatars/linda_m.jpg"
+      },
+      "created_at": "2023-12-20T10:15:00Z"
+    },
+    {
+      "id": "reply463_4",
+      "content": "Analysis toolkit:\n\n1. Machine learning\n   - Defect classification\n   - Growth prediction\n   - Risk modeling\n\n2. Visualization\n   - 3D mapping\n   - Trend plotting\n   - Report generation\n\nAccuracy rate: 95%",
+      "author": {
+        "id": "user588",
+        "name": "Dr. Robert Hughes",
+        "role": "Pipeline Integrity Engineer",
+        "avatar": "/avatars/robert_h.jpg"
+      },
+      "created_at": "2023-12-21T13:40:00Z"
+    },
+    {
+      "id": "reply463_5",
+      "content": "Processing equipment management:\n\n1. Critical parameters\n   - Temperature\n   - Pressure\n   - Flow rates\n\n2. Maintenance strategy\n   - Condition-based\n   - Risk-based\n   - Reliability-centered\n\nEfficiency increase: 25%",
+      "author": {
+        "id": "user590",
+        "name": "Thomas Anderson",
+        "role": "Process Engineering Manager",
+        "avatar": "/avatars/thomas_a.jpg"
+      },
+      "created_at": "2023-12-22T15:30:00Z"
+    },
+    {
+      "id": "reply463_6",
+      "content": "Storage facility optimization:\n\n1. Tank management\n   - Level monitoring\n   - Corrosion control\n   - Emissions tracking\n\n2. Safety systems\n   - Fire detection\n   - Emergency shutdown\n   - Spill containment\n\nIncident reduction: 65%",
+      "author": {
+        "id": "user591",
+        "name": "Maria Garcia",
+        "role": "Storage Facility Supervisor",
+        "avatar": "/avatars/maria_g.jpg"
+      },
+      "created_at": "2023-12-23T11:25:00Z"
+    }
+  ],
+  "category": "Oil & Gas",
+  "tags": ["asset-management", "equipment-reliability", "safety-protocols", "regulatory-compliance"],
+  "seo": {
+    "keywords": ["oil and gas asset management", "equipment reliability", "offshore platform maintenance", "pipeline integrity", "processing equipment maintenance", "storage facility management", "regulatory compliance", "safety protocols", "condition monitoring", "risk assessment"],
+    "description": "Expert discussion on oil and gas asset management strategies, covering equipment reliability, safety protocols, regulatory compliance, and condition monitoring for offshore platforms, pipelines, and processing facilities."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "066",
+  "title": "Mining Equipment Monitoring",
+  "content": "Mining maintenance professionals,\n\nLooking to enhance our equipment monitoring systems:\n\n1. Heavy machinery health\n2. Predictive analytics\n3. Environmental monitoring\n4. Safety systems\n5. Remote diagnostics\n\nKey areas:\n- Excavation equipment\n- Conveyor systems\n- Crushing units\n- Transport vehicles\n\nWhat monitoring solutions have proven most effective?\n\nAppreciate your insights!",
+  "author": {
+    "id": "user603",
+    "name": "Daniel Cooper",
+    "role": "Mining Operations Manager",
+    "avatar": "/avatars/daniel_c.jpg"
+  },
+  "created_at": "2023-12-19T09:45:00Z",
+  "last_activity": "2023-12-24T16:20:00Z",
+  "views": 745,
+  "replies": [
+    {
+      "id": "reply466_1",
+      "content": "Heavy machinery monitoring:\n\n1. Sensor deployment\n   - Vibration analysis\n   - Oil condition\n   - Temperature tracking\n\n2. Data integration\n   - Real-time alerts\n   - Performance trends\n   - Maintenance scheduling\n\nDowntime reduction: 55%",
+      "author": {
+        "id": "user604",
+        "name": "Rachel Torres",
+        "role": "Equipment Reliability Specialist",
+        "avatar": "/avatars/rachel_t.jpg"
+      },
+      "created_at": "2023-12-20T11:30:00Z"
+    },
+    {
+      "id": "reply466_2",
+      "content": "Conveyor system monitoring:\n\n1. Critical components\n   - Belt condition\n   - Roller bearings\n   - Drive systems\n\n2. Preventive measures\n   - Alignment checks\n   - Wear detection\n   - Load distribution\n\nSystem reliability: 92%",
+      "author": {
+        "id": "user605",
+        "name": "Mike Johnson",
+        "role": "Conveyor Systems Engineer",
+        "avatar": "/avatars/mike_j.jpg"
+      },
+      "created_at": "2023-12-21T14:15:00Z"
+    },
+    {
+      "id": "reply466_3",
+      "content": "Question about belt condition monitoring - what specific sensors and placement strategies are you using?",
+      "author": {
+        "id": "user606",
+        "name": "Sarah Williams",
+        "role": "Maintenance Technician",
+        "avatar": "/avatars/sarah_w.jpg"
+      },
+      "created_at": "2023-12-22T09:45:00Z"
+    },
+    {
+      "id": "reply466_4",
+      "content": "Belt monitoring setup:\n\n1. Sensor types\n   - Thermal imaging\n   - Acoustic sensors\n   - Thickness gauges\n\n2. Placement strategy\n   - High-stress points\n   - Transfer points\n   - Drive locations\n\nFailure prediction: 85%",
+      "author": {
+        "id": "user605",
+        "name": "Mike Johnson",
+        "role": "Conveyor Systems Engineer",
+        "avatar": "/avatars/mike_j.jpg"
+      },
+      "created_at": "2023-12-23T12:20:00Z"
+    },
+    {
+      "id": "reply466_5",
+      "content": "Crushing unit monitoring:\n\n1. Performance metrics\n   - Power consumption\n   - Throughput rate\n   - Product size\n\n2. Maintenance focus\n   - Wear components\n   - Lubrication systems\n   - Drive train\n\nEfficiency gain: 35%",
+      "author": {
+        "id": "user607",
+        "name": "Alan Parker",
+        "role": "Crushing Plant Supervisor",
+        "avatar": "/avatars/alan_p.jpg"
+      },
+      "created_at": "2023-12-24T10:45:00Z"
+    },
+    {
+      "id": "reply466_6",
+      "content": "Environmental monitoring:\n\n1. Key parameters\n   - Dust levels\n   - Noise pollution\n   - Water quality\n\n2. Control systems\n   - Dust suppression\n   - Noise reduction\n   - Water treatment\n\nCompliance rate: 100%",
+      "author": {
+        "id": "user608",
+        "name": "Emma Lewis",
+        "role": "Environmental Systems Engineer",
+        "avatar": "/avatars/emma_l.jpg"
+      },
+      "created_at": "2023-12-24T15:30:00Z"
+    }
+  ],
+  "category": "Mining Operations",
+  "tags": ["mining-equipment", "monitoring-systems", "predictive-maintenance", "environmental-control"],
+  "seo": {
+    "keywords": ["mining equipment monitoring", "heavy machinery maintenance", "conveyor system monitoring", "crushing unit maintenance", "environmental monitoring mining", "predictive analytics mining", "mining safety systems", "remote diagnostics mining", "mining equipment reliability", "mining maintenance solutions"],
+    "description": "Expert discussion on mining equipment monitoring systems, covering heavy machinery health, conveyor systems, crushing units, and environmental monitoring in mining operations."
+  }
+}

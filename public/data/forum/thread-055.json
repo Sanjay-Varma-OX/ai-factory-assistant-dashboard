@@ -1,0 +1,77 @@
+{
+  "id": "055",
+  "title": "Maintenance Workflow Automation",
+  "content": "Hello maintenance automation experts,\n\nWe're implementing workflow automation for our maintenance operations. Key focus areas:\n\n1. Work order automation\n2. Resource scheduling\n3. Documentation flow\n4. Approval processes\n5. Integration points\n\nSpecific challenges:\n- Process standardization\n- System integration\n- Change management\n- KPI tracking\n\nWhat strategies have worked in your implementations?\n\nThanks in advance!",
+  "author": {
+    "id": "user534",
+    "name": "Andrew Parker",
+    "role": "Maintenance Operations Manager",
+    "avatar": "/avatars/andrew_p.jpg"
+  },
+  "created_at": "2023-12-08T09:30:00Z",
+  "last_activity": "2023-12-15T14:45:00Z",
+  "views": 589,
+  "replies": [
+    {
+      "id": "reply455_1",
+      "content": "Andrew, our automation framework:\n\n1. Work Order Management\n   - Condition-based triggers\n   - Priority assignment\n   - Resource matching\n   - Schedule optimization\n\nReduced processing time by 68%.",
+      "author": {
+        "id": "user535",
+        "name": "Dr. Maria Rodriguez",
+        "role": "Process Automation Expert",
+        "avatar": "/avatars/maria_r.jpg"
+      },
+      "created_at": "2023-12-09T11:45:00Z"
+    },
+    {
+      "id": "reply455_2",
+      "content": "Integration architecture:\n\n1. CMMS connection\n2. IoT platform link\n3. ERP integration\n4. Mobile solutions\n\nAchieved 92% system connectivity.",
+      "author": {
+        "id": "user536",
+        "name": "Steve Chen",
+        "role": "Systems Integration Engineer",
+        "avatar": "/avatars/steve_c.jpg"
+      },
+      "created_at": "2023-12-10T14:20:00Z"
+    },
+    {
+      "id": "reply455_3",
+      "content": "Documentation workflow:\n\n1. Digital forms\n2. Auto-population\n3. Version control\n4. Approval routing\n\nReduced paperwork by 85%.",
+      "author": {
+        "id": "user537",
+        "name": "Jessica Thompson",
+        "role": "Documentation Manager",
+        "avatar": "/avatars/jessica_t.jpg"
+      },
+      "created_at": "2023-12-11T16:30:00Z"
+    },
+    {
+      "id": "reply455_4",
+      "content": "Question about your approval routing - how do you handle emergency maintenance scenarios within the automated workflow?",
+      "author": {
+        "id": "user538",
+        "name": "Michael Lee",
+        "role": "Emergency Response Coordinator",
+        "avatar": "/avatars/michael_l.jpg"
+      },
+      "created_at": "2023-12-12T10:15:00Z"
+    },
+    {
+      "id": "reply455_5",
+      "content": "Michael, emergency protocol:\n\n1. Priority override system\n2. Rapid approval paths\n3. Automated notifications\n4. Resource reallocation\n\nAverage response time: 12 minutes.",
+      "author": {
+        "id": "user539",
+        "name": "Sarah Wilson",
+        "role": "Workflow Optimization Lead",
+        "avatar": "/avatars/sarah_w.jpg"
+      },
+      "created_at": "2023-12-13T13:40:00Z"
+    }
+  ],
+  "category": "Predictive Maintenance",
+  "tags": ["workflow-automation", "maintenance-processes", "system-integration", "efficiency"],
+  "seo": {
+    "keywords": ["maintenance workflow automation", "work order automation", "maintenance process optimization", "automated maintenance scheduling", "maintenance efficiency", "workflow integration", "maintenance documentation", "automated approvals", "maintenance KPIs", "CMMS automation"],
+    "description": "Expert discussion on implementing maintenance workflow automation, covering work order management, resource scheduling, documentation flow, and system integration strategies."
+  }
+}

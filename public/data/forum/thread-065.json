@@ -1,0 +1,77 @@
+{
+  "id": "065",
+  "title": "Power Plant Equipment Care",
+  "content": "Power generation professionals,\n\nSeeking best practices for power plant equipment maintenance:\n\n1. Turbine maintenance\n2. Boiler efficiency\n3. Generator reliability\n4. Control systems\n5. Environmental compliance\n\nKey focus:\n- Preventive maintenance\n- Performance monitoring\n- Safety protocols\n- Emissions control\n\nWhat strategies have proven effective in your facilities?\n\nLooking forward to your expertise!",
+  "author": {
+    "id": "user598",
+    "name": "Alexander Wright",
+    "role": "Plant Maintenance Director",
+    "avatar": "/avatars/alexander_w.jpg"
+  },
+  "created_at": "2023-12-19T08:15:00Z",
+  "last_activity": "2023-12-24T15:45:00Z",
+  "views": 834,
+  "replies": [
+    {
+      "id": "reply465_1",
+      "content": "Turbine maintenance program:\n\n1. Inspection schedule\n   - Daily checks\n   - Monthly assessments\n   - Annual overhauls\n\n2. Monitoring systems\n   - Vibration analysis\n   - Temperature tracking\n   - Oil analysis\n\nReliability improvement: 45%",
+      "author": {
+        "id": "user599",
+        "name": "Emily Richardson",
+        "role": "Turbine Specialist",
+        "avatar": "/avatars/emily_r.jpg"
+      },
+      "created_at": "2023-12-20T10:30:00Z"
+    },
+    {
+      "id": "reply465_2",
+      "content": "Boiler optimization:\n\n1. Efficiency measures\n   - Heat rate monitoring\n   - Combustion analysis\n   - Steam quality\n\n2. Maintenance focus\n   - Tube inspection\n   - Scale prevention\n   - Burner tuning\n\nEfficiency gain: 15%",
+      "author": {
+        "id": "user600",
+        "name": "Carlos Mendoza",
+        "role": "Boiler Systems Engineer",
+        "avatar": "/avatars/carlos_m.jpg"
+      },
+      "created_at": "2023-12-21T13:45:00Z"
+    },
+    {
+      "id": "reply465_3",
+      "content": "Question about tube inspection methods - what technologies are you using for early detection of tube failures?",
+      "author": {
+        "id": "user601",
+        "name": "Lisa Chang",
+        "role": "Equipment Reliability Engineer",
+        "avatar": "/avatars/lisa_c.jpg"
+      },
+      "created_at": "2023-12-22T09:20:00Z"
+    },
+    {
+      "id": "reply465_4",
+      "content": "Inspection technologies:\n\n1. NDT methods\n   - Ultrasonic testing\n   - Eddy current\n   - Radiography\n\n2. Data analysis\n   - Thickness mapping\n   - Trend analysis\n   - Predictive modeling\n\nFailure prevention: 85%",
+      "author": {
+        "id": "user600",
+        "name": "Carlos Mendoza",
+        "role": "Boiler Systems Engineer",
+        "avatar": "/avatars/carlos_m.jpg"
+      },
+      "created_at": "2023-12-23T11:35:00Z"
+    },
+    {
+      "id": "reply465_5",
+      "content": "Generator maintenance:\n\n1. Key parameters\n   - Winding temperature\n   - Bearing condition\n   - Excitation system\n\n2. Testing program\n   - Insulation resistance\n   - Partial discharge\n   - Core testing\n\nUptime increase: 30%",
+      "author": {
+        "id": "user602",
+        "name": "James Foster",
+        "role": "Generator Maintenance Specialist",
+        "avatar": "/avatars/james_f.jpg"
+      },
+      "created_at": "2023-12-24T14:25:00Z"
+    }
+  ],
+  "category": "Power Generation",
+  "tags": ["power-plant", "equipment-maintenance", "turbine-care", "boiler-efficiency"],
+  "seo": {
+    "keywords": ["power plant equipment maintenance", "turbine maintenance", "boiler efficiency", "generator reliability", "control systems maintenance", "environmental compliance", "preventive maintenance power plant", "performance monitoring", "emissions control", "power generation equipment"],
+    "description": "Expert discussion on power plant equipment maintenance strategies, covering turbine care, boiler efficiency, generator reliability, and environmental compliance in power generation facilities."
+  }
+}
