@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faComments, faClock, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { loadThreadsData } from '../utils/forumUtils';
+import { loadThreadsForPage, startBackgroundLoading, getTotalThreadCount } from '../utils/forumUtils';
 import UserAvatar from '../components/UserAvatar'; 
 
 const CommunityPage = () => {
@@ -12,21 +12,30 @@ const CommunityPage = () => {
   const [totalThreads, setTotalThreads] = useState(0);
   const threadsPerPage = 10;
 
+  // Load current page threads
   useEffect(() => {
-    const fetchThreads = async () => {
+    const loadCurrentPage = async () => {
       setLoading(true);
-      const threadsData = await loadThreadsData();
-      if (threadsData) {
-        const sortedThreads = threadsData.sort((a, b) =>
-          new Date(b.last_activity) - new Date(a.last_activity)
-        );
-        setThreads(sortedThreads);
-        setTotalThreads(sortedThreads.length);
-      }
+      const pageThreads = await loadThreadsForPage(currentPage);
+      setThreads(pageThreads);
       setLoading(false);
     };
 
-    fetchThreads();
+    loadCurrentPage();
+  }, [currentPage]);
+
+  // Start background loading and get total count
+  useEffect(() => {
+    const initializeData = async () => {
+      // Start background loading of all threads
+      startBackgroundLoading();
+      
+      // Get total thread count
+      const total = await getTotalThreadCount();
+      setTotalThreads(total);
+    };
+
+    initializeData();
   }, []);
 
   // Get current threads for pagination
@@ -158,45 +167,49 @@ const CommunityPage = () => {
             </div>
 
             {/* Pagination */}
-            <div className="mt-8 flex justify-center items-center space-x-2">
-              <button
-                onClick={goToPreviousPage}
-                disabled={currentPage === 1}
-                className={`px-3 py-1 rounded ${
-                  currentPage === 1 
-                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </button>
-              
-              {pageNumbers.map(number => (
-                <button
-                  key={number}
-                  onClick={() => paginate(number)}
-                  className={`px-4 py-2 rounded ${
-                    currentPage === number
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-white text-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  {number}
-                </button>
-              ))}
+            {/* Pagination section */}
+    <div className="mt-8 flex justify-center items-center space-x-2">
+      <button
+        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+        disabled={currentPage === 1}
+        className={`px-3 py-1 rounded ${
+          currentPage === 1 
+            ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+            : 'bg-blue-600 text-white hover:bg-blue-700'
+        }`}
+      >
+        Previous
+      </button>
+      
+      {/* Page numbers */}
+      {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
+        <button
+          key={i + 1}
+          onClick={() => setCurrentPage(i + 1)}
+          className={`px-4 py-2 rounded ${
+            currentPage === i + 1
+              ? 'bg-blue-600 text-white'
+              : 'bg-white text-blue-600 hover:bg-blue-50'
+          }`}
+        >
+          {i + 1}
+        </button>
+      ))}
 
-              <button
-                onClick={goToNextPage}
-                disabled={currentPage === pageCount}
-                className={`px-3 py-1 rounded ${
-                  currentPage === pageCount
-                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            </div>
+      <button
+        onClick={() => setCurrentPage(prev => 
+          Math.min(prev + 1, Math.ceil(totalThreads / threadsPerPage))
+        )}
+        disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
+        className={`px-3 py-1 rounded ${
+          currentPage === Math.ceil(totalThreads / threadsPerPage)
+            ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+            : 'bg-blue-600 text-white hover:bg-blue-700'
+        }`}
+      >
+        Next
+      </button>
+    </div>
           </>
         ) : (
           <div className="text-center py-8 text-gray-600">
