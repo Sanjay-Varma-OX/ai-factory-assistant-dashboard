@@ -10,26 +10,10 @@ const CommunityPage = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalThreads, setTotalThreads] = useState(0);
+  const [pageData, setPageData] = useState({}); // Add this to cache page data
   const threadsPerPage = 10;
 
-  // Load current page threads
-  useEffect(() => {
-    const loadCurrentPage = async () => {
-      setLoading(true);
-      const pageThreads = await loadThreadsForPage(currentPage);
-      setThreads(pageThreads);
-      setLoading(false);
-    };
-
-    loadCurrentPage();
-  }, [currentPage]);
-
-  // Add this effect for scroll to top
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, [currentPage]);
-
-  // Start background loading and get total count
+  // Load total count once
   useEffect(() => {
     const initializeData = async () => {
       // Start background loading of all threads
@@ -42,6 +26,40 @@ useEffect(() => {
 
     initializeData();
   }, []);
+
+  // Load current page threads with caching
+  useEffect(() => {
+    const loadCurrentPage = async () => {
+      setLoading(true);
+      
+      // Check if we already have this page's data
+      if (pageData[currentPage]) {
+        setThreads(pageData[currentPage]);
+        setLoading(false);
+        return;
+      }
+
+      // If not, load it
+      const pageThreads = await loadThreadsForPage(currentPage);
+      
+      // Cache the page data
+      setPageData(prev => ({
+        ...prev,
+        [currentPage]: pageThreads
+      }));
+      
+      setThreads(pageThreads);
+      setLoading(false);
+    };
+
+    loadCurrentPage();
+  }, [currentPage]);
+
+  // Handle page change
+  const changePage = (newPage) => {
+    setCurrentPage(newPage);
+    window.scrollTo(0, 0);
+  };
 
 const startThread = (currentPage - 1) * threadsPerPage + 1;
 const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
@@ -153,49 +171,47 @@ const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
 
 
 {/* Pagination */}
-          {totalThreads > 0 && (
-            <div className="mt-8 flex justify-center items-center space-x-2">
-              <button
-                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
-                className={`px-3 py-1 rounded ${
-                  currentPage === 1 
-                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </button>
-              
-              {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
-                <button
-                  key={i + 1}
-                  onClick={() => setCurrentPage(i + 1)}
-                  className={`px-4 py-2 rounded ${
-                    currentPage === i + 1
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-white text-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  {i + 1}
-                </button>
-              ))}
+             {totalThreads > 0 && (
+      <div className="mt-8 flex justify-center items-center space-x-2">
+        <button
+          onClick={() => changePage(Math.max(currentPage - 1, 1))}
+          disabled={currentPage === 1}
+          className={`px-3 py-1 rounded ${
+            currentPage === 1 
+              ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+              : 'bg-blue-600 text-white hover:bg-blue-700'
+          }`}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        
+        {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
+          <button
+            key={i + 1}
+            onClick={() => changePage(i + 1)}
+            className={`px-4 py-2 rounded ${
+              currentPage === i + 1
+                ? 'bg-blue-600 text-white'
+                : 'bg-white text-blue-600 hover:bg-blue-50'
+            }`}
+          >
+            {i + 1}
+          </button>
+        ))}
 
-              <button
-                onClick={() => setCurrentPage(prev => 
-                  Math.min(prev + 1, Math.ceil(totalThreads / threadsPerPage))
-                )}
-                disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
-                className={`px-3 py-1 rounded ${
-                  currentPage === Math.ceil(totalThreads / threadsPerPage)
-                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            </div>
-          )}
+        <button
+          onClick={() => changePage(Math.min(currentPage + 1, Math.ceil(totalThreads / threadsPerPage)))}
+          disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
+          className={`px-3 py-1 rounded ${
+            currentPage === Math.ceil(totalThreads / threadsPerPage)
+              ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+              : 'bg-blue-600 text-white hover:bg-blue-700'
+          }`}
+        >
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+      </div>
+    )}
         </>
       ) : (
         <div className="text-center py-8 text-gray-600">
