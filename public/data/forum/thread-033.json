@@ -1,0 +1,99 @@
+{
+  "id": "033",
+  "title": "Building Cross-functional AI Maintenance Teams",
+  "content": "Hi maintenance professionals,\n\nWe're restructuring our maintenance department to incorporate AI solutions. Need advice on building effective cross-functional teams.\n\nKey challenges:\n1. Skill gap identification\n2. Team composition\n3. Role definitions\n4. Training requirements\n5. Communication protocols\n\nSpecific questions:\n- What roles are essential?\n- How to bridge IT-OT divide?\n- Training program recommendations?\n- Change management strategies?\n\nAppreciate your insights!\n\nBest,\nMichael",
+  "author": {
+    "id": "user375",
+    "name": "Michael Foster",
+    "role": "Maintenance Director",
+    "avatar": "/avatars/michael.jpg"
+  },
+  "created_at": "2023-11-30T09:15:00Z",
+  "last_activity": "2023-12-06T14:30:00Z",
+  "views": 345,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Essential roles for AI maintenance team:\n1. Maintenance Engineers\n2. Data Scientists\n3. IT Infrastructure Specialists\n4. OT System Experts\n5. Change Management Lead\n\nStart with these core positions.",
+      "author": {
+        "id": "user376",
+        "name": "Sarah Williams",
+        "role": "HR Technology Director",
+        "avatar": "/avatars/sarah_w.jpg"
+      },
+      "created_at": "2023-11-30T13:45:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "For bridging IT-OT divide:\n1. Joint training sessions\n2. Collaborative projects\n3. Cross-functional workshops\n4. Unified documentation\n5. Regular sync meetings\n\nTook us 6 months to see results.",
+      "author": {
+        "id": "user377",
+        "name": "David Chen",
+        "role": "IT-OT Integration Manager",
+        "avatar": "/avatars/david.jpg"
+      },
+      "created_at": "2023-12-01T10:20:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "Training program structure:\n- Basic AI/ML concepts\n- Data analysis fundamentals\n- Maintenance best practices\n- Digital tools training\n- Soft skills development\n\nRecommend 12-week program.",
+      "author": {
+        "id": "user378",
+        "name": "Emily Rodriguez",
+        "role": "Training Coordinator",
+        "avatar": "/avatars/emily.jpg"
+      },
+      "created_at": "2023-12-02T15:30:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "Change management approach:\n1. Clear communication plan\n2. Stakeholder engagement\n3. Phased implementation\n4. Regular feedback loops\n5. Success metrics tracking\n\nFocus on early wins.",
+      "author": {
+        "id": "user379",
+        "name": "James Wilson",
+        "role": "Change Management Specialist",
+        "avatar": "/avatars/james_w.jpg"
+      },
+      "created_at": "2023-12-03T11:45:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "Question about skill gap identification - what assessment tools are you using?",
+      "author": {
+        "id": "user375",
+        "name": "Michael Foster",
+        "role": "Maintenance Director",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-04T09:15:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "We use:\n1. Skills matrix assessment\n2. Digital literacy tests\n3. Technical competency evaluations\n4. Role-specific certifications\n5. Hands-on simulations\n\nHelps identify training needs accurately.",
+      "author": {
+        "id": "user380",
+        "name": "Linda Martinez",
+        "role": "Skills Development Manager",
+        "avatar": "/avatars/linda.jpg"
+      },
+      "created_at": "2023-12-05T16:20:00Z"
+    },
+    {
+      "id": "reply_7",
+      "content": "Team structure recommendation:\n- Core team (permanent)\n- Extended team (project-based)\n- Subject matter experts (on-call)\n- Training mentors\n- Cross-functional liaisons\n\nFlexible structure works best.",
+      "author": {
+        "id": "user381",
+        "name": "Robert Kumar",
+        "role": "Organizational Development Lead",
+        "avatar": "/avatars/robert.jpg"
+      },
+      "created_at": "2023-12-06T14:30:00Z"
+    }
+  ],
+  "category": "Team Management & Training",
+  "tags": ["team-building", "cross-functional-teams", "skill-development", "change-management", "training-programs"],
+  "seo": {
+    "keywords": ["AI maintenance teams", "cross-functional teams", "maintenance training", "skill development", "IT-OT integration", "change management", "team building"],
+    "description": "Expert discussion on building effective cross-functional teams for AI-powered maintenance operations, including role definitions, training requirements, and change management strategies."
+  }
+}

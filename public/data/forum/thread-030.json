@@ -1,0 +1,77 @@
+{
+  "id": "030",
+  "title": "Calculating Total Cost of Ownership for AI Solutions",
+  "content": "Hello fellow maintenance professionals,\n\nWe're developing a comprehensive TCO model for AI maintenance solutions. Looking to capture all cost components:\n\n1. Initial implementation costs\n2. Ongoing operational expenses\n3. Infrastructure requirements\n4. System upgrades and scaling\n5. Training and support costs\n\nKey questions:\n- What hidden costs should we consider?\n- How do you factor in system scalability?\n- What's your experience with maintenance contracts?\n- How do you budget for AI model retraining?\n\nAppreciate your insights!\n\nRegards,\nMichael",
+  "author": {
+    "id": "user356",
+    "name": "Michael Foster",
+    "role": "Cost Analysis Manager",
+    "avatar": "/avatars/michael.jpg"
+  },
+  "created_at": "2023-12-03T09:15:00Z",
+  "last_activity": "2023-12-07T15:30:00Z",
+  "views": 289,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Hidden costs we discovered:\n1. Data storage scaling (grew 300% in 2 years)\n2. API call costs for cloud services\n3. Network bandwidth increases\n4. Security compliance updates\n5. Integration with legacy systems\n\nRecommend 25% buffer in initial budget.",
+      "author": {
+        "id": "user357",
+        "name": "Linda Patel",
+        "role": "IT Infrastructure Manager",
+        "avatar": "/avatars/linda.jpg"
+      },
+      "created_at": "2023-12-03T11:45:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "For scalability costs, consider:\n- Per-device licensing models\n- Data throughput requirements\n- Processing power needs\n- Redundancy systems\n\nOur scaling costs were 40% of initial implementation.",
+      "author": {
+        "id": "user358",
+        "name": "Thomas Wright",
+        "role": "Systems Architecture Lead",
+        "avatar": "/avatars/thomas.jpg"
+      },
+      "created_at": "2023-12-04T10:20:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "Model retraining budget breakdown:\n1. Data collection/cleaning: 30%\n2. Computing resources: 25%\n3. Validation/testing: 20%\n4. Expert oversight: 25%\n\nPlan for quarterly minor updates, annual major retraining.",
+      "author": {
+        "id": "user359",
+        "name": "Dr. Rachel Kim",
+        "role": "ML Operations Manager",
+        "avatar": "/avatars/rachel.jpg"
+      },
+      "created_at": "2023-12-05T13:40:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "Question about maintenance contracts - what terms should we specifically look for regarding model performance guarantees?",
+      "author": {
+        "id": "user356",
+        "name": "Michael Foster",
+        "role": "Cost Analysis Manager",
+        "avatar": "/avatars/michael.jpg"
+      },
+      "created_at": "2023-12-06T09:15:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "Key maintenance contract terms we include:\n1. Minimum accuracy thresholds\n2. Response time SLAs\n3. Model drift monitoring\n4. Regular performance audits\n5. Retraining triggers\n\nTypically 15-20% of initial cost annually.",
+      "author": {
+        "id": "user360",
+        "name": "David Thompson",
+        "role": "Legal & Compliance Director",
+        "avatar": "/avatars/david.jpg"
+      },
+      "created_at": "2023-12-07T15:30:00Z"
+    }
+  ],
+  "category": "Cost & ROI Discussions",
+  "tags": ["tco-analysis", "ai-costs", "maintenance-budgeting", "cost-planning", "infrastructure-costs"],
+  "seo": {
+    "keywords": ["AI maintenance TCO", "total cost of ownership AI", "maintenance cost analysis", "AI implementation costs", "maintenance budgeting", "AI infrastructure costs", "maintenance contracts"],
+    "description": "Expert discussion on calculating the total cost of ownership for AI maintenance solutions, including hidden costs, scalability considerations, and long-term maintenance expenses."
+  }
+}

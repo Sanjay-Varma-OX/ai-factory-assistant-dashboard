@@ -1,0 +1,99 @@
+{
+  "id": "038",
+  "title": "Sustainable Maintenance Practices with AI",
+  "content": "Dear maintenance community,\n\nWe're working on making our maintenance operations more sustainable using AI. Key focus areas:\n\n1. Energy optimization\n2. Resource efficiency\n3. Waste reduction\n4. Environmental impact\n5. Carbon footprint\n\nLooking for:\n- Success stories\n- Implementation strategies\n- Measurement metrics\n- Technology recommendations\n\nThanks,\nGreen Tech Lead",
+  "author": {
+    "id": "user410",
+    "name": "Dr. Rachel Green",
+    "role": "Sustainability Director",
+    "avatar": "/avatars/rachel_g.jpg"
+  },
+  "created_at": "2023-12-05T08:30:00Z",
+  "last_activity": "2023-12-11T15:45:00Z",
+  "views": 289,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Success story: 40% energy reduction\nKey strategies:\n1. Smart sensor deployment\n2. AI-driven optimization\n3. Predictive maintenance\n4. Automated scheduling\n5. Real-time monitoring",
+      "author": {
+        "id": "user411",
+        "name": "Thomas Zhang",
+        "role": "Energy Efficiency Manager",
+        "avatar": "/avatars/thomas.jpg"
+      },
+      "created_at": "2023-12-05T13:45:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "Implementation approach:\n- Start with energy audit\n- Identify high-impact areas\n- Deploy IoT sensors\n- Implement AI analytics\n- Monitor and adjust\n\nROI in 8 months.",
+      "author": {
+        "id": "user412",
+        "name": "Maria Santos",
+        "role": "Implementation Specialist",
+        "avatar": "/avatars/maria.jpg"
+      },
+      "created_at": "2023-12-06T09:30:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "Key metrics we track:\n1. Energy consumption/savings\n2. Resource utilization\n3. Waste reduction %\n4. Carbon emissions\n5. Water usage\n\nMonthly reporting essential.",
+      "author": {
+        "id": "user413",
+        "name": "David Park",
+        "role": "Sustainability Metrics Analyst",
+        "avatar": "/avatars/david_p.jpg"
+      },
+      "created_at": "2023-12-07T14:20:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "Technology stack used:\n- EcoAI Platform\n- GreenSensor Network\n- SustainableOps Dashboard\n- ResourceTrack Analytics\n\nSeamless integration vital.",
+      "author": {
+        "id": "user414",
+        "name": "Lisa Johnson",
+        "role": "Technology Integration Lead",
+        "avatar": "/avatars/lisa.jpg"
+      },
+      "created_at": "2023-12-08T11:15:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "Question about sensor deployment - what's the optimal density for accurate energy monitoring?",
+      "author": {
+        "id": "user410",
+        "name": "Dr. Rachel Green",
+        "role": "Sustainability Director",
+        "avatar": "/avatars/rachel_g.jpg"
+      },
+      "created_at": "2023-12-09T10:30:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "Sensor optimization strategy:\n1. One per major equipment\n2. Critical junction points\n3. High-consumption areas\n4. Environmental parameters\n\nBalance coverage/cost.",
+      "author": {
+        "id": "user415",
+        "name": "Kevin O'Brien",
+        "role": "IoT Solutions Architect",
+        "avatar": "/avatars/kevin.jpg"
+      },
+      "created_at": "2023-12-10T13:45:00Z"
+    },
+    {
+      "id": "reply_7",
+      "content": "Waste reduction results:\n- 45% less maintenance waste\n- 30% fewer spare parts\n- 25% reduced chemical usage\n- 35% lower water consumption\n\nAI optimization key.",
+      "author": {
+        "id": "user416",
+        "name": "Sarah Mitchell",
+        "role": "Waste Management Specialist",
+        "avatar": "/avatars/sarah_m.jpg"
+      },
+      "created_at": "2023-12-11T15:45:00Z"
+    }
+  ],
+  "category": "Industry Trends & Future",
+  "tags": ["sustainability", "green-maintenance", "energy-efficiency", "waste-reduction", "environmental-impact"],
+  "seo": {
+    "keywords": ["sustainable maintenance", "AI sustainability", "green maintenance practices", "energy efficiency", "waste reduction", "environmental impact"],
+    "description": "Expert discussion on implementing sustainable maintenance practices using AI, covering energy optimization, resource efficiency, waste reduction, and environmental impact measurement."
+  }
+}

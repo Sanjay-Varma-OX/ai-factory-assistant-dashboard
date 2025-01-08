@@ -1,0 +1,99 @@
+{
+  "id": "032",
+  "title": "Industry 4.0 Standards for Maintenance Operations",
+  "content": "Hello maintenance professionals,\n\nWe're aligning our maintenance operations with Industry 4.0 standards. Key focus areas:\n\n1. IIoT integration standards\n2. Digital twin implementation\n3. Data exchange protocols\n4. Cybersecurity frameworks\n5. Interoperability requirements\n\nLooking for insights on:\n- Which standards are most critical?\n- Implementation challenges?\n- Certification requirements?\n- Integration with existing systems?\n\nThanks for your help!\n\nRegards,\nSteve",
+  "author": {
+    "id": "user368",
+    "name": "Steve Morrison",
+    "role": "Standards Implementation Manager",
+    "avatar": "/avatars/steve.jpg"
+  },
+  "created_at": "2023-11-29T08:45:00Z",
+  "last_activity": "2023-12-05T15:20:00Z",
+  "views": 378,
+  "replies": [
+    {
+      "id": "reply_1",
+      "content": "Critical Industry 4.0 standards:\n1. ISA-95 for enterprise integration\n2. OPC UA for data communication\n3. ISO/IEC 21823 for IoT interoperability\n4. RAMI 4.0 reference architecture\n\nStart with ISA-95 as foundation.",
+      "author": {
+        "id": "user369",
+        "name": "Dr. Andreas Schmidt",
+        "role": "Industry 4.0 Consultant",
+        "avatar": "/avatars/andreas.jpg"
+      },
+      "created_at": "2023-11-29T11:30:00Z"
+    },
+    {
+      "id": "reply_2",
+      "content": "Implementation challenges we faced:\n1. Legacy system integration\n2. Protocol standardization\n3. Workforce adaptation\n4. Data quality consistency\n\nRecommend phased approach over 18 months.",
+      "author": {
+        "id": "user370",
+        "name": "Jennifer Lee",
+        "role": "Digital Transformation Lead",
+        "avatar": "/avatars/jennifer.jpg"
+      },
+      "created_at": "2023-11-30T14:15:00Z"
+    },
+    {
+      "id": "reply_3",
+      "content": "For certification, focus on:\n- ISO/IEC 27001 for security\n- IEC 62443 for industrial networks\n- ISO 9001:2015 updates\n- Industry-specific certs\n\nBudget 8-12 months for full certification.",
+      "author": {
+        "id": "user371",
+        "name": "Mark Thompson",
+        "role": "Quality Systems Manager",
+        "avatar": "/avatars/mark.jpg"
+      },
+      "created_at": "2023-12-01T09:45:00Z"
+    },
+    {
+      "id": "reply_4",
+      "content": "Question about data exchange protocols - which standards are you using for real-time equipment monitoring?",
+      "author": {
+        "id": "user368",
+        "name": "Steve Morrison",
+        "role": "Standards Implementation Manager",
+        "avatar": "/avatars/steve.jpg"
+      },
+      "created_at": "2023-12-02T13:20:00Z"
+    },
+    {
+      "id": "reply_5",
+      "content": "We implemented:\n1. MQTT for sensor data\n2. OPC UA for equipment control\n3. REST APIs for analytics\n4. WebSocket for real-time updates\n\nEnsure proper security at each layer.",
+      "author": {
+        "id": "user372",
+        "name": "Raj Patel",
+        "role": "IIoT Architecture Lead",
+        "avatar": "/avatars/raj.jpg"
+      },
+      "created_at": "2023-12-03T10:30:00Z"
+    },
+    {
+      "id": "reply_6",
+      "content": "For legacy system integration:\n1. Use protocol adapters\n2. Implement data transformation layer\n3. Maintain parallel systems initially\n4. Gradual migration approach\n\nHelped us achieve 95% compatibility.",
+      "author": {
+        "id": "user373",
+        "name": "Lisa Chen",
+        "role": "Systems Integration Specialist",
+        "avatar": "/avatars/lisa.jpg"
+      },
+      "created_at": "2023-12-04T16:45:00Z"
+    },
+    {
+      "id": "reply_7",
+      "content": "Current interoperability standards:\n- AutomationML for data modeling\n- B2MML for business integration\n- MTConnect for machine data\n- UMCM for maintenance data\n\nStandardization reduced integration time by 60%.",
+      "author": {
+        "id": "user374",
+        "name": "Thomas Wagner",
+        "role": "Automation Standards Expert",
+        "avatar": "/avatars/thomas.jpg"
+      },
+      "created_at": "2023-12-05T15:20:00Z"
+    }
+  ],
+  "category": "Compliance & Standards",
+  "tags": ["industry-4.0", "maintenance-standards", "iiot-integration", "digital-transformation", "interoperability"],
+  "seo": {
+    "keywords": ["Industry 4.0 standards", "maintenance operations standards", "IIoT integration", "digital transformation", "industrial interoperability", "maintenance protocols", "Industry 4.0 compliance"],
+    "description": "Expert discussion on implementing Industry 4.0 standards in maintenance operations, covering IIoT integration, digital twin implementation, data exchange protocols, and interoperability requirements."
+  }
+}
