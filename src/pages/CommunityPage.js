@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faComments, faClock, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { loadThreadsForPage, startBackgroundLoading, getTotalThreadCount } from '../utils/forumUtils';
+import { 
+  loadInitialThreads, 
+  loadRemainingThreads, 
+  loadSingleThread, 
+  formatDate 
+} from '../utils/forumUtils';
 import UserAvatar from '../components/UserAvatar'; 
 
 const CommunityPage = () => {
