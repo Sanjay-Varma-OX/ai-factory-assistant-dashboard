@@ -276,6 +276,12 @@ const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
     </div>
   </div>
 )}
+     </>
+        ) : (
+          <div className="text-center py-8 text-gray-600">
+            No discussions found.
+          </div>
+        )}
       </div>
     </div>
   );
