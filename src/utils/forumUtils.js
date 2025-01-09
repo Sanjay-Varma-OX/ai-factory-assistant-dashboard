@@ -1,13 +1,12 @@
 // forumUtils.js
 const THREADS_PER_PAGE = 10;
-let allThreads = null;
 
 const readThreadFile = async (threadId) => {
   try {
     const paddedId = String(threadId).padStart(3, '0');
     const response = await fetch(`/data/forum/thread-${paddedId}.json`);
     if (!response.ok) {
-      throw new Error(`Failed to fetch thread file: ${response.statusText}`);
+      throw new Error(`Failed to fetch thread ${threadId}`);
     }
     return await response.json();
   } catch (error) {
@@ -16,13 +15,14 @@ const readThreadFile = async (threadId) => {
   }
 };
 
-// Export all the needed functions
-export const loadInitialThreads = async (pagesCount = 5) => {
+export const loadInitialThreads = async (pageNumber = 1, threadsPerPage = THREADS_PER_PAGE) => {
   try {
+    const startId = (pageNumber - 1) * threadsPerPage + 1;
+    const endId = startId + threadsPerPage - 1;
+    
     const threadsPromises = [];
-    for (let id = 1; id <= pagesCount * THREADS_PER_PAGE; id++) {
-      const paddedId = String(id).padStart(3, '0');
-      threadsPromises.push(readThreadFile(paddedId));
+    for (let id = startId; id <= endId; id++) {
+      threadsPromises.push(readThreadFile(id));
     }
 
     const threads = await Promise.all(threadsPromises);
@@ -34,131 +34,66 @@ export const loadInitialThreads = async (pagesCount = 5) => {
   }
 };
 
-export const loadRemainingThreads = async (startFromId) => {
-  if (allThreads !== null) return allThreads;
-
+export const loadPageThreads = async (pageNumber, threadsPerPage = THREADS_PER_PAGE) => {
   try {
-    let threads = [];
-    let consecutiveFailures = 0;
-    let currentId = startFromId;
-
-    while (consecutiveFailures < 3) {
-      const thread = await readThreadFile(currentId);
-      if (thread) {
-        threads.push(thread);
-        consecutiveFailures = 0;
-      } else {
-        consecutiveFailures++;
-      }
-      currentId++;
+    const startId = (pageNumber - 1) * threadsPerPage + 1;
+    const endId = startId + threadsPerPage - 1;
+    
+    const threadsPromises = [];
+    for (let id = startId; id <= endId; id++) {
+      threadsPromises.push(readThreadFile(id));
     }
 
-    return threads.sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
+    const threads = await Promise.all(threadsPromises);
+    return threads.filter(thread => thread !== null)
+      .sort((a, b) => new Date(b.last_activity) - new Date(a.last_activity));
   } catch (error) {
-    console.error('Error loading remaining threads:', error);
+    console.error(`Error loading page ${pageNumber}:`, error);
     return [];
   }
 };
 
-export const formatDate = (dateString) => {
-  const options = { year: 'numeric', month: 'short', day: 'numeric' };
-  return new Date(dateString).toLocaleDateString(undefined, options);
-};
-
-export const loadSingleThread = async (threadId) => {
+export const preloadNextPages = async (currentPage, pagesToPreload = 2) => {
   try {
-    const thread = await readThreadFile(threadId);
-    if (!thread) {
-      throw new Error(`Thread ${threadId} not found`);
-    }
-    return thread;
-  } catch (error) {
-    console.error(`Error loading thread ${threadId}:`, error);
-    return null;
-  }
-};
-
-export const getQuickThreadCount = async () => {
-  try {
-    let count = 0;
-    let consecutiveFailures = 0;
-    let currentId = 1;
-
-    // Fast check for thread count
-    while (consecutiveFailures < 3) {
-      const exists = await checkThreadExists(currentId);
-      if (exists) {
-        count++;
-        consecutiveFailures = 0;
-      } else {
-        consecutiveFailures++;
-      }
-      currentId++;
-    }
-    return count;
-  } catch (error) {
-    console.error('Error getting thread count:', error);
-    return 0;
-  }
-};
-
-// Add this function to forumUtils.js
-const checkThreadExists = async (threadId) => {
-  try {
-    const paddedId = String(threadId).padStart(3, '0');
-    const response = await fetch(`/data/forum/thread-${paddedId}.json`);
-    return response.ok;
-  } catch (error) {
-    return false;
-  }
-};
-
-// In forumUtils.js, add this function to quickly get total count
-export const getTotalThreadCount = async () => {
-  try {
-    let count = 0;
-    let consecutiveFailures = 0;
-    let currentId = 1;
+    const startPage = currentPage + 1;
+    const preloadPromises = [];
     
-    while (consecutiveFailures < 3) {
-      const response = await fetch(`/data/forum/thread-${String(currentId).padStart(3, '0')}.json`);
-      if (response.ok) {
-        count++;
-        consecutiveFailures = 0;
-      } else {
-        consecutiveFailures++;
-      }
-      currentId++;
+    for (let page = startPage; page < startPage + pagesToPreload; page++) {
+      preloadPromises.push(loadPageThreads(page));
     }
-    return count;
+    
+    return await Promise.all(preloadPromises);
   } catch (error) {
-    console.error('Error counting threads:', error);
-    return 0;
+    console.error('Error preloading pages:', error);
+    return [];
   }
 };
 
-// Function to quickly get total count by checking file existence
 export const getQuickCount = async () => {
   try {
+    const response = await fetch('/data/forum/thread-count.json');
+    if (response.ok) {
+      const data = await response.json();
+      return data.count;
+    }
+    
+    // Fallback to quick scanning if count file doesn't exist
     let count = 0;
     let consecutiveFailures = 0;
     let currentId = 1;
-    const batchSize = 10; // Check multiple files at once for speed
+    const batchSize = 10;
 
     while (consecutiveFailures < 3) {
       const batchPromises = [];
-      
-      // Create batch of promises
       for (let i = 0; i < batchSize; i++) {
-        const threadId = String(currentId + i).padStart(3, '0');
+        const threadId = currentId + i;
         batchPromises.push(
-          fetch(`/data/forum/thread-${threadId}.json`, { method: 'HEAD' })
+          fetch(`/data/forum/thread-${String(threadId).padStart(3, '0')}.json`, { method: 'HEAD' })
             .then(response => response.ok)
             .catch(() => false)
         );
       }
 
-      // Check batch results
       const results = await Promise.all(batchPromises);
       const validFiles = results.filter(Boolean).length;
       
@@ -174,7 +109,28 @@ export const getQuickCount = async () => {
 
     return count;
   } catch (error) {
-    console.error('Error getting file count:', error);
+    console.error('Error getting thread count:', error);
     return 0;
+  }
+};
+
+export const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffTime = Math.abs(now - date);
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays === 0) {
+    return 'Today';
+  } else if (diffDays === 1) {
+    return 'Yesterday';
+  } else if (diffDays < 7) {
+    return `${diffDays} days ago`;
+  } else {
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
   }
 };
