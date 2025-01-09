@@ -20,47 +20,53 @@ const CommunityPage = () => {
   const threadsPerPage = 10;
   const preloadPages = 5;
 
-
-   // Separate useEffect for getting total count immediately
+  // Single useEffect to handle both count and initial threads
   useEffect(() => {
-    const getCount = async () => {
-      const count = await getTotalThreadCount();
-      setTotalThreads(count);
-    };
-    getCount();
-  }, []);
-  
-  // Modified initial load effect
-  useEffect(() => {
-    const initializeThreads = async () => {
-      setLoading(true);
+    const initialize = async () => {
       try {
-        // Load first 50 threads immediately
-        const initialThreads = await loadInitialThreads(preloadPages);
-        
-        // Organize threads into pages
+        // Get total count quickly
+        const count = await getQuickCount();
+        setTotalThreads(count);
+
+        // Start loading first page immediately
+        const firstPagePromise = loadInitialThreads(1); // Load just first page first
+
+        // Load preloaded pages in background
+        const remainingPagesPromise = loadInitialThreads(preloadPages);
+
+        // Wait for first page
+        const firstPageThreads = await firstPagePromise;
         const pages = {};
-        initialThreads.forEach((thread, index) => {
+        firstPageThreads.forEach((thread, index) => {
           const pageNumber = Math.floor(index / threadsPerPage) + 1;
           if (!pages[pageNumber]) pages[pageNumber] = [];
           pages[pageNumber].push(thread);
         });
-
         setPageData(pages);
-        setThreads(pages[1] || []); // Set first page
-        
+        setThreads(pages[1] || []);
+        setLoading(false);
+
+        // Handle remaining pages in background
+        const remainingThreads = await remainingPagesPromise;
+        const allPages = { ...pages };
+        remainingThreads.forEach((thread, index) => {
+          const pageNumber = Math.floor((index + threadsPerPage) / threadsPerPage) + 1;
+          if (!allPages[pageNumber]) allPages[pageNumber] = [];
+          allPages[pageNumber].push(thread);
+        });
+        setPageData(allPages);
+
         // Start loading remaining threads in background
-        loadRemainingThreadsInBackground(initialThreads.length);
+        loadRemainingThreadsInBackground(preloadPages * threadsPerPage);
       } catch (error) {
-        console.error('Error in initial load:', error);
-      } finally {
+        console.error('Error in initialization:', error);
         setLoading(false);
       }
     };
 
-    initializeThreads();
+    initialize();
   }, []);
-
+  
 const startThread = (currentPage - 1) * threadsPerPage + 1;
 const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
   
