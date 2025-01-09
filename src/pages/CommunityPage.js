@@ -7,7 +7,8 @@ import {
   loadRemainingThreads, 
   loadSingleThread, 
   formatDate,
-  getTotalThreadCount
+  getTotalThreadCount,
+  getQuickCount
 } from '../utils/forumUtils';
 import UserAvatar from '../components/UserAvatar'; 
 
