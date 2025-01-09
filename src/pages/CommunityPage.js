@@ -7,7 +7,8 @@ import {
   loadPageThreads,
   preloadNextPages,
   formatDate,
-  getQuickCount
+  getQuickCount,
+  readThreadFile
 } from '../utils/forumUtils';
 import UserAvatar from '../components/UserAvatar'; 
 
