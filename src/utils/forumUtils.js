@@ -77,3 +77,27 @@ export const loadSingleThread = async (threadId) => {
     return null;
   }
 };
+
+export const getQuickThreadCount = async () => {
+  try {
+    let count = 0;
+    let consecutiveFailures = 0;
+    let currentId = 1;
+
+    // Fast check for thread count
+    while (consecutiveFailures < 3) {
+      const exists = await checkThreadExists(currentId);
+      if (exists) {
+        count++;
+        consecutiveFailures = 0;
+      } else {
+        consecutiveFailures++;
+      }
+      currentId++;
+    }
+    return count;
+  } catch (error) {
+    console.error('Error getting thread count:', error);
+    return 0;
+  }
+};
