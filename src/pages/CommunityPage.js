@@ -179,53 +179,103 @@ const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
 
 
 {/* Pagination */}
-             {totalThreads > 0 && (
-      <div className="mt-8 flex justify-center items-center space-x-2">
+{totalThreads > 0 && (
+  <div className="flex items-center justify-center space-x-2 mt-8">
+    {/* Previous button */}
+    <button
+      onClick={() => changePage(currentPage - 1)}
+      disabled={currentPage === 1}
+      className={`px-3 py-1 rounded ${
+        currentPage === 1 
+          ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+          : 'bg-blue-600 text-white hover:bg-blue-700'
+      }`}
+    >
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </button>
+
+    {/* Page numbers */}
+    {currentPage > 3 && (
+      <>
         <button
-          onClick={() => changePage(Math.max(currentPage - 1, 1))}
-          disabled={currentPage === 1}
-          className={`px-3 py-1 rounded ${
-            currentPage === 1 
-              ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-              : 'bg-blue-600 text-white hover:bg-blue-700'
-          }`}
+          onClick={() => changePage(1)}
+          className="px-3 py-1 rounded hover:bg-gray-100"
         >
-          <FontAwesomeIcon icon={faChevronLeft} />
+          1
         </button>
-        
-        {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => (
+        {currentPage > 4 && <span className="px-2">...</span>}
+      </>
+    )}
+
+    {Array.from({ length: Math.ceil(totalThreads / threadsPerPage) }, (_, i) => {
+      const pageNumber = i + 1;
+      // Show current page and 2 pages before and after
+      if (
+        pageNumber === 1 ||
+        pageNumber === Math.ceil(totalThreads / threadsPerPage) ||
+        (pageNumber >= currentPage - 2 && pageNumber <= currentPage + 2)
+      ) {
+        return (
           <button
-            key={i + 1}
-            onClick={() => changePage(i + 1)}
+            key={pageNumber}
+            onClick={() => changePage(pageNumber)}
             className={`px-4 py-2 rounded ${
-              currentPage === i + 1
+              currentPage === pageNumber
                 ? 'bg-blue-600 text-white'
                 : 'bg-white text-blue-600 hover:bg-blue-50'
             }`}
           >
-            {i + 1}
+            {pageNumber}
           </button>
-        ))}
+        );
+      } else if (
+        pageNumber === currentPage - 3 ||
+        pageNumber === currentPage + 3
+      ) {
+        return <span key={pageNumber} className="px-2">...</span>;
+      }
+      return null;
+    })}
 
-        <button
-          onClick={() => changePage(Math.min(currentPage + 1, Math.ceil(totalThreads / threadsPerPage)))}
-          disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
-          className={`px-3 py-1 rounded ${
-            currentPage === Math.ceil(totalThreads / threadsPerPage)
-              ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-              : 'bg-blue-600 text-white hover:bg-blue-700'
-          }`}
-        >
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
-      </div>
-    )}
-        </>
-      ) : (
-        <div className="text-center py-8 text-gray-600">
-          No discussions found.
-        </div>
-      )}
+    {/* Next button */}
+    <button
+      onClick={() => changePage(currentPage + 1)}
+      disabled={currentPage === Math.ceil(totalThreads / threadsPerPage)}
+      className={`px-3 py-1 rounded ${
+        currentPage === Math.ceil(totalThreads / threadsPerPage)
+          ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+          : 'bg-blue-600 text-white hover:bg-blue-700'
+      }`}
+    >
+      <FontAwesomeIcon icon={faChevronRight} />
+    </button>
+
+    {/* Go to page input */}
+    <div className="flex items-center ml-4">
+      <span className="text-sm text-gray-600 mr-2">Go to page</span>
+      <input
+        type="number"
+        min="1"
+        max={Math.ceil(totalThreads / threadsPerPage)}
+        className="w-16 px-2 py-1 border rounded text-sm"
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            const page = parseInt(e.target.value);
+            if (page >= 1 && page <= Math.ceil(totalThreads / threadsPerPage)) {
+              changePage(page);
+              e.target.value = '';
+            }
+          }
+        }}
+      />
+      <button 
+        className="ml-2 px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700"
+      >
+        Go
+      </button>
+    </div>
+  </div>
+)}
       </div>
     </div>
   );
