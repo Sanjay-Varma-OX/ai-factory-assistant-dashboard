@@ -8,8 +8,8 @@
     "role": "Maintenance Engineering Manager",
     "avatar": "/avatars/michael.jpg"
   },
-  "created_at": "2023-11-15T14:30:00Z",
-  "last_activity": "2023-11-22T16:45:00Z",
+  "created_at": "2024-11-12T12:49:00.000000Z",
+  "last_activity": "2024-11-12T14:49:00.000000Z",
   "views": 342,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "IoT Solutions Architect",
         "avatar": "/avatars/sarah.jpg"
       },
-      "created_at": "2023-11-16T09:15:00Z"
+      "created_at": "2024-11-12T13:16:00.000000Z"
     },
     {
       "id": "reply443_2",
@@ -32,7 +32,7 @@
         "role": "Plant Maintenance Supervisor",
         "avatar": "/avatars/david.jpg"
       },
-      "created_at": "2023-11-17T11:20:00Z"
+      "created_at": "2024-11-12T13:39:00.000000Z"
     },
     {
       "id": "reply443_3",
@@ -43,7 +43,7 @@
         "role": "Quality Assurance Manager",
         "avatar": "/avatars/lisa.jpg"
       },
-      "created_at": "2023-11-18T13:45:00Z"
+      "created_at": "2024-11-12T13:49:00.000000Z"
     },
     {
       "id": "reply443_4",
@@ -54,7 +54,7 @@
         "role": "Systems Integration Specialist",
         "avatar": "/avatars/james.jpg"
       },
-      "created_at": "2023-11-19T10:30:00Z"
+      "created_at": "2024-11-12T14:33:00.000000Z"
     },
     {
       "id": "reply443_5",
@@ -65,7 +65,7 @@
         "role": "Digital Transformation Lead",
         "avatar": "/avatars/rachel.jpg"
       },
-      "created_at": "2023-11-20T14:15:00Z"
+      "created_at": "2024-11-12T14:09:00.000000Z"
     },
     {
       "id": "reply443_6",
@@ -76,13 +76,31 @@
         "role": "Data Governance Specialist",
         "avatar": "/avatars/thomas.jpg"
       },
-      "created_at": "2023-11-21T16:30:00Z"
+      "created_at": "2024-11-12T15:13:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["sensors", "equipment-monitoring", "IoT", "data-collection", "CMMS-integration", "predictive-maintenance"],
+  "tags": [
+    "sensors",
+    "equipment-monitoring",
+    "IoT",
+    "data-collection",
+    "CMMS-integration",
+    "predictive-maintenance"
+  ],
   "seo": {
-    "keywords": ["advanced sensors", "equipment monitoring", "sensor integration", "predictive maintenance", "IoT sensors", "CMMS integration", "real-time monitoring", "industrial IoT", "sensor data collection", "maintenance technology"],
+    "keywords": [
+      "advanced sensors",
+      "equipment monitoring",
+      "sensor integration",
+      "predictive maintenance",
+      "IoT sensors",
+      "CMMS integration",
+      "real-time monitoring",
+      "industrial IoT",
+      "sensor data collection",
+      "maintenance technology"
+    ],
     "description": "Expert discussion on implementing advanced sensor systems for equipment monitoring, covering sensor placement, data collection, integration challenges, and best practices for industrial maintenance applications."
   }
 }

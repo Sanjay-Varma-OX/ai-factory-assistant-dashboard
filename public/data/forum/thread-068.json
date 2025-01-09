@@ -8,8 +8,8 @@
     "role": "Quality Assurance Director",
     "avatar": "/avatars/maria_r.jpg"
   },
-  "created_at": "2023-12-20T09:15:00Z",
-  "last_activity": "2023-12-24T16:30:00Z",
+  "created_at": "2024-11-24T16:52:00.000000Z",
+  "last_activity": "2024-11-24T18:52:00.000000Z",
   "views": 542,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Sanitation Systems Engineer",
         "avatar": "/avatars/david_t.jpg"
       },
-      "created_at": "2023-12-21T11:30:00Z"
+      "created_at": "2024-11-24T17:19:00.000000Z"
     },
     {
       "id": "reply468_2",
@@ -32,7 +32,7 @@
         "role": "Process Control Specialist",
         "avatar": "/avatars/jennifer_l.jpg"
       },
-      "created_at": "2023-12-22T14:45:00Z"
+      "created_at": "2024-11-24T17:26:00.000000Z"
     },
     {
       "id": "reply468_3",
@@ -43,7 +43,7 @@
         "role": "Compliance Manager",
         "avatar": "/avatars/michael_f.jpg"
       },
-      "created_at": "2023-12-23T10:20:00Z"
+      "created_at": "2024-11-24T17:49:00.000000Z"
     },
     {
       "id": "reply468_4",
@@ -54,7 +54,7 @@
         "role": "Food Safety Coordinator",
         "avatar": "/avatars/emily_w.jpg"
       },
-      "created_at": "2023-12-23T15:40:00Z"
+      "created_at": "2024-11-24T18:20:00.000000Z"
     },
     {
       "id": "reply468_5",
@@ -65,13 +65,29 @@
         "role": "Compliance Manager",
         "avatar": "/avatars/michael_f.jpg"
       },
-      "created_at": "2023-12-24T09:15:00Z"
+      "created_at": "2024-11-24T19:17:00.000000Z"
     }
   ],
   "category": "Food Safety",
-  "tags": ["food-processing", "sanitation", "compliance", "quality-control"],
+  "tags": [
+    "food-processing",
+    "sanitation",
+    "compliance",
+    "quality-control"
+  ],
   "seo": {
-    "keywords": ["food processing standards", "sanitation systems", "equipment sterilization", "quality control food industry", "compliance tracking", "CIP systems", "allergen control", "cross-contamination prevention", "temperature monitoring food", "FSMA compliance"],
+    "keywords": [
+      "food processing standards",
+      "sanitation systems",
+      "equipment sterilization",
+      "quality control food industry",
+      "compliance tracking",
+      "CIP systems",
+      "allergen control",
+      "cross-contamination prevention",
+      "temperature monitoring food",
+      "FSMA compliance"
+    ],
     "description": "Expert discussion on maintaining food processing standards, covering sanitation systems, equipment sterilization, quality control measures, and compliance tracking in food manufacturing facilities."
   }
 }

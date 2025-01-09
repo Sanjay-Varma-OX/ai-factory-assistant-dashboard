@@ -8,8 +8,8 @@
     "role": "Systems Integration Manager",
     "avatar": "/avatars/frank.jpg"
   },
-  "created_at": "2023-12-03T10:15:00Z",
-  "last_activity": "2023-12-09T14:30:00Z",
+  "created_at": "2024-11-08T10:07:00.000000Z",
+  "last_activity": "2024-11-08T11:07:00.000000Z",
   "views": 278,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Integration Architect",
         "avatar": "/avatars/david_t.jpg"
       },
-      "created_at": "2023-12-03T15:45:00Z"
+      "created_at": "2024-11-08T10:24:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Middleware Specialist",
         "avatar": "/avatars/jennifer.jpg"
       },
-      "created_at": "2023-12-04T11:30:00Z"
+      "created_at": "2024-11-08T11:03:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Project Success Manager",
         "avatar": "/avatars/robert_g.jpg"
       },
-      "created_at": "2023-12-05T16:20:00Z"
+      "created_at": "2024-11-08T11:13:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Risk Management Expert",
         "avatar": "/avatars/amanda.jpg"
       },
-      "created_at": "2023-12-06T13:45:00Z"
+      "created_at": "2024-11-08T11:47:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Systems Integration Manager",
         "avatar": "/avatars/frank.jpg"
       },
-      "created_at": "2023-12-07T09:30:00Z"
+      "created_at": "2024-11-08T11:47:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Security Integration Specialist",
         "avatar": "/avatars/sophie.jpg"
       },
-      "created_at": "2023-12-08T12:15:00Z"
+      "created_at": "2024-11-08T11:43:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,13 +87,26 @@
         "role": "Hardware Integration Lead",
         "avatar": "/avatars/chris.jpg"
       },
-      "created_at": "2023-12-09T14:30:00Z"
+      "created_at": "2024-11-08T12:20:00.000000Z"
     }
   ],
   "category": "Problem-Solving Threads",
-  "tags": ["legacy-systems", "system-integration", "middleware", "security", "hardware-upgrade"],
+  "tags": [
+    "legacy-systems",
+    "system-integration",
+    "middleware",
+    "security",
+    "hardware-upgrade"
+  ],
   "seo": {
-    "keywords": ["legacy system integration", "AI integration challenges", "middleware solutions", "system compatibility", "integration security", "hardware limitations"],
+    "keywords": [
+      "legacy system integration",
+      "AI integration challenges",
+      "middleware solutions",
+      "system compatibility",
+      "integration security",
+      "hardware limitations"
+    ],
     "description": "Expert discussion on challenges and solutions for integrating AI maintenance solutions with legacy systems, including middleware options, security measures, and successful implementation strategies."
   }
 }

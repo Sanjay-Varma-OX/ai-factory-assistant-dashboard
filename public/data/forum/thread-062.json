@@ -8,8 +8,8 @@
     "role": "Pharmaceutical Maintenance Director",
     "avatar": "/avatars/maria_s.jpg"
   },
-  "created_at": "2023-12-16T10:15:00Z",
-  "last_activity": "2023-12-24T14:45:00Z",
+  "created_at": "2024-11-21T10:04:00.000000Z",
+  "last_activity": "2024-11-21T13:04:00.000000Z",
   "views": 815,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "GMP Compliance Manager",
         "avatar": "/avatars/thomas_a.jpg"
       },
-      "created_at": "2023-12-17T13:30:00Z"
+      "created_at": "2024-11-21T10:29:00.000000Z"
     },
     {
       "id": "reply462_2",
@@ -32,7 +32,7 @@
         "role": "Clean Room Specialist",
         "avatar": "/avatars/sarah_m.jpg"
       },
-      "created_at": "2023-12-18T15:45:00Z"
+      "created_at": "2024-11-21T11:00:00.000000Z"
     },
     {
       "id": "reply462_3",
@@ -43,7 +43,7 @@
         "role": "Calibration Engineer",
         "avatar": "/avatars/david_k.jpg"
       },
-      "created_at": "2023-12-19T11:20:00Z"
+      "created_at": "2024-11-21T11:07:00.000000Z"
     },
     {
       "id": "reply462_4",
@@ -54,7 +54,7 @@
         "role": "Production Supervisor",
         "avatar": "/avatars/rachel_t.jpg"
       },
-      "created_at": "2023-12-20T09:15:00Z"
+      "created_at": "2024-11-21T11:56:00.000000Z"
     },
     {
       "id": "reply462_5",
@@ -65,7 +65,7 @@
         "role": "Calibration Engineer",
         "avatar": "/avatars/david_k.jpg"
       },
-      "created_at": "2023-12-21T10:45:00Z"
+      "created_at": "2024-11-21T12:14:00.000000Z"
     },
     {
       "id": "reply462_6",
@@ -76,7 +76,7 @@
         "role": "Environmental Monitoring Specialist",
         "avatar": "/avatars/emily_w.jpg"
       },
-      "created_at": "2023-12-22T14:30:00Z"
+      "created_at": "2024-11-21T12:58:00.000000Z"
     },
     {
       "id": "reply462_7",
@@ -87,7 +87,7 @@
         "role": "Validation Manager",
         "avatar": "/avatars/michael_c.jpg"
       },
-      "created_at": "2023-12-23T16:20:00Z"
+      "created_at": "2024-11-21T13:13:00.000000Z"
     },
     {
       "id": "reply462_8",
@@ -98,13 +98,29 @@
         "role": "Maintenance Supervisor",
         "avatar": "/avatars/laura_r.jpg"
       },
-      "created_at": "2023-12-24T12:15:00Z"
+      "created_at": "2024-11-21T12:52:00.000000Z"
     }
   ],
   "category": "Pharmaceutical Manufacturing",
-  "tags": ["pharmaceutical", "equipment-maintenance", "GMP-compliance", "validation"],
+  "tags": [
+    "pharmaceutical",
+    "equipment-maintenance",
+    "GMP-compliance",
+    "validation"
+  ],
   "seo": {
-    "keywords": ["pharmaceutical equipment maintenance", "GMP compliance", "clean room maintenance", "equipment validation", "calibration management", "contamination prevention", "environmental monitoring", "pharmaceutical manufacturing", "equipment qualification", "preventive maintenance"],
+    "keywords": [
+      "pharmaceutical equipment maintenance",
+      "GMP compliance",
+      "clean room maintenance",
+      "equipment validation",
+      "calibration management",
+      "contamination prevention",
+      "environmental monitoring",
+      "pharmaceutical manufacturing",
+      "equipment qualification",
+      "preventive maintenance"
+    ],
     "description": "Expert discussion on pharmaceutical equipment maintenance practices, covering GMP compliance, validation procedures, contamination prevention, and calibration management in pharmaceutical manufacturing facilities."
   }
 }

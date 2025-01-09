@@ -8,8 +8,8 @@
     "role": "Operations Manager",
     "avatar": "/avatars/user_17.jpg"
   },
-  "created_at": "2024-12-28T17:50:33.578938Z",
-  "last_activity": "2025-01-08T17:50:33.578946Z",
+  "created_at": "2024-12-13T12:20:00.000000Z",
+  "last_activity": "2024-12-13T15:20:00.000000Z",
   "views": 350,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_7.jpg"
       },
-      "created_at": "2024-12-20T22:50:33.578951Z"
+      "created_at": "2024-12-13T12:44:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-21T18:50:33.578951Z"
+      "created_at": "2024-12-13T12:52:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_15.jpg"
       },
-      "created_at": "2024-12-23T02:50:33.578951Z"
+      "created_at": "2024-12-13T13:35:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_10.jpg"
       },
-      "created_at": "2024-12-24T01:50:33.578951Z"
+      "created_at": "2024-12-13T13:20:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-24T22:50:33.578951Z"
+      "created_at": "2024-12-13T14:15:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_7.jpg"
       },
-      "created_at": "2024-12-25T22:50:33.578951Z"
+      "created_at": "2024-12-13T13:50:00.000000Z"
     }
   ],
   "category": "Supply Chain",

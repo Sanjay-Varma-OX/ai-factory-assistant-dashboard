@@ -8,8 +8,8 @@
     "role": "Standards Implementation Manager",
     "avatar": "/avatars/steve.jpg"
   },
-  "created_at": "2023-11-29T08:45:00Z",
-  "last_activity": "2023-12-05T15:20:00Z",
+  "created_at": "2024-11-06T14:39:00.000000Z",
+  "last_activity": "2024-11-06T16:39:00.000000Z",
   "views": 378,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industry 4.0 Consultant",
         "avatar": "/avatars/andreas.jpg"
       },
-      "created_at": "2023-11-29T11:30:00Z"
+      "created_at": "2024-11-06T15:06:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Digital Transformation Lead",
         "avatar": "/avatars/jennifer.jpg"
       },
-      "created_at": "2023-11-30T14:15:00Z"
+      "created_at": "2024-11-06T15:21:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Quality Systems Manager",
         "avatar": "/avatars/mark.jpg"
       },
-      "created_at": "2023-12-01T09:45:00Z"
+      "created_at": "2024-11-06T15:36:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Standards Implementation Manager",
         "avatar": "/avatars/steve.jpg"
       },
-      "created_at": "2023-12-02T13:20:00Z"
+      "created_at": "2024-11-06T16:19:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "IIoT Architecture Lead",
         "avatar": "/avatars/raj.jpg"
       },
-      "created_at": "2023-12-03T10:30:00Z"
+      "created_at": "2024-11-06T16:09:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Systems Integration Specialist",
         "avatar": "/avatars/lisa.jpg"
       },
-      "created_at": "2023-12-04T16:45:00Z"
+      "created_at": "2024-11-06T17:27:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,13 +87,27 @@
         "role": "Automation Standards Expert",
         "avatar": "/avatars/thomas.jpg"
       },
-      "created_at": "2023-12-05T15:20:00Z"
+      "created_at": "2024-11-06T17:27:00.000000Z"
     }
   ],
   "category": "Compliance & Standards",
-  "tags": ["industry-4.0", "maintenance-standards", "iiot-integration", "digital-transformation", "interoperability"],
+  "tags": [
+    "industry-4.0",
+    "maintenance-standards",
+    "iiot-integration",
+    "digital-transformation",
+    "interoperability"
+  ],
   "seo": {
-    "keywords": ["Industry 4.0 standards", "maintenance operations standards", "IIoT integration", "digital transformation", "industrial interoperability", "maintenance protocols", "Industry 4.0 compliance"],
+    "keywords": [
+      "Industry 4.0 standards",
+      "maintenance operations standards",
+      "IIoT integration",
+      "digital transformation",
+      "industrial interoperability",
+      "maintenance protocols",
+      "Industry 4.0 compliance"
+    ],
     "description": "Expert discussion on implementing Industry 4.0 standards in maintenance operations, covering IIoT integration, digital twin implementation, data exchange protocols, and interoperability requirements."
   }
 }

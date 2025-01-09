@@ -8,8 +8,8 @@
     "role": "Maintenance Strategy Director",
     "avatar": "/avatars/jennifer_p.jpg"
   },
-  "created_at": "2023-12-13T08:15:00Z",
-  "last_activity": "2023-12-21T14:30:00Z",
+  "created_at": "2024-11-20T13:45:00.000000Z",
+  "last_activity": "2024-11-20T16:45:00.000000Z",
   "views": 728,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Operations Excellence Manager",
         "avatar": "/avatars/alex_t.jpg"
       },
-      "created_at": "2023-12-14T10:45:00Z"
+      "created_at": "2024-11-20T14:08:00.000000Z"
     },
     {
       "id": "reply459_2",
@@ -32,7 +32,7 @@
         "role": "Training Coordinator",
         "avatar": "/avatars/maria_g.jpg"
       },
-      "created_at": "2023-12-15T13:20:00Z"
+      "created_at": "2024-11-20T14:21:00.000000Z"
     },
     {
       "id": "reply459_3",
@@ -43,7 +43,7 @@
         "role": "Technology Integration Specialist",
         "avatar": "/avatars/david_w.jpg"
       },
-      "created_at": "2023-12-16T15:55:00Z"
+      "created_at": "2024-11-20T14:36:00.000000Z"
     },
     {
       "id": "reply459_4",
@@ -54,7 +54,7 @@
         "role": "Project Manager",
         "avatar": "/avatars/lisa_b.jpg"
       },
-      "created_at": "2023-12-17T09:30:00Z"
+      "created_at": "2024-11-20T14:45:00.000000Z"
     },
     {
       "id": "reply459_5",
@@ -65,7 +65,7 @@
         "role": "Technology Integration Specialist",
         "avatar": "/avatars/david_w.jpg"
       },
-      "created_at": "2023-12-18T11:45:00Z"
+      "created_at": "2024-11-20T16:10:00.000000Z"
     },
     {
       "id": "reply459_6",
@@ -76,13 +76,29 @@
         "role": "Business Analytics Lead",
         "avatar": "/avatars/ryan_m.jpg"
       },
-      "created_at": "2023-12-19T14:20:00Z"
+      "created_at": "2024-11-20T15:39:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["predictive-maintenance", "reactive-maintenance", "maintenance-strategy", "implementation"],
+  "tags": [
+    "predictive-maintenance",
+    "reactive-maintenance",
+    "maintenance-strategy",
+    "implementation"
+  ],
   "seo": {
-    "keywords": ["predictive vs reactive maintenance", "maintenance transition", "predictive maintenance implementation", "maintenance ROI", "maintenance training", "maintenance technology", "maintenance strategy", "maintenance costs", "equipment reliability", "maintenance optimization"],
+    "keywords": [
+      "predictive vs reactive maintenance",
+      "maintenance transition",
+      "predictive maintenance implementation",
+      "maintenance ROI",
+      "maintenance training",
+      "maintenance technology",
+      "maintenance strategy",
+      "maintenance costs",
+      "equipment reliability",
+      "maintenance optimization"
+    ],
     "description": "Expert discussion comparing predictive and reactive maintenance approaches, covering implementation strategies, cost considerations, ROI analysis, and success metrics for industrial maintenance optimization."
   }
 }

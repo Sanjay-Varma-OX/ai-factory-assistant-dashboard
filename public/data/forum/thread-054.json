@@ -8,8 +8,8 @@
     "role": "Asset Performance Manager",
     "avatar": "/avatars/michael_c.jpg"
   },
-  "created_at": "2023-12-07T10:15:00Z",
-  "last_activity": "2023-12-14T16:30:00Z",
+  "created_at": "2024-11-17T16:30:00.000000Z",
+  "last_activity": "2024-11-17T19:30:00.000000Z",
   "views": 623,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Reliability Engineer",
         "avatar": "/avatars/james_w.jpg"
       },
-      "created_at": "2023-12-08T13:45:00Z"
+      "created_at": "2024-11-17T16:53:00.000000Z"
     },
     {
       "id": "reply454_2",
@@ -32,7 +32,7 @@
         "role": "Data Scientist",
         "avatar": "/avatars/sarah_m.jpg"
       },
-      "created_at": "2023-12-09T15:20:00Z"
+      "created_at": "2024-11-17T17:18:00.000000Z"
     },
     {
       "id": "reply454_3",
@@ -43,7 +43,7 @@
         "role": "Operations Manager",
         "avatar": "/avatars/robert_k.jpg"
       },
-      "created_at": "2023-12-10T11:30:00Z"
+      "created_at": "2024-11-17T17:27:00.000000Z"
     },
     {
       "id": "reply454_4",
@@ -54,7 +54,7 @@
         "role": "Maintenance Planner",
         "avatar": "/avatars/emily_c.jpg"
       },
-      "created_at": "2023-12-11T14:15:00Z"
+      "created_at": "2024-11-17T18:14:00.000000Z"
     },
     {
       "id": "reply454_5",
@@ -65,7 +65,7 @@
         "role": "Asset Management Specialist",
         "avatar": "/avatars/david_t.jpg"
       },
-      "created_at": "2023-12-12T16:45:00Z"
+      "created_at": "2024-11-17T17:45:00.000000Z"
     },
     {
       "id": "reply454_6",
@@ -76,7 +76,7 @@
         "role": "Maintenance Coordinator",
         "avatar": "/avatars/lisa_p.jpg"
       },
-      "created_at": "2023-12-13T12:20:00Z"
+      "created_at": "2024-11-17T18:18:00.000000Z"
     },
     {
       "id": "reply454_7",
@@ -87,13 +87,29 @@
         "role": "Risk Management Expert",
         "avatar": "/avatars/thomas_l.jpg"
       },
-      "created_at": "2023-12-14T15:30:00Z"
+      "created_at": "2024-11-17T19:11:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["asset-health", "scoring-methods", "performance-metrics", "risk-assessment"],
+  "tags": [
+    "asset-health",
+    "scoring-methods",
+    "performance-metrics",
+    "risk-assessment"
+  ],
   "seo": {
-    "keywords": ["asset health scoring", "equipment health index", "maintenance scoring system", "asset performance metrics", "condition assessment", "risk-based maintenance", "asset reliability", "predictive maintenance", "equipment monitoring", "maintenance planning"],
+    "keywords": [
+      "asset health scoring",
+      "equipment health index",
+      "maintenance scoring system",
+      "asset performance metrics",
+      "condition assessment",
+      "risk-based maintenance",
+      "asset reliability",
+      "predictive maintenance",
+      "equipment monitoring",
+      "maintenance planning"
+    ],
     "description": "Expert discussion on developing and implementing asset health scoring systems, covering methodologies, KPIs, risk assessment, and integration with maintenance planning."
   }
 }

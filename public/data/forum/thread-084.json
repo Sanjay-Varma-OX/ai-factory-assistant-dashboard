@@ -8,8 +8,8 @@
     "role": "Senior Engineer",
     "avatar": "/avatars/user_10.jpg"
   },
-  "created_at": "2025-01-01T17:50:33.569212Z",
-  "last_activity": "2025-01-07T17:50:33.569220Z",
+  "created_at": "2024-11-16T15:59:00.000000Z",
+  "last_activity": "2024-11-16T16:59:00.000000Z",
   "views": 211,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-30T22:50:33.569225Z"
+      "created_at": "2024-11-16T16:15:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_10.jpg"
       },
-      "created_at": "2025-01-01T04:50:33.569225Z"
+      "created_at": "2024-11-16T16:49:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_7.jpg"
       },
-      "created_at": "2025-01-01T20:50:33.569225Z"
+      "created_at": "2024-11-16T17:02:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_3.jpg"
       },
-      "created_at": "2025-01-03T05:50:33.569225Z"
+      "created_at": "2024-11-16T16:59:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2025-01-03T21:50:33.569225Z"
+      "created_at": "2024-11-16T17:39:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2025-01-04T18:50:33.569225Z"
+      "created_at": "2024-11-16T17:59:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_13.jpg"
       },
-      "created_at": "2025-01-05T18:50:33.569225Z"
+      "created_at": "2024-11-16T18:33:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_7.jpg"
       },
-      "created_at": "2025-01-07T02:50:33.569225Z"
+      "created_at": "2024-11-16T19:11:00.000000Z"
     },
     {
       "id": "reply_9",
@@ -109,7 +109,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2025-01-08T03:50:33.569225Z"
+      "created_at": "2024-11-16T19:44:00.000000Z"
     }
   ],
   "category": "Process Optimization",

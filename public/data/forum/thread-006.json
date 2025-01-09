@@ -1,16 +1,16 @@
 {
   "id": "006",
   "title": "Manufacturing: Balancing Production Demands with Maintenance Schedules",
-  "content": "Running a high-volume manufacturing plant with just-in-time production creates constant tension between maintenance needs and production targets. We're struggling to find the right balance.\n\nCurrent challenges:\n1. Production managers pushing back on scheduled maintenance\n2. Increasing emergency repairs due to delayed maintenance\n3. Difficulty coordinating maintenance windows across production lines\n4. Pressure to maintain 95% OEE while ensuring equipment health\n\nHow are other manufacturing facilities handling this balance? Especially interested in how AI/predictive maintenance has helped optimize this trade-off.",
+  "content": "Running a high-volume manufacturing plant with just-in-time production creates constant tension between maintenance needs and production targets. We're struggling to balance:\n\n1. OEE (Overall Equipment Effectiveness) targets\n2. Lean manufacturing principles\n3. TPM (Total Productive Maintenance) implementation\n4. Production line changeover times\n5. Preventive maintenance schedules\n6. Six Sigma quality standards\n\nKey challenges:\n- Minimizing production disruption\n- Meeting JIT delivery commitments\n- Maintaining TAKT time\n- Reducing Mean Time To Repair (MTTR)\n- Optimizing maintenance windows\n- Managing spare parts inventory\n\nLooking for insights from other manufacturing maintenance leaders on balancing these competing priorities while implementing AI-powered solutions.",
   "author": {
     "id": "user701",
     "name": "Steve Morrison",
     "role": "Plant Operations Manager",
     "avatar": "/avatars/steve.jpg"
   },
-  "created_at": "2024-01-07T15:05:00Z",
-  "last_activity": "2024-01-07T19:50:00Z",
-  "views": 203,
+  "created_at": "2024-12-03T10:53:00.000000Z",
+  "last_activity": "2024-12-03T19:00:00.000000Z",
+  "views": 1275,
   "replies": [
     {
       "id": "reply001",
@@ -21,7 +21,7 @@
         "role": "Smart Factory Director",
         "avatar": "/avatars/linda.jpg"
       },
-      "created_at": "2024-01-07T15:45:00Z"
+      "created_at": "2024-12-03T11:15:00.000000Z"
     },
     {
       "id": "reply002",
@@ -32,7 +32,7 @@
         "role": "Production Planning Manager",
         "avatar": "/avatars/mike.jpg"
       },
-      "created_at": "2024-01-07T16:30:00Z"
+      "created_at": "2024-12-03T11:31:00.000000Z"
     },
     {
       "id": "reply003",
@@ -43,7 +43,7 @@
         "role": "Quality Systems Engineer",
         "avatar": "/avatars/raj.jpg"
       },
-      "created_at": "2024-01-07T17:15:00Z"
+      "created_at": "2024-12-03T12:14:00.000000Z"
     },
     {
       "id": "reply004",
@@ -54,13 +54,94 @@
         "role": "Operations Excellence Manager",
         "avatar": "/avatars/hannah.jpg"
       },
-      "created_at": "2024-01-07T18:45:00Z"
+      "created_at": "2024-12-03T11:57:00.000000Z"
+    },
+    {
+      "author": {
+        "id": "lean_expert",
+        "name": "David Martinez",
+        "role": "Lean Manufacturing Director",
+        "avatar": "/images/avatars/david.png"
+      },
+      "content": "We transformed our maintenance approach using TPM principles:\n\n1. Autonomous maintenance by operators\n2. Planned maintenance windows aligned with TAKT time\n3. Visual management boards for equipment status\n4. Cross-functional maintenance teams\n\nResults:\n- OEE improved from 75% to 92%\n- MTTR reduced by 65%\n- Changeover times cut by 40%\n- Zero missed deliveries in 12 months\n\nKey success factor: Integration of predictive maintenance with lean principles.",
+      "posted_at": "2024-12-03T12:38:00.000000Z"
+    },
+    {
+      "author": {
+        "id": "production_mgr",
+        "name": "Jennifer Wong",
+        "role": "Production Manager",
+        "avatar": "/images/avatars/jennifer.png"
+      },
+      "content": "From a production perspective, we implemented:\n\n1. Digital Andon system for maintenance alerts\n2. Kanban-based spare parts management\n3. Standard Work for maintenance procedures\n4. Gemba walks with maintenance teams\n\nCritical metrics we track:\n- First Time Fix Rate: 95%\n- Schedule adherence: 98%\n- Production loss from maintenance: <2%\n\n@David, how do you handle emergency maintenance without disrupting JIT?",
+      "posted_at": "2024-12-03T13:05:00.000000Z"
+    },
+    {
+      "author": {
+        "id": "maintenance_dir",
+        "name": "Robert Thompson",
+        "role": "Maintenance Director",
+        "avatar": "/images/avatars/robert.png"
+      },
+      "content": "Our AI-powered maintenance strategy focuses on:\n\n1. Real-time OEE monitoring\n2. Predictive analytics for equipment health\n3. Dynamic maintenance scheduling based on:\n   - Production schedule\n   - Equipment condition\n   - Resource availability\n   - Material flow\n\nResults:\n- 85% reduction in unplanned downtime\n- 30% decrease in maintenance costs\n- 25% improvement in labor utilization\n\n@Jennifer, we use similar Andon integration. What's your escalation protocol?",
+      "posted_at": "2024-12-03T12:38:00.000000Z"
+    },
+    {
+      "author": {
+        "id": "quality_eng",
+        "name": "Sarah Chen",
+        "role": "Quality Systems Engineer",
+        "avatar": "/images/avatars/sarah.png"
+      },
+      "content": "Quality perspective on maintenance impact:\n\n1. Six Sigma projects revealed:\n   - 60% of quality issues stem from equipment variation\n   - 35% reduction in defects after TPM implementation\n   - 45% improvement in Cpk after predictive maintenance\n\nKey learning: Maintenance directly affects process capability.\n\nHow do others measure maintenance impact on quality metrics?",
+      "posted_at": "2024-12-03T14:05:00.000000Z"
+    },
+    {
+      "author": {
+        "id": "lean_expert",
+        "name": "David Martinez",
+        "role": "Lean Manufacturing Director",
+        "avatar": "/images/avatars/david.png"
+      },
+      "content": "@Jennifer, for emergency maintenance we:\n\n1. Maintain critical spares using min/max inventory\n2. Cross-train operators for basic repairs\n3. Use SMED principles for quick maintenance\n4. Keep flexible capacity buffer\n\nThis reduces impact on JIT while maintaining flow.",
+      "posted_at": "2024-12-03T13:53:00.000000Z"
+    },
+    {
+      "author": {
+        "id": "thread_author",
+        "name": "Michael Chang",
+        "role": "Plant Manager",
+        "avatar": "/images/avatars/michael.png"
+      },
+      "content": "Thank you all for the valuable insights!\n\n@David, your TPM results are impressive. We're implementing autonomous maintenance next month. Any tips for operator training?\n\n@Jennifer, love the digital Andon idea. Currently evaluating similar systems.\n\n@Robert, what predictive analytics tools are you using for OEE monitoring?\n\n@Sarah, fascinating correlation between maintenance and Cpk. We'll start tracking this relationship.\n\nAdditional question: How do you handle maintenance during high-demand periods?",
+      "posted_at": "2024-12-03T13:53:00.000000Z"
     }
   ],
   "category": "Industry-Specific Discussions",
-  "tags": ["manufacturing", "maintenance-scheduling", "production-planning", "oee-optimization", "predictive-maintenance"],
+  "tags": [
+    "manufacturing",
+    "maintenance-scheduling",
+    "production-planning",
+    "oee-optimization",
+    "predictive-maintenance"
+  ],
   "seo": {
-    "keywords": ["manufacturing maintenance schedule", "production vs maintenance", "OEE optimization", "predictive maintenance manufacturing", "maintenance planning", "smart factory maintenance", "production efficiency"],
+    "keywords": [
+      "manufacturing maintenance schedule",
+      "production vs maintenance",
+      "OEE optimization",
+      "predictive maintenance manufacturing",
+      "maintenance planning",
+      "smart factory maintenance",
+      "production efficiency",
+      "manufacturing maintenance",
+      "OEE optimization",
+      "lean manufacturing",
+      "TPM implementation",
+      "production line maintenance",
+      "preventive maintenance manufacturing",
+      "TAKT time optimization"
+    ],
     "description": "Expert discussion on balancing manufacturing production demands with maintenance schedules using AI and predictive maintenance, focusing on OEE optimization and reducing emergency repairs."
   }
 }

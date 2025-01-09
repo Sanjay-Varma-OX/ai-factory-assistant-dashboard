@@ -8,8 +8,8 @@
     "role": "Financial Planning Manager",
     "avatar": "/avatars/john.jpg"
   },
-  "created_at": "2023-12-02T08:30:00Z",
-  "last_activity": "2023-12-06T16:15:00Z",
+  "created_at": "2024-11-05T15:57:00.000000Z",
+  "last_activity": "2024-11-05T16:57:00.000000Z",
   "views": 342,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Operations Finance Director",
         "avatar": "/avatars/patricia.jpg"
       },
-      "created_at": "2023-12-02T10:45:00Z"
+      "created_at": "2024-11-05T16:17:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Risk Management Specialist",
         "avatar": "/avatars/marcus.jpg"
       },
-      "created_at": "2023-12-03T09:20:00Z"
+      "created_at": "2024-11-05T16:45:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Training & Development Lead",
         "avatar": "/avatars/sarah.jpg"
       },
-      "created_at": "2023-12-04T11:30:00Z"
+      "created_at": "2024-11-05T16:48:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Supply Chain Manager",
         "avatar": "/avatars/robert.jpg"
       },
-      "created_at": "2023-12-05T08:45:00Z"
+      "created_at": "2024-11-05T17:41:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Financial Planning Manager",
         "avatar": "/avatars/john.jpg"
       },
-      "created_at": "2023-12-05T14:20:00Z"
+      "created_at": "2024-11-05T18:22:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,13 +76,27 @@
         "role": "Energy Analytics Manager",
         "avatar": "/avatars/emily.jpg"
       },
-      "created_at": "2023-12-06T16:15:00Z"
+      "created_at": "2024-11-05T18:33:00.000000Z"
     }
   ],
   "category": "Cost & ROI Discussions",
-  "tags": ["cost-benefits", "roi-analysis", "maintenance-economics", "ai-implementation", "financial-planning"],
+  "tags": [
+    "cost-benefits",
+    "roi-analysis",
+    "maintenance-economics",
+    "ai-implementation",
+    "financial-planning"
+  ],
   "seo": {
-    "keywords": ["AI maintenance cost benefits", "maintenance ROI analysis", "predictive maintenance savings", "maintenance cost optimization", "AI system ROI", "maintenance financial planning", "equipment lifecycle costs"],
+    "keywords": [
+      "AI maintenance cost benefits",
+      "maintenance ROI analysis",
+      "predictive maintenance savings",
+      "maintenance cost optimization",
+      "AI system ROI",
+      "maintenance financial planning",
+      "equipment lifecycle costs"
+    ],
     "description": "Expert discussion on analyzing and calculating the long-term cost benefits of implementing AI maintenance systems, including ROI metrics, indirect benefits, and optimization strategies."
   }
 }

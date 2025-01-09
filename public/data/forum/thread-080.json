@@ -8,8 +8,8 @@
     "role": "Quality Manager",
     "avatar": "/avatars/user_12.jpg"
   },
-  "created_at": "2024-12-16T17:50:33.567614Z",
-  "last_activity": "2025-01-08T17:50:33.567622Z",
+  "created_at": "2024-11-12T12:55:00.000000Z",
+  "last_activity": "2024-11-12T14:55:00.000000Z",
   "views": 232,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-17T00:50:33.567627Z"
+      "created_at": "2024-11-12T13:15:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_13.jpg"
       },
-      "created_at": "2024-12-18T04:50:33.567627Z"
+      "created_at": "2024-11-12T13:27:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-19T04:50:33.567627Z"
+      "created_at": "2024-11-12T13:58:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_4.jpg"
       },
-      "created_at": "2024-12-19T20:50:33.567627Z"
+      "created_at": "2024-11-12T14:27:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-20T21:50:33.567627Z"
+      "created_at": "2024-11-12T15:10:00.000000Z"
     }
   ],
   "category": "Risk Management",

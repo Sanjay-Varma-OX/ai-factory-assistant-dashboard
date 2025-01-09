@@ -8,8 +8,8 @@
     "role": "ML Engineer",
     "avatar": "/avatars/daniel.jpg"
   },
-  "created_at": "2023-12-02T09:30:00Z",
-  "last_activity": "2023-12-08T16:15:00Z",
+  "created_at": "2024-11-08T11:39:00.000000Z",
+  "last_activity": "2024-11-08T12:39:00.000000Z",
   "views": 312,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Data Science Lead",
         "avatar": "/avatars/sarah_z.jpg"
       },
-      "created_at": "2023-12-02T14:45:00Z"
+      "created_at": "2024-11-08T12:04:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Data Quality Specialist",
         "avatar": "/avatars/mike.jpg"
       },
-      "created_at": "2023-12-03T11:20:00Z"
+      "created_at": "2024-11-08T12:27:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Feature Engineering Expert",
         "avatar": "/avatars/elena.jpg"
       },
-      "created_at": "2023-12-04T15:30:00Z"
+      "created_at": "2024-11-08T13:00:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "ML Engineer",
         "avatar": "/avatars/daniel.jpg"
       },
-      "created_at": "2023-12-05T10:15:00Z"
+      "created_at": "2024-11-08T12:39:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "ML Operations Manager",
         "avatar": "/avatars/tom.jpg"
       },
-      "created_at": "2023-12-06T13:45:00Z"
+      "created_at": "2024-11-08T13:24:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Model Performance Analyst",
         "avatar": "/avatars/lisa_w.jpg"
       },
-      "created_at": "2023-12-07T11:30:00Z"
+      "created_at": "2024-11-08T13:33:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,13 +87,27 @@
         "role": "AI Research Lead",
         "avatar": "/avatars/james_m.jpg"
       },
-      "created_at": "2023-12-08T16:15:00Z"
+      "created_at": "2024-11-08T14:06:00.000000Z"
     }
   ],
   "category": "Problem-Solving Threads",
-  "tags": ["ai-model-accuracy", "model-tuning", "data-preprocessing", "feature-selection", "performance-monitoring"],
+  "tags": [
+    "ai-model-accuracy",
+    "model-tuning",
+    "data-preprocessing",
+    "feature-selection",
+    "performance-monitoring"
+  ],
   "seo": {
-    "keywords": ["AI model accuracy", "predictive maintenance accuracy", "model tuning", "data preprocessing", "feature selection", "performance monitoring", "model drift"],
+    "keywords": [
+      "AI model accuracy",
+      "predictive maintenance accuracy",
+      "model tuning",
+      "data preprocessing",
+      "feature selection",
+      "performance monitoring",
+      "model drift"
+    ],
     "description": "Expert discussion on strategies to improve AI model accuracy in predictive maintenance, including model tuning, data preprocessing, feature selection, and performance monitoring approaches."
   }
 }

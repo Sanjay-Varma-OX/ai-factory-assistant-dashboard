@@ -8,8 +8,8 @@
     "role": "Process Specialist",
     "avatar": "/avatars/user_7.jpg"
   },
-  "created_at": "2024-12-21T17:50:33.589231Z",
-  "last_activity": "2025-01-08T17:50:33.589240Z",
+  "created_at": "2024-12-21T10:10:00.000000Z",
+  "last_activity": "2024-12-21T11:10:00.000000Z",
   "views": 274,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_13.jpg"
       },
-      "created_at": "2024-12-12T21:50:33.589244Z"
+      "created_at": "2024-12-21T10:25:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-14T02:50:33.589244Z"
+      "created_at": "2024-12-21T10:54:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2024-12-14T19:50:33.589244Z"
+      "created_at": "2024-12-21T11:13:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2024-12-15T19:50:33.589244Z"
+      "created_at": "2024-12-21T11:50:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-17T03:50:33.589244Z"
+      "created_at": "2024-12-21T11:50:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_10.jpg"
       },
-      "created_at": "2024-12-18T03:50:33.589244Z"
+      "created_at": "2024-12-21T12:28:00.000000Z"
     }
   ],
   "category": "Digital Transformation",

@@ -8,8 +8,8 @@
     "role": "Plant Manager",
     "avatar": "/avatars/mike.jpg"
   },
-  "created_at": "2023-12-01T14:30:00Z",
-  "last_activity": "2023-12-05T16:45:00Z",
+  "created_at": "2024-12-05T10:09:00.000000Z",
+  "last_activity": "2024-12-05T11:09:00.000000Z",
   "views": 245,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Maintenance Supervisor",
         "avatar": "/avatars/sarah.jpg"
       },
-      "created_at": "2023-12-02T09:15:00Z"
+      "created_at": "2024-12-05T10:26:00.000000Z"
     },
     {
       "id": "reply311b",
@@ -32,7 +32,7 @@
         "role": "Plant Manager",
         "avatar": "/avatars/mike.jpg"
       },
-      "created_at": "2023-12-02T10:30:00Z"
+      "created_at": "2024-12-05T10:39:00.000000Z"
     },
     {
       "id": "reply311c",
@@ -43,7 +43,7 @@
         "role": "Industrial IoT Consultant",
         "avatar": "/avatars/david.jpg"
       },
-      "created_at": "2023-12-03T11:20:00Z"
+      "created_at": "2024-12-05T11:39:00.000000Z"
     },
     {
       "id": "reply311d",
@@ -54,7 +54,7 @@
         "role": "Maintenance Supervisor",
         "avatar": "/avatars/sarah.jpg"
       },
-      "created_at": "2023-12-03T14:45:00Z"
+      "created_at": "2024-12-05T11:49:00.000000Z"
     },
     {
       "id": "reply311e",
@@ -65,7 +65,7 @@
         "role": "IT Systems Engineer",
         "avatar": "/avatars/james.jpg"
       },
-      "created_at": "2023-12-04T08:30:00Z"
+      "created_at": "2024-12-05T12:29:00.000000Z"
     },
     {
       "id": "reply311f",
@@ -76,7 +76,7 @@
         "role": "Operations Manager",
         "avatar": "/avatars/lisa.jpg"
       },
-      "created_at": "2023-12-04T13:15:00Z"
+      "created_at": "2024-12-05T12:33:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",

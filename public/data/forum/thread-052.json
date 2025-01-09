@@ -8,8 +8,8 @@
     "role": "IoT Solutions Architect",
     "avatar": "/avatars/kevin_r.jpg"
   },
-  "created_at": "2023-12-05T09:15:00Z",
-  "last_activity": "2023-12-12T16:30:00Z",
+  "created_at": "2024-11-16T16:28:00.000000Z",
+  "last_activity": "2024-11-16T17:28:00.000000Z",
   "views": 678,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "IoT Protocol Specialist",
         "avatar": "/avatars/sarah_m.jpg"
       },
-      "created_at": "2023-12-06T11:30:00Z"
+      "created_at": "2024-11-16T16:45:00.000000Z"
     },
     {
       "id": "reply452_2",
@@ -32,7 +32,7 @@
         "role": "Data Infrastructure Manager",
         "avatar": "/avatars/mike_t.jpg"
       },
-      "created_at": "2023-12-07T14:45:00Z"
+      "created_at": "2024-11-16T17:16:00.000000Z"
     },
     {
       "id": "reply452_3",
@@ -43,7 +43,7 @@
         "role": "Cybersecurity Expert",
         "avatar": "/avatars/alex_c.jpg"
       },
-      "created_at": "2023-12-08T16:20:00Z"
+      "created_at": "2024-11-16T17:31:00.000000Z"
     },
     {
       "id": "reply452_4",
@@ -54,7 +54,7 @@
         "role": "Edge Computing Specialist",
         "avatar": "/avatars/linda_m.jpg"
       },
-      "created_at": "2023-12-09T10:15:00Z"
+      "created_at": "2024-11-16T17:28:00.000000Z"
     },
     {
       "id": "reply452_5",
@@ -65,7 +65,7 @@
         "role": "Cloud Architecture Lead",
         "avatar": "/avatars/david_w.jpg"
       },
-      "created_at": "2023-12-10T13:40:00Z"
+      "created_at": "2024-11-16T17:43:00.000000Z"
     },
     {
       "id": "reply452_6",
@@ -76,7 +76,7 @@
         "role": "Systems Integration Engineer",
         "avatar": "/avatars/jennifer_p.jpg"
       },
-      "created_at": "2023-12-11T15:25:00Z"
+      "created_at": "2024-11-16T19:04:00.000000Z"
     },
     {
       "id": "reply452_7",
@@ -87,7 +87,7 @@
         "role": "Financial Analyst",
         "avatar": "/avatars/robert_l.jpg"
       },
-      "created_at": "2023-12-12T11:50:00Z"
+      "created_at": "2024-11-16T19:58:00.000000Z"
     },
     {
       "id": "reply452_8",
@@ -98,13 +98,29 @@
         "role": "Sensor Network Engineer",
         "avatar": "/avatars/michelle_z.jpg"
       },
-      "created_at": "2023-12-12T14:30:00Z"
+      "created_at": "2024-11-16T20:04:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["iot-integration", "predictive-maintenance", "industrial-iot", "sensor-networks"],
+  "tags": [
+    "iot-integration",
+    "predictive-maintenance",
+    "industrial-iot",
+    "sensor-networks"
+  ],
   "seo": {
-    "keywords": ["IoT integration maintenance", "industrial IoT", "predictive maintenance IoT", "IoT sensors", "maintenance data integration", "industrial sensor networks", "real-time monitoring", "IoT security", "CMMS integration", "industrial automation"],
+    "keywords": [
+      "IoT integration maintenance",
+      "industrial IoT",
+      "predictive maintenance IoT",
+      "IoT sensors",
+      "maintenance data integration",
+      "industrial sensor networks",
+      "real-time monitoring",
+      "IoT security",
+      "CMMS integration",
+      "industrial automation"
+    ],
     "description": "Expert discussion on implementing IoT integration in predictive maintenance systems, covering protocols, data management, security, and CMMS integration strategies for industrial applications."
   }
 }

@@ -8,8 +8,8 @@
     "role": "Quality Manager",
     "avatar": "/avatars/user_3.jpg"
   },
-  "created_at": "2024-12-15T17:50:33.598049Z",
-  "last_activity": "2025-01-07T17:50:33.598057Z",
+  "created_at": "2025-01-03T16:42:00.000000Z",
+  "last_activity": "2025-01-03T17:42:00.000000Z",
   "views": 648,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_1.jpg"
       },
-      "created_at": "2024-12-15T20:50:33.598062Z"
+      "created_at": "2025-01-03T17:01:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_18.jpg"
       },
-      "created_at": "2024-12-16T21:50:33.598062Z"
+      "created_at": "2025-01-03T17:22:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-18T04:50:33.598062Z"
+      "created_at": "2025-01-03T17:39:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_13.jpg"
       },
-      "created_at": "2024-12-18T22:50:33.598062Z"
+      "created_at": "2025-01-03T17:54:00.000000Z"
     }
   ],
   "category": "Safety Systems",

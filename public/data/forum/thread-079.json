@@ -8,8 +8,8 @@
     "role": "Operations Manager",
     "avatar": "/avatars/user_4.jpg"
   },
-  "created_at": "2024-12-14T17:50:33.567204Z",
-  "last_activity": "2025-01-07T17:50:33.567212Z",
+  "created_at": "2024-11-11T15:55:00.000000Z",
+  "last_activity": "2024-11-11T18:55:00.000000Z",
   "views": 468,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-12T05:50:33.567217Z"
+      "created_at": "2024-11-11T16:17:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-12T23:50:33.567217Z"
+      "created_at": "2024-11-11T16:31:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_8.jpg"
       },
-      "created_at": "2024-12-14T05:50:33.567217Z"
+      "created_at": "2024-11-11T17:16:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_19.jpg"
       },
-      "created_at": "2024-12-14T20:50:33.567217Z"
+      "created_at": "2024-11-11T17:39:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-15T22:50:33.567217Z"
+      "created_at": "2024-11-11T18:05:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_17.jpg"
       },
-      "created_at": "2024-12-17T05:50:33.567217Z"
+      "created_at": "2024-11-11T17:31:00.000000Z"
     }
   ],
   "category": "Safety Systems",

@@ -8,8 +8,8 @@
     "role": "Inventory Manager",
     "avatar": "/avatars/rachel.jpg"
   },
-  "created_at": "2023-12-22T09:30:00Z",
-  "last_activity": "2023-12-24T09:20:00Z",
+  "created_at": "2024-11-02T11:03:00.000000Z",
+  "last_activity": "2024-11-02T13:03:00.000000Z",
   "views": 276,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Supply Chain Director",
         "avatar": "/avatars/mark.jpg"
       },
-      "created_at": "2023-12-22T14:15:00Z"
+      "created_at": "2024-11-02T11:28:00.000000Z"
     },
     {
       "id": "reply440b",
@@ -32,7 +32,7 @@
         "role": "Data Science Lead",
         "avatar": "/avatars/lisa.jpg"
       },
-      "created_at": "2023-12-23T10:30:00Z"
+      "created_at": "2024-11-02T12:03:00.000000Z"
     },
     {
       "id": "reply440c",
@@ -43,7 +43,7 @@
         "role": "Inventory Manager",
         "avatar": "/avatars/rachel.jpg"
       },
-      "created_at": "2023-12-23T15:45:00Z"
+      "created_at": "2024-11-02T12:33:00.000000Z"
     },
     {
       "id": "reply440d",
@@ -54,7 +54,7 @@
         "role": "Supply Chain Director",
         "avatar": "/avatars/mark.jpg"
       },
-      "created_at": "2023-12-24T09:20:00Z"
+      "created_at": "2024-11-02T12:31:00.000000Z"
     }
   ],
   "category": "Inventory Management",

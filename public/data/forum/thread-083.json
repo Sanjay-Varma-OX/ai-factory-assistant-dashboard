@@ -8,8 +8,8 @@
     "role": "Technical Director",
     "avatar": "/avatars/user_1.jpg"
   },
-  "created_at": "2024-12-20T17:50:33.568833Z",
-  "last_activity": "2025-01-08T17:50:33.568841Z",
+  "created_at": "2024-11-15T13:28:00.000000Z",
+  "last_activity": "2024-11-15T15:28:00.000000Z",
   "views": 720,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_18.jpg"
       },
-      "created_at": "2024-12-10T05:50:33.568846Z"
+      "created_at": "2024-11-15T13:56:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_3.jpg"
       },
-      "created_at": "2024-12-10T21:50:33.568846Z"
+      "created_at": "2024-11-15T14:24:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_4.jpg"
       },
-      "created_at": "2024-12-12T01:50:33.568846Z"
+      "created_at": "2024-11-15T14:22:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_7.jpg"
       },
-      "created_at": "2024-12-13T05:50:33.568846Z"
+      "created_at": "2024-11-15T14:56:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_8.jpg"
       },
-      "created_at": "2024-12-13T23:50:33.568846Z"
+      "created_at": "2024-11-15T15:18:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_18.jpg"
       },
-      "created_at": "2024-12-15T05:50:33.568846Z"
+      "created_at": "2024-11-15T16:16:00.000000Z"
     }
   ],
   "category": "Automation",

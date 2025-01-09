@@ -8,8 +8,8 @@
     "role": "Performance Analytics Manager",
     "avatar": "/avatars/david_k.jpg"
   },
-  "created_at": "2023-12-10T08:15:00Z",
-  "last_activity": "2023-12-18T16:30:00Z",
+  "created_at": "2024-11-18T09:09:00.000000Z",
+  "last_activity": "2024-11-18T12:09:00.000000Z",
   "views": 642,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industrial IoT Specialist",
         "avatar": "/avatars/emma_t.jpg"
       },
-      "created_at": "2023-12-11T10:20:00Z"
+      "created_at": "2024-11-18T09:35:00.000000Z"
     },
     {
       "id": "reply456_2",
@@ -32,7 +32,7 @@
         "role": "Data Science Lead",
         "avatar": "/avatars/james_c.jpg"
       },
-      "created_at": "2023-12-12T14:45:00Z"
+      "created_at": "2024-11-18T09:43:00.000000Z"
     },
     {
       "id": "reply456_3",
@@ -43,7 +43,7 @@
         "role": "UI/UX Specialist",
         "avatar": "/avatars/sarah_m.jpg"
       },
-      "created_at": "2023-12-13T09:30:00Z"
+      "created_at": "2024-11-18T09:57:00.000000Z"
     },
     {
       "id": "reply456_4",
@@ -54,7 +54,7 @@
         "role": "Network Operations Engineer",
         "avatar": "/avatars/alex_w.jpg"
       },
-      "created_at": "2023-12-14T11:15:00Z"
+      "created_at": "2024-11-18T11:01:00.000000Z"
     },
     {
       "id": "reply456_5",
@@ -65,7 +65,7 @@
         "role": "Mobile Solutions Architect",
         "avatar": "/avatars/lisa_j.jpg"
       },
-      "created_at": "2023-12-15T13:40:00Z"
+      "created_at": "2024-11-18T10:39:00.000000Z"
     },
     {
       "id": "reply456_6",
@@ -76,13 +76,29 @@
         "role": "Database Administrator",
         "avatar": "/avatars/michael_z.jpg"
       },
-      "created_at": "2023-12-16T15:20:00Z"
+      "created_at": "2024-11-18T10:39:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["real-time-monitoring", "performance-metrics", "data-analytics", "visualization"],
+  "tags": [
+    "real-time-monitoring",
+    "performance-metrics",
+    "data-analytics",
+    "visualization"
+  ],
   "seo": {
-    "keywords": ["real-time performance metrics", "industrial monitoring", "performance analytics", "OEE tracking", "equipment monitoring", "real-time visualization", "performance benchmarking", "industrial IoT metrics", "maintenance analytics", "performance optimization"],
+    "keywords": [
+      "real-time performance metrics",
+      "industrial monitoring",
+      "performance analytics",
+      "OEE tracking",
+      "equipment monitoring",
+      "real-time visualization",
+      "performance benchmarking",
+      "industrial IoT metrics",
+      "maintenance analytics",
+      "performance optimization"
+    ],
     "description": "Expert discussion on implementing real-time performance metrics in industrial maintenance, covering key metrics selection, data collection strategies, alert thresholds, and visualization techniques."
   }
 }

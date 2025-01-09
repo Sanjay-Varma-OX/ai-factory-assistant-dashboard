@@ -8,8 +8,8 @@
     "role": "Quality Manager",
     "avatar": "/avatars/user_20.jpg"
   },
-  "created_at": "2024-12-16T17:50:33.594259Z",
-  "last_activity": "2025-01-07T17:50:33.594267Z",
+  "created_at": "2024-12-24T13:00:00.000000Z",
+  "last_activity": "2024-12-24T14:00:00.000000Z",
   "views": 403,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-23T02:50:33.594272Z"
+      "created_at": "2024-12-24T13:29:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_19.jpg"
       },
-      "created_at": "2024-12-23T22:50:33.594272Z"
+      "created_at": "2024-12-24T13:42:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,18 +43,18 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_7.jpg"
       },
-      "created_at": "2024-12-25T00:50:33.594272Z"
+      "created_at": "2024-12-24T14:12:00.000000Z"
     },
     {
       "id": "reply_4",
-      "content": "Our key learnings:\n\n1. Critical Considerations:\n   - Technology selection\n   - Team training\n   - Process integration\n   - Change management\n\n2. Success Metrics:\n   - ROI achieved in 17 months\n   - 36% performance improvement\n   - 36% reduction in downtime\n\nRecommendation: Focus on incremental implementation with clear success metrics.",
+      "content": "Implementation strategy details:\n\n1. Success Metrics\n   - Process optimization: 48%\n   - Resource utilization: 43%\n   - Error reduction: 55%\n   - Time savings: 28%\n\n2. Key Learnings\n   - Continuous monitoring\n   - Team enablement\n   - Iterative improvement\n   - Knowledge sharing\n\nProject duration: 6 months",
       "author": {
         "id": "user280",
         "name": "David Wilson",
         "role": "Systems Manager",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-25T21:50:33.594272Z"
+      "created_at": "2024-12-24T14:00:00.000000Z"
     }
   ],
   "category": "Environmental Compliance",

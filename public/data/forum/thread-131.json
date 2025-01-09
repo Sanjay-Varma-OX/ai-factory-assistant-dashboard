@@ -8,8 +8,8 @@
     "role": "Senior Engineer",
     "avatar": "/avatars/user_17.jpg"
   },
-  "created_at": "2024-12-09T17:50:33.590980Z",
-  "last_activity": "2025-01-08T17:50:33.590989Z",
+  "created_at": "2024-12-22T11:23:00.000000Z",
+  "last_activity": "2024-12-22T14:23:00.000000Z",
   "views": 350,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-26T01:50:33.590993Z"
+      "created_at": "2024-12-22T11:44:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-26T18:50:33.590993Z"
+      "created_at": "2024-12-22T12:11:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-28T05:50:33.590993Z"
+      "created_at": "2024-12-22T12:38:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_20.jpg"
       },
-      "created_at": "2024-12-28T18:50:33.590993Z"
+      "created_at": "2024-12-22T12:31:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_3.jpg"
       },
-      "created_at": "2024-12-30T02:50:33.590993Z"
+      "created_at": "2024-12-22T12:38:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_8.jpg"
       },
-      "created_at": "2024-12-30T21:50:33.590993Z"
+      "created_at": "2024-12-22T12:59:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-31T20:50:33.590993Z"
+      "created_at": "2024-12-22T14:11:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_17.jpg"
       },
-      "created_at": "2025-01-02T04:50:33.590993Z"
+      "created_at": "2024-12-22T14:27:00.000000Z"
     }
   ],
   "category": "Data Analytics",

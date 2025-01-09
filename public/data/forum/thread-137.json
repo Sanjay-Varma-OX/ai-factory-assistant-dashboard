@@ -8,8 +8,8 @@
     "role": "Process Specialist",
     "avatar": "/avatars/user_14.jpg"
   },
-  "created_at": "2024-12-20T17:50:33.593845Z",
-  "last_activity": "2025-01-07T17:50:33.593853Z",
+  "created_at": "2024-12-24T17:42:00.000000Z",
+  "last_activity": "2024-12-24T20:42:00.000000Z",
   "views": 513,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_8.jpg"
       },
-      "created_at": "2024-12-13T03:50:33.593858Z"
+      "created_at": "2024-12-24T18:00:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_10.jpg"
       },
-      "created_at": "2024-12-13T22:50:33.593858Z"
+      "created_at": "2024-12-24T18:38:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_15.jpg"
       },
-      "created_at": "2024-12-15T00:50:33.593858Z"
+      "created_at": "2024-12-24T19:06:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2024-12-15T23:50:33.593858Z"
+      "created_at": "2024-12-24T19:10:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_4.jpg"
       },
-      "created_at": "2024-12-16T19:50:33.593858Z"
+      "created_at": "2024-12-24T19:27:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2024-12-18T05:50:33.593858Z"
+      "created_at": "2024-12-24T19:42:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-19T03:50:33.593858Z"
+      "created_at": "2024-12-24T19:48:00.000000Z"
     }
   ],
   "category": "Safety Systems",

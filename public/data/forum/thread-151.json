@@ -8,8 +8,8 @@
     "role": "Technical Director",
     "avatar": "/avatars/user_16.jpg"
   },
-  "created_at": "2025-01-03T17:50:33.599611Z",
-  "last_activity": "2025-01-08T17:50:33.599619Z",
+  "created_at": "2025-01-04T15:10:00.000000Z",
+  "last_activity": "2025-01-04T18:10:00.000000Z",
   "views": 565,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2025-01-03T18:50:33.599623Z"
+      "created_at": "2025-01-04T15:25:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2025-01-05T04:50:33.599623Z"
+      "created_at": "2025-01-04T15:58:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2025-01-05T20:50:33.599623Z"
+      "created_at": "2025-01-04T15:55:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2025-01-06T22:50:33.599623Z"
+      "created_at": "2025-01-04T16:34:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_16.jpg"
       },
-      "created_at": "2025-01-08T03:50:33.599623Z"
+      "created_at": "2025-01-04T17:10:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_4.jpg"
       },
-      "created_at": "2025-01-09T02:50:33.599623Z"
+      "created_at": "2025-01-04T17:04:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2025-01-10T04:50:33.599623Z"
+      "created_at": "2025-01-04T18:12:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_19.jpg"
       },
-      "created_at": "2025-01-10T18:50:33.599623Z"
+      "created_at": "2025-01-04T18:54:00.000000Z"
     }
   ],
   "category": "Environmental Compliance",

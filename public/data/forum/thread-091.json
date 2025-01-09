@@ -8,8 +8,8 @@
     "role": "Systems Architect",
     "avatar": "/avatars/user_1.jpg"
   },
-  "created_at": "2024-12-30T17:50:33.573187Z",
-  "last_activity": "2025-01-07T17:50:33.573195Z",
+  "created_at": "2024-12-01T15:10:00.000000Z",
+  "last_activity": "2024-12-01T17:10:00.000000Z",
   "views": 678,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2024-12-25T00:50:33.573200Z"
+      "created_at": "2024-12-01T15:32:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-26T03:50:33.573200Z"
+      "created_at": "2024-12-01T16:10:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_14.jpg"
       },
-      "created_at": "2024-12-27T05:50:33.573200Z"
+      "created_at": "2024-12-01T16:34:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-28T01:50:33.573200Z"
+      "created_at": "2024-12-01T16:26:00.000000Z"
     }
   ],
   "category": "Environmental Compliance",

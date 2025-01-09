@@ -8,8 +8,8 @@
     "role": "Aircraft Maintenance Director",
     "avatar": "/avatars/sarah.jpg"
   },
-  "created_at": "2023-11-28T08:30:00Z",
-  "last_activity": "2023-12-02T16:45:00Z",
+  "created_at": "2024-11-03T12:11:00.000000Z",
+  "last_activity": "2024-11-03T14:11:00.000000Z",
   "views": 284,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Aviation Safety Manager",
         "avatar": "/avatars/james.jpg"
       },
-      "created_at": "2023-11-28T10:15:00Z"
+      "created_at": "2024-11-03T12:30:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Aviation Safety Consultant",
         "avatar": "/avatars/emily.jpg"
       },
-      "created_at": "2023-11-29T09:20:00Z"
+      "created_at": "2024-11-03T12:41:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "MRO Systems Specialist",
         "avatar": "/avatars/michael.jpg"
       },
-      "created_at": "2023-11-30T11:45:00Z"
+      "created_at": "2024-11-03T13:38:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Training Coordinator",
         "avatar": "/avatars/lisa.jpg"
       },
-      "created_at": "2023-12-01T08:30:00Z"
+      "created_at": "2024-11-03T13:27:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Aviation Safety Manager",
         "avatar": "/avatars/james.jpg"
       },
-      "created_at": "2023-12-01T14:20:00Z"
+      "created_at": "2024-11-03T13:36:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Aviation Cybersecurity Expert",
         "avatar": "/avatars/david.jpg"
       },
-      "created_at": "2023-12-02T10:15:00Z"
+      "created_at": "2024-11-03T13:41:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,13 +87,27 @@
         "role": "Aircraft Maintenance Director",
         "avatar": "/avatars/sarah.jpg"
       },
-      "created_at": "2023-12-02T16:45:00Z"
+      "created_at": "2024-11-03T14:31:00.000000Z"
     }
   ],
   "category": "Industry-Specific Discussions",
-  "tags": ["aerospace", "aircraft-maintenance", "ai-implementation", "aviation-safety", "predictive-maintenance"],
+  "tags": [
+    "aerospace",
+    "aircraft-maintenance",
+    "ai-implementation",
+    "aviation-safety",
+    "predictive-maintenance"
+  ],
   "seo": {
-    "keywords": ["aircraft maintenance AI", "aviation safety", "predictive maintenance aerospace", "AI-driven aircraft maintenance", "aviation maintenance technology", "aircraft safety protocols", "MRO systems integration"],
+    "keywords": [
+      "aircraft maintenance AI",
+      "aviation safety",
+      "predictive maintenance aerospace",
+      "AI-driven aircraft maintenance",
+      "aviation maintenance technology",
+      "aircraft safety protocols",
+      "MRO systems integration"
+    ],
     "description": "Expert discussion on implementing AI-driven maintenance solutions in the aerospace industry, focusing on aircraft safety, predictive maintenance, and regulatory compliance."
   }
 }

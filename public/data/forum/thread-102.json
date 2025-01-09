@@ -8,8 +8,8 @@
     "role": "Systems Architect",
     "avatar": "/avatars/user_6.jpg"
   },
-  "created_at": "2024-12-10T17:50:33.578074Z",
-  "last_activity": "2025-01-08T17:50:33.578081Z",
+  "created_at": "2024-12-11T14:20:00.000000Z",
+  "last_activity": "2024-12-11T17:20:00.000000Z",
   "views": 618,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_19.jpg"
       },
-      "created_at": "2024-12-23T19:50:33.578086Z"
+      "created_at": "2024-12-11T14:47:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_18.jpg"
       },
-      "created_at": "2024-12-25T03:50:33.578086Z"
+      "created_at": "2024-12-11T15:06:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_11.jpg"
       },
-      "created_at": "2024-12-25T20:50:33.578086Z"
+      "created_at": "2024-12-11T15:26:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-27T05:50:33.578086Z"
+      "created_at": "2024-12-11T16:04:00.000000Z"
     }
   ],
   "category": "Quality Control",

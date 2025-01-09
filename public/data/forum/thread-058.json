@@ -8,8 +8,8 @@
     "role": "Maintenance Systems Engineer",
     "avatar": "/avatars/michael_z.jpg"
   },
-  "created_at": "2023-12-12T10:30:00Z",
-  "last_activity": "2023-12-20T16:45:00Z",
+  "created_at": "2024-11-19T11:58:00.000000Z",
+  "last_activity": "2024-11-19T14:58:00.000000Z",
   "views": 642,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Reliability Engineer",
         "avatar": "/avatars/sarah_j.jpg"
       },
-      "created_at": "2023-12-13T14:20:00Z"
+      "created_at": "2024-11-19T12:22:00.000000Z"
     },
     {
       "id": "reply458_2",
@@ -32,7 +32,7 @@
         "role": "Data Science Lead",
         "avatar": "/avatars/james_l.jpg"
       },
-      "created_at": "2023-12-14T11:45:00Z"
+      "created_at": "2024-11-19T12:56:00.000000Z"
     },
     {
       "id": "reply458_3",
@@ -43,7 +43,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/emma_w.jpg"
       },
-      "created_at": "2023-12-15T09:30:00Z"
+      "created_at": "2024-11-19T13:22:00.000000Z"
     },
     {
       "id": "reply458_4",
@@ -54,7 +54,7 @@
         "role": "Data Science Lead",
         "avatar": "/avatars/james_l.jpg"
       },
-      "created_at": "2023-12-16T13:15:00Z"
+      "created_at": "2024-11-19T12:58:00.000000Z"
     },
     {
       "id": "reply458_5",
@@ -65,13 +65,29 @@
         "role": "Systems Integration Specialist",
         "avatar": "/avatars/robert_c.jpg"
       },
-      "created_at": "2023-12-17T15:40:00Z"
+      "created_at": "2024-11-19T13:13:00.000000Z"
     }
   ],
   "category": "Predictive Maintenance",
-  "tags": ["machine-health", "monitoring-systems", "predictive-maintenance", "cmms-integration"],
+  "tags": [
+    "machine-health",
+    "monitoring-systems",
+    "predictive-maintenance",
+    "cmms-integration"
+  ],
   "seo": {
-    "keywords": ["machine health monitoring", "predictive maintenance", "condition monitoring", "equipment health", "maintenance alerts", "CMMS integration", "vibration analysis", "thermal monitoring", "oil analysis", "machine learning maintenance"],
+    "keywords": [
+      "machine health monitoring",
+      "predictive maintenance",
+      "condition monitoring",
+      "equipment health",
+      "maintenance alerts",
+      "CMMS integration",
+      "vibration analysis",
+      "thermal monitoring",
+      "oil analysis",
+      "machine learning maintenance"
+    ],
     "description": "Expert discussion on implementing effective machine health monitoring systems, covering key indicators, monitoring frequencies, alert thresholds, and CMMS integration strategies."
   }
 }

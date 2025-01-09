@@ -8,8 +8,8 @@
     "role": "Quality Manager",
     "avatar": "/avatars/user_17.jpg"
   },
-  "created_at": "2024-12-26T17:50:33.601724Z",
-  "last_activity": "2025-01-08T17:50:33.601732Z",
+  "created_at": "2025-01-06T17:20:00.000000Z",
+  "last_activity": "2025-01-06T18:20:00.000000Z",
   "views": 788,
   "replies": [
     {
@@ -21,7 +21,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-17T23:50:33.601736Z"
+      "created_at": "2025-01-06T17:37:00.000000Z"
     },
     {
       "id": "reply_2",
@@ -32,7 +32,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_4.jpg"
       },
-      "created_at": "2024-12-18T23:50:33.601736Z"
+      "created_at": "2025-01-06T18:14:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_3.jpg"
       },
-      "created_at": "2024-12-19T22:50:33.601736Z"
+      "created_at": "2025-01-06T18:11:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_9.jpg"
       },
-      "created_at": "2024-12-20T21:50:33.601736Z"
+      "created_at": "2025-01-06T19:16:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-22T03:50:33.601736Z"
+      "created_at": "2025-01-06T19:15:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-22T23:50:33.601736Z"
+      "created_at": "2025-01-06T18:56:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-24T01:50:33.601736Z"
+      "created_at": "2025-01-06T20:29:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Operations Director",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-24T19:50:33.601736Z"
+      "created_at": "2025-01-06T19:44:00.000000Z"
     },
     {
       "id": "reply_9",
@@ -109,7 +109,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2024-12-25T19:50:33.601736Z"
+      "created_at": "2025-01-06T20:20:00.000000Z"
     },
     {
       "id": "reply_10",
@@ -120,7 +120,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_18.jpg"
       },
-      "created_at": "2024-12-27T00:50:33.601736Z"
+      "created_at": "2025-01-06T19:50:00.000000Z"
     }
   ],
   "category": "Workforce Development",

@@ -8,8 +8,8 @@
     "role": "Senior Engineer",
     "avatar": "/avatars/user_17.jpg"
   },
-  "created_at": "2025-01-01T17:50:33.574023Z",
-  "last_activity": "2025-01-07T17:50:33.574031Z",
+  "created_at": "2024-12-03T16:03:00.000000Z",
+  "last_activity": "2024-12-03T17:03:00.000000Z",
   "views": 708,
   "replies": [
     {
@@ -21,18 +21,18 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_12.jpg"
       },
-      "created_at": "2024-12-27T21:50:33.574036Z"
+      "created_at": "2024-12-03T16:28:00.000000Z"
     },
     {
       "id": "reply_2",
-      "content": "Based on our implementation experience:\n\n1. Key Success Factors:\n   - Comprehensive planning\n   - Stakeholder engagement\n   - Regular monitoring\n   - Continuous improvement\n\n2. Measured Improvements:\n   - 24% efficiency increase\n   - 22% cost reduction\n   - 45% quality improvement\n\n3. Implementation Timeline:\n   - Planning: 2-3 months\n   - Pilot: 1-2 months\n   - Full rollout: 3-4 months",
+      "content": "Project implementation insights:\n\n1. Critical Components\n   - Strategic planning\n   - Team alignment\n   - Technology roadmap\n   - Change management\n\n2. Measured Outcomes\n   - Timeline accuracy: 90%\n   - Budget adherence: 97%\n   - Stakeholder satisfaction: 95%\n   - ROI achieved: 259%\n\nImplementation completed in 8 months.",
       "author": {
         "id": "user817",
         "name": "David Wilson",
         "role": "Industry Expert",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-29T01:50:33.574036Z"
+      "created_at": "2024-12-03T16:51:00.000000Z"
     },
     {
       "id": "reply_3",
@@ -43,7 +43,7 @@
         "role": "Systems Manager",
         "avatar": "/avatars/user_10.jpg"
       },
-      "created_at": "2024-12-29T22:50:33.574036Z"
+      "created_at": "2024-12-03T17:33:00.000000Z"
     },
     {
       "id": "reply_4",
@@ -54,7 +54,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_2.jpg"
       },
-      "created_at": "2024-12-31T02:50:33.574036Z"
+      "created_at": "2024-12-03T17:07:00.000000Z"
     },
     {
       "id": "reply_5",
@@ -65,7 +65,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_6.jpg"
       },
-      "created_at": "2024-12-31T21:50:33.574036Z"
+      "created_at": "2024-12-03T18:03:00.000000Z"
     },
     {
       "id": "reply_6",
@@ -76,7 +76,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_4.jpg"
       },
-      "created_at": "2025-01-01T19:50:33.574036Z"
+      "created_at": "2024-12-03T18:03:00.000000Z"
     },
     {
       "id": "reply_7",
@@ -87,7 +87,7 @@
         "role": "Industry Expert",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2025-01-03T04:50:33.574036Z"
+      "created_at": "2024-12-03T18:02:00.000000Z"
     },
     {
       "id": "reply_8",
@@ -98,7 +98,7 @@
         "role": "Technical Lead",
         "avatar": "/avatars/user_5.jpg"
       },
-      "created_at": "2025-01-03T19:50:33.574036Z"
+      "created_at": "2024-12-03T19:15:00.000000Z"
     },
     {
       "id": "reply_9",
@@ -109,7 +109,7 @@
         "role": "Implementation Specialist",
         "avatar": "/avatars/user_17.jpg"
       },
-      "created_at": "2025-01-04T21:50:33.574036Z"
+      "created_at": "2024-12-03T19:39:00.000000Z"
     },
     {
       "id": "reply_10",
@@ -120,7 +120,7 @@
         "role": "Process Engineer",
         "avatar": "/avatars/user_8.jpg"
       },
-      "created_at": "2025-01-05T23:50:33.574036Z"
+      "created_at": "2024-12-03T19:43:00.000000Z"
     }
   ],
   "category": "Energy Efficiency",
