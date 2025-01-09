@@ -19,7 +19,17 @@ const CommunityPage = () => {
   const threadsPerPage = 10;
   const preloadPages = 5;
 
-  // Initial load of first 50 threads
+
+   // Separate useEffect for getting total count immediately
+  useEffect(() => {
+    const getCount = async () => {
+      const count = await getTotalThreadCount();
+      setTotalThreads(count);
+    };
+    getCount();
+  }, []);
+  
+  // Modified initial load effect
   useEffect(() => {
     const initializeThreads = async () => {
       setLoading(true);
@@ -37,7 +47,6 @@ const CommunityPage = () => {
 
         setPageData(pages);
         setThreads(pages[1] || []); // Set first page
-        setTotalThreads(initialThreads.length);
         
         // Start loading remaining threads in background
         loadRemainingThreadsInBackground(initialThreads.length);
