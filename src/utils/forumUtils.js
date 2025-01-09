@@ -112,3 +112,27 @@ const checkThreadExists = async (threadId) => {
     return false;
   }
 };
+
+// In forumUtils.js, add this function to quickly get total count
+export const getTotalThreadCount = async () => {
+  try {
+    let count = 0;
+    let consecutiveFailures = 0;
+    let currentId = 1;
+    
+    while (consecutiveFailures < 3) {
+      const response = await fetch(`/data/forum/thread-${String(currentId).padStart(3, '0')}.json`);
+      if (response.ok) {
+        count++;
+        consecutiveFailures = 0;
+      } else {
+        consecutiveFailures++;
+      }
+      currentId++;
+    }
+    return count;
+  } catch (error) {
+    console.error('Error counting threads:', error);
+    return 0;
+  }
+};
