@@ -7,8 +7,7 @@ import {
   loadPageThreads,
   preloadNextPages,
   formatDate,
-  getQuickCount,
-  readThreadFile
+  getQuickCount
 } from '../utils/forumUtils';
 import UserAvatar from '../components/UserAvatar'; 
 
@@ -68,38 +67,20 @@ useEffect(() => {
   
 const loadRemainingInBackground = async (startFrom) => {
   try {
-    const batchSize = 30; // Load in smaller batches
-    let currentId = startFrom + 1;
+    const startPage = Math.ceil(startFrom / threadsPerPage) + 1;
+    const totalPages = Math.ceil(TOTAL_THREADS / threadsPerPage);
     
-    while (currentId <= TOTAL_THREADS) {
-      const batchEnd = Math.min(currentId + batchSize - 1, TOTAL_THREADS);
-      const batchPromises = [];
-      
-      for (let id = currentId; id <= batchEnd; id++) {
-        batchPromises.push(readThreadFile(String(id).padStart(3, '0')));
+    for (let page = startPage; page <= totalPages; page++) {
+      // Skip if already cached
+      if (!pageCache[page]) {
+        const pageThreads = await loadPageThreads(page);
+        setPageCache(prev => ({
+          ...prev,
+          [page]: pageThreads
+        }));
+        // Add small delay between page loads
+        await new Promise(resolve => setTimeout(resolve, 100));
       }
-
-      const batchResults = await Promise.all(batchPromises);
-      const validThreads = batchResults.filter(thread => thread !== null);
-
-      if (validThreads.length > 0) {
-        // Update page cache with new threads
-        setPageCache(prevCache => {
-          const newCache = { ...prevCache };
-          validThreads.forEach((thread, index) => {
-            const globalIndex = currentId + index - 1;
-            const pageNumber = Math.floor(globalIndex / threadsPerPage) + 1;
-            if (!newCache[pageNumber]) newCache[pageNumber] = [];
-            newCache[pageNumber].push(thread);
-          });
-          return newCache;
-        });
-      }
-
-      currentId = batchEnd + 1;
-      
-      // Add a small delay between batches to prevent overwhelming the system
-      await new Promise(resolve => setTimeout(resolve, 100));
     }
   } catch (error) {
     console.error('Error loading remaining threads:', error);
@@ -133,7 +114,7 @@ const loadRemainingInBackground = async (startFrom) => {
   // };
 
   // Handle page changes
-  const changePage = (newPage) => {
+  const changePage = async (newPage) => {
   if (newPage === currentPage) return;
   
   setCurrentPage(newPage);
@@ -149,29 +130,18 @@ const loadRemainingInBackground = async (startFrom) => {
     setThreads(pageCache[newPage]);
     setLoading(false);
   } else {
-    // Load specific page if not in cache
-    const startId = (newPage - 1) * threadsPerPage + 1;
-    const endId = startId + threadsPerPage - 1;
-    
-    const pagePromises = [];
-    for (let id = startId; id <= endId; id++) {
-      pagePromises.push(readThreadFile(String(id).padStart(3, '0')));
+    // Load specific page using loadPageThreads
+    try {
+      const pageThreads = await loadPageThreads(newPage);
+      setPageCache(prev => ({ ...prev, [newPage]: pageThreads }));
+      setThreads(pageThreads);
+    } catch (error) {
+      console.error('Error loading page:', error);
+    } finally {
+      setLoading(false);
     }
-
-    Promise.all(pagePromises)
-      .then(threads => {
-        const validThreads = threads.filter(thread => thread !== null);
-        setPageCache(prev => ({ ...prev, [newPage]: validThreads }));
-        setThreads(validThreads);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error loading page:', error);
-        setLoading(false);
-      });
   }
 };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
