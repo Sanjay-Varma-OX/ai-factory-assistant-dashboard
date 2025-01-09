@@ -112,27 +112,3 @@ const checkThreadExists = async (threadId) => {
     return false;
   }
 };
-
-// Export it if needed by other components
-export const getQuickThreadCount = async () => {
-  try {
-    let count = 0;
-    let consecutiveFailures = 0;
-    let currentId = 1;
-
-    while (consecutiveFailures < 3) {
-      const exists = await checkThreadExists(currentId);
-      if (exists) {
-        count++;
-        consecutiveFailures = 0;
-      } else {
-        consecutiveFailures++;
-      }
-      currentId++;
-    }
-    return count;
-  } catch (error) {
-    console.error('Error getting thread count:', error);
-    return 0;
-  }
-};
