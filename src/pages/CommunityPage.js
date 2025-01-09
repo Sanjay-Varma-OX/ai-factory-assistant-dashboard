@@ -21,26 +21,40 @@ const CommunityPage = () => {
   const preloadPages = 5;
 
   // Single useEffect to handle both count and initial threads
- useEffect(() => {
+ // At the top with other state declarations
+const TOTAL_THREADS = 180; // Hard-coded total threads
+const INITIAL_LOAD = 50; // Initial threads to load
+
+useEffect(() => {
   const initialize = async () => {
     try {
-      // Get quick count first
-      const count = await getQuickCount();
-      setTotalThreads(count);
+      // Set total threads immediately
+      setTotalThreads(TOTAL_THREADS);
+      
+      // Load first 50 threads
+      const initialThreadPromises = [];
+      for (let id = 1; id <= INITIAL_LOAD; id++) {
+        initialThreadPromises.push(readThreadFile(String(id).padStart(3, '0')));
+      }
 
-      // Load first page immediately
-      const firstPageThreads = await loadInitialThreads(1);
-      setThreads(firstPageThreads);
-      setPageCache(prev => ({ ...prev, 1: firstPageThreads }));
+      const initialThreads = await Promise.all(initialThreadPromises);
+      const validThreads = initialThreads.filter(thread => thread !== null);
+      
+      // Organize into pages
+      const pages = {};
+      validThreads.forEach((thread, index) => {
+        const pageNumber = Math.floor(index / threadsPerPage) + 1;
+        if (!pages[pageNumber]) pages[pageNumber] = [];
+        pages[pageNumber].push(thread);
+      });
+
+      setPageCache(pages);
+      setThreads(pages[1] || []);
       setLoading(false);
 
-      // Preload next pages in background
-      const preloadedPages = await preloadNextPages(1);
-      const updatedCache = { ...pageCache };
-      preloadedPages.forEach((pageThreads, index) => {
-        updatedCache[index + 2] = pageThreads;
-      });
-      setPageCache(updatedCache);
+      // Start background loading remaining threads (51-180)
+      loadRemainingInBackground(INITIAL_LOAD);
+
     } catch (error) {
       console.error('Error in initialization:', error);
       setLoading(false);
@@ -49,6 +63,46 @@ const CommunityPage = () => {
 
   initialize();
 }, []);
+
+const loadRemainingInBackground = async (startFrom) => {
+  try {
+    const batchSize = 30; // Load in smaller batches
+    let currentId = startFrom + 1;
+    
+    while (currentId <= TOTAL_THREADS) {
+      const batchEnd = Math.min(currentId + batchSize - 1, TOTAL_THREADS);
+      const batchPromises = [];
+      
+      for (let id = currentId; id <= batchEnd; id++) {
+        batchPromises.push(readThreadFile(String(id).padStart(3, '0')));
+      }
+
+      const batchResults = await Promise.all(batchPromises);
+      const validThreads = batchResults.filter(thread => thread !== null);
+
+      if (validThreads.length > 0) {
+        // Update page cache with new threads
+        setPageCache(prevCache => {
+          const newCache = { ...prevCache };
+          validThreads.forEach((thread, index) => {
+            const globalIndex = currentId + index - 1;
+            const pageNumber = Math.floor(globalIndex / threadsPerPage) + 1;
+            if (!newCache[pageNumber]) newCache[pageNumber] = [];
+            newCache[pageNumber].push(thread);
+          });
+          return newCache;
+        });
+      }
+
+      currentId = batchEnd + 1;
+      
+      // Add a small delay between batches to prevent overwhelming the system
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+  } catch (error) {
+    console.error('Error loading remaining threads:', error);
+  }
+};
   
 // const startThread = (currentPage - 1) * threadsPerPage + 1;
 // const endThread = Math.min(startThread + threadsPerPage - 1, totalThreads);
@@ -77,31 +131,43 @@ const CommunityPage = () => {
   // };
 
   // Handle page changes
-  const changePage = async (newPage) => {
+  const changePage = (newPage) => {
   if (newPage === currentPage) return;
   
   setCurrentPage(newPage);
   window.scrollTo(0, 0);
 
+  // Show loading state only if page data isn't cached
+  if (!pageCache[newPage]) {
+    setLoading(true);
+  }
+
   // Use cached data if available
   if (pageCache[newPage]) {
     setThreads(pageCache[newPage]);
-  } else {
-    setLoading(true);
-    const pageThreads = await loadPageThreads(newPage);
-    setThreads(pageThreads);
-    setPageCache(prev => ({ ...prev, [newPage]: pageThreads }));
     setLoading(false);
-  }
+  } else {
+    // Load specific page if not in cache
+    const startId = (newPage - 1) * threadsPerPage + 1;
+    const endId = startId + threadsPerPage - 1;
+    
+    const pagePromises = [];
+    for (let id = startId; id <= endId; id++) {
+      pagePromises.push(readThreadFile(String(id).padStart(3, '0')));
+    }
 
-  // Preload next pages in background
-  preloadNextPages(newPage).then(preloadedPages => {
-    const updatedCache = { ...pageCache };
-    preloadedPages.forEach((pageThreads, index) => {
-      updatedCache[newPage + index + 1] = pageThreads;
-    });
-    setPageCache(updatedCache);
-  });
+    Promise.all(pagePromises)
+      .then(threads => {
+        const validThreads = threads.filter(thread => thread !== null);
+        setPageCache(prev => ({ ...prev, [newPage]: validThreads }));
+        setThreads(validThreads);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error loading page:', error);
+        setLoading(false);
+      });
+  }
 };
 
   return (
