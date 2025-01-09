@@ -31,18 +31,12 @@ useEffect(() => {
       // Set total threads immediately
       setTotalThreads(TOTAL_THREADS);
       
-      // Load first 50 threads
-      const initialThreadPromises = [];
-      for (let id = 1; id <= INITIAL_LOAD; id++) {
-        initialThreadPromises.push(readThreadFile(String(id).padStart(3, '0')));
-      }
-
-      const initialThreads = await Promise.all(initialThreadPromises);
-      const validThreads = initialThreads.filter(thread => thread !== null);
+      // Load first 50 threads using existing loadInitialThreads
+      const initialThreads = await loadInitialThreads(1, INITIAL_LOAD);
       
       // Organize into pages
       const pages = {};
-      validThreads.forEach((thread, index) => {
+      initialThreads.forEach((thread, index) => {
         const pageNumber = Math.floor(index / threadsPerPage) + 1;
         if (!pages[pageNumber]) pages[pageNumber] = [];
         pages[pageNumber].push(thread);
@@ -52,8 +46,15 @@ useEffect(() => {
       setThreads(pages[1] || []);
       setLoading(false);
 
-      // Start background loading remaining threads (51-180)
-      loadRemainingInBackground(INITIAL_LOAD);
+      // Load remaining pages in background using loadPageThreads
+      const remainingPages = Math.ceil((TOTAL_THREADS - INITIAL_LOAD) / threadsPerPage);
+      for (let page = Math.ceil(INITIAL_LOAD / threadsPerPage) + 1; page <= remainingPages; page++) {
+        const pageThreads = await loadPageThreads(page);
+        setPageCache(prev => ({
+          ...prev,
+          [page]: pageThreads
+        }));
+      }
 
     } catch (error) {
       console.error('Error in initialization:', error);
@@ -63,7 +64,7 @@ useEffect(() => {
 
   initialize();
 }, []);
-
+  
 const loadRemainingInBackground = async (startFrom) => {
   try {
     const batchSize = 30; // Load in smaller batches
