@@ -2,11 +2,24 @@
 const THREADS_PER_PAGE = 10;
 let allThreads = null;
 
-// Function to load multiple pages at once
+const readThreadFile = async (threadId) => {
+  try {
+    const paddedId = String(threadId).padStart(3, '0');
+    const response = await fetch(`/data/forum/thread-${paddedId}.json`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch thread file: ${response.statusText}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(`Error reading thread ${threadId}:`, error);
+    return null;
+  }
+};
+
+// Export all the needed functions
 export const loadInitialThreads = async (pagesCount = 5) => {
   try {
     const threadsPromises = [];
-    // Load first 50 threads (5 pages)
     for (let id = 1; id <= pagesCount * THREADS_PER_PAGE; id++) {
       const paddedId = String(id).padStart(3, '0');
       threadsPromises.push(readThreadFile(paddedId));
@@ -21,7 +34,6 @@ export const loadInitialThreads = async (pagesCount = 5) => {
   }
 };
 
-// Modified background loading to start after initial threads
 export const loadRemainingThreads = async (startFromId) => {
   if (allThreads !== null) return allThreads;
 
@@ -48,21 +60,11 @@ export const loadRemainingThreads = async (startFromId) => {
   }
 };
 
-const readThreadFile = async (threadId) => {
-  try {
-    const paddedId = String(threadId).padStart(3, '0');
-    const response = await fetch(`/data/forum/thread-${paddedId}.json`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch thread file: ${response.statusText}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error(`Error reading thread ${threadId}:`, error);
-    return null;
-  }
+export const formatDate = (dateString) => {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
 };
 
-// Add this export
 export const loadSingleThread = async (threadId) => {
   try {
     const thread = await readThreadFile(threadId);
