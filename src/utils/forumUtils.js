@@ -136,3 +136,45 @@ export const getTotalThreadCount = async () => {
     return 0;
   }
 };
+
+// Function to quickly get total count by checking file existence
+export const getQuickCount = async () => {
+  try {
+    let count = 0;
+    let consecutiveFailures = 0;
+    let currentId = 1;
+    const batchSize = 10; // Check multiple files at once for speed
+
+    while (consecutiveFailures < 3) {
+      const batchPromises = [];
+      
+      // Create batch of promises
+      for (let i = 0; i < batchSize; i++) {
+        const threadId = String(currentId + i).padStart(3, '0');
+        batchPromises.push(
+          fetch(`/data/forum/thread-${threadId}.json`, { method: 'HEAD' })
+            .then(response => response.ok)
+            .catch(() => false)
+        );
+      }
+
+      // Check batch results
+      const results = await Promise.all(batchPromises);
+      const validFiles = results.filter(Boolean).length;
+      
+      if (validFiles > 0) {
+        count += validFiles;
+        consecutiveFailures = 0;
+      } else {
+        consecutiveFailures++;
+      }
+      
+      currentId += batchSize;
+    }
+
+    return count;
+  } catch (error) {
+    console.error('Error getting file count:', error);
+    return 0;
+  }
+};
