@@ -134,3 +134,16 @@ export const formatDate = (dateString) => {
     });
   }
 };
+
+export const loadSingleThread = async (threadId) => {
+  try {
+    const thread = await readThreadFile(threadId);
+    if (!thread) {
+      throw new Error(`Thread ${threadId} not found`);
+    }
+    return thread;
+  } catch (error) {
+    console.error(`Error loading thread ${threadId}:`, error);
+    return null;
+  }
+};
