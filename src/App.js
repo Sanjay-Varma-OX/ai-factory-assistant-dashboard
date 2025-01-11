@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'; 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -10,8 +10,13 @@ import FeaturesPage from './pages/FeaturesPage';
 import ThreadPage from './pages/ThreadPage';
 import CommunityPage from './pages/CommunityPage';
 import Footer from './components/Footer';
+import { initClarity } from './utils/clarity';
 
 function App() {
+  useEffect(() => {
+    initClarity();
+  }, []);
+
   return (
     <Router>
       <div className="App min-h-screen flex flex-col">
