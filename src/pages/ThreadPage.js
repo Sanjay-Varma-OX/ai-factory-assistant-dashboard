@@ -11,6 +11,8 @@ const ThreadPage = () => {
   const [thread, setThread] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [replyContent, setReplyContent] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const fetchThread = async () => {
@@ -41,6 +43,31 @@ const ThreadPage = () => {
       minute: '2-digit' 
     };
     return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!replyContent.trim() || isSubmitting) return;
+
+    setIsSubmitting(true);
+    try {
+      // Here you would add your API call to submit the reply
+      console.log('Submitting reply:', replyContent);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Clear the form after successful submission
+      setReplyContent('');
+      
+      // Optionally refresh thread data to show new reply
+      // await fetchThread();
+      
+    } catch (error) {
+      console.error('Error submitting reply:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (loading) {
@@ -107,7 +134,7 @@ const ThreadPage = () => {
         </div>
       </div>
 
-     {/* Main Content */}
+      {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Original Post */}
@@ -174,19 +201,28 @@ const ThreadPage = () => {
         </div>
 
         {/* Reply Form */}
-        <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-xl font-semibold mb-4">Leave a Reply</h3>
-          <form className="space-y-4">
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold mb-4">Leave a Reply</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <textarea 
-              className="w-full h-32 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={replyContent}
+              onChange={(e) => setReplyContent(e.target.value)}
               placeholder="Share your thoughts..."
+              className="w-full min-h-[156px] p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
             />
-            <button 
-              type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Post Reply
-            </button>
+            <div className="flex justify-start">
+              <button 
+                type="submit"
+                disabled={!replyContent.trim() || isSubmitting}
+                className={`px-6 py-2 rounded-lg text-white transition-all duration-200 ${
+                  !replyContent.trim() || isSubmitting
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700'
+                }`}
+              >
+                {isSubmitting ? 'Posting...' : 'Post Reply'}
+              </button>
+            </div>
           </form>
         </div>
       </div>
