@@ -237,8 +237,8 @@ const ThreadPage = () => {
         </div>
 
         {/* Reply Form */}
-       // Replace the existing Reply Form section with this code:
 
+{/* Reply Form */}
 {/* Reply Form */}
 <div className="mt-8">
   <h2 className="text-xl font-semibold mb-4">Leave a Reply</h2>
@@ -246,55 +246,59 @@ const ThreadPage = () => {
     <div>
       <input
         type="text"
+        name="name"
         value={replyData.name}
-        onChange={(e) => setReplyData(prev => ({...prev, name: e.target.value}))}
+        onChange={handleChange}
         placeholder="Name"
-        className="w-full p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         required
       />
-      {errors.name && (
-        <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+      {formErrors.name && (
+        <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
       )}
     </div>
 
     <div>
       <input
         type="text"
+        name="position"
         value={replyData.position}
-        onChange={(e) => setReplyData(prev => ({...prev, position: e.target.value}))}
+        onChange={handleChange}
         placeholder="Position"
-        className="w-full p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         required
       />
-      {errors.position && (
-        <p className="text-red-500 text-sm mt-1">{errors.position}</p>
+      {formErrors.position && (
+        <p className="text-red-500 text-sm mt-1">{formErrors.position}</p>
       )}
     </div>
 
     <div>
       <input
         type="email"
+        name="email"
         value={replyData.email}
-        onChange={(e) => setReplyData(prev => ({...prev, email: e.target.value}))}
+        onChange={handleChange}
         placeholder="Email"
-        className="w-full p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         required
       />
-      {errors.email && (
-        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+      {formErrors.email && (
+        <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>
       )}
     </div>
 
     <div>
       <textarea 
+        name="comment"
         value={replyData.comment}
-        onChange={(e) => setReplyData(prev => ({...prev, comment: e.target.value}))}
+        onChange={handleChange}
         placeholder="Share your thoughts..."
-        className="w-full min-h-[156px] p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
+        className="w-full min-h-[156px] p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
         required
       />
-      {errors.comment && (
-        <p className="text-red-500 text-sm mt-1">{errors.comment}</p>
+      {formErrors.comment && (
+        <p className="text-red-500 text-sm mt-1">{formErrors.comment}</p>
       )}
     </div>
 
@@ -310,27 +314,28 @@ const ThreadPage = () => {
       </button>
     </div>
   </form>
+</div>
 
   {/* Success Alert */}
   {showAlert && (
-    <div className="fixed bottom-4 right-4 bg-white rounded-lg shadow-lg p-4 animate-fade-in-up">
-      <div className="flex">
-        <div className="flex-shrink-0">
-          <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-        </div>
-        <div className="ml-3">
-          <p className="text-sm font-medium text-green-800">
-            Reply posted successfully!
-          </p>
-          <p className="mt-1 text-sm text-green-600">
-            Your reply has been submitted and will appear in the discussion.
-          </p>
-        </div>
+  <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg p-4 animate-fade-in-down z-50">
+    <div className="flex">
+      <div className="flex-shrink-0">
+        <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+        </svg>
+      </div>
+      <div className="ml-3">
+        <p className="text-sm font-medium text-green-800">
+          Reply posted successfully!
+        </p>
+        <p className="mt-1 text-sm text-green-600">
+          Your reply has been submitted and will appear in the discussion.
+        </p>
       </div>
     </div>
-  )}
+  </div>
+)}
 </div>
       </div>
     </div>
