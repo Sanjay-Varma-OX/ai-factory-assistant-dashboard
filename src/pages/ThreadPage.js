@@ -6,6 +6,8 @@ import { loadSingleThread } from '../utils/forumUtils';
 import UserAvatar from '../components/UserAvatar';
 
 const ThreadPage = () => {
+  const { threadId } = useParams();   
+  const navigate = useNavigate(); 
   const [thread, setThread] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);  // This line should be uncommented
