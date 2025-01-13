@@ -43,6 +43,20 @@ const ThreadPage = () => {
     }
   }, [threadId, navigate]);
 
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+  setReplyData(prev => ({
+    ...prev,
+    [name]: value
+  }));
+  if (errors[name]) {
+    setErrors(prev => ({
+      ...prev,
+      [name]: ''
+    }));
+  }
+};
+  
   const formatDate = (dateString) => {
     const options = { 
       year: 'numeric', 
@@ -338,9 +352,6 @@ const ThreadPage = () => {
   </div>
 )}
 </div>
-      </div>
-    </div>
-  </>
   );
 };
 
