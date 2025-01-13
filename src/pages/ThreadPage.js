@@ -140,6 +140,7 @@ const ThreadPage = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
       <div className="bg-blue-900 text-white py-8">
@@ -339,6 +340,7 @@ const ThreadPage = () => {
 </div>
       </div>
     </div>
+  </>
   );
 };
 
