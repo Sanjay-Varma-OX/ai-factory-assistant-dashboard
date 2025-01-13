@@ -9,7 +9,8 @@ import {
   formatDate,
   getQuickCount
 } from '../utils/forumUtils';
-import UserAvatar from '../components/UserAvatar'; 
+import UserAvatar from '../components/UserAvatar';
+import DiscussionForm from '../components/DiscussionForm';
 
 const CommunityPage = () => {
   const [threads, setThreads] = useState([]);
@@ -165,9 +166,7 @@ const loadRemainingInBackground = async (startFrom) => {
                 : 'Loading threads...'}
             </p>
           </div>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-            Start New Discussion
-          </button>
+          <DiscussionForm />
         </div>
 
         {loading ? (
