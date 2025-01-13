@@ -6,22 +6,20 @@ import { loadSingleThread } from '../utils/forumUtils';
 import UserAvatar from '../components/UserAvatar';
 
 const ThreadPage = () => {
-  const { threadId } = useParams();
-  const navigate = useNavigate();
   const [thread, setThread] = useState(null);
   const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);  // This line should be uncommented
   const [replyContent, setReplyContent] = useState('');
-  // const [isSubmitting, setIsSubmitting] = useState(false);
   const [replyData, setReplyData] = useState({
-  name: '',
-  position: '',
-  email: '',
-  comment: ''
-});
+    name: '',
+    position: '',
+    email: '',
+    comment: ''
+  });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+
 
   useEffect(() => {
     const fetchThread = async () => {
