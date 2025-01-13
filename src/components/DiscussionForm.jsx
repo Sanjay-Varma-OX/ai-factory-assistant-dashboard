@@ -1,26 +1,7 @@
 import React, { useState } from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, AlertCircle } from "lucide-react";
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@/components/ui/alert";
 
 const DiscussionForm = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     position: '',
@@ -28,207 +9,183 @@ const DiscussionForm = () => {
     question: ''
   });
   const [errors, setErrors] = useState({});
-  const [showAlert, setShowAlert] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
-    
-    // Required field validation
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    } else if (formData.name.length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
-    }
-
-    if (!formData.position.trim()) {
-      newErrors.position = 'Position is required';
-    }
-
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.position.trim()) newErrors.position = 'Position is required';
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
       newErrors.email = 'Invalid email address';
     }
-
-    if (!formData.question.trim()) {
-      newErrors.question = 'Question is required';
-    } else if (formData.question.length < 10) {
-      newErrors.question = 'Question must be at least 10 characters';
-    }
-
+    if (!formData.question.trim()) newErrors.question = 'Question is required';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    
     if (validateForm()) {
-      try {
-        // Here you would typically send the data to your backend
-        // For now, we'll simulate an API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Show success alert
-        setIsSubmitted(true);
-        setShowAlert(true);
-        
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setShowAlert(false);
-          setIsOpen(false);
-          setFormData({
-            name: '',
-            position: '',
-            email: '',
-            question: ''
-          });
-        }, 3000);
-        
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        setShowAlert(true);
-      }
-    } else {
-      // Show validation errors alert
-      setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 3000);
+      console.log('Form submitted:', formData);
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setIsOpen(false);
+        setFormData({ name: '', position: '', email: '', question: '' });
+      }, 3000);
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    // Clear error when user starts typing
+    setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  // Close modal when clicking outside
+  const handleClickOutside = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      setIsOpen(false);
     }
   };
 
   return (
     <>
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
-            Start New Discussion
-          </Button>
-        </DialogTrigger>
-        
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Start a New Discussion</DialogTitle>
-            <DialogDescription>
-              Share your question with our community experts
-            </DialogDescription>
-          </DialogHeader>
+      {/* Trigger Button */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Start New Discussion
+      </button>
 
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium">
-                  Name <span className="text-red-500">*</span>
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={errors.name ? 'border-red-500' : ''}
-                  required
-                />
-                {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                )}
+      {/* Modal */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 modal-overlay z-50"
+          onClick={handleClickOutside}
+        >
+          <div className="bg-white rounded-lg w-full max-w-md p-6 relative">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
+            >
+              ×
+            </button>
+
+            {!isSubmitted ? (
+              <>
+                <h2 className="text-2xl font-semibold mb-2">Start a New Discussion</h2>
+                <p className="text-gray-600 mb-6">Share your question with our community experts</p>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Name Field */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full px-3 py-2 border rounded-md ${
+                        errors.name ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-1 focus:ring-blue-500`}
+                    />
+                    {errors.name && (
+                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                    )}
+                  </div>
+
+                  {/* Position Field */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Position <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="position"
+                      value={formData.position}
+                      onChange={handleChange}
+                      className={`w-full px-3 py-2 border rounded-md ${
+                        errors.position ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-1 focus:ring-blue-500`}
+                    />
+                    {errors.position && (
+                      <p className="text-red-500 text-sm mt-1">{errors.position}</p>
+                    )}
+                  </div>
+
+                  {/* Email Field */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`w-full px-3 py-2 border rounded-md ${
+                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-1 focus:ring-blue-500`}
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                    )}
+                  </div>
+
+                  {/* Question Field */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Your Question <span className="text-red-500">*</span>
+                    </label>
+                    <textarea
+                      name="question"
+                      value={formData.question}
+                      onChange={handleChange}
+                      rows="4"
+                      className={`w-full px-3 py-2 border rounded-md ${
+                        errors.question ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-1 focus:ring-blue-500`}
+                    />
+                    {errors.question && (
+                      <p className="text-red-500 text-sm mt-1">{errors.question}</p>
+                    )}
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                  >
+                    Submit Question
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="bg-green-50 border border-green-200 rounded-md p-4">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="text-sm font-medium text-green-800">Success!</h3>
+                    <div className="mt-2 text-sm text-green-700">
+                      We have received your question. Our expert team will review it and provide an update soon.
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="position" className="text-sm font-medium">
-                  Position <span className="text-red-500">*</span>
-                </Label>
-                <Input
-                  id="position"
-                  name="position"
-                  value={formData.position}
-                  onChange={handleChange}
-                  className={errors.position ? 'border-red-500' : ''}
-                  required
-                />
-                {errors.position && (
-                  <p className="text-red-500 text-sm mt-1">{errors.position}</p>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-medium">
-                  Email <span className="text-red-500">*</span>
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={errors.email ? 'border-red-500' : ''}
-                  required
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="question" className="text-sm font-medium">
-                  Your Question <span className="text-red-500">*</span>
-                </Label>
-                <Textarea
-                  id="question"
-                  name="question"
-                  value={formData.question}
-                  onChange={handleChange}
-                  className={`min-h-[100px] ${errors.question ? 'border-red-500' : ''}`}
-                  required
-                />
-                {errors.question && (
-                  <p className="text-red-500 text-sm mt-1">{errors.question}</p>
-                )}
-              </div>
-
-              <Button 
-                type="submit" 
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Submit Question
-              </Button>
-            </form>
-          ) : (
-            <Alert className="bg-green-50 border-green-200">
-              <CheckCircle2 className="h-4 w-4 text-green-600" />
-              <AlertTitle>Success!</AlertTitle>
-              <AlertDescription>
-                We have received your question. Our expert team will review it and provide an update soon.
-              </AlertDescription>
-            </Alert>
-          )}
-        </DialogContent>
-      </Dialog>
-
-      {/* Floating Alert */}
-      {showAlert && !isSubmitted && (
-        <div className="fixed bottom-4 right-4 z-50">
-          <Alert className="bg-red-50 border-red-200">
-            <AlertCircle className="h-4 w-4 text-red-600" />
-            <AlertTitle>Please check your inputs</AlertTitle>
-            <AlertDescription>
-              All fields are required and must be filled correctly.
-            </AlertDescription>
-          </Alert>
+            )}
+          </div>
         </div>
       )}
     </>
