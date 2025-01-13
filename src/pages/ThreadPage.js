@@ -10,9 +10,18 @@ const ThreadPage = () => {
   const navigate = useNavigate();
   const [thread, setThread] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [replyContent, setReplyContent] = useState('');
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  const [replyData, setReplyData] = useState({
+  name: '',
+  position: '',
+  email: '',
+  comment: ''
+});
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     const fetchThread = async () => {
@@ -46,29 +55,56 @@ const ThreadPage = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!replyContent.trim() || isSubmitting) return;
+  e.preventDefault();
+  
+  // Validate form
+  const newErrors = {};
+  if (!replyData.name.trim()) newErrors.name = 'Name is required';
+  if (!replyData.position.trim()) newErrors.position = 'Position is required';
+  if (!replyData.email.trim()) {
+    newErrors.email = 'Email is required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(replyData.email)) {
+    newErrors.email = 'Invalid email address';
+  }
+  if (!replyData.comment.trim()) newErrors.comment = 'Comment is required';
 
-    setIsSubmitting(true);
-    try {
-      // Here you would add your API call to submit the reply
-      console.log('Submitting reply:', replyContent);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Clear the form after successful submission
-      setReplyContent('');
-      
-      // Optionally refresh thread data to show new reply
-      // await fetchThread();
-      
-    } catch (error) {
-      console.error('Error submitting reply:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+    return;
+  }
+
+  setIsSubmitting(true);
+  try {
+    // Here you would add your API call to submit the reply
+    console.log('Submitting reply:', replyData);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Show success alert
+    setShowAlert(true);
+    
+    // Clear form
+    setReplyData({
+      name: '',
+      position: '',
+      email: '',
+      comment: ''
+    });
+    setErrors({});
+    
+    // Hide alert after 3 seconds
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+    
+  } catch (error) {
+    console.error('Error submitting reply:', error);
+    setErrors({ submit: 'Failed to submit reply. Please try again.' });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   if (loading) {
     return (
@@ -201,30 +237,101 @@ const ThreadPage = () => {
         </div>
 
         {/* Reply Form */}
-        <div className="mt-8">
-          <h2 className="text-xl font-semibold mb-4">Leave a Reply</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <textarea 
-              value={replyContent}
-              onChange={(e) => setReplyContent(e.target.value)}
-              placeholder="Share your thoughts..."
-              className="w-full min-h-[156px] p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
-            />
-            <div className="flex justify-start">
-              <button 
-                type="submit"
-                disabled={!replyContent.trim() || isSubmitting}
-                className={`px-6 py-2 rounded-lg text-white transition-all duration-200 ${
-                  !replyContent.trim() || isSubmitting
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-blue-600 hover:bg-blue-700'
-                }`}
-              >
-                {isSubmitting ? 'Posting...' : 'Post Reply'}
-              </button>
-            </div>
-          </form>
+       // Replace the existing Reply Form section with this code:
+
+{/* Reply Form */}
+<div className="mt-8">
+  <h2 className="text-xl font-semibold mb-4">Leave a Reply</h2>
+  <form onSubmit={handleSubmit} className="space-y-4">
+    <div>
+      <input
+        type="text"
+        value={replyData.name}
+        onChange={(e) => setReplyData(prev => ({...prev, name: e.target.value}))}
+        placeholder="Name"
+        className="w-full p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        required
+      />
+      {errors.name && (
+        <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+      )}
+    </div>
+
+    <div>
+      <input
+        type="text"
+        value={replyData.position}
+        onChange={(e) => setReplyData(prev => ({...prev, position: e.target.value}))}
+        placeholder="Position"
+        className="w-full p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        required
+      />
+      {errors.position && (
+        <p className="text-red-500 text-sm mt-1">{errors.position}</p>
+      )}
+    </div>
+
+    <div>
+      <input
+        type="email"
+        value={replyData.email}
+        onChange={(e) => setReplyData(prev => ({...prev, email: e.target.value}))}
+        placeholder="Email"
+        className="w-full p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        required
+      />
+      {errors.email && (
+        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+      )}
+    </div>
+
+    <div>
+      <textarea 
+        value={replyData.comment}
+        onChange={(e) => setReplyData(prev => ({...prev, comment: e.target.value}))}
+        placeholder="Share your thoughts..."
+        className="w-full min-h-[156px] p-4 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
+        required
+      />
+      {errors.comment && (
+        <p className="text-red-500 text-sm mt-1">{errors.comment}</p>
+      )}
+    </div>
+
+    <div className="flex justify-start">
+      <button 
+        type="submit"
+        disabled={isSubmitting}
+        className={`px-6 py-2 rounded-lg text-white transition-all duration-200 ${
+          isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+        }`}
+      >
+        {isSubmitting ? 'Posting...' : 'Post Reply'}
+      </button>
+    </div>
+  </form>
+
+  {/* Success Alert */}
+  {showAlert && (
+    <div className="fixed bottom-4 right-4 bg-white rounded-lg shadow-lg p-4 animate-fade-in-up">
+      <div className="flex">
+        <div className="flex-shrink-0">
+          <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
         </div>
+        <div className="ml-3">
+          <p className="text-sm font-medium text-green-800">
+            Reply posted successfully!
+          </p>
+          <p className="mt-1 text-sm text-green-600">
+            Your reply has been submitted and will appear in the discussion.
+          </p>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
       </div>
     </div>
   );
