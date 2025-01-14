@@ -350,5 +350,6 @@ const ThreadPage = () => {
     )}
   </div>
 );
+};
 
 export default ThreadPage;
