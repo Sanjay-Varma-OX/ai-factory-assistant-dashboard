@@ -153,206 +153,202 @@ const ThreadPage = () => {
     );
   }
 
-  return (
-    <>
-    <div className="min-h-screen bg-gray-50">
-      {/* Header Section */}
-      <div className="bg-blue-900 text-white py-8">
-        <div className="container mx-auto px-4">
-          <Link 
-            to="/community" 
-            className="inline-flex items-center text-blue-200 hover:text-white transition-colors mb-4"
-          >
-            <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
-            Back to Community
-          </Link>
-          <h1 className="text-3xl font-bold mb-4">{thread.title}</h1>
-          
-          <div className="flex flex-wrap items-center text-sm text-blue-200 space-x-6">
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faUser} className="mr-2" />
-              {thread.author.name} ({thread.author.role})
-            </div>
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
-              {formatDate(thread.created_at)}
-            </div>
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faEye} className="mr-2" />
-              {thread.views} views
-            </div>
+ return (
+  <div className="min-h-screen bg-gray-50">
+    {/* Header Section */}
+    <div className="bg-blue-900 text-white py-8">
+      <div className="container mx-auto px-4">
+        <Link 
+          to="/community" 
+          className="inline-flex items-center text-blue-200 hover:text-white transition-colors mb-4"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+          Back to Community
+        </Link>
+        <h1 className="text-3xl font-bold mb-4">{thread.title}</h1>
+        
+        <div className="flex flex-wrap items-center text-sm text-blue-200 space-x-6">
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faUser} className="mr-2" />
+            {thread.author.name} ({thread.author.role})
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
+            {formatDate(thread.created_at)}
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faEye} className="mr-2" />
+            {thread.views} views
           </div>
         </div>
       </div>
+    </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Original Post */}
-          <div className="p-6 border-b border-gray-200">
-            <div className="flex items-start">
-              <UserAvatar 
-                name={thread.author.name} 
-                size="lg"
-                className="flex-shrink-0 mr-4"
-              />
-              <div className="flex-1">
-                <div className="flex items-center mb-4">
-                  <div>
-                    <p className="font-medium text-lg">{thread.author.name}</p>
-                    <p className="text-sm text-gray-500">{thread.author.role}</p>
-                  </div>
+    {/* Main Content */}
+    <div className="container mx-auto px-4 py-8">
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        {/* Original Post */}
+        <div className="p-6 border-b border-gray-200">
+          <div className="flex items-start">
+            <UserAvatar 
+              name={thread.author.name} 
+              size="lg"
+              className="flex-shrink-0 mr-4"
+            />
+            <div className="flex-1">
+              <div className="flex items-center mb-4">
+                <div>
+                  <p className="font-medium text-lg">{thread.author.name}</p>
+                  <p className="text-sm text-gray-500">{thread.author.role}</p>
                 </div>
-                <div className="prose max-w-none">
-                  <p className="whitespace-pre-wrap">{thread.content}</p>
-                </div>
-                
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {thread.tags.map((tag) => (
-                    <span 
-                      key={tag}
-                      className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
-                    >
-                      {tag}
+              </div>
+              <div className="prose max-w-none">
+                <p className="whitespace-pre-wrap">{thread.content}</p>
+              </div>
+              
+              <div className="mt-4 flex flex-wrap gap-2">
+                {thread.tags.map((tag) => (
+                  <span 
+                    key={tag}
+                    className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Replies */}
+        <div className="divide-y divide-gray-200">
+          {thread.replies.map((reply) => (
+            <div key={reply.id} className="p-6">
+              <div className="flex items-start">
+                <UserAvatar 
+                  name={reply.author.name} 
+                  size="md"
+                  className="flex-shrink-0 mr-4"
+                />
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <span className="font-medium">{reply.author.name}</span>
+                      <span className="text-gray-500 text-sm ml-2">{reply.author.role}</span>
+                    </div>
+                    <span className="text-sm text-gray-500">
+                      {formatDate(reply.created_at)}
                     </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Replies */}
-          <div className="divide-y divide-gray-200">
-            {thread.replies.map((reply) => (
-              <div key={reply.id} className="p-6">
-                <div className="flex items-start">
-                  <UserAvatar 
-                    name={reply.author.name} 
-                    size="md"
-                    className="flex-shrink-0 mr-4"
-                  />
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-2">
-                      <div>
-                        <span className="font-medium">{reply.author.name}</span>
-                        <span className="text-gray-500 text-sm ml-2">{reply.author.role}</span>
-                      </div>
-                      <span className="text-sm text-gray-500">
-                        {formatDate(reply.created_at)}
-                      </span>
-                    </div>
-                    <div className="prose max-w-none">
-                      <p className="whitespace-pre-wrap">{reply.content}</p>
-                    </div>
+                  </div>
+                  <div className="prose max-w-none">
+                    <p className="whitespace-pre-wrap">{reply.content}</p>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Reply Form */}
+      <div className="mt-8">
+        <h2 className="text-xl font-semibold mb-4">Leave a Reply</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <input
+              type="text"
+              name="name"
+              value={replyData.name}
+              onChange={handleChange}
+              placeholder="Name"
+              className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="position"
+              value={replyData.position}
+              onChange={handleChange}
+              placeholder="Position"
+              className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+            {errors.position && (
+              <p className="text-red-500 text-sm mt-1">{errors.position}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              type="email"
+              name="email"
+              value={replyData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
+          </div>
+
+          <div>
+            <textarea 
+              name="comment"
+              value={replyData.comment}
+              onChange={handleChange}
+              placeholder="Share your thoughts..."
+              className="w-full min-h-[156px] p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
+              required
+            />
+            {errors.comment && (
+              <p className="text-red-500 text-sm mt-1">{errors.comment}</p>
+            )}
+          </div>
+
+          <div className="flex justify-start">
+            <button 
+              type="submit"
+              disabled={isSubmitting}
+              className={`px-6 py-2 rounded-lg text-white transition-all duration-200 ${
+                isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+              }`}
+            >
+              {isSubmitting ? 'Posting...' : 'Post Reply'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {/* Success Alert */}
+    {showAlert && (
+      <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg p-4 animate-fade-in-down z-50">
+        <div className="flex">
+          <div className="flex-shrink-0">
+            <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <div className="ml-3">
+            <p className="text-sm font-medium text-green-800">
+              Reply posted successfully!
+            </p>
+            <p className="mt-1 text-sm text-green-600">
+              Your reply has been submitted and will appear in the discussion.
+            </p>
           </div>
         </div>
-
-        {/* Reply Form */}
-
-{/* Reply Form */}
-{/* Reply Form */}
-<div className="mt-8">
-  <h2 className="text-xl font-semibold mb-4">Leave a Reply</h2>
-  <form onSubmit={handleSubmit} className="space-y-4">
-    <div>
-      <input
-        type="text"
-        name="name"
-        value={replyData.name}
-        onChange={handleChange}
-        placeholder="Name"
-        className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        required
-      />
-      {formErrors.name && (
-        <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
-      )}
-    </div>
-
-    <div>
-      <input
-        type="text"
-        name="position"
-        value={replyData.position}
-        onChange={handleChange}
-        placeholder="Position"
-        className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        required
-      />
-      {formErrors.position && (
-        <p className="text-red-500 text-sm mt-1">{formErrors.position}</p>
-      )}
-    </div>
-
-    <div>
-      <input
-        type="email"
-        name="email"
-        value={replyData.email}
-        onChange={handleChange}
-        placeholder="Email"
-        className="w-full p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        required
-      />
-      {formErrors.email && (
-        <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>
-      )}
-    </div>
-
-    <div>
-      <textarea 
-        name="comment"
-        value={replyData.comment}
-        onChange={handleChange}
-        placeholder="Share your thoughts..."
-        className="w-full min-h-[156px] p-4 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
-        required
-      />
-      {formErrors.comment && (
-        <p className="text-red-500 text-sm mt-1">{formErrors.comment}</p>
-      )}
-    </div>
-
-    <div className="flex justify-start">
-      <button 
-        type="submit"
-        disabled={isSubmitting}
-        className={`px-6 py-2 rounded-lg text-white transition-all duration-200 ${
-          isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-        }`}
-      >
-        {isSubmitting ? 'Posting...' : 'Post Reply'}
-      </button>
-    </div>
-  </form>
-</div>
-
-  {/* Success Alert */}
-  {showAlert && (
-  <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg p-4 animate-fade-in-down z-50">
-    <div className="flex">
-      <div className="flex-shrink-0">
-        <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-        </svg>
       </div>
-      <div className="ml-3">
-        <p className="text-sm font-medium text-green-800">
-          Reply posted successfully!
-        </p>
-        <p className="mt-1 text-sm text-green-600">
-          Your reply has been submitted and will appear in the discussion.
-        </p>
-      </div>
-    </div>
+    )}
   </div>
-)}
-</div>
-  );
-};
+);
 
 export default ThreadPage;
